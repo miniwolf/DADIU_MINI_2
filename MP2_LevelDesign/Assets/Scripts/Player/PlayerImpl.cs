@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerImpl : MonoBehaviour, Player {
+public class PlayerImpl : Player {
 	private PlayerState playerState;
 	private Life playerLife;
 
