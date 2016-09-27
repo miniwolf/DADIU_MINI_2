@@ -22,4 +22,8 @@ public class Enemy : MonoBehaviour {
 		//update state
 		state = newState;
 	}
+
+	public NavMeshController GetNavMesh () {
+		return navmesh;
+	}
 }
