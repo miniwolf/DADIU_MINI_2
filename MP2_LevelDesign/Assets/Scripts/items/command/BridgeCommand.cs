@@ -3,6 +3,7 @@ using System.Collections;
 
 public class BridgeCommand : ItemCommand {
 	private Enemy enemy;
+	private GameObject bridgeObject;
 
 	public BridgeCommand(Enemy enemy) {
 		this.enemy = enemy;
@@ -13,6 +14,7 @@ public class BridgeCommand : ItemCommand {
 	/// </summary>
 	/// <param name="gameObject">Game object of the bridge</param>
 	public void Setup(GameObject gameObject) {
+		this.bridgeObject = gameObject;
 		gameObject.GetComponent<Rigidbody>().isKinematic = true;
 	}
 
@@ -22,6 +24,7 @@ public class BridgeCommand : ItemCommand {
 	/// <param name="other">Colliding object</param>
 	public void Execute(Collision other) {
 		if ( other.transform.tag == TagConstants.ENEMY ) {
+			bridgeObject.GetComponent<Rigidbody>().isKinematic = false;
 			enemy.SetState(EnemyState.ObstacleHit);
 		}
 	}
