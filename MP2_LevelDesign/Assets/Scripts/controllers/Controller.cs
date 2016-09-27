@@ -4,9 +4,6 @@ using UnityEngine;
 /// The controller is responsible for response control
 /// </summary>
 public interface Controller {
-	/**
-	 * 
-	 */
 	/// <summary>
 	/// Called when the state has changed to moving
 	/// </summary>

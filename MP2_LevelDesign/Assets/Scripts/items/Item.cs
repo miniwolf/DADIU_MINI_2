@@ -12,6 +12,7 @@ public class Item : MonoBehaviour {
 		if ( gameObject.GetComponent<Collider>() == null ) {
 			Debug.LogError("This item should have a collider on it, to interact with moveable objects");
 		}
+		command.Setup(gameObject);
 	}
 
 	void OnCollisionEnter(Collision other) {
