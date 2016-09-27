@@ -1,16 +1,20 @@
 using UnityEngine;
 
-/**
- * The controller is responsible for response control
- */
+/// <summary>
+/// The controller is responsible for response control
+/// </summary>
 public interface Controller {
 	/**
-	 * Called when the state has changed to moving
+	 * 
 	 */
+	/// <summary>
+	/// Called when the state has changed to moving
+	/// </summary>
+	/// <param name="moveTo">Vector3 we move to</param>
 	void Move(Vector3 moveTo);
 
-	/**
-	 * Called when the state has changed to idle
-	 */
+	/// <summary>
+	/// Called when the state has changed to idle
+	/// </summary>
 	void Idle();
 }
