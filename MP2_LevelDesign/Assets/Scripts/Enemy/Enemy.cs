@@ -10,8 +10,21 @@ public class Enemy : MonoBehaviour {
 
 	public Enemy(NavMeshAgent agent) {
 		navmesh = new NavMeshController(agent);
-		state = EnemyState.RandomWalk;
+		state = EnemyState.ObstacleHit;
 		// set animation and sound controller
+	}
+
+	void Start () {
+		NavMeshAgent agent = GetComponent<NavMeshAgent>();
+		navmesh = new NavMeshController(agent);
+		state = EnemyState.ObstacleHit;
+	}
+
+	// DEBUG
+	void Update () {
+		if(Input.GetKeyDown(KeyCode.Space)) {
+			SetState(EnemyState.RandomWalk);
+		}
 	}
 
 	public EnemyState GetState () {
