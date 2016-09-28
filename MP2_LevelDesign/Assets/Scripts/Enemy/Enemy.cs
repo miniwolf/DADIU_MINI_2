@@ -1,6 +1,14 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
+<<<<<<< HEAD
+public interface Enemy {
+	EnemyState GetState();
+
+	void SetState(EnemyState newState);
+
+	List<Controller> GetControllers();
+=======
 public class Enemy : MonoBehaviour {
 	private EnemyState state;
 	private NavMeshController navmesh;
@@ -54,4 +62,5 @@ public class Enemy : MonoBehaviour {
 		animController = null;
 	}
 
+>>>>>>> develop
 }
