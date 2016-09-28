@@ -13,6 +13,9 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 
 	public PlayerImpl() {
 		InjectionRegister.Register(this);
+	}
+
+	void Awake() {
 		TagRegister.Register(gameObject, TagConstants.PLAYER);
 	}
 
@@ -21,12 +24,6 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	}
 		
 	void Update() {
-		foreach ( Touch touch in Input.touches ) {
-			foreach ( Controller controller in controllers ) {
-				controller.Move(touch.position);
-			}
-		}
-
 		foreach(Touch touch in Input.touches) {
 			cameraToGround = cam.ScreenPointToRay(touch.position);
 			if ( Physics.Raycast(cameraToGround,out hit,500f) ) {
@@ -60,7 +57,7 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	}
 
 	public string GetTag() {
-		return gameObject.transform.tag;
+		return TagConstants.PLAYER;
 	}
 
 	public void AddController(Controller controller) {
