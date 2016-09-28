@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemyAI : MonoBehaviour {
 	private Enemy enemy;
-	private Player player;
+	private GameObject player;
 	public float roamRadius;
 	private bool isRoaming;
 	Vector3 movingPosition;
@@ -11,7 +11,7 @@ public class EnemyAI : MonoBehaviour {
 	void Start () {
 		roamRadius = 15.0f;
 		movingPosition = transform.position;
-		player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+		player = GameObject.FindGameObjectWithTag("Player").GetComponent<GameObject>();
 		enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
 	}
 

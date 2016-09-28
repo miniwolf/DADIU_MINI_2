@@ -12,7 +12,8 @@ public class NavMeshController : Controller {
 	/// </summary>
 	/// <param name="moveTo">Move to.</param>
 	public void Move(Vector3 moveTo) {
-		agent.SetDestination(moveTo);		
+		agent.SetDestination(moveTo);
+		agent.Resume();
 	}
 
 	public void Idle() {
