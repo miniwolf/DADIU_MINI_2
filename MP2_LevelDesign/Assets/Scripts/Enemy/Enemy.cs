@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class Enemy : MonoBehaviour {
-
 	private EnemyState state;
 	private NavMeshController navmesh;
 	//private AnimationController animation;
@@ -14,16 +13,16 @@ public class Enemy : MonoBehaviour {
 		// set animation and sound controller
 	}
 
-	public EnemyState GetState () {
+	public EnemyState GetState() {
 		return state;
 	}
 
-	public void SetState (EnemyState newState) {
+	public void SetState(EnemyState newState) {
 		//update state
 		state = newState;
 	}
 
-	public NavMeshController GetNavMesh () {
+	public NavMeshController GetNavMesh() {
 		return navmesh;
 	}
 }
