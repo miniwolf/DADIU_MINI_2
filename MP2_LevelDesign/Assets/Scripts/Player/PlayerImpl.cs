@@ -6,6 +6,10 @@ public class PlayerImpl : MonoBehaviour, Player {
 	private Life playerLife;
 	private NavMeshController navController;
 	private PlayerAnimController animController;
+	private RaycastHit hit;
+	private Camera cam;
+	private Ray cameraToGround;
+	private int layerMask = 1 << LayerConstants.GroundLayer;
 
 	public PlayerImpl(NavMeshController controller) {
 		navController = controller;
@@ -14,6 +18,7 @@ public class PlayerImpl : MonoBehaviour, Player {
 	void Start() {
 		EnsureNavAgent();
 		EnsureAnimator();
+		cam = GameObject.FindGameObjectWithTag(TagConstants.CAMERA).GetComponent<Camera>();
 	}
 		
 	void Update() {
@@ -24,11 +29,17 @@ public class PlayerImpl : MonoBehaviour, Player {
 		}
 
 		foreach(Touch touch in Input.touches) {
-			navController.Move(touch.position);
+			cameraToGround = cam.ViewportPointToRay;
+			if(Physics.Raycast(cameraToGround,out hit,500f,layerMask)){
+				navController.Move(hit.point);
+			}
 		}
 
 		if(Input.GetMouseButtonDown(1)) {
-			navController.Move(Input.mousePosition);
+			cameraToGround = cam.ViewportPointToRay;
+			if(Physics.Raycast(cameraToGround,out hit,500f,layerMask)){
+				navController.Move(hit.point);
+			}
 		}
 	}
 
