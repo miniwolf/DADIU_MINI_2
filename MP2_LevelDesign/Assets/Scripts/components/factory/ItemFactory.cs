@@ -2,12 +2,14 @@ using UnityEngine;
 using System.Collections.Generic;
 
 public class ItemFactory {
-	GameObject enemy, score, scoreController;
+	Enemy enemy;
+	ScoreController scoreController;
+	Score score;
 
 	public ItemFactory() {
-		score = GameObject.FindGameObjectWithTag(TagConstants.SCORE);
-		scoreController = GameObject.FindGameObjectWithTag(TagConstants.SCORECONTROLLER);
-		enemy = GameObject.FindGameObjectWithTag(TagConstants.ENEMY);
+		score = GameObject.FindGameObjectWithTag(TagConstants.SCORE).GetComponent<Score>();
+		scoreController = GameObject.FindGameObjectWithTag(TagConstants.SCORECONTROLLER).GetComponent<ScoreController>();
+		enemy = GameObject.FindGameObjectWithTag(TagConstants.ENEMY).GetComponent<Enemy>();
 	}
 
 	public void CreateDress(Commandable dress) {

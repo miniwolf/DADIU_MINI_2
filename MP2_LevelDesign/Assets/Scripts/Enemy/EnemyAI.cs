@@ -55,7 +55,7 @@ public class EnemyAI : MonoBehaviour {
 
 	// for now the random walk is just the position + (10,10,0)
 	private void WalkAway() {
-		enemy.GetNavMesh().Move(enemy.transform.position + new Vector3(10, 10, 0));
+		enemy.GetNavMesh().Move(enemy.GetPosition() + new Vector3(10, 10, 0));
 	}
 
 	private void FreeRoam() {
