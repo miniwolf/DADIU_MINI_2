@@ -3,6 +3,6 @@ using System.Collections;
 
 public interface EnemyAnimController : Controller {
 
-	void CatchGirl();
+	void CatchGirl(Enemy enemy);
 
 }
