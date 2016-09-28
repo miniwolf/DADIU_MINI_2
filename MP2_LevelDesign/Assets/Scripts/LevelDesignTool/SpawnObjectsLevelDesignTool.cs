@@ -8,10 +8,10 @@ public class SpawnObjectsLevelDesignTool : MonoBehaviour {
 	GameObject[] allChildren;
 	public int stateToShow = 6;
 
-	public bool shouldTheStateSelectedBeRandom = false;
+	public bool randomStateSelection = false;
 
 	void Awake(){
-		if (shouldTheStateSelectedBeRandom) {
+		if (randomStateSelection) {
 			stateToShow = Random.Range(0, 10);
 		}
 		allChildren = GameObject.FindGameObjectsWithTag("LaundryFormation");

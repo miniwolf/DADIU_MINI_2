@@ -38,7 +38,6 @@ public class PlayerImpl : MonoBehaviour, Player {
 		if(Input.GetMouseButtonDown(1)) {
 			cameraToGround = cam.ScreenPointToRay(Input.mousePosition);
 			if(Physics.Raycast(cameraToGround,out hit)){
-				print(hit.point);
 				navController.Move(hit.point);
 			}
 		}
