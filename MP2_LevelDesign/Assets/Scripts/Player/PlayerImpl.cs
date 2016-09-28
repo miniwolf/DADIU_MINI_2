@@ -1,34 +1,49 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
-public class PlayerImpl : MonoBehaviour, Player {
+public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
+	private RaycastHit hit;
+	private Camera cam;
+	private Ray cameraToGround;
+	private int layerMask = 1 << LayerConstants.GroundLayer;
+
 	private PlayerState playerState;
 	private Life playerLife;
-	private NavMeshController navController;
-	private PlayerAnimController animController;
+	private List<Controller> controllers = new List<Controller>();
 
-	public PlayerImpl(NavMeshController controller) {
-		navController = controller;
+	public PlayerImpl() {
+		InjectionRegister.Register(this);
+		TagRegister.Register(gameObject, TagConstants.PLAYER);
 	}
 
 	void Start() {
-		EnsureNavAgent();
-		EnsureAnimator();
+		cam = GameObject.FindGameObjectWithTag(TagConstants.CAMERA).GetComponent<Camera>();
 	}
 		
 	void Update() {
-
-		if(navController == null) {
-//			Debug.Log("No navigation controller set on Player. Did you call \"public PlayerImpl(NavMeshController controller)\" contructor?");
-			return;
+		foreach ( Touch touch in Input.touches ) {
+			foreach ( Controller controller in controllers ) {
+				controller.Move(touch.position);
+			}
 		}
 
 		foreach(Touch touch in Input.touches) {
-			navController.Move(touch.position);
+			cameraToGround = cam.ScreenPointToRay(touch.position);
+			if ( Physics.Raycast(cameraToGround,out hit,500f) ) {
+				foreach ( Controller controller in controllers ) {
+					controller.Move(hit.point);
+				}
+			}
 		}
 
-		if(Input.GetMouseButtonDown(1)) {
-			navController.Move(Input.mousePosition);
+		if ( Input.GetMouseButtonDown(1) ) {
+			cameraToGround = cam.ScreenPointToRay(Input.mousePosition);
+			if ( Physics.Raycast(cameraToGround, out hit) ) {
+				print(hit.point);
+				foreach ( Controller controller in controllers ) {
+					controller.Move(hit.point);
+				}
+			}
 		}
 	}
 
@@ -44,32 +59,11 @@ public class PlayerImpl : MonoBehaviour, Player {
 		return playerLife;
 	}
 
-	public PlayerAnimController getAnimationController() {
-		return animController;
+	public string GetTag() {
+		return gameObject.transform.tag;
 	}
 
-	void OnDestroy() {
-		navController = null;
-		animController = null;
-	}
-
-	private void EnsureNavAgent() {
-		if(navController == null) { // was not set by constructor
-			NavMeshAgent agent = gameObject.GetComponent<NavMeshAgent>();
-			if(agent == null) {
-				Debug.Log("There's no NavMeshAgent component on Player set");
-			} else {
-				navController = new NavMeshController(agent);
-			}
-		}
-	}
-
-	private void EnsureAnimator() {
-		Animator animator = gameObject.GetComponent<Animator>();
-		if(animator == null) {
-			Debug.Log("There's no Animator component on Player set");
-		} else {
-			animController = new PlayerAnimControllerImpl(animator);
-		}
+	public void AddController(Controller controller) {
+		controllers.Add(controller);
 	}
 }

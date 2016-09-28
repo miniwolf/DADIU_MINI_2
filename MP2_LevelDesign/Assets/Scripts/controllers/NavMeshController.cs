@@ -1,7 +1,10 @@
 using UnityEngine;
+using System.Collections;
 
 public class NavMeshController : Controller {
 	private NavMeshAgent agent;
+	public float slowdown = 1.5f;
+	public int slowdownTime = 3;
 
 	public NavMeshController(NavMeshAgent agent) {
 		this.agent = agent;
@@ -26,5 +29,11 @@ public class NavMeshController : Controller {
 	public void HitObstacle(GameObject obstacle) {
 		
 	}
+	
+	public IEnumerator SlowDown() {
+		agent.speed -= slowdown;
+		yield return new WaitForSeconds(slowdownTime);
 
+		agent.speed += slowdown;
+	}
 }
