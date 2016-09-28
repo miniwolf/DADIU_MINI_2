@@ -14,4 +14,10 @@ public interface Controller {
 	/// Called when the state has changed to idle
 	/// </summary>
 	void Idle();
+
+	/// <summary>
+	/// Hits the obstacle.
+	/// </summary>
+	/// <param name="obstacle">Obstacle.</param>
+	void HitObstacle(GameObject obstacle);
 }
