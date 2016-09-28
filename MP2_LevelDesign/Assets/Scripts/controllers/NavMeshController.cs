@@ -22,4 +22,9 @@ public class NavMeshController : Controller {
 	public void Idle() {
 		agent.Stop();
 	}
+
+	public void HitObstacle(GameObject obstacle) {
+		
+	}
+
 }
