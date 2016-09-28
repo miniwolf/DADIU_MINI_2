@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class TrollEnemy : MonoBehaviour, Controllable {
+public class TrollEnemy : MonoBehaviour, GameEntity, Controllable {
 	private EnemyState state;
 	List<Controller> controllers = new List<Controller>();
 
@@ -11,7 +11,7 @@ public class TrollEnemy : MonoBehaviour, Controllable {
 
 	public TrollEnemy() {
 		InjectionRegister.Register(this);
-		TagRegister.Register(TagConstants.ENEMY);
+		TagRegister.Register(gameObject, TagConstants.ENEMY);
 		// set animation and sound controller
 	}
 
@@ -28,8 +28,8 @@ public class TrollEnemy : MonoBehaviour, Controllable {
 
 	public NavMeshController GetNavMesh() {
 		foreach ( Controller controller in controllers ) {
-			if ( controller.GetType == typeof(NavMeshController) ) {
-				return controller;
+			if ( controller.GetType() == typeof(NavMeshController) ) {
+				return (NavMeshController) controller;
 			}
 		}
 		return null;
@@ -50,5 +50,9 @@ public class TrollEnemy : MonoBehaviour, Controllable {
 
 	public void AddController(Controller controller) {
 		controllers.Add(controller);
+	}
+
+	public string GetTag() {
+		return TagConstants.ENEMY;
 	}
 }

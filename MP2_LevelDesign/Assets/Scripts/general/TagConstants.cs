@@ -7,4 +7,6 @@ public class TagConstants {
 	public const string DRESS = "Dress";
 	public const string BRIDGE = "Bridge";
 	public const string CAMERA = "MainCamera";
+	public const string SCORE = "Score";
+	public const string SCORECONTROLLER = "ScoreController";
 }
