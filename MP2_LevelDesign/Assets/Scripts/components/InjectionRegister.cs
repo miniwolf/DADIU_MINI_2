@@ -3,8 +3,13 @@ using System.Collections.Generic;
 
 public class InjectionRegister : MonoBehaviour {
 	private static List<GameEntity> components = new List<GameEntity>();
-	private ControllableFactory controllableFactory = new ControllableFactory();
-	private ItemFactory itemFactory = new ItemFactory();
+	private ControllableFactory controllableFactory;
+	private ItemFactory itemFactory;
+
+	void Awake() {
+		controllableFactory = new ControllableFactory();
+		itemFactory = new ItemFactory();
+	}
 
 	// Use this for initialization
 	void Start() {
@@ -12,6 +17,12 @@ public class InjectionRegister : MonoBehaviour {
 	}
 
 	public static void Register(GameEntity component) {
+		if ( component == null ) {
+			Debug.Log("Component");
+		}
+		if ( components == null ) {
+			Debug.Log("Components");
+		}
 		components.Add(component);
 	}
 

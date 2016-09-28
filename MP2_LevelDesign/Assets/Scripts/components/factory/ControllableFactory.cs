@@ -5,6 +5,7 @@ public class ControllableFactory {
 	GameObject playerObj, enemyObj;
 
 	public ControllableFactory() {
+		Debug.Log(GameObject.FindGameObjectWithTag(TagConstants.PLAYER));
 		playerObj = GameObject.FindGameObjectWithTag(TagConstants.PLAYER);
 		playerAgent = playerObj.GetComponent<NavMeshAgent>();
 
