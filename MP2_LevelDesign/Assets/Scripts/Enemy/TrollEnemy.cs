@@ -17,8 +17,6 @@ public class TrollEnemy : MonoBehaviour, GameEntity, Controllable {
 
 	void Start() {
 		state = EnemyState.RandomWalk;
-		InjectionRegister.Register(this);
-		TagRegister.Register(gameObject, TagConstants.ENEMY);
 	}
 
 	// DEBUG
