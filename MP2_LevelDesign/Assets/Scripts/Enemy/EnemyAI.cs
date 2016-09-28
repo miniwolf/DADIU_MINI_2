@@ -13,15 +13,15 @@ public class EnemyAI : MonoBehaviour {
 		roamRadius = 15.0f;
 		roamDistanceError = 2.5f;
 		movingPosition = transform.position;
-		player = GameObject.FindGameObjectWithTag("Player").GetComponent<GameObject>();
+		player = GameObject.FindGameObjectWithTag("Player");
 		enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
 	}
 
 	void Update () {
 		switch(enemy.GetState()) {
 			case EnemyState.RandomWalk:
-				enemy.GetNavMesh().Move(new Vector3(74, transform.position.y, -3));
-				//FreeRoam();
+				//enemy.GetNavMesh().Move(new Vector3(74, transform.position.y, -3));
+				FreeRoam();
 				break;
 
 			case EnemyState.WalkAway:

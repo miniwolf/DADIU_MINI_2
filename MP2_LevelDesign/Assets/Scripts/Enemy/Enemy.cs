@@ -6,11 +6,7 @@ public class Enemy : MonoBehaviour {
 	private NavMeshController navmesh;
 	private EnemyAnimController animController;
 	//private SoundController sound;
-
-	void Start() {
-		EnsureAnimator();
-	}
-
+	
 	public Enemy(NavMeshAgent agent) {
 		navmesh = new NavMeshController(agent);
 		state = EnemyState.ObstacleHit;
@@ -18,9 +14,10 @@ public class Enemy : MonoBehaviour {
 	}
 
 	void Start() {
+		EnsureAnimator();
 		NavMeshAgent agent = GetComponent<NavMeshAgent>();
 		navmesh = new NavMeshController(agent);
-		state = EnemyState.ObstacleHit;
+		state = EnemyState.RandomWalk;
 	}
 
 	// DEBUG
