@@ -5,11 +5,13 @@ public class EnemyAI : MonoBehaviour {
 	private Enemy enemy;
 	private GameObject player;
 	public float roamRadius;
+	public float roamDistanceError;
 	private bool isRoaming;
 	Vector3 movingPosition;
 
 	void Start () {
 		roamRadius = 15.0f;
+		roamDistanceError = 2.5f;
 		movingPosition = transform.position;
 		player = GameObject.FindGameObjectWithTag("Player").GetComponent<GameObject>();
 		enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
@@ -70,7 +72,7 @@ public class EnemyAI : MonoBehaviour {
 		}
 
 		//if the enemy is close enough to the end position we stop roaming
-		if(Vector3.Distance(transform.position, movingPosition) < 0.15f) {
+		if(Vector3.Distance(transform.position, movingPosition) < roamDistanceError) {
 			isRoaming = false;
 		}
 
