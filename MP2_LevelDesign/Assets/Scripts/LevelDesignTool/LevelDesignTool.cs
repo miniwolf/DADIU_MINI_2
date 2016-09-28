@@ -32,7 +32,9 @@ public class LevelDesignTool : MonoBehaviour {
 		if (!StatesInit()) {
 			InittheStates();
 		}
-		organizedSplitData[stateToSaveIn].Clear();
+		if (organizedSplitData[stateToSaveIn].Count > 0) {
+			organizedSplitData[stateToSaveIn].Clear();
+		}
 		theStates[stateToSaveIn].Clear();
 		foreach (Transform go in parentOfLaundryFormation.GetComponentInChildren<Transform>()) {
 			if (go.gameObject.activeInHierarchy) {
@@ -100,9 +102,11 @@ public class LevelDesignTool : MonoBehaviour {
 		for (int i = 0; i < splitData.Length; i++) {
 			if (organizedSplitData[i].Count > 0) {
 				for (int u = 0; u < organizedSplitData[i].Count; u++) {
-					if (Char.GetNumericValue(organizedSplitData[i][u][0]) < 0) {
-						theStates[i].Add(GameObject.Find(organizedSplitData[i][u]));
-					}		
+					if (organizedSplitData[i][u].Length > 0) {
+						if (Char.GetNumericValue(organizedSplitData[i][u][0]) < 0) {
+							theStates[i].Add(GameObject.Find(organizedSplitData[i][u]));
+						}		
+					}
 				}
 			}
 		}
