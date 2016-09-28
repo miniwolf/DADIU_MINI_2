@@ -5,4 +5,5 @@ public interface Player {
 	void SetState(PlayerState state);
 	PlayerState GetState();
 	Life GetLife();
+	PlayerAnimController getAnimationController();
 }
