@@ -29,15 +29,16 @@ public class PlayerImpl : MonoBehaviour, Player {
 		}
 
 		foreach(Touch touch in Input.touches) {
-			cameraToGround = cam.ViewportPointToRay(touch.position);
-			if(Physics.Raycast(cameraToGround,out hit,500f,layerMask)){
+			cameraToGround = cam.ScreenPointToRay(touch.position);
+			if(Physics.Raycast(cameraToGround,out hit,500f)){
 				navController.Move(hit.point);
 			}
 		}
 
 		if(Input.GetMouseButtonDown(1)) {
-			cameraToGround = cam.ViewportPointToRay(Input.mousePosition);
-			if(Physics.Raycast(cameraToGround,out hit,500f,layerMask)){
+			cameraToGround = cam.ScreenPointToRay(Input.mousePosition);
+			if(Physics.Raycast(cameraToGround,out hit)){
+				print(hit.point);
 				navController.Move(hit.point);
 			}
 		}
