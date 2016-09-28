@@ -15,6 +15,9 @@ public class NavMeshController : Controller {
 		agent.SetDestination(moveTo);		
 	}
 
+	/// <summary>
+	/// Stopping the agent from moving
+	/// </summary>
 	public void Idle() {
 		agent.Stop();
 	}
