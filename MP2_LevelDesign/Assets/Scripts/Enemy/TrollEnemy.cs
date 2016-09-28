@@ -1,22 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class TrollEnemy : MonoBehaviour, GameEntity, Controllable {
+public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable {
 	private EnemyState state;
 	List<Controller> controllers = new List<Controller>();
 
-	private NavMeshController navmesh;
-	//private AnimationController animation;
-	//private SoundController sound;
-
 	public TrollEnemy() {
 		InjectionRegister.Register(this);
-		TagRegister.Register(gameObject, TagConstants.ENEMY);
+		
 		// set animation and sound controller
 	}
 
 	void Start() {
 		state = EnemyState.RandomWalk;
+		TagRegister.Register(gameObject, TagConstants.ENEMY);
 	}
 
 	// DEBUG
@@ -53,5 +50,9 @@ public class TrollEnemy : MonoBehaviour, GameEntity, Controllable {
 
 	public string GetTag() {
 		return TagConstants.ENEMY;
+	}
+
+	public Vector3 GetPosition() {
+		return this.transform.position;
 	}
 }

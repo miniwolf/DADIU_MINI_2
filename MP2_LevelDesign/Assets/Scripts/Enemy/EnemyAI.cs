@@ -50,32 +50,9 @@ public class EnemyAI : MonoBehaviour {
 	private void WalkAway() {
 		enemy.GetNavMesh().Move(enemy.GetPosition() + new Vector3(10, 10, 0));
 	}
-
-	private void FreeRoam() {
-		
+	
+	 private void FreeRoam() {
 		if(!isRoaming) {
-			Vector3 newRoamingPosition = new Vector3();
-			float randomDirection = Random.Range(0.0f, 2*Mathf.PI);
-			newRoamingPosition.x = transform.position.x + (roamRadius * Mathf.Sin(randomDirection)) ;
-			newRoamingPosition.y = transform.position.y;
-			newRoamingPosition.z = transform.position.z + (roamRadius * Mathf.Cos(randomDirection));
-			movingPosition = newRoamingPosition;
-
-			enemy.GetNavMesh().Move(movingPosition);
-			isRoaming = true;
-		}
-
-		//if the enemy is close enough to the end position we stop roaming
-		if(Vector3.Distance(transform.position, movingPosition) < roamDistanceError) {
-			isRoaming = false;
-		}
-	}
-
-	/*
-	 * 	private void FreeRoam() {
-
-		if(!isRoaming) {
-
 			Collider [] existingColliders;
 
 			for(int i = 0; i < 10; i++) { 
@@ -87,25 +64,23 @@ public class EnemyAI : MonoBehaviour {
 					break;
 				}
 			}
-
 			enemy.GetNavMesh().Move(movingPosition);
-
 			isRoaming = true;
-			print(transform.position+ " "+ movingPosition);
+			//print(transform.position+ " "+ movingPosition);
 		}
 
 		//if the enemy is close enough to the end position we stop roaming
 		if(Vector3.Distance(transform.position, movingPosition) < roamDistanceError) {
 			isRoaming = false;
 		}
-	}*/
-	/*
-	 	private Vector3 GetNextRoamingPos() {
+	}
+	 
+	private Vector3 GetNextRoamingPos() {
 		Vector3 newRoamingPosition = new Vector3();
 		float randomDirection = Random.Range(0.0f, 2*Mathf.PI);
 		newRoamingPosition.x = transform.position.x + (roamRadius * Mathf.Sin(randomDirection)) ;
 		newRoamingPosition.y = transform.position.y;
 		newRoamingPosition.z = transform.position.z + (roamRadius * Mathf.Cos(randomDirection));
 		return newRoamingPosition;
-	}*/
+	}
 }
