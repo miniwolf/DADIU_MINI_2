@@ -10,7 +10,7 @@ public class CameraScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start() {
-		player = GameObject.FindGameObjectWithTag("Player");
+		player = GameObject.FindGameObjectWithTag(TagConstants.PLAYER);
 	}
 
 	// Update is called once per frame
@@ -24,7 +24,7 @@ public class CameraScript : MonoBehaviour {
 		yield return new WaitForSeconds(cameraDelayTime);
 		//cameraPosition = new Vector3(player.transform.position.x - offset, offset, player.transform.position.z - offset);
 		//transform.position = cameraPosition;
-		transform.position = new Vector3(playerPos.x - offset, offset, playerPos.z - offset);
+		transform.position = new Vector3(playerPos.x, offset, playerPos.z - offset);
 
 	}
 }

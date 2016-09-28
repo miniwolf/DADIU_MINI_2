@@ -12,8 +12,27 @@ public class TrollEnemy : MonoBehaviour, Controllable {
 	public TrollEnemy() {
 		InjectionRegister.Register(this);
 		TagRegister.Register(TagConstants.ENEMY);
-		state = EnemyState.RandomWalk;
 		// set animation and sound controller
+	}
+
+	void Start() {
+		state = EnemyState.RandomWalk;
+	}
+
+	// DEBUG
+	void Update() {
+		if (Input.GetKeyDown(KeyCode.Space)) {
+			SetState(EnemyState.RandomWalk);
+		}
+	}
+
+	public NavMeshController GetNavMesh() {
+		foreach ( Controller controller in controllers ) {
+			if ( controller.GetType == typeof(NavMeshController) ) {
+				return controller;
+			}
+		}
+		return null;
 	}
 
 	public EnemyState GetState() {
@@ -33,4 +52,3 @@ public class TrollEnemy : MonoBehaviour, Controllable {
 		controllers.Add(controller);
 	}
 }
-
