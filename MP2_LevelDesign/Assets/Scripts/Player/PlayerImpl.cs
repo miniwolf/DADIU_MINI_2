@@ -1,39 +1,27 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
-public class PlayerImpl : MonoBehaviour, Player {
+public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	private PlayerState playerState;
 	private Life playerLife;
-	private NavMeshController navController;
+	private List<Controller> controllers = new List<Controller>();
 
-	public PlayerImpl(NavMeshController controller) {
-		navController = controller;
-	}
-
-	void Start() {
-		if(navController == null) { // was not set by constructor
-			NavMeshAgent agent = gameObject.GetComponent<NavMeshAgent>();
-			if(agent == null) {
-				Debug.Log("There's no NavMeshAgent component on Player set");
-			} else {
-				navController = new NavMeshController(agent);
-			}
-		}
+	public PlayerImpl() {
+		InjectionRegister.Register(this);
+		TagRegister.Register(gameObject, TagConstants.PLAYER);
 	}
 
 	void Update() {
-
-		if(navController == null) {
-//			Debug.Log("No navigation controller set on Player. Did you call \"public PlayerImpl(NavMeshController controller)\" contructor?");
-			return;
+		foreach ( Touch touch in Input.touches ) {
+			foreach ( Controller controller in controllers ) {
+				controller.Move(touch.position);
+			}
 		}
 
-		foreach(Touch touch in Input.touches) {
-			navController.Move(touch.position);
-		}
-
-		if(Input.GetMouseButtonDown(1)) {
-			navController.Move(Input.mousePosition);
+		if ( Input.GetMouseButtonDown(1) ) {
+			foreach ( Controller controller in controllers ) {
+				controller.Move(Input.mousePosition);
+			}
 		}
 	}
 
@@ -49,7 +37,11 @@ public class PlayerImpl : MonoBehaviour, Player {
 		return playerLife;
 	}
 
-	void OnDestroy() {
-		navController = null;
+	public string GetTag() {
+		return gameObject.transform.tag;
+	}
+
+	public void AddController(Controller controller) {
+		controllers.Add(controller);
 	}
 }
