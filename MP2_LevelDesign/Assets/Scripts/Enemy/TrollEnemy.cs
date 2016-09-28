@@ -17,12 +17,14 @@ public class TrollEnemy : MonoBehaviour, GameEntity, Controllable {
 
 	void Start() {
 		state = EnemyState.RandomWalk;
+		InjectionRegister.Register(this);
+		TagRegister.Register(gameObject, TagConstants.ENEMY);
 	}
 
 	// DEBUG
 	void Update() {
 		if (Input.GetKeyDown(KeyCode.Space)) {
-			SetState(EnemyState.RandomWalk);
+			SetState(EnemyState.ObstacleHit);
 		}
 	}
 
@@ -40,7 +42,6 @@ public class TrollEnemy : MonoBehaviour, GameEntity, Controllable {
 	}
 
 	public void SetState(EnemyState newState) {
-		//update state
 		state = newState;
 	}
 

@@ -9,12 +9,19 @@ public class EnemyAnimControllerImpl : EnemyAnimController {
 		this.animator = animator;
 	}
 
-	public void CatchGirl() {
-	
+	public void CatchGirl(Enemy enemy) {
+
+		/*if (enemy.animation.GetBool("trigger saying that animation is finished") == true) {
+			enemy.SetState(EnemyState.WalkAway);
+		}
+		*/
 	}
 
 	public void HitObstacle(GameObject obstacle) {
-	
+		/*if (enemy.animation.GetBool("trigger to random walk") == true) {
+						enemy.SetState(EnemyState.RandomWalk);
+		}
+		*/
 	}
 
 	public void Move(Vector3 moveTo) {
@@ -24,4 +31,7 @@ public class EnemyAnimControllerImpl : EnemyAnimController {
 	public void Idle() {
 		
 	}
+
+	
+
 }
