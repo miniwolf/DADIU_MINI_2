@@ -58,18 +58,19 @@ public class EnemyAI : MonoBehaviour {
 	private void FreeRoam() {
 		
 		if(!isRoaming) {
-			Vector3 randomDirection = Random.insideUnitSphere * roamRadius + enemy.transform.position;
-			NavMeshHit hit;
-			NavMesh.SamplePosition(randomDirection, out hit, roamRadius, 1);
-			movingPosition = hit.position;
-			movingPosition.y = enemy.transform.position.y;
+			Vector3 newRoamingPosition = new Vector3();
+			float randomDirection = Random.Range(0.0f, 2*Mathf.PI);
+			newRoamingPosition.x = transform.position.x + (roamRadius * Mathf.Sin(randomDirection)) ;
+			newRoamingPosition.y = transform.position.y;
+			newRoamingPosition.z = transform.position.z + (roamRadius * Mathf.Cos(randomDirection));
+			movingPosition = newRoamingPosition;
 			enemy.GetNavMesh().Move(movingPosition);
 			isRoaming = true;
-			print(enemy.transform.position+ " "+ movingPosition);
+			print(transform.position+ " "+ movingPosition);
 		}
 
 		//if the enemy is close enough to the end position we stop roaming
-		if(Vector3.Distance(transform.position, movingPosition) < 0.07f) {
+		if(Vector3.Distance(transform.position, movingPosition) < 0.15f) {
 			isRoaming = false;
 		}
 
