@@ -20,7 +20,8 @@ public class EnemyAI : MonoBehaviour {
 	void Update () {
 		switch(enemy.GetState()) {
 			case EnemyState.RandomWalk:
-				FreeRoam();
+				enemy.GetNavMesh().Move(new Vector3(74, transform.position.y, -3));
+				//FreeRoam();
 				break;
 
 			case EnemyState.WalkAway:
