@@ -16,6 +16,9 @@ public class NavMeshController : Controller {
 		agent.Resume();
 	}
 
+	/// <summary>
+	/// Stopping the agent from moving
+	/// </summary>
 	public void Idle() {
 		agent.Stop();
 	}
