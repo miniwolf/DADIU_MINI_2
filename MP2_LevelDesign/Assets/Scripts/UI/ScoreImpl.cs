@@ -14,6 +14,9 @@ public class ScoreImpl : Score, ScoreController {
 	}
 	void Update(){
 		ShowPoints();
+		if (Input.GetKey(KeyCode.K)) {
+			scoreText.text = PlayerPrefs.GetFloat(PlayerPrefsConstants.HIGHSCORE).ToString();
+		}
 	}
 
 	public void ShowLife() {
