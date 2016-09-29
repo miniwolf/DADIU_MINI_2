@@ -7,7 +7,7 @@ using System.Collections;
 public class Bridge : Item {
 	void Awake() {
 		InjectionRegister.Register(this);
-		TagRegister.Register(gameObject, TagConstants.BRIDGE);
+		TagRegister.RegisterMultiple(gameObject, TagConstants.BRIDGE);
 	}
 
 	override public string GetTag() {

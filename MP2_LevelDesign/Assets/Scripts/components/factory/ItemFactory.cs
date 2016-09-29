@@ -6,10 +6,11 @@ public class ItemFactory {
 	ScoreController scoreController;
 	Score score;
 
-	void Awake() {
-		score = GameObject.FindGameObjectWithTag(TagConstants.SCORE).GetComponent<Score>();
-		scoreController = GameObject.FindGameObjectWithTag(TagConstants.SCORECONTROLLER).GetComponent<ScoreController>();
+	public ItemFactory() {
+		//score = GameObject.FindGameObjectWithTag(TagConstants.SCORE).GetComponent<Score>();
+		//scoreController = GameObject.FindGameObjectWithTag(TagConstants.SCORECONTROLLER).GetComponent<ScoreController>();
 		enemy = GameObject.FindGameObjectWithTag(TagConstants.ENEMY).GetComponent<Enemy>();
+		Debug.Log("2");
 	}
 
 	public void CreateDress(Commandable dress) {
