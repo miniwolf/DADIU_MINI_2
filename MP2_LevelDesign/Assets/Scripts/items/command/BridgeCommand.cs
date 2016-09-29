@@ -22,7 +22,7 @@ public class BridgeCommand : ItemCommand {
 	/// When hitting the enemy we toggle its state as collider
 	/// </summary>
 	/// <param name="other">Colliding object</param>
-	public void Execute(Collision other) {
+	public void Execute(Collider other) {
 		if ( other.transform.tag == TagConstants.ENEMY ) {
 			bridgeObject.GetComponent<Rigidbody>().isKinematic = false;
 			enemy.SetState(EnemyState.ObstacleHit);
