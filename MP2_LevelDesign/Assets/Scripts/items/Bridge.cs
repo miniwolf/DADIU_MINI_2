@@ -5,7 +5,7 @@ using System.Collections;
 /// This represents the bridge. Look in the BridgeCommand to see the underlying mechanics.
 /// </summary>
 public class Bridge : Item {
-	public Bridge() {
+	void Awake() {
 		InjectionRegister.Register(this);
 		TagRegister.Register(gameObject, TagConstants.BRIDGE);
 	}
