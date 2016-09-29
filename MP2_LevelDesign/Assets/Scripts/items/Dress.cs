@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Dress : Item {
-	public Dress() {
+	void Awake() {
 		InjectionRegister.Register(this);
 		TagRegister.Register(gameObject, TagConstants.DRESS);
 	}

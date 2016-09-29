@@ -21,7 +21,7 @@ public class SpawnObjectsLevelDesignTool : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		HideAllGO();
+		//HideAllGO();
 		for (int i = 0; i < theStates[stateToShow].Count; i++) {
 			theStates[stateToShow][i].SetActive(true);
 		}
