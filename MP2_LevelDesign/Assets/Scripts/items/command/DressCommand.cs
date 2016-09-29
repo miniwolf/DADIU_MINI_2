@@ -15,9 +15,9 @@ public class DressCommand : ItemCommand {
 		this.dress = dress;
 	}
 
-	public void Execute(Collision other) {
+	public void Execute(Collider other) {
 		if ( other.transform.tag == TagConstants.PLAYER ) {
-			//dress.SetActive(false);
+			dress.SetActive(false);
 			updateScore();
 		}
 	}

@@ -13,9 +13,10 @@ public abstract class Item : MonoBehaviour, GameEntity, Commandable {
 		}
 	}
 
-	void OnCollisionEnter(Collision other) {
+	public void OnTriggerEnter(Collider other) {
+		Debug.Log("Collided");
 		foreach ( ItemCommand command in commands ) {
-			command.Setup(gameObject);
+			command.Execute(other);
 		}
 	}
 
