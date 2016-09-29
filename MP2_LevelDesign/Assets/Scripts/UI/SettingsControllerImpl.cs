@@ -32,7 +32,8 @@ public class SettingsControllerImpl : MonoBehaviour, SettingsController {
 	}
 
 	public void ReturnToMainMenu() {
-		// todo 
+		CanvasScript script =  gameObject.GetComponentInParent<CanvasScript>();
+		//script.ReturnToMainMenu(this);
 	}
 
 	private void ResolveDependencies() {
