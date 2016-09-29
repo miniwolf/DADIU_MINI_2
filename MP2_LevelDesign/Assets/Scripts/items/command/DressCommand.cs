@@ -5,8 +5,10 @@ public class DressCommand : ItemCommand {
 	private GameObject dress;
 	private Score score;
 	private ScoreController scoreController;
+	private Enemy enemy;
 
-	public DressCommand(Score score, ScoreController scoreController) {
+	public DressCommand(Score score, ScoreController scoreController, Enemy enemy) {
+		this.enemy = enemy;
 		this.score = score;
 		this.scoreController = scoreController;
 	}
@@ -15,10 +17,12 @@ public class DressCommand : ItemCommand {
 		this.dress = dress;
 	}
 
-	public void Execute(Collision other) {
+	public void Execute(Collider other) {
 		if ( other.transform.tag == TagConstants.PLAYER ) {
-			//dress.SetActive(false);
-			updateScore();
+			dress.SetActive(false);
+			//updateScore();
+			enemy.SetState(EnemyState.Chasing);
+
 		}
 	}
 

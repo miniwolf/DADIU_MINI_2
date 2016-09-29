@@ -17,18 +17,13 @@ public class InjectionRegister : MonoBehaviour {
 	}
 
 	public static void Register(GameEntity component) {
-		if ( component == null ) {
-			Debug.Log("Component");
-		}
-		if ( components == null ) {
-			Debug.Log("Components");
-		}
 		components.Add(component);
 	}
 
 	private void InitializeComponents() {
 		foreach ( GameEntity component in components ) {
 			InitializeComponent(component);
+			component.SetupComponents();
 		}
 	}
 

@@ -8,14 +8,18 @@ public abstract class Item : MonoBehaviour, GameEntity, Commandable {
 		if ( gameObject.GetComponent<Collider>() == null ) {
 			Debug.LogError("This item should have a collider on it, to interact with moveable objects");
 		}
+	}
+
+	public void SetupComponents() {
 		foreach ( ItemCommand command in commands ) {
 			command.Setup(gameObject);
 		}
 	}
 
-	void OnCollisionEnter(Collision other) {
+	public void OnTriggerEnter(Collider other) {
+		Debug.Log("Collided");
 		foreach ( ItemCommand command in commands ) {
-			command.Setup(gameObject);
+			command.Execute(other);
 		}
 	}
 
