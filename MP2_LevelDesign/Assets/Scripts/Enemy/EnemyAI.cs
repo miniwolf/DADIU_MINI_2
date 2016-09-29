@@ -2,16 +2,18 @@
 using System.Collections;
 
 public class EnemyAI : MonoBehaviour {
-	private Enemy enemy;
-	private GameObject player;
 	public float roamRadius;
 	public float roamDistanceError;
+	public float sphereRadius = 0.5f;
+	static private int MAX_ITERATIONS = 10;
+	private Enemy enemy;
+	private GameObject player;
 	private bool isRoaming;
 	Vector3 movingPosition;
 
 	void Start () {
 		roamRadius = 15.0f;
-		roamDistanceError = 2.5f;
+		roamDistanceError = 0.5f;
 		movingPosition = transform.position;
 		player = GameObject.FindGameObjectWithTag(TagConstants.PLAYER);
 		enemy = GameObject.FindGameObjectWithTag(TagConstants.ENEMY).GetComponent<Enemy>();
@@ -20,7 +22,6 @@ public class EnemyAI : MonoBehaviour {
 	void Update () {
 		switch(enemy.GetState()) {
 			case EnemyState.RandomWalk:
-				//enemy.GetNavMesh().Move(new Vector3(22, transform.position.y, 17));
 				FreeRoam();
 				break;
 
@@ -54,19 +55,19 @@ public class EnemyAI : MonoBehaviour {
 	 private void FreeRoam() {
 		if(!isRoaming) {
 			Collider [] existingColliders;
-
-			for(int i = 0; i < 10; i++) { 
+			// If the new position is an object we choose another one 
+			// but only try to find a new one for MAX_ITERATIONS
+			for(int i = 0; i < MAX_ITERATIONS; i++) { 
 				movingPosition = GetNextRoamingPos();
-				existingColliders = Physics.OverlapSphere(movingPosition, 1f);
-
-				if(existingColliders.Length == 0) {
-					Debug.Log("iterations: " + i);							
+				existingColliders = Physics.OverlapSphere(movingPosition, sphereRadius);
+				// no colliders in the sphere means no object in that position
+				if(existingColliders.Length == 0) {						
 					break;
 				}
 			}
 			enemy.GetNavMesh().Move(movingPosition);
+			print (movingPosition + " " + enemy.GetPosition());
 			isRoaming = true;
-			//print(transform.position+ " "+ movingPosition);
 		}
 
 		//if the enemy is close enough to the end position we stop roaming
@@ -74,7 +75,7 @@ public class EnemyAI : MonoBehaviour {
 			isRoaming = false;
 		}
 	}
-	 
+	
 	private Vector3 GetNextRoamingPos() {
 		Vector3 newRoamingPosition = new Vector3();
 		float randomDirection = Random.Range(0.0f, 2*Mathf.PI);
