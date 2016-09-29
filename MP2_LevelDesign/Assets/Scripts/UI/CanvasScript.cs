@@ -14,7 +14,7 @@ public class CanvasScript : MonoBehaviour {
 	void Awake() {
 		//mainMenuController = GameObject.FindGameObjectWithTag(UIConstants.MAIN_MENU).GetComponent<MenuController>() as MenuController;
 		//mainMenuController.ShowMainMenu();
-		gameStateManager = GameObject.FindGameObjectWithTag(TagConstants.GAME_STATE).GetComponent<GameStateManager>() as GameStateManager;
+		gameStateManager = GameObject.FindGameObjectWithTag(TagConstants.GAME_STATE).GetComponent<GameStateManager>();
 		ShowMainMenu();
 	}
 
@@ -43,4 +43,7 @@ public class CanvasScript : MonoBehaviour {
 		gameStateManager.NewState(GameState.Playing);
 	}
 
+	public void ReturnToMainMenu() {
+		ShowMainMenu();
+	}
 }

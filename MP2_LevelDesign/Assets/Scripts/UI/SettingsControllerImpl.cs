@@ -33,13 +33,13 @@ public class SettingsControllerImpl : MonoBehaviour, SettingsController {
 
 	public void ReturnToMainMenu() {
 		CanvasScript script =  gameObject.GetComponentInParent<CanvasScript>();
-		//script.ReturnToMainMenu(this);
+		script.ReturnToMainMenu();
 	}
 
 	private void ResolveDependencies() {
 		textToggleSound = GetTextComponent(UIConstants.TEXT_TOGGLE_SOUND);
-		textLanguage = GetTextComponent(UIConstants.TEXT_TOGGLE_SOUND);
-		textReturnToMain = GetTextComponent(UIConstants.TEXT_TOGGLE_SOUND);
+		textLanguage = GetTextComponent(UIConstants.TEXT_CHANGE_LANGUAGE);
+		textReturnToMain = GetTextComponent(UIConstants.TEXT_RETURN_TO_MAIN_MENU);
 	}
 
 	private Text GetTextComponent(string tag) {
