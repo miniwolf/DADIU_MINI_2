@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable {
+public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable, MovableCommandable {
 	private EnemyState state;
 	List<Controller> controllers = new List<Controller>();
+
+	List<MovableCommand> commands = new List<MovableCommand>();
 
 	public TrollEnemy() {
 		InjectionRegister.Register(this);
@@ -53,6 +55,12 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable {
 		return controllers;
 	}
 
+	public void OnTriggerEnter(Collider other) {
+		foreach ( MovableCommand command in commands ) {
+			command.Execute(other);
+		}
+	}
+
 	public void AddController(Controller controller) {
 		controllers.Add(controller);
 	}
@@ -63,6 +71,10 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable {
 
 	public Vector3 GetPosition() {
 		return this.transform.position;
+	}
+
+	public void AddCommand(MovableCommand command) {
+		commands.Add(command);
 	}
 
 	public void SetPosition(Vector3 newPosition) {
