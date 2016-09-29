@@ -1,2 +1,11 @@
-key;valueDK
-key2;valueDK2
+mainPlayGame;Play game dk
+mainHowtoPlay;How to Play dk
+mainSettings;Settings dk
+mainExitGame;Exit Game dk
+settingsToggleSound;  Toggle Sound   dk
+settingsChangeLanguage; Change Language dk
+settingsReturnToMainMenu;Return to Main Menu dk
+ingameExit; Exit dk
+ingameRetry;Retry dk
+ingameLife;Life: dk
+ingameScore;Score: dk
