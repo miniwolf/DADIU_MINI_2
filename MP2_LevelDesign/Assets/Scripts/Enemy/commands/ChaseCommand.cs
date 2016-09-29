@@ -10,7 +10,7 @@ public class ChaseCommand : MovableCommand {
 
 	public void Execute(Collider other) {
 		if ( other.tag == TagConstants.PLAYER ) {
-			//enemy.GetNavMesh().SpeedUp();
+			enemy.SetState(EnemyState.Chasing);
 		}
 	}
 }
