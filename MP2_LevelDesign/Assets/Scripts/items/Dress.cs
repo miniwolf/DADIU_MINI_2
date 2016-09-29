@@ -10,8 +10,4 @@ public class Dress : Item {
 	override public string GetTag() {
 		return TagConstants.DRESS;
 	}
-
-	public void OnTriggerEnter(Collider other) {
-		base.OnTriggerEnter(other);
-	}
 }
