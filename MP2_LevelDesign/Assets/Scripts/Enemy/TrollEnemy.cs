@@ -64,4 +64,8 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable {
 	public Vector3 GetPosition() {
 		return this.transform.position;
 	}
+
+	public void SetPosition(Vector3 newPosition) {
+		this.transform.position = newPosition;
+	}
 }
