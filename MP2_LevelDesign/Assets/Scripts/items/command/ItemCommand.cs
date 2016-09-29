@@ -9,5 +9,5 @@ public interface ItemCommand {
 	/// <summary>
 	/// Command to be executed
 	/// </summary>
-	void Execute(Collision other);
+	void Execute(Collider other);
 }
