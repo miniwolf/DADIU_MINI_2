@@ -5,27 +5,22 @@ using UnityEngine.UI;
 
 public class ScoreImpl : Score, ScoreController {
 	private Player player;
-	private Life life;
-	private Score score1;
 	private Text scoreText;
 
-	void Start(){
+	void Start() {
+		TagRegister.RegisterSingle(gameObject, TagConstants.SCORE);
 		scoreText = GetComponent<Text>();
 	}
-	void Update(){
+
+	void Update() {
 		ShowPoints();
 		if (Input.GetKey(KeyCode.K)) {
 			scoreText.text = PlayerPrefs.GetFloat(PlayerPrefsConstants.HIGHSCORE).ToString();
 		}
 	}
 
-	public void ShowLife() {
-		life = player.GetLife();
-		// TODO show life on UI element
-		throw new NotImplementedException();
-	}
-
 	public void ShowPoints() {
-		scoreText.text = GetValue().ToString();
+		scoreText.text = "Dresses: " + GetValue().ToString();
+
 	}
 }

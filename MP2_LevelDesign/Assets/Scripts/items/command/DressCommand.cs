@@ -3,14 +3,12 @@ using System.Collections;
 
 public class DressCommand : ItemCommand {
 	private GameObject dress;
-	private Score score;
-	private ScoreController scoreController;
+	private Value score;
 	private Enemy enemy;
 
-	public DressCommand(Score score, ScoreController scoreController, Enemy enemy) {
+	public DressCommand(Value score, Enemy enemy) {
 		this.enemy = enemy;
 		this.score = score;
-		this.scoreController = scoreController;
 	}
 
 	/// <summary>
@@ -38,6 +36,5 @@ public class DressCommand : ItemCommand {
 
 	private void updateScore() {
 		score.IncrementValue();
-		//scoreController.ShowPoints();
 	}
 }
