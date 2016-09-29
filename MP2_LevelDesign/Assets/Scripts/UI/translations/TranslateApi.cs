@@ -27,8 +27,6 @@ public class TranslateApi {
 	}
 
 	private static void LoadLanguage(SupportedLanguage language)  {
-
-
 		string data = System.IO.File.ReadAllText("Assets/Resources/Translations/" + language.ToString().ToLower() + ".txt");
 		string [] splits = data.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None); // Environment.NewLine
 
@@ -45,6 +43,7 @@ public class TranslateApi {
 
 			translationLookupTable.Add(key, value);
 		}
+		languageLoaded = language;
 	}
 
 
