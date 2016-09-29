@@ -15,13 +15,19 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable, Movabl
 
 	void Start() {
 		state = EnemyState.RandomWalk;
-		TagRegister.RegisterSingle(gameObject, TagConstants.ENEMY);
+		TagRegister.Register(gameObject, TagConstants.ENEMY);
 	}
 
 	// DEBUG
 	void Update() {
 		if (Input.GetKeyDown(KeyCode.Space)) {
 			SetState(EnemyState.ObstacleHit);
+		}
+		else if (Input.GetKeyDown(KeyCode.UpArrow)) {
+			SetState(EnemyState.Chasing);
+		}
+		else if (Input.GetKeyDown(KeyCode.DownArrow)) {
+			SetState(EnemyState.WalkAway);
 		}
 	}
 
@@ -69,5 +75,9 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable, Movabl
 
 	public void AddCommand(MovableCommand command) {
 		commands.Add(command);
+	}
+
+	public void SetPosition(Vector3 newPosition) {
+		this.transform.position = newPosition;
 	}
 }
