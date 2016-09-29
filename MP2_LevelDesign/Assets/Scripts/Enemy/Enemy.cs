@@ -1,29 +1,11 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
-public class Enemy : MonoBehaviour {
+public interface Enemy {
+	EnemyState GetState();
+	void SetState(EnemyState newState);
+	List<Controller> GetControllers();
+	NavMeshController GetNavMesh();
 
-	private EnemyState state;
-	private NavMeshController navmesh;
-	//private AnimationController animation;
-	//private SoundController sound;
-
-	public Enemy(NavMeshAgent agent) {
-		navmesh = new NavMeshController(agent);
-		state = EnemyState.RandomWalk;
-		// set animation and sound controller
-	}
-
-	public EnemyState GetState () {
-		return state;
-	}
-
-	public void SetState (EnemyState newState) {
-		//update state
-		state = newState;
-	}
-
-	public NavMeshController GetNavMesh () {
-		return navmesh;
-	}
+	Vector3 GetPosition();
 }
