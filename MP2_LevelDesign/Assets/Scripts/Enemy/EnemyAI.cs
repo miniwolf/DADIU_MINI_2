@@ -29,18 +29,20 @@ public class EnemyAI : MonoBehaviour {
 				WalkAway();
 				break;
 
-			case EnemyState.ObstacleHit:
+			case EnemyState.ObstacleHit: //hit yellow bush
 				StartCoroutine(enemy.GetNavMesh().SlowDown());
+				// if it was chasing the girl it stops now
 				enemy.SetState(EnemyState.RandomWalk);
-				FreeRoam();
+				FreeRoam(); 
 				break;
 
 			case EnemyState.Chasing:
+				isRoaming = false;
 				enemy.GetNavMesh().Move(player.transform.position);
 				break;
 
 			case EnemyState.GirlCaught:
-				// call animation controller of enemy and caught girl that would change the state to WalkAway
+				// call animation controller of enemy and caught girl that would change the state to WalkAway when it's finished
 				//enemy.GetAnimController().CatchGirl(enemy);
 				break;
 		}
@@ -49,7 +51,7 @@ public class EnemyAI : MonoBehaviour {
 
 	// for now the random walk is just the position + (100,0,100)
 	private void WalkAway() {
-		enemy.GetNavMesh().Move(enemy.GetPosition() + new Vector3(10, 10, 0));
+		enemy.GetNavMesh().Move(enemy.GetPosition() + new Vector3(10, 0, 10));
 	}
 	
 	 private void FreeRoam() {
@@ -66,12 +68,11 @@ public class EnemyAI : MonoBehaviour {
 				}
 			}
 			enemy.GetNavMesh().Move(movingPosition);
-			print (movingPosition + " " + enemy.GetPosition());
 			isRoaming = true;
 		}
 
 		//if the enemy is close enough to the end position we stop roaming
-		if(Vector3.Distance(transform.position, movingPosition) < roamDistanceError) {
+		if(Vector3.Distance(enemy.GetPosition(), movingPosition) < roamDistanceError) {
 			isRoaming = false;
 		}
 	}
