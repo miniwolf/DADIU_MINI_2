@@ -41,6 +41,9 @@ public class InjectionRegister : MonoBehaviour {
 			case TagConstants.BRIDGE:
 				itemFactory.CreateBridge((Commandable) component);
 				break;
+			case TagConstants.YELLOWBUSH:
+				itemFactory.CreateYellowBush((Commandable) component);
+				break;
 		}
 	}
 }
