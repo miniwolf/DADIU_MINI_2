@@ -30,7 +30,7 @@ public class DressCommand : ItemCommand {
 	public void Execute(Collider other) {
 		if ( other.transform.tag == TagConstants.PLAYER ) {
 			dress.SetActive(false);
-			//updateScore();
+			updateScore();
 			enemy.SetState(EnemyState.Chasing);
 			enemy.GetNavMesh().SpeedUp();
 		}
@@ -38,6 +38,6 @@ public class DressCommand : ItemCommand {
 
 	private void updateScore() {
 		score.IncrementValue();
-		scoreController.ShowPoints();
+		//scoreController.ShowPoints();
 	}
 }

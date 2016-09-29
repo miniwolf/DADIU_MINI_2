@@ -7,7 +7,7 @@ public class ItemFactory {
 	Score score;
 
 	public ItemFactory() {
-		//score = GameObject.FindGameObjectWithTag(TagConstants.SCORE).GetComponent<Score>();
+		score = GameObject.FindGameObjectWithTag(TagConstants.SCORE).GetComponent<Score>();
 		//scoreController = GameObject.FindGameObjectWithTag(TagConstants.SCORECONTROLLER).GetComponent<ScoreController>();
 		enemy = GameObject.FindGameObjectWithTag(TagConstants.ENEMY).GetComponent<Enemy>();
 	}
