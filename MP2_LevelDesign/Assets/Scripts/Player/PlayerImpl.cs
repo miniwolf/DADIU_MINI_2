@@ -5,7 +5,7 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	private RaycastHit hit;
 	private Camera cam;
 	private Ray cameraToGround;
-	private int layerMask = 1 << LayerConstants.GroundLayer;
+	private LayerMask layerMask = 1 << LayerConstants.GroundLayer;
 
 	private PlayerState playerState;
 	private Life playerLife;
@@ -26,7 +26,7 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	void Update() {
 		foreach(Touch touch in Input.touches) {
 			cameraToGround = cam.ScreenPointToRay(touch.position);
-			if ( Physics.Raycast(cameraToGround,out hit,500f) ) {
+			if ( Physics.Raycast(cameraToGround,out hit,500f,layerMask.value) ) {
 				foreach ( Controller controller in controllers ) {
 					controller.Move(hit.point);
 				}
@@ -35,7 +35,7 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 
 		if ( Input.GetMouseButtonDown(1) ) {
 			cameraToGround = cam.ScreenPointToRay(Input.mousePosition);
-			if ( Physics.Raycast(cameraToGround, out hit) ) {
+			if ( Physics.Raycast(cameraToGround, out hit,500f,layerMask.value) ) {
 				print(hit.point);
 				foreach ( Controller controller in controllers ) {
 					controller.Move(hit.point);
