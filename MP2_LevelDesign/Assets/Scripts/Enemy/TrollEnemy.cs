@@ -21,6 +21,12 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable {
 		if (Input.GetKeyDown(KeyCode.Space)) {
 			SetState(EnemyState.ObstacleHit);
 		}
+		else if (Input.GetKeyDown(KeyCode.UpArrow)) {
+			SetState(EnemyState.Chasing);
+		}
+		else if (Input.GetKeyDown(KeyCode.DownArrow)) {
+			SetState(EnemyState.WalkAway);
+		}
 	}
 
 	public NavMeshController GetNavMesh() {
@@ -30,6 +36,9 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable {
 			}
 		}
 		return null;
+	}
+
+	public void SetupComponents() {
 	}
 
 	public EnemyState GetState() {
