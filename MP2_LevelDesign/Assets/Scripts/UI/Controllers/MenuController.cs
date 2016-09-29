@@ -7,4 +7,5 @@ public interface MenuController {
 	void ShowMainMenu();
 	void ShowHowToPlay();
 	void ShowSettings();
+	void SetTexts();
 }

@@ -16,7 +16,8 @@ public class MenuControllerImpl : MonoBehaviour, MenuController {
 	void Awake() {
 		gameStateManager = GameObject.FindGameObjectWithTag(TagConstants.GAME_STATE).GetComponent<GameStateManager>() as GameStateManager;
 		canvas = GameObject.FindGameObjectWithTag(UIConstants.CANVAS).GetComponent<CanvasScript>();
-		SetTexts();	
+		ResolveDependencies();
+		//SetTexts();	
 	}
 
 	void OnDestroy () {
@@ -24,7 +25,8 @@ public class MenuControllerImpl : MonoBehaviour, MenuController {
 	}
 
 	public void ShowHowToPlay() {
-		
+		canvas.ShowHowToPlayMenu();
+		gameStateManager.NewState(GameState.Paused);
 	}
 
 	public void ShowMainMenu() {
@@ -42,7 +44,13 @@ public class MenuControllerImpl : MonoBehaviour, MenuController {
 		gameStateManager.NewState(GameState.Playing);
 	}
 
-	private void SetTexts() {
+	public void ExitGame() {
+		Application.Quit(); // Note: Needs testing for Android
+		Debug.Log("TEST ON TABLET");
+	}
+
+
+	public void SetTexts() {
 		textPlayGame.text = TranslateApi.GetString(LocalizedString.mainPlayGame);
 		textSettings.text = TranslateApi.GetString(LocalizedString.mainSettings);
 		textExitGame.text = TranslateApi.GetString(LocalizedString.mainExitGame);

@@ -9,9 +9,9 @@ public class SettingsControllerImpl : MonoBehaviour, SettingsController {
 	private Text textReturnToMain;
 	private CanvasScript canvas; 
 
-	void Start() {
+	void Awake() {
 		ResolveDependencies();
-		SetTexts();
+		//SetTexts();
 	}
 	
 	// Update is called once per frame
@@ -58,7 +58,7 @@ public class SettingsControllerImpl : MonoBehaviour, SettingsController {
 		return GameObject.FindGameObjectWithTag(tag).GetComponent<Text>();
 	}
 
-	private void SetTexts() {
+	public void SetTexts() {
 		textToggleSound.text = TranslateApi.GetString(LocalizedString.settingsToggleSound);
 		textLanguage.text = TranslateApi.GetString(LocalizedString.settingsChangeLanguage);
 		textReturnToMain.text = TranslateApi.GetString(LocalizedString.settingsReturnToMainMenu);
