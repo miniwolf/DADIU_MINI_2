@@ -2,6 +2,15 @@
 using System.Collections;
 
 public enum LocalizedString  {
-	key,
-	key2
+	mainPlayGame,
+	mainHowtoPlay,
+	mainSettings,
+	mainExitGame,
+	settingsToggleSound,
+	settingsChangeLanguage,
+	settingsReturnToMainMenu,
+	ingameExit,
+	ingameRetry,
+	ingameLife,
+	ingameScore
 }

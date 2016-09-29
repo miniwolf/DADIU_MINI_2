@@ -40,8 +40,8 @@ public class TranslateApi {
 				throw new EntryPointNotFoundException("Cannot load string on line " + i);
 
 			string [] keyValuePair = split.Split(';');
-			LocalizedString key = (LocalizedString) Enum.Parse(typeof(LocalizedString), keyValuePair[0]);
-			string value = keyValuePair[1];
+			LocalizedString key = (LocalizedString) Enum.Parse(typeof(LocalizedString), keyValuePair[0].Trim());
+			string value = keyValuePair[1].Trim();
 
 			translationLookupTable.Add(key, value);
 		}
