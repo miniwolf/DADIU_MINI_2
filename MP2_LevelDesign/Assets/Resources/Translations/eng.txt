@@ -1,2 +1,11 @@
-key;valueEN
-key2;valueEN2
+mainPlayGame;Play game
+mainHowtoPlay;How to Play
+mainSettings;Settings
+mainExitGame;Exit Game
+settingsToggleSound;  Toggle Sound  
+settingsChangeLanguage; Change Language
+settingsReturnToMainMenu;Return to Main Menu
+ingameExit; Exit
+ingameRetry;Retry
+ingameLife;Life:
+ingameScore;Score:
