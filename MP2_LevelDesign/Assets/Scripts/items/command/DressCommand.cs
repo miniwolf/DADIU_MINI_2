@@ -30,8 +30,9 @@ public class DressCommand : ItemCommand {
 	public void Execute(Collider other) {
 		if ( other.transform.tag == TagConstants.PLAYER ) {
 			dress.SetActive(false);
-			updateScore();
+			//updateScore();
 			enemy.SetState(EnemyState.Chasing);
+
 		}
 	}
 
