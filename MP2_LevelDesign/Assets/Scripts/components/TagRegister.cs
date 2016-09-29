@@ -41,13 +41,13 @@ public class TagRegister : MonoBehaviour {
 			testTagReference((GameObject) singleTags[s], s);
 		}
 		foreach ( MultiTag mt in multiObjects ) {
-			testTagReference(mt.GetObject, mt.GetTag);
+			testTagReference(mt.GetObject(), mt.GetTag());
 		}
 	}
 
 	private void testTagReference(GameObject obj, string tag) {
-		if ( obj.transform.tag != s ) {
-			Debug.LogError("Game object: '" + obj.name + "' is missing the tag '" + s + "' please add it.");
+		if ( obj.transform.tag != tag ) {
+			Debug.LogError("Game object: '" + obj.name + "' is missing the tag '" + tag + "' please add it.");
 			Application.Quit();
 		}
 	}
