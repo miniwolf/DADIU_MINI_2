@@ -3,8 +3,8 @@ using System.Collections;
 
 public interface SettingsController {
 
-	void ChangeLanguage(SupportedLanguage newLanguage);
-	void ToggleSound(bool soundOn);
+	void ToggleLanguage();
+	void ToggleSound();
 	void ReturnToMainMenu();
 
 //	SupportedLanguage GetCurrentLanguage();

@@ -46,4 +46,8 @@ public class CanvasScript : MonoBehaviour {
 	public void ReturnToMainMenu() {
 		ShowMainMenu();
 	}
+
+	public void OnLanguageChanged() {
+		// todo get mai menu components from Item.mainMenu and change language
+	}
 }

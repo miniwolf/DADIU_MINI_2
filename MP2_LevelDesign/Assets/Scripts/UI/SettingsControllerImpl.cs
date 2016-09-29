@@ -7,6 +7,7 @@ public class SettingsControllerImpl : MonoBehaviour, SettingsController {
 	private Text textToggleSound;
 	private Text textLanguage;
 	private Text textReturnToMain;
+	private CanvasScript canvas; 
 
 	void Start() {
 		ResolveDependencies();
@@ -22,24 +23,35 @@ public class SettingsControllerImpl : MonoBehaviour, SettingsController {
 		textToggleSound = textLanguage = textReturnToMain = null;
 	}
 
-	public void ChangeLanguage(SupportedLanguage newLanguage) {
-		TranslateApi.ChangeLanguage(newLanguage);
-		SetTexts();		
+	public void ToggleLanguage() {
+
+		SupportedLanguage language = TranslateApi.GetCurrentLanguage();
+		if(language.Equals(SupportedLanguage.DEN)) {
+			language = SupportedLanguage.ENG;
+		} else {
+			language = SupportedLanguage.DEN;
+		}
+
+		TranslateApi.ChangeLanguage(language);
+		SetTexts();
+		canvas.OnLanguageChanged();
+		// todo set this language to player prefs
 	}
 
-	public void ToggleSound(bool soundOn) {
+	public void ToggleSound() {
 		// todo call sound controller
 	}
 
 	public void ReturnToMainMenu() {
-		CanvasScript script =  gameObject.GetComponentInParent<CanvasScript>();
-		script.ReturnToMainMenu();
+		canvas.ReturnToMainMenu();
 	}
 
 	private void ResolveDependencies() {
 		textToggleSound = GetTextComponent(UIConstants.TEXT_TOGGLE_SOUND);
 		textLanguage = GetTextComponent(UIConstants.TEXT_CHANGE_LANGUAGE);
 		textReturnToMain = GetTextComponent(UIConstants.TEXT_RETURN_TO_MAIN_MENU);
+
+		canvas =  gameObject.GetComponentInParent<CanvasScript>();
 	}
 
 	private Text GetTextComponent(string tag) {
