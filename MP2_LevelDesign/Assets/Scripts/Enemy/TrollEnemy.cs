@@ -32,6 +32,9 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable {
 		return null;
 	}
 
+	public void SetupComponents() {
+	}
+
 	public EnemyState GetState() {
 		return state;
 	}

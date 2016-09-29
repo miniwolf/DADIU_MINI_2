@@ -13,7 +13,7 @@ public class ItemFactory {
 	}
 
 	public void CreateDress(Commandable dress) {
-		dress.AddCommand(new DressCommand(score, scoreController));
+		dress.AddCommand(new DressCommand(score, scoreController, enemy));
 	}
 
 	public void CreateBridge(Commandable bridge) {
