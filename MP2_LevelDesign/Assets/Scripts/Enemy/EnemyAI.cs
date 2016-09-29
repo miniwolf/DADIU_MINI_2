@@ -2,11 +2,11 @@
 using System.Collections;
 
 public class EnemyAI : MonoBehaviour {
-	public float roamRadius;
-	public float teleportRadius;
-	public float roamDistanceError;
-	public float distanceForTeleport;
-	public float sphereRadius;
+	public float roamRadius = 15.0f;
+	public float teleportRadius = 25f;
+	public float roamDistanceError = 0.5f;
+	public float distanceForTeleport = 50f;
+	public float sphereRadius = 0.5f;
 	static private int MAX_ITERATIONS = 10;
 	private Enemy enemy;
 	private GameObject player;
@@ -15,14 +15,9 @@ public class EnemyAI : MonoBehaviour {
 	Vector3 movingPosition;
 
 	void Start () {
-		roamRadius = 15.0f;
-		teleportRadius = 25f;
-		roamDistanceError = 0.5f;
-		distanceForTeleport = 50f;
-		sphereRadius = 0.5f;
-		movingPosition = transform.position;
 		player = GameObject.FindGameObjectWithTag(TagConstants.PLAYER);
 		enemy = GameObject.FindGameObjectWithTag(TagConstants.ENEMY).GetComponent<Enemy>();
+		movingPosition = enemy.GetPosition();
 	}
 
 	void Update () {
@@ -98,7 +93,18 @@ public class EnemyAI : MonoBehaviour {
 		// check if the troll is far away when the girl picks up laundry for the first time
 		if (!teleport) {
 			if(Vector3.Distance(enemy.GetPosition(), player.transform.position) > distanceForTeleport) {
-				Vector3 newPosition = GetNextRandomPos(player.transform.position, teleportRadius);
+				Collider [] existingColliders;
+				Vector3 newPosition = Vector3.zero;
+				// If the new position is an object we choose another one 
+				// but only try to find a new one for MAX_ITERATIONS
+				for(int i = 0; i < MAX_ITERATIONS; i++) { 
+					newPosition = GetNextRandomPos(player.transform.position, teleportRadius);
+					existingColliders = Physics.OverlapSphere(newPosition, sphereRadius);
+					// no colliders in the sphere means no object in that position
+					if(existingColliders.Length == 0) {						
+						break;
+					}
+				}
 				enemy.SetPosition(newPosition);
 			}
 			teleport = true;
