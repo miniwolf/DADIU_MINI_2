@@ -1,0 +1,31 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1919802259	trollFallsIntoWater			\Default Work Unit\trollFallsIntoWater	
+	2867536338	dressPickup			\Default Work Unit\dressPickup	
+	3139869105	menuBackwardClick			\Default Work Unit\menuBackwardClick	
+	3227179805	trollCatchAuntie			\Default Work Unit\trollCatchAuntie	
+	4028748541	menuForwardClick			\Default Work Unit\menuForwardClick	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	42406669	Uoohh	C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\.cache\Android\SFX\Uoohh_B3B572F1.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Surprised\Uoohh		81740
+	53723177	clothes_pickup	C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\.cache\Android\SFX\clothes_pickup_D3005BEB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\Clothes\clothes_pickup		198872
+	68472481	Uhhuhh	C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\.cache\Android\SFX\Uhhuhh_CF17B03B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Surprised\Uhhuhh		66208
+	294334297	Troll_falling_short_3	C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\.cache\Android\SFX\Troll_falling_short_3_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Troll_falling_shorts\Troll_falling_short_3		161184
+	330978246	bridge_breaking	C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\.cache\Android\SFX\bridge_breaking_03711B50.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\bridge_breaking		338228
+	341112838	Troll_catching_auntie_5	C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\.cache\Android\SFX\Troll_catching_auntie_5_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Catching_auntie\Troll_catching_auntie_5		117600
+	350202146	Troll_catching_auntie_2	C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\.cache\Android\SFX\Troll_catching_auntie_2_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Catching_auntie\Troll_catching_auntie_2		220644
+	360738613	Troll_falling_short_1	C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\.cache\Android\SFX\Troll_falling_short_1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Troll_falling_shorts\Troll_falling_short_1		185116
+	386831373	Troll_catching_auntie_1	C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\.cache\Android\SFX\Troll_catching_auntie_1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Catching_auntie\Troll_catching_auntie_1		251992
+	422205118	Yubii	C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\.cache\Android\SFX\Yubii_4A89DC03.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Happy\Yubii		15384
+	422937860	Troll_falling_short_2	C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\.cache\Android\SFX\Troll_falling_short_2_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Troll_falling_shorts\Troll_falling_short_2		162544
+	480542494	Troll_catching_auntie_3	C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\.cache\Android\SFX\Troll_catching_auntie_3_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Catching_auntie\Troll_catching_auntie_3		135320
+	563529082	Button	C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\.cache\Android\SFX\menu button_1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Button		53928
+	678907684	Gasp (breathing in)	C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\.cache\Android\SFX\Gasp (breathing in)_610AD98A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Surprised\Gasp (breathing in)		122152
+	686164433	Yaay	C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\.cache\Android\SFX\Yaay_EA497DCF.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Happy\Yaay		12621
+	738345270	Troll_catching_auntie_6	C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\.cache\Android\SFX\Troll_catching_auntie_6_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Catching_auntie\Troll_catching_auntie_6		170320
+	784167980	Oihh	C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\.cache\Android\SFX\Oihh_4BC9FDFB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Surprised\Oihh		82692
+	889290242	reward_points	C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\.cache\Android\SFX\reward_points_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\reward_points		345664
+	890164264	water_splash_1	C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\.cache\Android\SFX\water_splash_1_505E4ABD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\water_splash_1		422284
+	898376589	Eeiii	C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\.cache\Android\SFX\Eeiii_F82A2A69.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Surprised\Eeiii		93432
+	1007633232	pick_up_auntie_1	C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\.cache\Android\SFX\pick_up_auntie_1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\pick_up_auntie_1		55548
+	1072344928	Troll_catching_auntie_4	C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\.cache\Android\SFX\Troll_catching_auntie_4_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Catching_auntie\Troll_catching_auntie_4		166432
+
