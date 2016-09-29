@@ -16,7 +16,7 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	}
 
 	void Awake() {
-		TagRegister.Register(gameObject, TagConstants.PLAYER);
+		TagRegister.RegisterSingle(gameObject, TagConstants.PLAYER);
 	}
 
 	void Start() {
