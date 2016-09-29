@@ -3,20 +3,44 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class CanvasScript : MonoBehaviour {
-	private MenuController mainMenuController;
+	public Image mainMenu;
+	public Image settingsMenu;
+	public Image inGameMenu;
+
+	private GameStateManager gameStateManager;
+
+	//private MenuController mainMenuController;
 
 	void Awake() {
-		mainMenuController = GameObject.FindGameObjectWithTag(UIConstants.MAIN_MENU).GetComponent<MenuController>() as MenuController;
-		mainMenuController.ShowMainMenu();
+		//mainMenuController = GameObject.FindGameObjectWithTag(UIConstants.MAIN_MENU).GetComponent<MenuController>() as MenuController;
+		//mainMenuController.ShowMainMenu();
+		gameStateManager = GameObject.FindGameObjectWithTag(TagConstants.GAME_STATE).GetComponent<GameStateManager>() as GameStateManager;
+		ShowMainMenu();
 	}
 
-	// Use this for initialization
-	void Start () {
 
+	public void ShowMainMenu() {
+		mainMenu.gameObject.SetActive(true);
+		settingsMenu.gameObject.SetActive(false);
+		inGameMenu.gameObject.SetActive(false);
+
+		gameStateManager.NewState(GameState.Paused);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	public void ShowSettings() {
+		settingsMenu.gameObject.SetActive(true);
+		mainMenu.gameObject.SetActive(false);
+		inGameMenu.gameObject.SetActive(false);
+
+		gameStateManager.NewState(GameState.Paused);
 	}
+
+	public void ShowPlayGame() {
+		inGameMenu.gameObject.SetActive(true);
+		mainMenu.gameObject.SetActive(false);
+		settingsMenu.gameObject.SetActive(false);
+
+		gameStateManager.NewState(GameState.Playing);
+	}
+
 }
