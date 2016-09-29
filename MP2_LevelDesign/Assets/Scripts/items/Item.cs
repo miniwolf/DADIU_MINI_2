@@ -17,7 +17,6 @@ public abstract class Item : MonoBehaviour, GameEntity, Commandable {
 	}
 
 	public void OnTriggerEnter(Collider other) {
-		Debug.Log("Collided");
 		foreach ( ItemCommand command in commands ) {
 			command.Execute(other);
 		}
