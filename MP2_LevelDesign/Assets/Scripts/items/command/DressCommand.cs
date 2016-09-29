@@ -22,7 +22,7 @@ public class DressCommand : ItemCommand {
 			dress.SetActive(false);
 			//updateScore();
 			enemy.SetState(EnemyState.Chasing);
-
+			enemy.GetNavMesh().SpeedUp();
 		}
 	}
 
