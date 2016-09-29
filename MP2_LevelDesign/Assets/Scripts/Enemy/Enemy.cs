@@ -6,6 +6,6 @@ public interface Enemy {
 	void SetState(EnemyState newState);
 	List<Controller> GetControllers();
 	NavMeshController GetNavMesh();
-
 	Vector3 GetPosition();
+	void SetPosition(Vector3 newPosition);
 }
