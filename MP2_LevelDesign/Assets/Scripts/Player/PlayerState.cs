@@ -1,0 +1,1 @@
+﻿public enum PlayerState { Idle, Running, Dead };
