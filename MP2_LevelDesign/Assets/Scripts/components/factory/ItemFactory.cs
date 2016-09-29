@@ -4,17 +4,17 @@ using System.Collections.Generic;
 public class ItemFactory {
 	Enemy enemy;
 	ScoreController scoreController;
-	Score score;
+	Value score;
 
 	public ItemFactory() {
-		//score = GameObject.FindGameObjectWithTag(TagConstants.SCORE).GetComponent<Score>();
+		score = GameObject.FindGameObjectWithTag(TagConstants.SCORE).GetComponent<Value>();
+
 		//scoreController = GameObject.FindGameObjectWithTag(TagConstants.SCORECONTROLLER).GetComponent<ScoreController>();
 		enemy = GameObject.FindGameObjectWithTag(TagConstants.ENEMY).GetComponent<Enemy>();
-		Debug.Log("2");
 	}
 
 	public void CreateDress(Commandable dress) {
-		dress.AddCommand(new DressCommand(score, scoreController, enemy));
+		dress.AddCommand(new DressCommand(score, enemy));
 	}
 
 	public void CreateBridge(Commandable bridge) {

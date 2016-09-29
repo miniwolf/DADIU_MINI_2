@@ -39,7 +39,6 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 		if ( Input.GetMouseButtonDown(1) ) {
 			cameraToGround = cam.ScreenPointToRay(Input.mousePosition);
 			if ( Physics.Raycast(cameraToGround, out hit,500f,layerMask.value) ) {
-				print(hit.point);
 				foreach ( Controller controller in controllers ) {
 					controller.Move(hit.point);
 				}
