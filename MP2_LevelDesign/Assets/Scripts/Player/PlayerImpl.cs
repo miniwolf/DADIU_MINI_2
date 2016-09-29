@@ -22,6 +22,9 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	void Start() {
 		cam = GameObject.FindGameObjectWithTag(TagConstants.CAMERA).GetComponent<Camera>();
 	}
+
+	public void SetupComponents() {
+	}
 		
 	void Update() {
 		foreach(Touch touch in Input.touches) {
