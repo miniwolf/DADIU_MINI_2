@@ -66,7 +66,7 @@ public class EnemyAI : MonoBehaviour {
             enemy.GetNavMesh().Move(movingPosition);
 			isRoaming = true;
 		}
-
+        print(enemy.GetPosition() + " target " + movingPosition + " distance " + Vector3.Distance(enemy.GetPosition(), movingPosition));
 		//if the enemy is close enough to the end position we stop roaming
 		if ( Vector3.Distance(enemy.GetPosition(), movingPosition) < roamDistanceError ) {
 			isRoaming = false;
@@ -79,14 +79,17 @@ public class EnemyAI : MonoBehaviour {
         // but only try to find a new one for MAX_ITERATIONS
         for (int i = 0; i < MAX_ITERATIONS; i++) {
             generatedPosition = GetNextRandomPos(reference, maxRadius);
+            if(Distance(enemy.GetPosition(), generatedPosition) == Mathf.Infinity) {
+                continue;
+            }
             generatedPosition.y = reference.y;
             existingColliders = Physics.OverlapSphere(generatedPosition, sphereRadius);
             // no colliders in the sphere means no object in that position
             if (existingColliders.Length != 0) {
                 continue;
             }
-            if (Vector3.Distance(enemy.GetPosition(), (distanceToPlayer ? player.transform.position: generatedPosition)) > maxRadius 
-                || Vector3.Distance(enemy.GetPosition(), (distanceToPlayer ? player.transform.position : generatedPosition)) < minRadius) {
+            if (Distance(enemy.GetPosition(), (distanceToPlayer ? player.transform.position: generatedPosition)) > maxRadius 
+                || Distance(enemy.GetPosition(), (distanceToPlayer ? player.transform.position : generatedPosition)) < minRadius) {
                 continue;
             }
         }
@@ -94,16 +97,19 @@ public class EnemyAI : MonoBehaviour {
     }
 	private Vector3 GetNextRandomPos(Vector3 referencePosition, float radius) {
 		NavMeshHit hit;
-		Vector3 randomPoint = referencePosition + Random.insideUnitSphere * radius;
-		randomPoint.y = 0;
-		NavMesh.SamplePosition(randomPoint, out hit, radius, NavMesh.AllAreas);
+        Vector3 randomPoint = referencePosition + Random.insideUnitSphere * radius;
+        NavMesh.SamplePosition(randomPoint, out hit, radius, NavMesh.AllAreas);
 		return hit.position;
 	}
 
-	private void Chaising() {
+    private float Distance(Vector3 v1, Vector3 v2) {
+        return (Mathf.Sqrt(Mathf.Pow(Mathf.Abs(v1.x - v2.x), 2f) + Mathf.Pow(Mathf.Abs(v1.z - v2.z), 2f)));
+    }
+
+    private void Chaising() {
 		// check if the troll is far away when the girl picks up laundry for the first time
 		if ( !teleport ) {
-			if ( Vector3.Distance(enemy.GetPosition(), player.transform.position) > distanceForTeleport ) {
+			if ( Distance(enemy.GetPosition(), player.transform.position) > distanceForTeleport ) {
                 Vector3 newPosition = GenerateRandomPosition(player.transform.position, teleportRadius, 0, true);
 				enemy.SetPosition(newPosition);
 			}
