@@ -2,6 +2,8 @@
 /// Constants for the Canvas element
 /// </summary>
 public class UIConstants {
+	public const string CANVAS = "Canvas";
+
 	// MENUS
 	public const string MAIN_MENU = "MainMenu";
 	public const string SETTINGS_MENU = "SettingsMenu";
