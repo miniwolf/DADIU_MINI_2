@@ -39,4 +39,16 @@ public abstract class UIController : MonoBehaviour {
 	virtual protected void ReturnToMainMenu() {
 		canvas.ReturnToMainMenu();
 	}
+
+	/// <summary>
+	/// Don't use setActive method! You cannot find the object in the scene then
+	/// </summary>
+	virtual public void SetVisible() {
+		gameObject.transform.localScale = new Vector3(1, 1, 1);
+	}
+
+	virtual public void SetInvisible() {
+		gameObject.transform.localScale = new Vector3(0, 0, 0);
+	}
 }
+

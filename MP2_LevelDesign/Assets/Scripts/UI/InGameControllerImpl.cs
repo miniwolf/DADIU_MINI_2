@@ -8,6 +8,15 @@ public class InGameControllerImpl : InGameController {
 	private Text textScoreCounter;
 	private Text textLifeCounter;
 
+	private Player player;
+
+	private Life life = new Life();
+	private Score score = new Score();
+
+	void OnStart() {
+		TagRegister.RegisterSingle(gameObject, TagConstants.SCORE);
+	}
+
 	public override void RefreshText() {
 		textExit.text = TranslateApi.GetString(LocalizedString.ingameExit);
 		textRetry.text = TranslateApi.GetString(LocalizedString.ingameRetry);
@@ -28,6 +37,36 @@ public class InGameControllerImpl : InGameController {
 
 	public override void ShowMainMenu() {
 		canvas.ShowMainMenu();
-		gameStateManager.NewState(GameState.Paused);
+	}
+
+	private void UpdateLife() {
+		textLifeCounter.text = TranslateApi.GetString(LocalizedString.ingameScore) + life.GetValue();
+	}
+
+	private void UpdateScore() {
+//		if (Input.GetKey(KeyCode.K)) {
+//			textScoreCounter.text = PlayerPrefs.GetFloat(PlayerPrefsConstants.HIGHSCORE).ToString();
+//		}
+		textScoreCounter.text = TranslateApi.GetString(LocalizedString.ingameLife) + score.GetValue();
+	}
+
+	public override void IncrementLife() {
+		life.IncrementValue();
+		UpdateLife();
+	}
+
+	public override void IncrementScore() {
+		score.IncrementValue();
+		UpdateScore();
+	}
+
+	public override void DecrementLife() {
+		life.DecrementValue();
+		UpdateLife();
+	}
+
+	public override void DecrementScore() {
+		score.DecrementValue();
+		UpdateScore();
 	}
 }

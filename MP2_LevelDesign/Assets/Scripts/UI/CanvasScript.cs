@@ -13,47 +13,52 @@ public class CanvasScript : MonoBehaviour {
 	private SettingsController settingsController;
 	private MenuController menuController;
 	private InGameController inGameController;
+	private HowToPlayController howToPlayController;
 
 	void Awake() {
 		gameStateManager = GameObject.FindGameObjectWithTag(TagConstants.GAME_STATE).GetComponent<GameStateManager>();
+
 		settingsController = GameObject.FindGameObjectWithTag(UIConstants.SETTINGS_MENU).GetComponent<SettingsController>();
 		menuController = GameObject.FindGameObjectWithTag(UIConstants.MAIN_MENU).GetComponent<MenuController>();
 		inGameController = GameObject.FindGameObjectWithTag(UIConstants.IN_GAME_MENU).GetComponent<InGameController>();
+
 		ShowMainMenu();
 	}
 
-
 	public void ShowMainMenu() {
-		mainMenu.gameObject.SetActive(true);
-		settingsMenu.gameObject.SetActive(false);
-		inGameMenu.gameObject.SetActive(false);
+		menuController.SetVisible();
+		settingsController.SetInvisible();
+		inGameController.SetInvisible();
+
 		howToPlayMenu.gameObject.SetActive(false);
 
 		gameStateManager.NewState(GameState.Paused);
 	}
 
 	public void ShowSettings() {
-		settingsMenu.gameObject.SetActive(true);
-		mainMenu.gameObject.SetActive(false);
-		inGameMenu.gameObject.SetActive(false);
+		menuController.SetInvisible();
+		settingsController.SetVisible();
+		inGameController.SetInvisible();
+
 		howToPlayMenu.gameObject.SetActive(false);
 
 		gameStateManager.NewState(GameState.Paused);
 	}
 
 	public void ShowPlayGame() {
-		inGameMenu.gameObject.SetActive(true);
-		mainMenu.gameObject.SetActive(false);
-		settingsMenu.gameObject.SetActive(false);
+		menuController.SetInvisible();
+		settingsController.SetInvisible();
+		inGameController.SetVisible();
+
 		howToPlayMenu.gameObject.SetActive(false);
 
 		gameStateManager.NewState(GameState.Playing);
 	}
 
 	public void ShowHowToPlayMenu() {
-		inGameMenu.gameObject.SetActive(false);
-		mainMenu.gameObject.SetActive(false);
-		settingsMenu.gameObject.SetActive(false);
+		menuController.SetInvisible();
+		settingsController.SetInvisible();
+		inGameController.SetInvisible();
 		howToPlayMenu.gameObject.SetActive(true);
 
 		gameStateManager.NewState(GameState.Playing);
@@ -64,13 +69,9 @@ public class CanvasScript : MonoBehaviour {
 	}
 
 	public void OnLanguageChanged() {
-		//if(settingsMenu.IsActive())
-			settingsController.RefreshText();
-		//if(mainMenu.IsActive())
-				menuController.RefreshText();
-		//if(inGameMenu.IsActive())
-			inGameController.RefreshText();
-//		if(howToPlayMenu.IsActive()) // todo add how to play
-		//			howToPlayController.RefreshText();
+		settingsController.RefreshText();
+		menuController.RefreshText();
+		inGameController.RefreshText();
+		// todo on how to play menu
 	}
 }
