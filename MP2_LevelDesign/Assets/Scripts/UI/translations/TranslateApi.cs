@@ -46,6 +46,8 @@ public class TranslateApi {
 		languageLoaded = language;
 	}
 
-
+	public static SupportedLanguage GetCurrentLanguage() {
+		return languageLoaded;
+	}
 
 }

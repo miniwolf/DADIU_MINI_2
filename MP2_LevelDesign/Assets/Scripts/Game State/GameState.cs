@@ -1,1 +1,5 @@
-﻿public enum GameState { Playing, Paused, Ended};
+﻿public enum GameState {
+	Playing, 
+	Paused, 
+	Idle // in a game menu
+};
