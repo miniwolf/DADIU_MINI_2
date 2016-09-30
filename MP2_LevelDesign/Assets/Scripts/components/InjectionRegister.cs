@@ -16,6 +16,10 @@ public class InjectionRegister : MonoBehaviour {
 		InitializeComponents();
 	}
 
+	void OnDestroy() {
+		components.Clear();
+	}
+
 	public static void Register(GameEntity component) {
 		components.Add(component);
 	}
@@ -35,11 +39,17 @@ public class InjectionRegister : MonoBehaviour {
 			case TagConstants.ENEMY:
 				controllableFactory.CreateEnemy((Controllable) component);
 				break;
+			case TagConstants.ENEMYAI:
+				controllableFactory.CreateEnemyAI((AI) component);
+				break;
 			case TagConstants.DRESS:
 				itemFactory.CreateDress((Commandable) component);
 				break;
 			case TagConstants.BRIDGE:
 				itemFactory.CreateBridge((Commandable) component);
+				break;
+			case TagConstants.YELLOWBUSH:
+				itemFactory.CreateYellowBush((Commandable) component);
 				break;
 		}
 	}

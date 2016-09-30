@@ -18,7 +18,12 @@ public class ControllableFactory {
 
 	public void CreateEnemy(Controllable enemy) {
 		CreateControllable(enemy, enemyAgent);
-		enemyObj.GetComponent<MovableCommandable>().AddCommand(new ChaseCommand(enemyObj.GetComponent<Enemy>()));
+		enemyObj.GetComponentsInChildren<MovableCommandable>()[0].AddCommand(new ChaseCommand(enemyObj.GetComponent<Enemy>()));
+	}
+
+	public void CreateEnemyAI(AI ai) {
+		ai.SetPlayer(playerObj);
+		ai.SetEnemy(enemyObj.GetComponent<Enemy>());
 	}
 
 	private void CreateControllable(Controllable controllable, NavMeshAgent agent) {

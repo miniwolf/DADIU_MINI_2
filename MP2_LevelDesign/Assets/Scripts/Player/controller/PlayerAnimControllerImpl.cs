@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class PlayerAnimControllerImpl : PlayerAnimController {
-
 	private Animator animator;
 
 	public PlayerAnimControllerImpl(Animator animator) {

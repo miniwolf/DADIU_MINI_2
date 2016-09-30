@@ -51,6 +51,9 @@ public class TagRegister : MonoBehaviour {
 			Application.Quit();
 		}
 	}
+
+	void OnDestroy() {
+		singleTags.Clear();
+		multiObjects.Clear();
+	}
 }
-
-
