@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class InGameControllerImpl : InGameController {
+public class InGameControllerImpl : UIController, InGameController {
 	private Text textExit;
 	private Text textRetry;
 	private Text textScoreCounter;
@@ -31,11 +32,11 @@ public class InGameControllerImpl : InGameController {
 		textLifeCounter = GetTextComponent(UIConstants.TEXT_LIFE_COUNTER);
 	}
 
-	public override void RetryLevel() {
-		Application.LoadLevel(Application.loadedLevel);
+	public void RetryLevel() {
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
-	public override void ShowMainMenu() {
+	public void ShowMainMenu() {
 		canvas.ShowMainMenu();
 	}
 
@@ -50,23 +51,27 @@ public class InGameControllerImpl : InGameController {
 		textScoreCounter.text = TranslateApi.GetString(LocalizedString.ingameLife) + score.GetValue();
 	}
 
-	public override void IncrementLife() {
+	public void IncrementLife() {
 		life.IncrementValue();
 		UpdateLife();
 	}
 
-	public override void IncrementScore() {
+	public void IncrementScore() {
 		score.IncrementValue();
 		UpdateScore();
 	}
 
-	public override void DecrementLife() {
+	public void DecrementLife() {
 		life.DecrementValue();
 		UpdateLife();
 	}
 
-	public override void DecrementScore() {
+	public void DecrementScore() {
 		score.DecrementValue();
 		UpdateScore();
+	}
+
+	public float GetScoreValue() {
+		return score.GetValue();
 	}
 }

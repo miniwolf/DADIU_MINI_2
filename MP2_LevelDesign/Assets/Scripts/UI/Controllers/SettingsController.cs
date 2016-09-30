@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class SettingsController : UIController {
-
-	abstract public void ToggleLanguage();
-	abstract public void ToggleSound();
+public interface SettingsController {
+	void ToggleLanguage();
+	void ToggleSound();
 }

@@ -3,7 +3,6 @@ using System.Collections;
 using UnityEngine.UI;
 
 public abstract class UIController : MonoBehaviour {
-
 	protected CanvasScript canvas;
 	protected GameStateManager gameStateManager;
 
