@@ -1,65 +1,61 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyAI : MonoBehaviour {
+public class EnemyAI : MonoBehaviour, AI, GameEntity {
 	public float roamRadius = 15.0f;
 	public float teleportRadius = 25f;
 	public float roamDistanceError = 0.5f;
 	public float distanceForTeleport = 50f;
 	public float sphereRadius = 0.5f;       // radius around a point to check is is collision
-    public float walkAwayDistance = 30f;
+	public float walkAwayDistance = 30f;
 
-    static private int MAX_ITERATIONS = 30;
+	private static int MAX_ITERATIONS = 30;
 	private Enemy enemy;
 	private GameObject player;
 	private bool isRoaming;
 	private bool teleport;
-	Vector3 movingPosition;
+	private Vector3 movingPosition;
 
-	void Start() {
-		player = GameObject.FindGameObjectWithTag(TagConstants.PLAYER);
-		enemy = GameObject.FindGameObjectWithTag(TagConstants.ENEMY).GetComponent<Enemy>();
+	void Awake() {
+		InjectionRegister.Register(this);
+	}
+
+	public void SetupComponents() {
 		movingPosition = enemy.GetPosition();
 	}
 
 	void Update() {
+		if ( enemy == null ) {
+			return;
+		}
 		switch ( enemy.GetState() ) {
-		case EnemyState.RandomWalk:
-			FreeRoam(enemy.GetPosition(), roamRadius);
-			break;
-
-		case EnemyState.WalkAway:
-			print("walking away");
-            enemy.SetState(EnemyState.RandomWalk);
-			FreeRoam(player.transform.position, 2 * walkAwayDistance, walkAwayDistance);
-			break;
-
-		case EnemyState.ObstacleHit: //hit yellow bush
-			StartCoroutine(enemy.GetNavMesh().SlowDown());
-			// if it was chasing the girl it stops now
-			enemy.SetState(EnemyState.RandomWalk);
-			FreeRoam(enemy.GetPosition(), roamRadius); 
-			teleport = false;
-			break;
-
-		case EnemyState.Chasing:
-			print("chasing");
-			isRoaming = false;
-			Chaising();
-			break;
-
-		case EnemyState.GirlCaught:
-                print("doing nothing");
-                teleport = false;
+			case EnemyState.RandomWalk:
+				FreeRoam(enemy.GetPosition(), roamRadius);
+				break;
+			case EnemyState.WalkAway:
+				enemy.SetState(EnemyState.RandomWalk);
+				FreeRoam(player.transform.position, 2 * walkAwayDistance, walkAwayDistance);
+				break;
+			case EnemyState.ObstacleHit: //hit yellow bush
+				StartCoroutine(enemy.GetNavMesh().SlowDown());
+				// if it was chasing the girl it stops now
+				enemy.SetState(EnemyState.RandomWalk);
+				FreeRoam(enemy.GetPosition(), roamRadius); 
+				teleport = false;
+				break;
+			case EnemyState.Chasing:
+				isRoaming = false;
+				Chaising();
+				break;
+			case EnemyState.GirlCaught:
+				teleport = false;
 				// call animation controller of enemy and caught girl that would change the state to WalkAway when it's finished
 				//enemy.GetAnimController().CatchGirl(enemy);
-			break;
+				break;
 		}
 	}
 	
-
 	// for now the random walk is just the position + (100,0,100)
-	
 	private void FreeRoam(Vector3 reference, float maxRadius, float minRadius = 0) {
 		if ( !isRoaming ) {
             movingPosition = GenerateRandomPosition(reference, maxRadius, minRadius);
@@ -72,6 +68,7 @@ public class EnemyAI : MonoBehaviour {
 			isRoaming = false;
 		}
 	}
+
     private Vector3 GenerateRandomPosition(Vector3 reference, float maxRadius, float minRadius, bool distanceToPlayer = false) {
         Collider[] existingColliders;
         Vector3 generatedPosition = Vector3.zero;
@@ -92,6 +89,7 @@ public class EnemyAI : MonoBehaviour {
         }
         return generatedPosition;
     }
+
 	private Vector3 GetNextRandomPos(Vector3 referencePosition, float radius) {
 		NavMeshHit hit;
 		Vector3 randomPoint = referencePosition + Random.insideUnitSphere * radius;
@@ -111,5 +109,17 @@ public class EnemyAI : MonoBehaviour {
 		}
 			
 		enemy.GetNavMesh().Move(player.transform.position);
+	}
+
+	public void SetPlayer(GameObject player) {
+		this.player = player;
+	}
+
+	public void SetEnemy(Enemy enemy) {
+		this.enemy = enemy;
+	}
+
+	public string GetTag() {
+		return TagConstants.ENEMYAI;
 	}
 }

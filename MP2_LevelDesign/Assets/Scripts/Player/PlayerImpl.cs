@@ -11,11 +11,8 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	private Life playerLife;
 	private List<Controller> controllers = new List<Controller>();
 
-	public PlayerImpl() {
-		InjectionRegister.Register(this);
-	}
-
 	void Awake() {
+		InjectionRegister.Register(this);
 		TagRegister.RegisterSingle(gameObject, TagConstants.PLAYER);
 	}
 
