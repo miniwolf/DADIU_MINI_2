@@ -10,5 +10,5 @@ public class TagConstants {
 	public const string YELLOWBUSH = "YellowBush";
 	public const string CAMERA = "MainCamera";
 	public const string SCORE = "Score";
-	public const string SCORECONTROLLER = "ScoreController";
+	public const string GAME_STATE = "GameState";
 }
