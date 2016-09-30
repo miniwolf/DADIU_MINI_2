@@ -2,18 +2,12 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class HowToPlayControllerImpl : MonoBehaviour, HowToPlayController {
-	private CanvasScript canvas;
-
-	void Start() {
-		ResolveDependencies();
+public class HowToPlayControllerImpl : HowToPlayController {
+	public override void RefreshText() {
+	
 	}
 
-	public void ReturnToMainMenu() {
-		canvas.ReturnToMainMenu();
-	}
+	public override void ResolveDependencies() {
 
-	private void ResolveDependencies() {
-		canvas = gameObject.GetComponentInParent<CanvasScript>();
 	}
 }

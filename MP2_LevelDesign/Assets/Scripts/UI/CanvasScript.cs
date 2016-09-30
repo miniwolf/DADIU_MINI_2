@@ -64,19 +64,13 @@ public class CanvasScript : MonoBehaviour {
 	}
 
 	public void OnLanguageChanged() {
-		SupportedLanguage language = TranslateApi.GetCurrentLanguage();
-		if (language.Equals(SupportedLanguage.DEN)) {
-			language = SupportedLanguage.ENG;
-		}
-		else {
-			language = SupportedLanguage.DEN;
-		}
-
-		TranslateApi.ChangeLanguage(language);
-
-		settingsController.SetTexts();
-		menuController.SetTexts();
-		Debug.Log("RESOLVE NULL POINTER WHEN LOOKING UP TEXTS IN InGameMenu, THEN YOU CAN TRANSLATE");
-		//inGameController.SetTexts(); // TODO fix problems for looking up Texts for the In Game Menu!!! See InGameControllerImpl.cs vs. SettingsControllerImpl.cs
+		//if(settingsMenu.IsActive())
+			settingsController.RefreshText();
+		//if(mainMenu.IsActive())
+				menuController.RefreshText();
+		//if(inGameMenu.IsActive())
+			inGameController.RefreshText();
+//		if(howToPlayMenu.IsActive()) // todo add how to play
+		//			howToPlayController.RefreshText();
 	}
 }
