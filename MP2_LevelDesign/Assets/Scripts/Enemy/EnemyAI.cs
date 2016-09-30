@@ -4,7 +4,7 @@ using System.Collections;
 public class EnemyAI : MonoBehaviour {
 	public float roamRadius = 15.0f;
 	public float teleportRadius = 25f;
-	public float roamDistanceError = 0.2f;
+	public float roamDistanceError = 0.5f;
 	public float distanceForTeleport = 50f;
 	public float sphereRadius = 0.5f;       // radius around a point to check is is collision
     public float walkAwayDistance = 30f;
@@ -25,7 +25,6 @@ public class EnemyAI : MonoBehaviour {
 	void Update() {
 		switch ( enemy.GetState() ) {
 		case EnemyState.RandomWalk:
-			print("roaming " + enemy.GetPosition() + " target " + movingPosition);
 			FreeRoam(enemy.GetPosition(), roamRadius);
 			break;
 
@@ -37,7 +36,7 @@ public class EnemyAI : MonoBehaviour {
 
 		case EnemyState.ObstacleHit: //hit yellow bush
 			StartCoroutine(enemy.GetNavMesh().SlowDown());
-				// if it was chasing the girl it stops now
+			// if it was chasing the girl it stops now
 			enemy.SetState(EnemyState.RandomWalk);
 			FreeRoam(enemy.GetPosition(), roamRadius); 
 			teleport = false;
