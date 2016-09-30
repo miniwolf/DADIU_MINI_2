@@ -20,4 +20,8 @@ public class ItemFactory {
 	public void CreateBridge(Commandable bridge) {
 		bridge.AddCommand(new BridgeCommand(enemy));
 	}
+
+	public void CreateYellowBush(Commandable yellowBush) {
+		yellowBush.AddCommand(new YellowBushCommand(enemy));
+	}
 }
