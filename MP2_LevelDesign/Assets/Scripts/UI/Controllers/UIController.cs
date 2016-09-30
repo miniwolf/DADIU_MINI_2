@@ -43,7 +43,7 @@ public abstract class UIController : MonoBehaviour {
 	/// Don't use setActive method! You cannot find the object in the scene then
 	/// </summary>
 	virtual public void SetVisible() {
-		gameObject.transform.localScale = new Vector3(1, 1, 1);
+		gameObject.transform.localScale = new Vector3(0.9f, 1, 1);
 	}
 
 	virtual public void SetInvisible() {
