@@ -3,14 +3,12 @@ using System.Collections;
 
 public class DressCommand : ItemCommand {
 	private GameObject dress;
-	private Score score;
-	private ScoreController scoreController;
+	private Value score;
 	private Enemy enemy;
 
-	public DressCommand(Score score, ScoreController scoreController, Enemy enemy) {
+	public DressCommand(Value score, Enemy enemy) {
 		this.enemy = enemy;
 		this.score = score;
-		this.scoreController = scoreController;
 	}
 
 	/// <summary>
@@ -30,14 +28,13 @@ public class DressCommand : ItemCommand {
 	public void Execute(Collider other) {
 		if ( other.transform.tag == TagConstants.PLAYER ) {
 			dress.SetActive(false);
-			//updateScore();
+			updateScore();
 			enemy.SetState(EnemyState.Chasing);
-			enemy.GetNavMesh().SpeedUp();
+			//enemy.GetNavMesh().SpeedUp();
 		}
 	}
 
 	private void updateScore() {
 		score.IncrementValue();
-		scoreController.ShowPoints();
 	}
 }

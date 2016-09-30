@@ -2,8 +2,8 @@
 using System.Collections;
 using System;
 
-public class Score : Value {
-	private float score;
+public class Score : MonoBehaviour, Value {
+	private float score = 0;
 
 	public void DecrementValue() {
 		score--;
@@ -15,5 +15,9 @@ public class Score : Value {
 
 	public void IncrementValue() {
 		score++;
+		PlayerPrefs.SetFloat(PlayerPrefsConstants.MYSCORE, score);
+		if (PlayerPrefs.GetFloat(PlayerPrefsConstants.HIGHSCORE) < score) {
+			PlayerPrefs.SetFloat(PlayerPrefsConstants.HIGHSCORE, score);
+		}
 	}
 }
