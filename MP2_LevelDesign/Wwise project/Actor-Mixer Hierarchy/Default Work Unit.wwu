@@ -1414,7 +1414,13 @@
 					<ChildrenList>
 						<SwitchContainer Name="Footsteps" ID="{71BC011C-A5EC-4DE5-9153-D4EC0DA6D9A8}" ShortID="2544543">
 							<PropertyList>
+								<Property Name="DivergenceCenter" Type="int32">
+									<ValueList>
+										<Value>100</Value>
+									</ValueList>
+								</Property>
 								<Property Name="PositioningType" Type="int16" Value="1"/>
+								<Property Name="Spatialization" Type="bool" Value="False"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -1806,12 +1812,18 @@
 						</SwitchContainer>
 						<RandomSequenceContainer Name="Throwing" ID="{92D7EA33-DDD5-46C5-AD13-589C6A8BE78D}" ShortID="750989399">
 							<PropertyList>
+								<Property Name="DivergenceCenter" Type="int32">
+									<ValueList>
+										<Value>100</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Pitch" Type="int32">
 									<ValueList>
 										<Value>-200</Value>
 									</ValueList>
 								</Property>
 								<Property Name="PositioningType" Type="int16" Value="1"/>
+								<Property Name="Spatialization" Type="bool" Value="False"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -1905,6 +1917,11 @@
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Catching_auntie" ID="{3DB738C7-0BAA-418C-8AE8-C340FAD8C831}" ShortID="666126465">
 							<PropertyList>
+								<Property Name="DivergenceCenter" Type="int32">
+									<ValueList>
+										<Value>100</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Pitch" Type="int32">
 									<ValueList>
 										<Value>-200</Value>
@@ -1912,6 +1929,7 @@
 								</Property>
 								<Property Name="PositioningType" Type="int16" Value="1"/>
 								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+								<Property Name="Spatialization" Type="bool" Value="False"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -2106,12 +2124,18 @@
 						</Sound>
 						<RandomSequenceContainer Name="Troll_falling_longs" ID="{1AF0E5C6-731B-4147-9AFA-B8A6B5F8D811}" ShortID="410797459">
 							<PropertyList>
+								<Property Name="DivergenceCenter" Type="int32">
+									<ValueList>
+										<Value>100</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Pitch" Type="int32">
 									<ValueList>
 										<Value>-200</Value>
 									</ValueList>
 								</Property>
 								<Property Name="PositioningType" Type="int16" Value="1"/>
+								<Property Name="Spatialization" Type="bool" Value="False"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-7</Value>
@@ -2236,7 +2260,13 @@
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Troll_falling_shorts" ID="{AF3CBAB7-FAB0-4CBE-B477-30D668F30F51}" ShortID="656071102">
 							<PropertyList>
+								<Property Name="DivergenceCenter" Type="int32">
+									<ValueList>
+										<Value>100</Value>
+									</ValueList>
+								</Property>
 								<Property Name="PositioningType" Type="int16" Value="1"/>
+								<Property Name="Spatialization" Type="bool" Value="False"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-6</Value>
