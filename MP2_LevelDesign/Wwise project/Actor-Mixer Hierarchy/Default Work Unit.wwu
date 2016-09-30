@@ -86,7 +86,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -168,7 +168,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -200,7 +200,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -231,7 +231,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -254,7 +254,7 @@
 						<SwitchContainer Name="Footsteps" ID="{4187A11D-B99F-4349-88AA-494267B815C9}" ShortID="986250263">
 							<ReferenceList>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -530,6 +530,9 @@
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>footstep_branch_1.wav</AudioFile>
+															<ConvertedFileIDList>
+																<File ID="205310487"/>
+															</ConvertedFileIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
@@ -555,6 +558,9 @@
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>footstep_branch_2.wav</AudioFile>
+															<ConvertedFileIDList>
+																<File ID="548029858"/>
+															</ConvertedFileIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
@@ -583,6 +589,9 @@
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>footstep_branch_3.wav</AudioFile>
+															<ConvertedFileIDList>
+																<File ID="353118122"/>
+															</ConvertedFileIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
@@ -617,6 +626,9 @@
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>footstep_branch_4.wav</AudioFile>
+															<ConvertedFileIDList>
+																<File ID="238472842"/>
+															</ConvertedFileIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
@@ -648,6 +660,9 @@
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>footstep_branch_5.wav</AudioFile>
+															<ConvertedFileIDList>
+																<File ID="216424462"/>
+															</ConvertedFileIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
@@ -676,6 +691,9 @@
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>footstep_branch_6.wav</AudioFile>
+															<ConvertedFileIDList>
+																<File ID="897412089"/>
+															</ConvertedFileIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
@@ -881,7 +899,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -1047,7 +1065,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -1162,7 +1180,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -1297,7 +1315,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -1427,7 +1445,7 @@
 									<ObjectRef Name="troll" ID="{E81650FA-4FED-4263-9118-37C2E5A49D48}" WorkUnitID="{63DF6E17-55A9-467C-ACFF-5AAB3B339977}"/>
 								</Reference>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -1493,9 +1511,6 @@
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>footstep_branch_5.wav</AudioFile>
-															<ConvertedFileIDList>
-																<File ID="882369756"/>
-															</ConvertedFileIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
@@ -1524,9 +1539,6 @@
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>footstep_branch_6.wav</AudioFile>
-															<ConvertedFileIDList>
-																<File ID="964849120"/>
-															</ConvertedFileIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
@@ -1552,9 +1564,6 @@
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>footstep_branch_2.wav</AudioFile>
-															<ConvertedFileIDList>
-																<File ID="264189254"/>
-															</ConvertedFileIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
@@ -1583,9 +1592,6 @@
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>footstep_branch_3.wav</AudioFile>
-															<ConvertedFileIDList>
-																<File ID="786908410"/>
-															</ConvertedFileIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
@@ -1620,9 +1626,6 @@
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>footstep_branch_4.wav</AudioFile>
-															<ConvertedFileIDList>
-																<File ID="423969624"/>
-															</ConvertedFileIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
@@ -1682,9 +1685,6 @@
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>footstep_branch_1.wav</AudioFile>
-															<ConvertedFileIDList>
-																<File ID="17854566"/>
-															</ConvertedFileIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
@@ -1830,7 +1830,7 @@
 									<ObjectRef Name="troll" ID="{E81650FA-4FED-4263-9118-37C2E5A49D48}" WorkUnitID="{63DF6E17-55A9-467C-ACFF-5AAB3B339977}"/>
 								</Reference>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -1936,7 +1936,7 @@
 									<ObjectRef Name="troll" ID="{E81650FA-4FED-4263-9118-37C2E5A49D48}" WorkUnitID="{63DF6E17-55A9-467C-ACFF-5AAB3B339977}"/>
 								</Reference>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -2106,7 +2106,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -2147,7 +2147,7 @@
 									<ObjectRef Name="troll" ID="{E81650FA-4FED-4263-9118-37C2E5A49D48}" WorkUnitID="{63DF6E17-55A9-467C-ACFF-5AAB3B339977}"/>
 								</Reference>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -2278,7 +2278,7 @@
 									<ObjectRef Name="troll" ID="{E81650FA-4FED-4263-9118-37C2E5A49D48}" WorkUnitID="{63DF6E17-55A9-467C-ACFF-5AAB3B339977}"/>
 								</Reference>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -2385,7 +2385,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -2416,7 +2416,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -2442,7 +2442,7 @@
 						<RandomSequenceContainer Name="Clothes" ID="{0BA4A537-E94B-498A-81CF-A396A575507F}" ShortID="904004799">
 							<ReferenceList>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -2516,7 +2516,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -2551,7 +2551,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
