@@ -10,4 +10,6 @@ public abstract class InGameController : UIController {
 
 	abstract public void DecrementLife();
 	abstract public void DecrementScore();
+
+	abstract public float GetScore();
 }

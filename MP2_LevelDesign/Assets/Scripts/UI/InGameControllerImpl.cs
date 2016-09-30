@@ -9,12 +9,12 @@ public class InGameControllerImpl : InGameController {
 	private Text textLifeCounter;
 
 	private Player player;
-
+	private Score score =  new Score();
 	private Life life = new Life();
-	private Score score = new Score();
 
-	void OnStart() {
+	void OnStart(){
 		TagRegister.RegisterSingle(gameObject, TagConstants.SCORE);
+		print("hej");
 	}
 
 	public override void RefreshText() {
@@ -22,6 +22,7 @@ public class InGameControllerImpl : InGameController {
 		textRetry.text = TranslateApi.GetString(LocalizedString.ingameRetry);
 		textScoreCounter.text = TranslateApi.GetString(LocalizedString.ingameScore);
 		textLifeCounter.text = TranslateApi.GetString(LocalizedString.ingameLife);
+		UpdateLife();
 	}
 
 	public override void ResolveDependencies() {
@@ -29,6 +30,7 @@ public class InGameControllerImpl : InGameController {
 		textRetry = GetTextComponent(UIConstants.TEXT_RETRY);
 		textScoreCounter = GetTextComponent(UIConstants.TEXT_SCORE_COUNTER);
 		textLifeCounter = GetTextComponent(UIConstants.TEXT_LIFE_COUNTER);
+
 	}
 
 	public override void RetryLevel() {
@@ -40,14 +42,14 @@ public class InGameControllerImpl : InGameController {
 	}
 
 	private void UpdateLife() {
-		textLifeCounter.text = TranslateApi.GetString(LocalizedString.ingameScore) + life.GetValue();
+		textLifeCounter.text = TranslateApi.GetString(LocalizedString.ingameLife) + life.GetValue();
 	}
 
 	private void UpdateScore() {
 //		if (Input.GetKey(KeyCode.K)) {
 //			textScoreCounter.text = PlayerPrefs.GetFloat(PlayerPrefsConstants.HIGHSCORE).ToString();
 //		}
-		textScoreCounter.text = TranslateApi.GetString(LocalizedString.ingameLife) + score.GetValue();
+		textScoreCounter.text = TranslateApi.GetString(LocalizedString.ingameScore) + score.GetValue();
 	}
 
 	public override void IncrementLife() {
@@ -68,5 +70,9 @@ public class InGameControllerImpl : InGameController {
 	public override void DecrementScore() {
 		score.DecrementValue();
 		UpdateScore();
+	}
+
+	public override float GetScore() {
+		return score.GetValue();
 	}
 }
