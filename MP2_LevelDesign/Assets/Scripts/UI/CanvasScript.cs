@@ -10,17 +10,17 @@ public class CanvasScript : MonoBehaviour {
 
 	private GameStateManager gameStateManager;
 
-	private SettingsController settingsController;
-	private MenuController menuController;
-	private InGameController inGameController;
-	private HowToPlayController howToPlayController;
+	private UIController settingsController;
+	private UIController menuController;
+	private UIController inGameController;
+	private UIController howToPlayController;
 
 	void Awake() {
 		gameStateManager = GameObject.FindGameObjectWithTag(TagConstants.GAME_STATE).GetComponent<GameStateManager>();
 
-		settingsController = GameObject.FindGameObjectWithTag(UIConstants.SETTINGS_MENU).GetComponent<SettingsController>();
-		menuController = GameObject.FindGameObjectWithTag(UIConstants.MAIN_MENU).GetComponent<MenuController>();
-		inGameController = GameObject.FindGameObjectWithTag(UIConstants.IN_GAME_MENU).GetComponent<InGameController>();
+		settingsController = GameObject.FindGameObjectWithTag(UIConstants.SETTINGS_MENU).GetComponent<UIController>();
+		menuController = GameObject.FindGameObjectWithTag(UIConstants.MAIN_MENU).GetComponent<UIController>();
+		inGameController = GameObject.FindGameObjectWithTag(UIConstants.IN_GAME_MENU).GetComponent<UIController>();
 
 		ShowMainMenu();
 	}
