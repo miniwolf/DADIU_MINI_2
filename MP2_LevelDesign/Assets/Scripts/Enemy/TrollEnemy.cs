@@ -5,14 +5,8 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable {
 	private EnemyState state;
 	List<Controller> controllers = new List<Controller>();
 
-	public TrollEnemy() {
+	void Awake() {
 		InjectionRegister.Register(this);
-		
-		// set animation and sound controller
-	}
-
-	void Start() {
-		state = EnemyState.RandomWalk;
 		TagRegister.RegisterSingle(gameObject, TagConstants.ENEMY);
 	}
 
@@ -39,6 +33,7 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable {
 	}
 
 	public void SetupComponents() {
+		state = EnemyState.RandomWalk;
 	}
 
 	public EnemyState GetState() {
