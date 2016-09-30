@@ -15,7 +15,6 @@ public class InGameControllerImpl : UIController, InGameController {
 
 	void OnStart(){
 		TagRegister.RegisterSingle(gameObject, TagConstants.SCORE);
-		print("hej");
 	}
 
 	public override void RefreshText() {
@@ -31,7 +30,6 @@ public class InGameControllerImpl : UIController, InGameController {
 		textRetry = GetTextComponent(UIConstants.TEXT_RETRY);
 		textScoreCounter = GetTextComponent(UIConstants.TEXT_SCORE_COUNTER);
 		textLifeCounter = GetTextComponent(UIConstants.TEXT_LIFE_COUNTER);
-
 	}
 
 	public void RetryLevel() {

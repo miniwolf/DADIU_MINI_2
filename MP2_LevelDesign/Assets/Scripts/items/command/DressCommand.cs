@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class DressCommand : ItemCommand {
-	public int thresholdSpeedup = 100;
+	public int thresholdSpeedup = 5;
 	private GameObject dress;
 	private InGameController inGameController;
 	private Enemy enemy;
