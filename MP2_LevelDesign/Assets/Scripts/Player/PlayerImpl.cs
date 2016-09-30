@@ -8,7 +8,6 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	private LayerMask layerMask = 1 << LayerConstants.GroundLayer;
 
 	private PlayerState playerState;
-	private Life playerLife;
 	private List<Controller> controllers = new List<Controller>();
 
 	void Awake() {
@@ -49,10 +48,6 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 
 	public PlayerState GetState() {
 		return playerState;
-	}
-
-	public Life GetLife() {
-		return playerLife;
 	}
 
 	public string GetTag() {

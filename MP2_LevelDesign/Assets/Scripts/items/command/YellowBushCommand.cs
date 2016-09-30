@@ -3,7 +3,6 @@ using System.Collections;
 
 public class YellowBushCommand : ItemCommand {
 	private Enemy enemy;
-	private GameObject yellowBushObject;
 
 	public YellowBushCommand(Enemy enemy) {
 		this.enemy = enemy;
@@ -14,7 +13,6 @@ public class YellowBushCommand : ItemCommand {
 	/// </summary>
 	/// <param name="gameObject">Game object of the bridge</param>
 	public void Setup(GameObject gameObject) {
-		this.yellowBushObject = gameObject;
 	}
 
 	/// <summary>

@@ -2,7 +2,7 @@
 using System.Collections;
 using System;
 
-public class EndScreenImpl : EndScreenController {
+public class EndScreenImpl : UIController, EndScreenController {
 
 	public override void RefreshText() {
 		throw new NotImplementedException();
@@ -13,19 +13,19 @@ public class EndScreenImpl : EndScreenController {
 	}
 
 
-	public override void ShowFinalScore() {
+	public void ShowFinalScore() {
 		throw new NotImplementedException();
 	}
 
-	public override void ShowHighScore() {
+	public void ShowHighScore() {
 		throw new NotImplementedException();
 	}
 
-	public override void ShowFeedback() {
+	public void ShowFeedback() {
 		throw new NotImplementedException();
 	}
 
-	public override void ShowEatCakeTogetherAnimation() {
+	public void ShowEatCakeTogetherAnimation() {
 		throw new NotImplementedException();
 	}
 }

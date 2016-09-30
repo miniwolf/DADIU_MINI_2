@@ -43,7 +43,7 @@ public class DressCommand : ItemCommand {
 	/// Increases speed of troll every thresholdSpeedup points
 	/// </summary>
 	private void SpeedUp() {
-		if((int)inGameController.GetScore() % thresholdSpeedup == 0) {
+		if((int)inGameController.GetScoreValue() % thresholdSpeedup == 0) {
 			enemy.GetNavMesh().SpeedUp();
 		}
 	}

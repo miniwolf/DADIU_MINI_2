@@ -3,33 +3,33 @@ using System.Collections;
 using System;
 using UnityEngine.UI;
 
-public class MenuControllerImpl : MenuController {
+public class MenuControllerImpl : UIController, MenuController {
 
 	private Text textPlayGame;
 	private Text textSettings;
 	private Text textExitGame;
 	private Text textHowToPlay;
 
-	void OnDestroy () {
+	void OnDestroy() {
 		textPlayGame = textSettings = textExitGame = textHowToPlay = null;
 	}
 
-	public override  void ShowHowToPlay() {
+	public void ShowHowToPlay() {
 		canvas.ShowHowToPlayMenu();
 		gameStateManager.NewState(GameState.Paused);
 	}
 
-	public override  void ShowMainMenu() {
+	public void ShowMainMenu() {
 		canvas.ShowMainMenu();
 		gameStateManager.NewState(GameState.Paused);
 	}
 
-	public override  void ShowSettings() {
+	public void ShowSettings() {
 		canvas.ShowSettings();
 		gameStateManager.NewState(GameState.Paused);
 	}
 
-	public override void ShowPlayGame() {
+	public void ShowPlayGame() {
 		canvas.ShowPlayGame();
 		gameStateManager.NewState(GameState.Playing);
 	}
@@ -38,7 +38,6 @@ public class MenuControllerImpl : MenuController {
 		Application.Quit(); // Note: Needs testing for Android
 		Debug.Log("TEST ON TABLET");
 	}
-
 
 	public override void RefreshText() {
 		textPlayGame.text = TranslateApi.GetString(LocalizedString.mainPlayGame);
