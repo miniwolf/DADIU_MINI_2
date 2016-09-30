@@ -5,6 +5,7 @@ public class NavMeshController : Controller {
 	private NavMeshAgent agent;
 	public float slowdown = 1.5f;
 	public int slowdownTime = 3;
+	public float speedup = 1.5f;
 
 	public NavMeshController(NavMeshAgent agent) {
 		this.agent = agent;
@@ -35,5 +36,9 @@ public class NavMeshController : Controller {
 		yield return new WaitForSeconds(slowdownTime);
 
 		agent.speed += slowdown;
+	}
+
+	public void SpeedUp() {
+		agent.speed += speedup;
 	}
 }

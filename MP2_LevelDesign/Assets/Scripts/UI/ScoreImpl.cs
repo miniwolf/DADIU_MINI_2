@@ -1,13 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.UI;
 
 public class ScoreImpl : ScoreController {
 
 	private Player player;
+	private Text scoreText;
 	private Life life;
-	private Score score;
 
+	void Start() {
+		TagRegister.RegisterSingle(gameObject, TagConstants.SCORE);
+		scoreText = GetComponent<Text>();
+	}
 
 	public override void RefreshText() {
 		throw new NotImplementedException();
@@ -18,7 +23,10 @@ public class ScoreImpl : ScoreController {
 	}
 
 	public override void ShowPoints() {
-		throw new NotImplementedException();
+//		scoreText.text = "Dresses: " + GetValue().ToString();
+		if (Input.GetKey(KeyCode.K)) {
+			scoreText.text = PlayerPrefs.GetFloat(PlayerPrefsConstants.HIGHSCORE).ToString();
+		}
 	}
 
 	public override void ShowLife() {
@@ -31,8 +39,11 @@ public class ScoreImpl : ScoreController {
 		throw new NotImplementedException();
 	}
 
+	void Update() {
+		ShowPoints();
+	}
+
 	public override void UpdatePoints(int points) {
 		throw new NotImplementedException();
 	}
-
 }
