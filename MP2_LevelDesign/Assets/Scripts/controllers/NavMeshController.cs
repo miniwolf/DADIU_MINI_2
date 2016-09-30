@@ -23,14 +23,18 @@ public class NavMeshController : Controller {
 		}*/
 	}
 
-	/// <summary>
-	/// Stopping the agent from moving
-	/// </summary>
-	public void Idle() {
-		agent.Stop();
-	}
+    /// <summary>
+    /// Stopping the agent from moving
+    /// </summary>
+    public void Idle() {
+        agent.Stop();
+    }
 
-	public void HitObstacle(GameObject obstacle) {
+    public void Teleport(Vector3 position) {
+        agent.Warp(position);
+    }
+
+    public void HitObstacle(GameObject obstacle) {
 		
 	}
 	

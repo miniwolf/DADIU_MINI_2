@@ -3,8 +3,9 @@ using System.Collections;
 
 public class EnemyAI : MonoBehaviour, AI, GameEntity {
 	public float roamRadius = 15.0f;
-	public float teleportRadius = 25f;
-	public float roamDistanceError = 0.5f;
+    public float teleportRadius = 25f;
+    public float teleportRange = 5f;
+    public float roamDistanceError = 0.5f;
 	public float distanceForTeleport = 50f;
 	public float sphereRadius = 0.5f;       // radius around a point to check is is collision
 	public float walkAwayDistance = 30f;
@@ -16,11 +17,12 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 	private bool teleport;
 	private Vector3 movingPosition;
 
-	void Awake() {
-		InjectionRegister.Register(this);
-	}
+    void Awake() {
+        InjectionRegister.Register(this);
+        teleport = false;
+    }
 
-	public void SetupComponents() {
+    public void SetupComponents() {
 		movingPosition = enemy.GetPosition();
 	}
 
@@ -31,11 +33,13 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 		switch ( enemy.GetState() ) {
 			case EnemyState.RandomWalk:
 				FreeRoam(enemy.GetPosition(), roamRadius);
-				break;
+                teleport = false;
+                break;
 			case EnemyState.WalkAway:
 				enemy.SetState(EnemyState.RandomWalk);
 				FreeRoam(player.transform.position, 2 * walkAwayDistance, walkAwayDistance);
-				break;
+                teleport = false;
+                break;
 			case EnemyState.ObstacleHit: //hit yellow bush
 				StartCoroutine(enemy.GetNavMesh().SlowDown());
 				// if it was chasing the girl it stops now
@@ -44,7 +48,6 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 				teleport = false;
 				break;
 			case EnemyState.Chasing:
-				isRoaming = false;
 				Chaising();
 				break;
 			case EnemyState.GirlCaught:
@@ -62,14 +65,13 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
             enemy.GetNavMesh().Move(movingPosition);
 			isRoaming = true;
 		}
-        print(enemy.GetPosition() + " target " + movingPosition + " distance " + Vector3.Distance(enemy.GetPosition(), movingPosition));
 		//if the enemy is close enough to the end position we stop roaming
 		if ( Vector3.Distance(enemy.GetPosition(), movingPosition) < roamDistanceError ) {
 			isRoaming = false;
 		}
 	}
 
-    private Vector3 GenerateRandomPosition(Vector3 reference, float maxRadius, float minRadius, bool distanceToPlayer = false) {
+    private Vector3 GenerateRandomPosition(Vector3 reference, float maxRadius, float minRadius = 0) {
         Collider[] existingColliders;
         Vector3 generatedPosition = Vector3.zero;
         // If the new position is an object we choose another one 
@@ -85,8 +87,8 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
             if (existingColliders.Length != 0) {
                 continue;
             }
-            if (Distance(enemy.GetPosition(), (distanceToPlayer ? player.transform.position: generatedPosition)) > maxRadius 
-                || Distance(enemy.GetPosition(), (distanceToPlayer ? player.transform.position : generatedPosition)) < minRadius) {
+            if (Distance(reference, generatedPosition) > maxRadius 
+                || Distance(reference,  generatedPosition) < minRadius) {
                 continue;
             }
         }
@@ -107,10 +109,11 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
     private void Chaising() {
 		// check if the troll is far away when the girl picks up laundry for the first time
 		if ( !teleport ) {
-			if ( Distance(enemy.GetPosition(), player.transform.position) > distanceForTeleport ) {
-                Vector3 newPosition = GenerateRandomPosition(player.transform.position, teleportRadius, 0, true);
-				enemy.SetPosition(newPosition);
-			}
+            isRoaming = false;
+            if ( Distance(enemy.GetPosition(), player.transform.position) > distanceForTeleport ) {
+                Vector3 newPosition = GenerateRandomPosition(player.transform.position, teleportRadius + teleportRange, teleportRadius - teleportRange);
+                enemy.GetNavMesh().Teleport(newPosition);
+            }
 			teleport = true;
 		}
 			
