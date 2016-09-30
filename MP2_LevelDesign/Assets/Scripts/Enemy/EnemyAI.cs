@@ -6,8 +6,10 @@ public class EnemyAI : MonoBehaviour {
 	public float teleportRadius = 25f;
 	public float roamDistanceError = 0.2f;
 	public float distanceForTeleport = 50f;
-	public float sphereRadius = 0.5f;
-	static private int MAX_ITERATIONS = 10;
+	public float sphereRadius = 0.5f;       // radius around a point to check is is collision
+    public float walkAwayDistance = 30f;
+
+    static private int MAX_ITERATIONS = 30;
 	private Enemy enemy;
 	private GameObject player;
 	private bool isRoaming;
@@ -23,19 +25,21 @@ public class EnemyAI : MonoBehaviour {
 	void Update() {
 		switch ( enemy.GetState() ) {
 		case EnemyState.RandomWalk:
-			print("roaming");
-			FreeRoam();
+			print("roaming " + enemy.GetPosition() + " target " + movingPosition);
+			FreeRoam(enemy.GetPosition(), roamRadius);
 			break;
 
 		case EnemyState.WalkAway:
-			WalkAway();
+			print("walking away");
+            enemy.SetState(EnemyState.RandomWalk);
+			FreeRoam(player.transform.position, 2 * walkAwayDistance, walkAwayDistance);
 			break;
 
 		case EnemyState.ObstacleHit: //hit yellow bush
 			StartCoroutine(enemy.GetNavMesh().SlowDown());
 				// if it was chasing the girl it stops now
 			enemy.SetState(EnemyState.RandomWalk);
-			FreeRoam(); 
+			FreeRoam(enemy.GetPosition(), roamRadius); 
 			teleport = false;
 			break;
 
@@ -46,7 +50,8 @@ public class EnemyAI : MonoBehaviour {
 			break;
 
 		case EnemyState.GirlCaught:
-			teleport = false;
+                print("doing nothing");
+                teleport = false;
 				// call animation controller of enemy and caught girl that would change the state to WalkAway when it's finished
 				//enemy.GetAnimController().CatchGirl(enemy);
 			break;
@@ -55,28 +60,11 @@ public class EnemyAI : MonoBehaviour {
 	
 
 	// for now the random walk is just the position + (100,0,100)
-	private void WalkAway() {
-		enemy.GetNavMesh().Move(enemy.GetPosition() + new Vector3(10, 0, 10));
-	}
-
-	private void FreeRoam() {
+	
+	private void FreeRoam(Vector3 reference, float maxRadius, float minRadius = 0) {
 		if ( !isRoaming ) {
-			Collider[] existingColliders;
-			// If the new position is an object we choose another one 
-			// but only try to find a new one for MAX_ITERATIONS
-			for ( int i = 0; i < MAX_ITERATIONS; i++ ) { 
-				movingPosition = GetNextRandomPos(enemy.GetPosition(), roamRadius);
-				movingPosition.y = enemy.GetPosition().y;
-				existingColliders = Physics.OverlapSphere(movingPosition, sphereRadius);
-				// no colliders in the sphere means no object in that position
-				if ( existingColliders.Length != 0 ) {						
-					continue;
-				}
-				if ( Vector3.Distance(enemy.GetPosition(), movingPosition) > roamRadius ) {
-					continue;
-				}
-			}
-			enemy.GetNavMesh().Move(movingPosition);
+            movingPosition = GenerateRandomPosition(reference, maxRadius, minRadius);
+            enemy.GetNavMesh().Move(movingPosition);
 			isRoaming = true;
 		}
 
@@ -85,12 +73,30 @@ public class EnemyAI : MonoBehaviour {
 			isRoaming = false;
 		}
 	}
-
+    private Vector3 GenerateRandomPosition(Vector3 reference, float maxRadius, float minRadius) {
+        Collider[] existingColliders;
+        Vector3 generatedPosition = Vector3.zero;
+        // If the new position is an object we choose another one 
+        // but only try to find a new one for MAX_ITERATIONS
+        for (int i = 0; i < MAX_ITERATIONS; i++) {
+            generatedPosition = GetNextRandomPos(reference, maxRadius);
+            generatedPosition.y = reference.y;
+            existingColliders = Physics.OverlapSphere(generatedPosition, sphereRadius);
+            // no colliders in the sphere means no object in that position
+            if (existingColliders.Length != 0) {
+                continue;
+            }
+            if (Vector3.Distance(enemy.GetPosition(), generatedPosition) > maxRadius || Vector3.Distance(enemy.GetPosition(), generatedPosition) < minRadius) {
+                continue;
+            }
+        }
+        return generatedPosition;
+    }
 	private Vector3 GetNextRandomPos(Vector3 referencePosition, float radius) {
 		NavMeshHit hit;
 		Vector3 randomPoint = referencePosition + Random.insideUnitSphere * radius;
 		randomPoint.y = 0;
-		NavMesh.SamplePosition(randomPoint, out hit, 1, NavMesh.AllAreas);
+		NavMesh.SamplePosition(randomPoint, out hit, radius, NavMesh.AllAreas);
 		return hit.position;
 	}
 
