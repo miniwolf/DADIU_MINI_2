@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class HowToPlayControllerImpl : HowToPlayController {
+public class HowToPlayControllerImpl : UIController, HowToPlayController {
 	public override void RefreshText() {
 	
 	}

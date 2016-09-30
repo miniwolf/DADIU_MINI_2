@@ -4,10 +4,10 @@ using System.Collections;
 public class DressCommand : ItemCommand {
 	public int thresholdSpeedup = 100;
 	private GameObject dress;
-	private Value score;
+	private InGameController score;
 	private Enemy enemy;
 
-	public DressCommand(Value score, Enemy enemy) {
+	public DressCommand(InGameController score, Enemy enemy) {
 		this.enemy = enemy;
 		this.score = score;
 	}
@@ -36,14 +36,14 @@ public class DressCommand : ItemCommand {
 	}
 
 	private void updateScore() {
-		score.IncrementValue();
+		score.IncrementScore();
 	}
 
 	/// <summary>
 	/// Increases speed of troll every thresholdSpeedup points
 	/// </summary>
 	private void SpeedUp() {
-		if((int)score.GetValue() % thresholdSpeedup == 0) {
+		if((int)score.GetScoreValue() % thresholdSpeedup == 0) {
 			enemy.GetNavMesh().SpeedUp();
 		}
 	}

@@ -11,7 +11,7 @@ public class ItemFactory {
 	}
 
 	public void CreateDress(Commandable dress) {
-		//dress.AddCommand(new DressCommand(null, enemy)); // todo uncomment and connect to InGameController
+		dress.AddCommand(new DressCommand(inGameController, enemy));
 	}
 
 	public void CreateBridge(Commandable bridge) {

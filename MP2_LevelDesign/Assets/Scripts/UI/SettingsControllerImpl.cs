@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class SettingsControllerImpl : SettingsController {
+public class SettingsControllerImpl : UIController, SettingsController {
 
 	private Text textToggleSound;
 	private Text textLanguage;
@@ -12,7 +12,7 @@ public class SettingsControllerImpl : SettingsController {
 		textToggleSound = textLanguage = textReturnToMain = null;
 	}
 
-	public override void ToggleLanguage() {
+	public void ToggleLanguage() {
 
 		SupportedLanguage language = TranslateApi.GetCurrentLanguage();
 		if(language.Equals(SupportedLanguage.DEN)) {
@@ -25,7 +25,7 @@ public class SettingsControllerImpl : SettingsController {
 		canvas.OnLanguageChanged();
 	}
 
-	public override void ToggleSound() {
+	public void ToggleSound() {
 		// todo call sound controller
 	}
 
