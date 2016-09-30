@@ -1,55 +1,56 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyAI : MonoBehaviour {
+public class EnemyAI : MonoBehaviour, AI, GameEntity {
 	public float roamRadius = 15.0f;
 	public float teleportRadius = 25f;
 	public float roamDistanceError = 0.2f;
 	public float distanceForTeleport = 50f;
 	public float sphereRadius = 0.5f;
-	static private int MAX_ITERATIONS = 10;
+
+	private static int MAX_ITERATIONS = 10;
 	private Enemy enemy;
 	private GameObject player;
 	private bool isRoaming;
 	private bool teleport;
-	Vector3 movingPosition;
+	private Vector3 movingPosition;
 
-	void Start() {
-		player = GameObject.FindGameObjectWithTag(TagConstants.PLAYER);
-		enemy = GameObject.FindGameObjectWithTag(TagConstants.ENEMY).GetComponent<Enemy>();
+	void Awake() {
+		InjectionRegister.Register(this);
+	}
+
+	public void SetupComponents() {
 		movingPosition = enemy.GetPosition();
 	}
 
 	void Update() {
-		switch ( enemy.GetState() ) {
-		case EnemyState.RandomWalk:
-			print("roaming");
-			FreeRoam();
-			break;
-
-		case EnemyState.WalkAway:
-			WalkAway();
-			break;
-
-		case EnemyState.ObstacleHit: //hit yellow bush
-			StartCoroutine(enemy.GetNavMesh().SlowDown());
+		if ( enemy == null ) {
+			return;
+		}
+		switch (enemy.GetState()) {
+			case EnemyState.RandomWalk:
+				FreeRoam();
+				break;
+			case EnemyState.WalkAway:
+				WalkAway();
+				break;
+			case EnemyState.ObstacleHit: //hit yellow bush
+				StartCoroutine(enemy.GetNavMesh().SlowDown());
 				// if it was chasing the girl it stops now
-			enemy.SetState(EnemyState.RandomWalk);
-			FreeRoam(); 
-			teleport = false;
-			break;
+				enemy.SetState(EnemyState.RandomWalk);
+				FreeRoam(); 
+				teleport = false;
+				break;
+			case EnemyState.Chasing:
+				isRoaming = false;
+				Chaising();
+				break;
 
-		case EnemyState.Chasing:
-			print("chasing");
-			isRoaming = false;
-			Chaising();
-			break;
-
-		case EnemyState.GirlCaught:
-			teleport = false;
+			case EnemyState.GirlCaught:
+				teleport = false;
 				// call animation controller of enemy and caught girl that would change the state to WalkAway when it's finished
 				//enemy.GetAnimController().CatchGirl(enemy);
-			break;
+				break;
 		}
 	}
 	
@@ -119,5 +120,17 @@ public class EnemyAI : MonoBehaviour {
 		}
 			
 		enemy.GetNavMesh().Move(player.transform.position);
+	}
+
+	public void SetPlayer(GameObject player) {
+		this.player = player;
+	}
+
+	public void SetEnemy(Enemy enemy) {
+		this.enemy = enemy;
+	}
+
+	public string GetTag() {
+		return TagConstants.ENEMYAI;
 	}
 }

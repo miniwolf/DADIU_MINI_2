@@ -21,6 +21,11 @@ public class ControllableFactory {
 		enemyObj.GetComponentsInChildren<MovableCommandable>()[0].AddCommand(new ChaseCommand(enemyObj.GetComponent<Enemy>()));
 	}
 
+	public void CreateEnemyAI(AI ai) {
+		ai.SetPlayer(playerObj);
+		ai.SetEnemy(enemyObj.GetComponent<Enemy>());
+	}
+
 	private void CreateControllable(Controllable controllable, NavMeshAgent agent) {
 		if ( agent == null ) {
 			Debug.LogError("Game object '" + playerObj.name + "' is missing a navmesh agent");
