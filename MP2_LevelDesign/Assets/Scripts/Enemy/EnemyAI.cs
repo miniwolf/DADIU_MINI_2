@@ -72,7 +72,7 @@ public class EnemyAI : MonoBehaviour {
 			isRoaming = false;
 		}
 	}
-    private Vector3 GenerateRandomPosition(Vector3 reference, float maxRadius, float minRadius) {
+    private Vector3 GenerateRandomPosition(Vector3 reference, float maxRadius, float minRadius, bool distanceToPlayer = false) {
         Collider[] existingColliders;
         Vector3 generatedPosition = Vector3.zero;
         // If the new position is an object we choose another one 
@@ -85,7 +85,8 @@ public class EnemyAI : MonoBehaviour {
             if (existingColliders.Length != 0) {
                 continue;
             }
-            if (Vector3.Distance(enemy.GetPosition(), generatedPosition) > maxRadius || Vector3.Distance(enemy.GetPosition(), generatedPosition) < minRadius) {
+            if (Vector3.Distance(enemy.GetPosition(), (distanceToPlayer ? player.transform.position: generatedPosition)) > maxRadius 
+                || Vector3.Distance(enemy.GetPosition(), (distanceToPlayer ? player.transform.position : generatedPosition)) < minRadius) {
                 continue;
             }
         }
@@ -103,21 +104,7 @@ public class EnemyAI : MonoBehaviour {
 		// check if the troll is far away when the girl picks up laundry for the first time
 		if ( !teleport ) {
 			if ( Vector3.Distance(enemy.GetPosition(), player.transform.position) > distanceForTeleport ) {
-				Collider[] existingColliders;
-				Vector3 newPosition = Vector3.zero;
-				// If the new position is an object we choose another one 
-				// but only try to find a new one for MAX_ITERATIONS
-				for ( int i = 0; i < MAX_ITERATIONS; i++ ) { 
-					newPosition = GetNextRandomPos(player.transform.position, teleportRadius);
-					existingColliders = Physics.OverlapSphere(newPosition, sphereRadius);
-					// no colliders in the sphere means no object in that position
-					if ( existingColliders.Length != 0 ) {						
-						continue;
-					}
-					if ( Vector3.Distance(enemy.GetPosition(), player.transform.position) > teleportRadius ) {
-						continue;
-					}
-				}
+                Vector3 newPosition = GenerateRandomPosition(player.transform.position, teleportRadius, 0, true);
 				enemy.SetPosition(newPosition);
 			}
 			teleport = true;
