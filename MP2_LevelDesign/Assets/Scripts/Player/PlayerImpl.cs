@@ -6,6 +6,7 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	private Camera cam;
 	private Ray cameraToGround;
 	private LayerMask layerMask = 1 << LayerConstants.GroundLayer;
+    private Life life;
 
 	private PlayerState playerState;
 	private List<Controller> controllers = new List<Controller>();
@@ -20,32 +21,64 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	}
 
 	public void SetupComponents() {
-	}
+        life = new Life();
+        playerState = PlayerState.Running;
+    }
 		
 	void Update() {
-		foreach(Touch touch in Input.touches) {
-			cameraToGround = cam.ScreenPointToRay(touch.position);
-			if ( Physics.Raycast(cameraToGround,out hit,500f,layerMask.value) ) {
-				foreach ( Controller controller in controllers ) {
-					controller.Move(hit.point);
-				}
-			}
-		}
 
-		if ( Input.GetMouseButtonDown(1) ) {
-			cameraToGround = cam.ScreenPointToRay(Input.mousePosition);
-			if ( Physics.Raycast(cameraToGround, out hit,500f,layerMask.value) ) {
-				foreach ( Controller controller in controllers ) {
-					controller.Move(hit.point);
-				}
-			}
-		}
-	}
+        if (playerState == PlayerState.Running) {
+            foreach (Touch touch in Input.touches) {
+                cameraToGround = cam.ScreenPointToRay(touch.position);
+                if (Physics.Raycast(cameraToGround, out hit, 500f, layerMask.value)) {
+                    foreach (Controller controller in controllers) {
+                        controller.Move(hit.point);
+                    }
+                }
+            }
 
-	public void SetState(PlayerState newState) {
+            if (Input.GetMouseButtonDown(1)) {
+                cameraToGround = cam.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(cameraToGround, out hit, 500f, layerMask.value)) {
+                    foreach (Controller controller in controllers) {
+                        controller.Move(hit.point);
+                    }
+                }
+            }
+        }
+        else if (playerState == PlayerState.Idle) {
+            Stunned();  
+        }
+
+    }
+
+    public void SetState(PlayerState newState) {
 		playerState = newState;
 	}
+    public void Stunned() {
+        print(life.GetValue());
+        // Play animation & wait for trigger to change state back to Running
+        if (Input.GetKeyDown(KeyCode.R)) {
+            playerState = PlayerState.Running;
+            foreach (Controller controller in controllers) {
+                controller.Resume();
+            }
+        }
+    }
 
+    public void GetCaught() {
+        if (playerState != PlayerState.Idle) {
+            life.DecrementValue();
+        }
+        if (life.GetValue() > 0)
+            playerState = PlayerState.Idle;
+        else
+            playerState = PlayerState.Dead;
+
+        foreach (Controller controller in controllers) {
+            controller.Idle();
+        }
+    }
 	public PlayerState GetState() {
 		return playerState;
 	}
@@ -54,7 +87,11 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 		return TagConstants.PLAYER;
 	}
 
-	public void AddController(Controller controller) {
+    public Vector3 GetPosition() {
+        return this.transform.position;
+    }
+
+    public void AddController(Controller controller) {
 		controllers.Add(controller);
 	}
 }
