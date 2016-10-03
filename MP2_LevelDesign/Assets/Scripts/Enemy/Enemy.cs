@@ -24,6 +24,7 @@ public interface Enemy {
 	float GetSpeedUp();
 	void SetSpeedUp(float speedUp);
 	void SetDestination(Vector3 destination);
+	Vector3 GetDestination();
 
 	int GetThresholdSpeedup();
 

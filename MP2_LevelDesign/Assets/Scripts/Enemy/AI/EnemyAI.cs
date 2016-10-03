@@ -126,7 +126,7 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
     }
 
     private void GirlCaught() {
-		actionableEnemy.AddAction(Actions.STOP);
+		actionableEnemy.ExecuteAction(Actions.STOP);
     }
 
     public void SetPlayer(Player player) {
@@ -135,6 +135,10 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 
 	public void SetActionablePlayer(Actionable actionablePlayer) {
 		this.actionablePlayer = actionablePlayer;
+	}
+
+	public void SetActionableEnemy(Actionable actionableEnemy) {
+		this.actionableEnemy = actionableEnemy;
 	}
 
 	public void SetEnemy(Enemy enemy) {

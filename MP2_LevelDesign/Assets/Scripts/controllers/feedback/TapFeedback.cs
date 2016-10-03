@@ -8,11 +8,14 @@ public class TapFeedback : MoveAction {
 		this.tapFeedback = tapFeedback;
 	}
 
-	public override void Setup(GameObject component) {
+	public void Setup(GameObject component) {
 	}
 
-	public override void Execute(Vector3 pos) {
-		tapFeedback.transform.position = new Vector3(pos.x, pos.y + 0.1f, pos.z);
+	public void Execute() {
+	}
+
+	public void Execute(Vector3 pos) {
+		//tapFeedback.transform.position = new Vector3(pos.x, pos.y + 0.1f, pos.z);
 //			tapAnimator.Play("Scale", -1, 0f);
 	}
 }

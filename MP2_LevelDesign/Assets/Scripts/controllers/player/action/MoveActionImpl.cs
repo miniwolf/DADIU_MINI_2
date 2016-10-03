@@ -3,11 +3,15 @@
 public class MoveActionImpl : MoveAction {
 	private NavMeshAgent agent;
 
-	public override void Setup(GameObject obj) {
+	public void Setup(GameObject obj) {
 		agent = obj.GetComponent<NavMeshAgent>();
 	}
 
-	public override void Execute(Vector3 pos) {
+	public void Execute() {
+	}
+
+	public void Execute(Vector3 pos) {
 		agent.destination = pos;
+		agent.Resume();
 	}
 }

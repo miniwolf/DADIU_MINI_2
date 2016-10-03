@@ -14,6 +14,7 @@ public class TrollMove : Action {
 	}
 
 	public void Execute() {
-		agent.destination = troll.GetPosition();
+		agent.destination = troll.GetDestination();
+		agent.Resume();
 	}
 }

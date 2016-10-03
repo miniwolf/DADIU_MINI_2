@@ -29,6 +29,9 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Actionable {
 	}
 
 	public void SetupComponents() {
+		foreach ( Handler action in actions.Values ) {
+			action.SetupComponents(gameObject);
+		}
 	}
 
 	public EnemyState GetState() {
@@ -81,6 +84,10 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Actionable {
 
 	public void SetDestination(Vector3 destination) {
 		this.destination = destination;
+	}
+
+	public Vector3 GetDestination() {
+		return destination;
 	}
 
 	public int GetThresholdSpeedup() {
