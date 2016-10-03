@@ -29,37 +29,11 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	public void SetupComponents() {
 	}
 
-	void Update() {
-		foreach (Touch touch in Input.touches) {
-			cameraToGround = cam.ScreenPointToRay(touch.position);
-			if (Physics.Raycast(cameraToGround, out hit, 500f, layerMask.value)) {
-				foreach (Controller controller in controllers) {
-					controller.Move(hit.point);
-				}
-			}
-		}
-
-		// Mouse for debugging on a PC
-		if (Input.GetMouseButtonDown(1)) {
-			cameraToGround = cam.ScreenPointToRay(Input.mousePosition);
-			if (Physics.Raycast(cameraToGround, out hit, 500f, layerMask.value)) {
-				foreach (Controller controller in controllers) {
-					controller.Move(hit.point);
-					TapFeedback(hit);
-				}
-			}
-		}
-	}
-
 	private void TapFeedback(RaycastHit hit) {
 		tapFeedback.transform.position = hit.point;
 		rend.material.color = Color.green;
 	}
 
-	public void SetState(PlayerState newState) {
-		life = new Life();
-		playerState = PlayerState.Running;
-	}
 		
 	void Update() {
 		if (playerState == PlayerState.Running) {
