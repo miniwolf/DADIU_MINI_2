@@ -2,8 +2,8 @@
 using System.Collections;
 
 public interface MenuController {
+	void ShowPlayGame();
 	void ShowMainMenu();
-	void ShowTutorial();
 	void ShowHowToPlay();
 	void ShowSettings();
 }

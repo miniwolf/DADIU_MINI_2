@@ -4,7 +4,7 @@ using System;
 
 public class Life : Value {
 
-	private float life;
+	private float life = 3;
 
 	public void DecrementValue() {
 		life--;

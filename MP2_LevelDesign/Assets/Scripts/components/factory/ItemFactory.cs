@@ -3,18 +3,15 @@ using System.Collections.Generic;
 
 public class ItemFactory {
 	Enemy enemy;
-	ScoreController scoreController;
-	Value score;
+	InGameController inGameController;
 
 	public ItemFactory() {
-		score = GameObject.FindGameObjectWithTag(TagConstants.SCORE).GetComponent<Value>();
-
-		//scoreController = GameObject.FindGameObjectWithTag(TagConstants.SCORECONTROLLER).GetComponent<ScoreController>();
+		inGameController = GameObject.FindGameObjectWithTag(UIConstants.IN_GAME_MENU).GetComponent<InGameController>();
 		enemy = GameObject.FindGameObjectWithTag(TagConstants.ENEMY).GetComponent<Enemy>();
 	}
 
 	public void CreateDress(Commandable dress) {
-		dress.AddCommand(new DressCommand(score, enemy));
+		dress.AddCommand(new DressCommand(inGameController, enemy));
 	}
 
 	public void CreateBridge(Commandable bridge) {

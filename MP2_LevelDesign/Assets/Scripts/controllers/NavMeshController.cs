@@ -3,6 +3,7 @@ using System.Collections;
 
 public class NavMeshController : Controller {
 	private NavMeshAgent agent;
+	private NavMeshPath path = new NavMeshPath();
 	public float slowdown = 1.5f;
 	public int slowdownTime = 3;
 	public float speedup = 1.5f;
@@ -17,17 +18,23 @@ public class NavMeshController : Controller {
 	/// <param name="moveTo">Move to.</param>
 	public void Move(Vector3 moveTo) {
 		agent.SetDestination(moveTo);
-		agent.Resume();
+/*		if(agent.CalculatePath(moveTo,path)){
+			agent.SetPath(path);
+		}*/
 	}
 
-	/// <summary>
-	/// Stopping the agent from moving
-	/// </summary>
-	public void Idle() {
-		agent.Stop();
-	}
+    /// <summary>
+    /// Stopping the agent from moving
+    /// </summary>
+    public void Idle() {
+        agent.Stop();
+    }
 
-	public void HitObstacle(GameObject obstacle) {
+    public void Teleport(Vector3 position) {
+        agent.Warp(position);
+    }
+
+    public void HitObstacle(GameObject obstacle) {
 		
 	}
 	

@@ -8,6 +8,7 @@ public class TranslateApi {
 	private static SupportedLanguage languageLoaded = SupportedLanguage.ENG;
 	// todo if LocalizedString.Parse is slow, just change to plain strings and instead of translationLookupTable[key] call translationLookupTable[Key.toString()]
 	private static Dictionary<LocalizedString, string> translationLookupTable = new Dictionary<LocalizedString, string>();
+	private static TextAsset txtFile;
 
 	public static string GetString(LocalizedString key) {
 		lock(syncLock) {
@@ -27,7 +28,9 @@ public class TranslateApi {
 	}
 
 	private static void LoadLanguage(SupportedLanguage language)  {
-		string data = System.IO.File.ReadAllText("Assets/Resources/Translations/" + language.ToString().ToLower() + ".txt");
+		txtFile = (TextAsset)Resources.Load("Translations/" + language.ToString().ToLower(), typeof(TextAsset));
+
+		string data = txtFile.text;
 		string [] splits = data.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None); // Environment.NewLine
 
 		translationLookupTable.Clear();
@@ -46,6 +49,8 @@ public class TranslateApi {
 		languageLoaded = language;
 	}
 
-
+	public static SupportedLanguage GetCurrentLanguage() {
+		return languageLoaded;
+	}
 
 }
