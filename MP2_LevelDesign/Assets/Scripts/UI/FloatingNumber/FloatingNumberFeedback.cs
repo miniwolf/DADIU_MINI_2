@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class FloatingNumberFeedback : MonoBehaviour, Value {
+public class FloatingNumberFeedback : MonoBehaviour, FloatingNumberInterface, GameEntity {
 
 	private float dressesPickedUp = 0;
 	public float secondsUntilDisappear = 2.5f;
@@ -13,13 +13,17 @@ public class FloatingNumberFeedback : MonoBehaviour, Value {
 	private Camera cam;
 	private Vector3 playerPosOnScreen;
 	public float xOffset = 50f,yOffset = 20f;
-	// Use this for initialization
-	void Start () {
+	private InGameController inGameController;
+
+	void Awake(){
+		InjectionRegister.Register(this);
 		TagRegister.RegisterSingle(this.gameObject, TagConstants.FEEDBACKNUMBER);
+	}
+
+	void Start () {
 		text = GameObject.FindGameObjectWithTag(TagConstants.FEEDBACKNUMBER).GetComponent<Text>();
 		player = GameObject.FindGameObjectWithTag(TagConstants.PLAYER).GetComponent<Transform>();
 		cam = GameObject.FindGameObjectWithTag(TagConstants.CAMERA).GetComponent<Camera>();
-
 		gameObject.SetActive(false);
 	}
 	void Update(){
@@ -31,10 +35,7 @@ public class FloatingNumberFeedback : MonoBehaviour, Value {
 		dressesPickedUp++;
 		ShowNumber();
 	}
-
-	public void DecrementValue(){
-		dressesPickedUp--;
-	}
+		
 
 	public float GetValue(){
 		return dressesPickedUp;
@@ -44,7 +45,7 @@ public class FloatingNumberFeedback : MonoBehaviour, Value {
 		dressesPickedUp = 0f;
 	}
 		
-	private void ShowNumber(){
+	public void ShowNumber(){
 		if (displayNumberRunning) {
 			StopCoroutine(displayNumber);
 		}
@@ -57,7 +58,19 @@ public class FloatingNumberFeedback : MonoBehaviour, Value {
 		text.text = amount.ToString();
 		yield return new WaitForSeconds(secondsUntilDisappear);
 		gameObject.SetActive(false);
+		inGameController.UpdateScore();
 		ResetCurrDressCount();
 		displayNumberRunning = false;
+	}
+
+	public void SetInGameController(InGameController inGameController){
+		this.inGameController = inGameController;
+	}
+
+	public string GetTag(){
+		return TagConstants.FEEDBACKNUMBER;
+	}
+
+	public void SetupComponents(){
 	}
 }
