@@ -13,16 +13,25 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID AUNTIEFOOTSTEP = 3500283897U;
+        static const AkUniqueID AUNTIEFOOTSTEPS = 1747696776U;
+        static const AkUniqueID AUNTIELAUGH = 1454203074U;
+        static const AkUniqueID CONCRETE_TEST = 4278488131U;
         static const AkUniqueID DRESSPICKUP = 2867536338U;
         static const AkUniqueID MENUBACKWARDCLICK = 3139869105U;
         static const AkUniqueID MENUFORWARDCLICK = 4028748541U;
+        static const AkUniqueID PLAYFORESTSOUNDSCAPE = 1477059561U;
+        static const AkUniqueID PLAYLEVELMUSIC = 1148261388U;
+        static const AkUniqueID PLAYMENUMUSIC = 413545259U;
+        static const AkUniqueID STOPALLMUSIC = 2907867019U;
+        static const AkUniqueID STOPALLSOUNDSCAPES = 3284803258U;
         static const AkUniqueID STOPAUNTIEDRESSPICKUPVOICE = 1422264338U;
         static const AkUniqueID STOPAUNTIEFOOTSTEPS = 3527026064U;
+        static const AkUniqueID STOPMUSIC = 1917263390U;
         static const AkUniqueID STOPTROLLFOOTSTEPS = 1093813131U;
         static const AkUniqueID TROLLCATCHAUNTIE = 3227179805U;
         static const AkUniqueID TROLLFALLSINTOWATER = 1919802259U;
-        static const AkUniqueID TROLLFOOTSTEP = 835295888U;
+        static const AkUniqueID TROLLFOOTSTEPS = 4032712899U;
+        static const AkUniqueID TROLLTHROWSAUNTIE = 4228143387U;
     } // namespace EVENTS
 
     namespace GAME_PARAMETERS

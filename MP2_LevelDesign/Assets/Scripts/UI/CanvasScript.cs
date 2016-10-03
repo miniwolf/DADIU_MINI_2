@@ -32,7 +32,7 @@ public class CanvasScript : MonoBehaviour {
 
 		howToPlayMenu.gameObject.SetActive(false);
 
-		gameStateManager.NewState(GameState.Paused);
+		gameStateManager.NewState(new GameState.Paused());
 	}
 
 	public void ShowSettings() {
@@ -42,7 +42,7 @@ public class CanvasScript : MonoBehaviour {
 
 		howToPlayMenu.gameObject.SetActive(false);
 
-		gameStateManager.NewState(GameState.Paused);
+		gameStateManager.NewState(new GameState.Paused());
 	}
 
 	public void ShowPlayGame() {
@@ -52,7 +52,7 @@ public class CanvasScript : MonoBehaviour {
 
 		howToPlayMenu.gameObject.SetActive(false);
 
-		gameStateManager.NewState(GameState.Playing);
+		gameStateManager.NewState(new GameState.Playing());
 	}
 
 	public void ShowHowToPlayMenu() {
@@ -61,7 +61,7 @@ public class CanvasScript : MonoBehaviour {
 		inGameController.SetInvisible();
 		howToPlayMenu.gameObject.SetActive(true);
 
-		gameStateManager.NewState(GameState.Playing);
+		gameStateManager.NewState(new GameState.Paused());
 	}
 
 	public void ReturnToMainMenu() {
