@@ -23,12 +23,17 @@ public class ControllableFactory {
 		enemyObj = GameObject.FindGameObjectWithTag(TagConstants.ENEMY);
 		enemyAgent = enemyObj.GetComponent<NavMeshAgent>();
 		enemy = enemyObj.GetComponent<Enemy>();
+
+		gameObj = GameObject.FindGameObjectWithTag(TagConstants.GAME_STATE);
 	}
 
 	public void CreatePlayer(Actionable player) {
 		player.AddAction(Actions.MOVE, CreateMovementAuntie(player));
 		player.AddAction(Actions.STUN, CreateStun(player));
 		player.AddAction(Actions.CAUGHT, CreateCaught(player));
+
+		new LifeCommander(playerObj.GetComponent<Player>(), enemyObj.GetComponent<Enemy>(), gameObj.GetComponent<GameStateManager>(), inGameController)
+		playerObj.GetComponentsInChildren<MovableCommandable>()[0].AddCommand();
 	}
 
 	private Handler CreateCaught(Actionable actionable) {

@@ -100,7 +100,7 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 
 	private void TeleportToGirl() {
 		// check if the troll is far away when the girl picks up laundry for the first time
-		if ( Vector3.Distance(enemy.GetPosition(), player.GetPosition()) > distanceForTeleport ) {
+		if ( Distance(enemy.GetPosition(), player.GetPosition()) > distanceForTeleport ) {
 			Vector3 newPosition = GenerateRandomPosition(player.GetPosition(), teleportRadius + teleportRange, teleportRadius - teleportRange);
 			enemy.SetDestination(newPosition);
 			actionableEnemy.ExecuteAction(Actions.WARP);
@@ -109,21 +109,24 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 	}
 
     private void Chaising() {
+		isRoaming = false;
 		enemy.SetDestination(player.GetPosition());
 		actionableEnemy.ExecuteAction(Actions.MOVE);
 	}
 
-    private void CatchGirl() {
-        if (Vector3.Distance(enemy.GetPosition(), player.GetPosition()) < catchDistance) {
+	private void CatchGirl() {
+		if ( Distance(enemy.GetPosition(), player.GetPosition()) < catchDistance ) {
 			actionablePlayer.ExecuteAction(Actions.CAUGHT);
             enemy.SetState(EnemyState.GirlCaught);
         }
     }
 
+    private float Distance(Vector3 from, Vector3 to) {
+        return Mathf.Sqrt((from.x - to.x) * (from.x - to.x) + (from.z - to.z) * (from.z - to.z));
+    }
+
     private void GirlCaught() {
-        if (Input.GetKeyDown(KeyCode.R)) {
-            enemy.SetState(EnemyState.WalkAway);
-        }
+		actionableEnemy.AddAction(Actions.STOP);
     }
 
     public void SetPlayer(Player player) {

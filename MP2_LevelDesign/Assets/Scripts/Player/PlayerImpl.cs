@@ -4,6 +4,16 @@ using System.Collections.Generic;
 public class PlayerImpl : MonoBehaviour, Player, GameEntity, Actionable {
 	private PlayerState playerState = PlayerState.Running;
 	private Dictionary<Actions, Handler> actions = new Dictionary<Actions, Handler>();
+	private RaycastHit hit;
+	private Camera cam;
+	private Ray cameraToGround;
+	private LayerMask layerMask = 1 << LayerConstants.GroundLayer;
+
+	private GameObject tapFeedback;
+	private Color color;
+
+	private GameStateManager gameStateManager;
+	private Animator tapAnimator;
 
 	void Awake() {
 		InjectionRegister.Register(this);
@@ -26,9 +36,6 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Actionable {
 		}
 	}
 
-	public void SetupComponents() {
-	}
-
 	public void AddAction(Actions command, Handler action) {
 		actions.Add(command, action);
 	}
@@ -40,6 +47,12 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Actionable {
 	public void SetState(PlayerState newState) {
 		playerState = newState;
 	}
+
+    public void GetCaught() {
+        foreach (Controller controller in controllers) {
+            controller.Idle();
+        }
+    }
 
 	public PlayerState GetState() {
 		return playerState;
