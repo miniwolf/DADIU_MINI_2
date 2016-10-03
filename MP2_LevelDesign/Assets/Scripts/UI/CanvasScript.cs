@@ -25,6 +25,12 @@ public class CanvasScript : MonoBehaviour {
 		ShowMainMenu();
 	}
 
+	void Update(){
+		if (Input.GetKey(KeyCode.K)) {
+			GameEnded();
+		}
+	}
+
 	public void ShowMainMenu() {
 		menuController.SetVisible();
 		settingsController.SetInvisible();
@@ -73,5 +79,9 @@ public class CanvasScript : MonoBehaviour {
 		menuController.RefreshText();
 		inGameController.RefreshText();
 		// todo on how to play menu
+	}
+
+	public void GameEnded() {
+		gameStateManager.NewState(new GameState.Ended());
 	}
 }
