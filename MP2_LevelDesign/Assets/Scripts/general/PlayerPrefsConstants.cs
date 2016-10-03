@@ -2,6 +2,6 @@
 /// Constants 
 /// </summary>
 public class PlayerPrefsConstants {
-	public const string HIGHSCORE = "highScore";
-	public const string MYSCORE = "myScore";
+	public const string HIGHSCORE = "HIGHSCORE";
+	public const string MYSCORE = "CURRENTSCORE";
 }

@@ -69,6 +69,7 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
         Vector3 generatedPosition = Vector3.zero;
         // If the new position is an object we choose another one 
         // but only try to find a new one for MAX_ITERATIONS
+		int i = 0;
 		do {
 			generatedPosition = GetNextRandomPos(reference, maxRadius);
 			if ( Vector3.Distance(enemy.GetPosition(), generatedPosition) == Mathf.Infinity ) {
@@ -77,6 +78,10 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 
 			generatedPosition.y = reference.y;
 			existingColliders = Physics.OverlapSphere(generatedPosition, sphereRadius);
+			if ( i > 300 ) {
+				break;
+			}
+			i++;
 		} while ( existingColliders.Length != 0
 		          || Vector3.Distance(reference, generatedPosition) > maxRadius
 		          || Vector3.Distance(reference, generatedPosition) < minRadius );
