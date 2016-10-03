@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Android" BasePlatform="Android" SchemaVersion="11" SoundbankVersion="118">
 	<RootPaths>
-		<ProjectRoot>C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Android\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\GeneratedSoundBanks\Android\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Android\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\GeneratedSoundBanks\Android\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\GeneratedSoundBanks\Android\</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\GeneratedSoundBanks\Android\</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -21,24 +21,24 @@
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>Main_Soundbank.bnk</Path>
 			<IncludedEvents>
-				<Event Id="3500283897" Name="auntieFootstep" ObjectPath="\Events\Default Work Unit\auntieFootstep"/>
+				<Event Id="1747696776" Name="auntieFootsteps" ObjectPath="\Events\Default Work Unit\auntieFootsteps"/>
 				<Event Id="1454203074" Name="auntieLaugh" ObjectPath="\Events\Default Work Unit\auntieLaugh"/>
 				<Event Id="4278488131" Name="concrete_test" ObjectPath="\Events\Default Work Unit\concrete_test"/>
 				<Event Id="2867536338" Name="dressPickup" ObjectPath="\Events\Default Work Unit\dressPickup"/>
 				<Event Id="3139869105" Name="menuBackwardClick" ObjectPath="\Events\Default Work Unit\menuBackwardClick"/>
 				<Event Id="4028748541" Name="menuForwardClick" ObjectPath="\Events\Default Work Unit\menuForwardClick"/>
 				<Event Id="1477059561" Name="playForestSoundscape" ObjectPath="\Events\Default Work Unit\playForestSoundscape"/>
+				<Event Id="1148261388" Name="playLevelMusic" ObjectPath="\Events\Default Work Unit\musicEvents\playLevelMusic" MaxAttenuation="50.000000"/>
 				<Event Id="413545259" Name="playMenuMusic" ObjectPath="\Events\Default Work Unit\musicEvents\playMenuMusic"/>
 				<Event Id="2907867019" Name="stopAllMusic" ObjectPath="\Events\Default Work Unit\musicEvents\stopAllMusic" MaxAttenuation="0.000000"/>
 				<Event Id="3284803258" Name="stopAllSoundscapes" ObjectPath="\Events\Default Work Unit\stopEvents\stopAllSoundscapes" MaxAttenuation="0.000000"/>
 				<Event Id="1422264338" Name="stopAuntieDressPickupVoice" ObjectPath="\Events\Default Work Unit\stopEvents\stopAuntieDressPickupVoice" MaxAttenuation="0.000000"/>
 				<Event Id="3527026064" Name="stopAuntieFootsteps" ObjectPath="\Events\Default Work Unit\stopEvents\stopAuntieFootsteps" MaxAttenuation="0.000000"/>
-				<Event Id="1973898857" Name="stopMenuMusic" ObjectPath="\Events\Default Work Unit\musicEvents\stopMenuMusic" MaxAttenuation="0.000000"/>
 				<Event Id="1917263390" Name="stopMusic" ObjectPath="\Events\Default Work Unit\stopEvents\stopMusic" MaxAttenuation="0.000000"/>
 				<Event Id="1093813131" Name="stopTrollFootsteps" ObjectPath="\Events\Default Work Unit\stopEvents\stopTrollFootsteps" MaxAttenuation="0.000000"/>
 				<Event Id="3227179805" Name="trollCatchAuntie" ObjectPath="\Events\Default Work Unit\trollCatchAuntie"/>
 				<Event Id="1919802259" Name="trollFallsIntoWater" ObjectPath="\Events\Default Work Unit\trollFallsIntoWater"/>
-				<Event Id="835295888" Name="trollFootstep" ObjectPath="\Events\Default Work Unit\trollFootstep" MaxAttenuation="50.000000"/>
+				<Event Id="4032712899" Name="trollFootsteps" ObjectPath="\Events\Default Work Unit\trollFootsteps" MaxAttenuation="50.000000"/>
 				<Event Id="4228143387" Name="trollThrowsAuntie" ObjectPath="\Events\Default Work Unit\trollThrowsAuntie"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
@@ -73,6 +73,10 @@
 				<File Id="205310487" Language="SFX">
 					<ShortName>footstep_branch_1.wav</ShortName>
 					<Path>SFX\footstep_branch_1_414C7702.wem</Path>
+				</File>
+				<File Id="208407703" Language="SFX">
+					<ShortName>music_notroll_comp.wav</ShortName>
+					<Path>SFX\music_notroll_comp_37B59102.wem</Path>
 				</File>
 				<File Id="216424462" Language="SFX">
 					<ShortName>footstep_branch_5.wav</ShortName>
@@ -110,10 +114,6 @@
 					<ShortName>Troll_falling_short_1.wav</ShortName>
 					<Path>SFX\Troll_falling_short_1_2C147F71.wem</Path>
 				</File>
-				<File Id="386831373" Language="SFX">
-					<ShortName>Troll_catching_auntie_1.wav</ShortName>
-					<Path>SFX\Troll_catching_auntie_1_CDFE0F68.wem</Path>
-				</File>
 				<File Id="422205118" Language="SFX">
 					<ShortName>Yubii.wav</ShortName>
 					<Path>SFX\Yubii_4A89DC03.wem</Path>
@@ -128,7 +128,7 @@
 				</File>
 				<File Id="485177666" Language="SFX">
 					<ShortName>music_menu_comp.wav</ShortName>
-					<Path>SFX\music_menu_comp_CDFE0F68.wem</Path>
+					<Path>SFX\music_menu_comp_37B59102.wem</Path>
 				</File>
 				<File Id="548029858" Language="SFX">
 					<ShortName>footstep_branch_2.wav</ShortName>
@@ -141,6 +141,10 @@
 				<File Id="617219006" Language="SFX">
 					<ShortName>footstep_3.wav</ShortName>
 					<Path>SFX\footstep_3_CDFE0F68.wem</Path>
+				</File>
+				<File Id="641037458" Language="SFX">
+					<ShortName>music_troll_comp_2.wav</ShortName>
+					<Path>SFX\music_troll_comp_2_37B59102.wem</Path>
 				</File>
 				<File Id="662664710" Language="SFX">
 					<ShortName>forest_ambience_loop.wav</ShortName>
