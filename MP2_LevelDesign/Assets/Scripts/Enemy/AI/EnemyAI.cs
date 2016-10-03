@@ -105,7 +105,8 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 	}
 
     private void Chaising() {
-		controllableEnemy.MoveTo(player.GetPosition());
+        isRoaming = false;
+        controllableEnemy.MoveTo(player.GetPosition());
 	}
 
     private void CatchGirl() {
@@ -121,8 +122,8 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
     private void GirlCaught() {
         enemy.Idle();
         if (Input.GetKeyDown(KeyCode.R)) {
-            enemy.SetState(EnemyState.WalkAway);
             enemy.Resume();
+            enemy.SetState(EnemyState.WalkAway);
         }
     }
 
