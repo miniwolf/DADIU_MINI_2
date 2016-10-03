@@ -2,15 +2,16 @@
 using System.Collections;
 
 public class DressCommand : ItemCommand {
-	private int thresholdSpeedup;
+	private int thresholdSpeedup, thresholdChase;
 	private GameObject dress;
 	private InGameController inGameController;
 	private Enemy enemy;
 
-	public DressCommand(InGameController inGameController, Enemy enemy, int thresholdSpeedUp) {
+	public DressCommand(InGameController inGameController, Enemy enemy, int thresholdSpeedUp, int thresholdChase) {
 		this.enemy = enemy;
 		this.inGameController = inGameController;
 		this.thresholdSpeedup = thresholdSpeedUp;
+		this.thresholdChase = thresholdChase;
 	}
 
 	/// <summary>
@@ -47,8 +48,10 @@ public class DressCommand : ItemCommand {
 	/// </summary>
 	void SpeedUpTroll() {
 		if ((int)inGameController.GetScoreValue() % thresholdSpeedup == 0) {
-			enemy.SetState(EnemyState.CatchGirl);
 			enemy.SpeedUp();
+		}
+		if ((int)inGameController.GetScoreValue() % thresholdChase == 0) {
+			enemy.SetState(EnemyState.CatchGirl);
 		}
 	}
 }
