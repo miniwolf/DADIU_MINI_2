@@ -56,11 +56,21 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 		playerState = newState;
 	}
     public void Stunned() {
+        print(life.GetValue());
         // Play animation & wait for trigger to change state back to Running
+        if (Input.GetKeyDown(KeyCode.R)) {
+            playerState = PlayerState.Running;
+            foreach (Controller controller in controllers) {
+                controller.Resume();
+            }
+        }
     }
+
     public void GetCaught() {
-        life.DecrementValue();
-        if(life.GetValue() > 0)
+        if (playerState != PlayerState.Idle) {
+            life.DecrementValue();
+        }
+        if (life.GetValue() > 0)
             playerState = PlayerState.Idle;
         else
             playerState = PlayerState.Dead;
