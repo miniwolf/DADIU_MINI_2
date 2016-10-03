@@ -12,4 +12,10 @@ public class GameState {
 			Time.timeScale = 0.0f;
 		}
 	}
+
+	public class End : GameStates {
+		public void Execute() {
+			Application.LoadLevel("EndScene");
+		}
+	}
 }
