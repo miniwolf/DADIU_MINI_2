@@ -22,14 +22,24 @@ public interface Enemy {
 	/// </summary>
 	void SlowDown();
 
-	/// <summary>
-	/// Teleports the enemy to a position
-	/// </summary>
-	/// <param name="newPosition">Position to be teleported to</param>
-	void Warp(Vector3 newPosition);
+    /// <summary>
+    /// Teleports the enemy to a position
+    /// </summary>
+    /// <param name="newPosition">Position to be teleported to</param>
+    void Warp(Vector3 newPosition);
+    
+    /// <summary>
+    /// Stops the enemy movment.
+    /// </summary>
+    void Idle();
 
-	/// <summary>
-	/// Speeds up the troll
-	/// </summary>
-	void SpeedUp();
+    /// <summary>
+    /// Resumes the enemy movment.
+    /// </summary>
+    void Resume();
+
+    /// <summary>
+    /// Speeds up the troll
+    /// </summary>
+    void SpeedUp();
 }

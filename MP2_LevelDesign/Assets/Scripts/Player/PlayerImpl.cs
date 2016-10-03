@@ -6,7 +6,6 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	private Camera cam;
 	private Ray cameraToGround;
 	private LayerMask layerMask = 1 << LayerConstants.GroundLayer;
-	private Life life;
 
 	private GameObject tapFeedback;
 	private Renderer rend;
@@ -29,10 +28,8 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	}
 
 	public void SetupComponents() {
-		life = new Life();
-		playerState = PlayerState.Running;
-	}
-
+        playerState = PlayerState.Running;
+    }
 	void Update() {
 		if (playerState == PlayerState.Running) {
 			foreach (Touch touch in Input.touches) {
@@ -64,34 +61,21 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	public void SetState(PlayerState newState) {
 		playerState = newState;
 	}
+    public void Stunned() {
+        // Play animation & wait for trigger to change state back to Running
+        if (Input.GetKeyDown(KeyCode.R)) {
+            playerState = PlayerState.Running;
+            foreach (Controller controller in controllers) {
+                controller.Resume();
+            }
+        }
+    }
 
-	public void Stunned() {
-		// Play animation & wait for trigger to change state back to Running
-		if (Input.GetKeyDown(KeyCode.R)) {
-			playerState = PlayerState.Running;
-			foreach (Controller controller in controllers) {
-				controller.Resume();
-			}
-		}
-	}
-
-	public void GetCaught() {
-		if (playerState != PlayerState.Idle) {
-			life.DecrementValue();
-		}
-		if (life.GetValue() > 0)
-			playerState = PlayerState.Idle;
-		else {
-			playerState = PlayerState.Dead;
-			gameStateManager.NewState(new GameState.End());
-		}
-			
-
-
-		foreach (Controller controller in controllers) {
-			controller.Idle();
-		}
-	}
+    public void GetCaught() {
+        foreach (Controller controller in controllers) {
+            controller.Idle();
+        }
+    }
 
 	public PlayerState GetState() {
 		return playerState;
