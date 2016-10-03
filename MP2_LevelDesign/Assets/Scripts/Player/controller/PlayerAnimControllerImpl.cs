@@ -13,10 +13,13 @@ public class PlayerAnimControllerImpl : PlayerAnimController {
 	}
 
 	public void Idle() {
-	
-	}
 
-	public void Move(Vector3 moveTo) {
+    }
+    public void Resume() {
+
+    }
+
+    public void Move(Vector3 moveTo) {
 	
 	}
 

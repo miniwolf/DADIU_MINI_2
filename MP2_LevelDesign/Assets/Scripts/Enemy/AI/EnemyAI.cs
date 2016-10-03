@@ -8,7 +8,7 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
     public float roamDistanceError = 0.5f;
     public float distanceForTeleport = 50f;
     public float catchDistance = 5f;
-    public float sphereRadius = 0.5f;       // radius around a point to check is is collision
+    public float sphereRadius = 10f;       // radius around a point to check is is collision
 	public float walkAwayDistance = 30f;
 
 	private static int MAX_ITERATIONS = 30;
@@ -53,7 +53,7 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 				break;
 			case EnemyState.GirlCaught:
 				teleport = false;
-
+                GirlCaught();
 				// call animation controller of enemy and caught girl that would change the state to WalkAway when it's finished
 				//enemy.GetAnimController().CatchGirl(enemy);
 				break;
@@ -126,6 +126,12 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
         if (Distance(enemy.GetPosition(), player.GetPosition()) < catchDistance) {
             player.GetCaught();
             enemy.SetState(EnemyState.GirlCaught);
+        }
+    }
+
+    private void GirlCaught() {
+        if (Input.GetKeyDown(KeyCode.R)) {
+            enemy.SetState(EnemyState.WalkAway);
         }
     }
 

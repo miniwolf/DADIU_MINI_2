@@ -10,14 +10,17 @@ public interface Controller {
 	/// <param name="moveTo">Vector3 we move to</param>
 	void Move(Vector3 moveTo);
 
-	/// <summary>
-	/// Called when the state has changed to idle
-	/// </summary>
-	void Idle();
+    /// <summary>
+    /// Called when the state has changed to idle
+    /// </summary>
+    void Idle();
 
-	/// <summary>
-	/// Hits the obstacle.
-	/// </summary>
-	/// <param name="obstacle">Obstacle.</param>
-	void HitObstacle(GameObject obstacle);
+
+    void Resume();
+
+    /// <summary>
+    /// Hits the obstacle.
+    /// </summary>
+    /// <param name="obstacle">Obstacle.</param>
+    void HitObstacle(GameObject obstacle);
 }
