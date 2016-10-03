@@ -57,6 +57,8 @@ public class InjectionRegister : MonoBehaviour {
 			case TagConstants.FEEDBACKNUMBER:
 				itemFactory.CreateFloatingNumberFeedback();
 				break;
+			default:
+				Debug.LogError("Missing implementation for component: '" + component.GetTag() + "' inside InjectionRegister");
 		}
 	}
 }

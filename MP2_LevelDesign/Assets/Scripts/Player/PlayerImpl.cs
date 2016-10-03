@@ -30,18 +30,14 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
             foreach (Touch touch in Input.touches) {
                 cameraToGround = cam.ScreenPointToRay(touch.position);
                 if (Physics.Raycast(cameraToGround, out hit, 500f, layerMask.value)) {
-                    foreach (Controller controller in controllers) {
-                        controller.Move(hit.point);
-                    }
+					MoveTo(hit.point);
                 }
             }
 
             if (Input.GetMouseButtonDown(1)) {
                 cameraToGround = cam.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(cameraToGround, out hit, 500f, layerMask.value)) {
-                    foreach (Controller controller in controllers) {
-                        controller.Move(hit.point);
-                    }
+					MoveTo(hit.point);
                 }
             }
         } else if (playerState == PlayerState.Idle) {
@@ -52,6 +48,7 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
     public void SetState(PlayerState newState) {
 		playerState = newState;
 	}
+
     public void Stunned() {
         // Play animation & wait for trigger to change state back to Running
         if (Input.GetKeyDown(KeyCode.R)) {
@@ -75,6 +72,7 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
             controller.Idle();
         }
     }
+
 	public PlayerState GetState() {
 		return playerState;
 	}
@@ -89,5 +87,11 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 
     public void AddController(Controller controller) {
 		controllers.Add(controller);
+	}
+
+	public void MoveTo(Vector3 position) {
+		foreach ( Controller controller in controllers ) {
+			controller.Move(position);
+		}
 	}
 }
