@@ -2,14 +2,17 @@
 using System.Collections;
 
 public class DressCommand : ItemCommand {
-	public int thresholdSpeedup = 5;
+	private int thresholdSpeedup;
 	private GameObject dress;
 	private InGameController inGameController;
 	private Enemy enemy;
+	private Value feedBackNumber;
 
-	public DressCommand(InGameController inGameController, Enemy enemy) {
+	public DressCommand(InGameController inGameController, Enemy enemy,Value feedBackNumber, int thresholdSpeedUp) {
 		this.enemy = enemy;
 		this.inGameController = inGameController;
+		this.feedBackNumber = feedBackNumber;
+		this.thresholdSpeedup = thresholdSpeedUp;
 	}
 
 	/// <summary>
@@ -30,13 +33,13 @@ public class DressCommand : ItemCommand {
 		if ( other.transform.tag == TagConstants.PLAYER ) {
 			dress.SetActive(false);
 			updateScore();
-			enemy.SetState(EnemyState.Chasing);
 			SpeedUp();
 		}
 	}
 
 	private void updateScore() {
 		inGameController.IncrementScore();
+		feedBackNumber.IncrementValue();
 	}
 
 	/// <summary>
@@ -44,6 +47,7 @@ public class DressCommand : ItemCommand {
 	/// </summary>
 	private void SpeedUp() {
 		if((int)inGameController.GetScoreValue() % thresholdSpeedup == 0) {
+			enemy.SetState(EnemyState.Chasing);
 			enemy.GetNavMesh().SpeedUp();
 		}
 	}

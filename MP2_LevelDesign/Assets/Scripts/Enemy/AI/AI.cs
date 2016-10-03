@@ -1,6 +1,6 @@
 using UnityEngine;
 
 public interface AI {
-	void SetPlayer(GameObject playerObj);
+	void SetPlayer(Player playerObj);
 	void SetEnemy(Enemy enemy);
 }
