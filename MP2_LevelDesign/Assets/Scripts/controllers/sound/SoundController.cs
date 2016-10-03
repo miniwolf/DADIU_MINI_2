@@ -1,5 +1,2 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public interface SoundController : Controller {
+﻿public interface SoundController : Controller {
 }

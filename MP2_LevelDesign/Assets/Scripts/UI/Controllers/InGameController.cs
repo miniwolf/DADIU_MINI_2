@@ -13,4 +13,8 @@ public interface InGameController {
 
 	float GetScoreValue();
     float GetLifeValue();
+
+	void UpdateScore ();
+
+	void SetFeedback (FloatingNumberInterface floatingNumberFeedback);
 }
