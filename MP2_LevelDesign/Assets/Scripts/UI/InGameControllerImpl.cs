@@ -57,6 +57,10 @@ public class InGameControllerImpl : UIController, InGameController {
 
 	public void IncrementScore() {
 		score.IncrementValue();
+		PlayerPrefs.SetFloat(PlayerPrefsConstants.MYSCORE, score.GetValue());
+		if (score.GetValue() > PlayerPrefs.GetFloat(PlayerPrefsConstants.HIGHSCORE)) {
+			PlayerPrefs.SetFloat(PlayerPrefsConstants.HIGHSCORE, score.GetValue());
+		}
 		feedBackNumber.IncrementValue();
 	}
 
