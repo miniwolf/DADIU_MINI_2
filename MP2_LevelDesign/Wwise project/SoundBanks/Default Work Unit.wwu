@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{2E1B4507-CFD6-4913-BA7B-5BF884AAA2BE}" SchemaVersion="72">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{2E1B4507-CFD6-4913-BA7B-5BF884AAA2BE}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Main_Soundbank" ID="{8E3A34D1-ECD0-4B6A-8D7D-C7DBA6833F71}">
+					<ObjectInclusionList>
+						<ObjectRef Name="trollFallsIntoWater" ID="{A75FD346-D57D-4280-BEF5-B91F51B9409C}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="stopAuntieFootsteps" ID="{90D1E0FE-9FDC-42BA-A3F3-8FC7A251B0D4}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="trollCatchAuntie" ID="{0735D53C-9CC2-4308-A8E3-E292CC2B79EC}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="stopAuntieDressPickupVoice" ID="{17A2992E-0D4E-470B-9323-1B1C2F706037}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="trollFootstep" ID="{441AE6FC-175B-4732-8E96-E0C78F786837}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="menuBackwardClick" ID="{9AE2FF85-5998-48DF-9A7A-7424F7DB6C49}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="auntieFootstep" ID="{44ADE32D-FF22-4AA3-AA3B-69D4D9B78B3D}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="stopTrollFootsteps" ID="{558F8B5A-3A3D-4CD2-9BC2-C87C7A501F20}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="dressPickup" ID="{1D2FB92B-7CF8-4ED3-877A-F3B524A11323}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="menuForwardClick" ID="{E5ED313F-A92A-4FA0-B6B0-70228321DC6F}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>
