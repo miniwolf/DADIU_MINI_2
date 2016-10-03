@@ -6,5 +6,5 @@ public interface GameStateManager {
 	/// Assign a new game state specified in {@link GameState}
 	/// </summary>
 	/// <param name="newState">New game state.</param>
-	void NewState(GameState newState);
+	void NewState(GameStates newState);
 }

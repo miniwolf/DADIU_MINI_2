@@ -24,6 +24,20 @@ public class TagRegister : MonoBehaviour {
 		}
 	}
 
+	void Start() {
+		foreach ( string s in singleTags.Keys ) {
+			testTagReference((GameObject) singleTags[s], s);
+		}
+		foreach ( MultiTag mt in multiObjects ) {
+			testTagReference(mt.GetObject(), mt.GetTag());
+		}
+	}
+
+	void OnDestroy() {
+		singleTags.Clear();
+		multiObjects.Clear();
+	}
+
 	public static void RegisterSingle(GameObject obj, string tag) {
 		if ( singleTags.ContainsKey(tag) ) {
 			Debug.Log("Game object : '" + obj.name + "' needs the tag '" + tag + "'. However the tag already is assigned as a single tag. Note that this component will not be initialized with the scripts and features");
@@ -36,24 +50,10 @@ public class TagRegister : MonoBehaviour {
 		multiObjects.Add(new MultiTag(obj, tag));
 	}
 
-	void Start() {
-		foreach ( string s in singleTags.Keys ) {
-			testTagReference((GameObject) singleTags[s], s);
-		}
-		foreach ( MultiTag mt in multiObjects ) {
-			testTagReference(mt.GetObject(), mt.GetTag());
-		}
-	}
-
 	private void testTagReference(GameObject obj, string tag) {
 		if ( obj.transform.tag != tag ) {
 			Debug.LogError("Game object: '" + obj.name + "' is missing the tag '" + tag + "' please add it.");
 			Application.Quit();
 		}
-	}
-
-	void OnDestroy() {
-		singleTags.Clear();
-		multiObjects.Clear();
 	}
 }

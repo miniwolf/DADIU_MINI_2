@@ -25,7 +25,7 @@ public class BridgeCommand : ItemCommand {
 	public void Execute(Collider other) {
 		if ( other.transform.tag == TagConstants.ENEMY ) {
 			bridgeObject.GetComponent<Rigidbody>().isKinematic = false;
-			enemy.SetState(EnemyState.ObstacleHit);
+			enemy.SetState(EnemyState.RandomWalk);
 		}
 	}
 }
