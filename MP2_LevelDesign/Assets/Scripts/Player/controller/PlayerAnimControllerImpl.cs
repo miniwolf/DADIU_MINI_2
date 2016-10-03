@@ -22,10 +22,12 @@ public class PlayerAnimControllerImpl : MonoBehaviour, PlayerAnimController {
 
 	public void Idle() {
 		animator.SetBool(BOOL_IS_MOVING, false);
+		log("BOOL_IS_MOVING false");
 	}
 
 	public void Move(Vector3 moveTo) {
 		animator.SetBool(BOOL_IS_MOVING, true);
+		log("BOOL_IS_MOVING true");
 	}
 
     public void Resume() {
@@ -37,28 +39,26 @@ public class PlayerAnimControllerImpl : MonoBehaviour, PlayerAnimController {
 	}
 
 	public void Caught() {
-		Idle();
-
-		animator.SetTrigger(TRIGGER_CAUGHT);
-		log("caught");
-		animator.SetBool(BOOL_IS_THROWN, true);
-		log("thrown true");
-		StartCoroutine(ContinueIdleCoroutine());
+//		Idle();
+//		animator.SetTrigger(TRIGGER_CAUGHT);
+//		log("caught");
+//		animator.SetBool(BOOL_IS_THROWN, true);
+//		log("thrown true");
+//		StartCoroutine(ContinueIdleCoroutine());
 	}
 
 	private IEnumerator ContinueIdleCoroutine() {
 		yield return StartCoroutine(WakeUpCoroutine());
-		animator.SetBool(BOOL_IS_MOVING, true);
+//		animator.SetBool(BOOL_IS_MOVING, true);
 	}
 
 	private IEnumerator WakeUpCoroutine() {
-		animator.SetTrigger(TRIGGER_GET_UP);
-		log("getUp start");
+//		animator.SetTrigger(TRIGGER_GET_UP);
+//		log("getUp start");
 		yield return  new WaitForSeconds(1f);
 	}
 
 	private void log(string msg) {
 		Debug.Log(msg);
 	}
-
 }

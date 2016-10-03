@@ -15,6 +15,7 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	private PlayerState playerState;
 	private List<Controller> controllers = new List<Controller>();
 	private GameStateManager gameStateManager;
+	private PlayerAnimController animController;
 
 	void Awake() {
 		InjectionRegister.Register(this);
@@ -26,6 +27,8 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 		cam = GameObject.FindGameObjectWithTag(TagConstants.CAMERA).GetComponent<Camera>();
 		tapFeedback = GameObject.FindGameObjectWithTag(TagConstants.TAP_FEEDBACK);
 		rend = tapFeedback.GetComponent<Renderer>();
+		animController = GetComponentInChildren<PlayerAnimController>();
+		AddController(animController);
 	}
 
 	public void SetupComponents() {
@@ -50,8 +53,7 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 					TapFeedback(hit);
 				}
 			}
-		}
-		else if (playerState == PlayerState.Idle) {
+		} else if (playerState == PlayerState.Idle) {
 			Stunned();
 		}
 	}
@@ -86,8 +88,6 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 			gameStateManager.NewState(new GameState.End());
 		}
 			
-
-
 		foreach (Controller controller in controllers) {
 			controller.Idle();
 		}
