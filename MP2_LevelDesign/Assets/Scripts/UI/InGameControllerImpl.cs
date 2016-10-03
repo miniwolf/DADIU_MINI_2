@@ -71,7 +71,11 @@ public class InGameControllerImpl : UIController, InGameController {
 		UpdateScore();
 	}
 
-	public float GetScoreValue() {
-		return score.GetValue();
-	}
+    public float GetScoreValue() {
+        return score.GetValue();
+    }
+
+    public float GetLifeValue() {
+        return life.GetValue();
+    }
 }

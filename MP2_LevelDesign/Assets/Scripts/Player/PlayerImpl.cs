@@ -6,7 +6,6 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	private Camera cam;
 	private Ray cameraToGround;
 	private LayerMask layerMask = 1 << LayerConstants.GroundLayer;
-    private Life life;
 
 	private PlayerState playerState;
 	private List<Controller> controllers = new List<Controller>();
@@ -21,7 +20,6 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	}
 
 	public void SetupComponents() {
-        life = new Life();
         playerState = PlayerState.Running;
     }
 		
@@ -56,7 +54,6 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 		playerState = newState;
 	}
     public void Stunned() {
-        print(life.GetValue());
         // Play animation & wait for trigger to change state back to Running
         if (Input.GetKeyDown(KeyCode.R)) {
             playerState = PlayerState.Running;
@@ -67,14 +64,6 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
     }
 
     public void GetCaught() {
-        if (playerState != PlayerState.Idle) {
-            life.DecrementValue();
-        }
-        if (life.GetValue() > 0)
-            playerState = PlayerState.Idle;
-        else
-            playerState = PlayerState.Dead;
-
         foreach (Controller controller in controllers) {
             controller.Idle();
         }

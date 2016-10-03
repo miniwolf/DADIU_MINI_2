@@ -124,14 +124,15 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 
     private void CatchGirl() {
         if (Distance(enemy.GetPosition(), player.GetPosition()) < catchDistance) {
-            player.GetCaught();
             enemy.SetState(EnemyState.GirlCaught);
         }
     }
 
     private void GirlCaught() {
+        enemy.GetNavMesh().Idle();
         if (Input.GetKeyDown(KeyCode.R)) {
             enemy.SetState(EnemyState.WalkAway);
+            enemy.GetNavMesh().Resume();
         }
     }
 

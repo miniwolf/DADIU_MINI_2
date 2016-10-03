@@ -3,18 +3,22 @@
 public class ControllableFactory {
 	NavMeshAgent playerAgent, enemyAgent;
 	GameObject playerObj, enemyObj;
+    InGameController inGameController;
 
-	public ControllableFactory() {
+    public ControllableFactory() {
 		playerObj = GameObject.FindGameObjectWithTag(TagConstants.PLAYER);
 		playerAgent = playerObj.GetComponent<NavMeshAgent>();
 
 		enemyObj = GameObject.FindGameObjectWithTag(TagConstants.ENEMY);
 		enemyAgent = enemyObj.GetComponent<NavMeshAgent>();
-	}
+        
+        inGameController = GameObject.FindGameObjectWithTag(UIConstants.IN_GAME_MENU).GetComponent<InGameController>();
+    }
 
 	public void CreatePlayer(Controllable player) {
-		CreateControllable(player, playerAgent);
-	}
+        CreateControllable(player, playerAgent);
+        playerObj.GetComponentsInChildren<MovableCommandable>()[0].AddCommand(new LifeCommander(playerObj.GetComponent<Player>(), enemyObj.GetComponent<Enemy>(), inGameController));
+    }
 
 	public void CreateEnemy(Controllable enemy, float maxSpeedOnTroll) {
 		CreateControllable(enemy, enemyAgent,maxSpeedOnTroll);

@@ -12,4 +12,5 @@ public interface InGameController {
 	void DecrementScore();
 
 	float GetScoreValue();
+    float GetLifeValue();
 }
