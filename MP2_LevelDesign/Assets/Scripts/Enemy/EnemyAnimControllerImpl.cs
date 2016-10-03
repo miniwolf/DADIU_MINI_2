@@ -28,10 +28,14 @@ public class EnemyAnimControllerImpl : EnemyAnimController {
 	
 	}
 
-	public void Idle() {
-		
-	}
+    public void Idle() {
 
-	
+    }
+
+    public void Resume() {
+
+    }
+
+
 
 }
