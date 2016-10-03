@@ -26,7 +26,6 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
     }
 		
 	void Update() {
-
         if (playerState == PlayerState.Running) {
             foreach (Touch touch in Input.touches) {
                 cameraToGround = cam.ScreenPointToRay(touch.position);
@@ -45,11 +44,9 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
                     }
                 }
             }
-        }
-        else if (playerState == PlayerState.Idle) {
+        } else if (playerState == PlayerState.Idle) {
             Stunned();  
         }
-
     }
 
     public void SetState(PlayerState newState) {

@@ -12,16 +12,14 @@ public class InGameControllerImpl : UIController, InGameController {
 	private Player player;
 	private Score score =  new Score();
 	private Life life = new Life();
-
-	void OnStart(){
-		TagRegister.RegisterSingle(gameObject, TagConstants.SCORE);
-	}
+	private FloatingNumberInterface feedBackNumber;
 
 	public override void RefreshText() {
 		textExit.text = TranslateApi.GetString(LocalizedString.ingameExit);
 		textRetry.text = TranslateApi.GetString(LocalizedString.ingameRetry);
 		textScoreCounter.text = TranslateApi.GetString(LocalizedString.ingameScore);
 		textLifeCounter.text = TranslateApi.GetString(LocalizedString.ingameLife);
+		UpdateScore();
 		UpdateLife();
 	}
 
@@ -44,10 +42,11 @@ public class InGameControllerImpl : UIController, InGameController {
 		textLifeCounter.text = TranslateApi.GetString(LocalizedString.ingameLife) + life.GetValue();
 	}
 
-	private void UpdateScore() {
+	public void UpdateScore() {
 //		if (Input.GetKey(KeyCode.K)) {
 //			textScoreCounter.text = PlayerPrefs.GetFloat(PlayerPrefsConstants.HIGHSCORE).ToString();
 //		}
+
 		textScoreCounter.text = TranslateApi.GetString(LocalizedString.ingameScore) + score.GetValue();
 	}
 
@@ -58,7 +57,7 @@ public class InGameControllerImpl : UIController, InGameController {
 
 	public void IncrementScore() {
 		score.IncrementValue();
-		UpdateScore();
+		feedBackNumber.IncrementValue();
 	}
 
 	public void DecrementLife() {
@@ -73,5 +72,9 @@ public class InGameControllerImpl : UIController, InGameController {
 
 	public float GetScoreValue() {
 		return score.GetValue();
+	}
+
+	public void SetFeedback(FloatingNumberInterface feedBackNumber) {
+		this.feedBackNumber = feedBackNumber;
 	}
 }
