@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class EnemyCommands : MonoBehaviour, MovableCommandable {
+public class ElementCommands : MonoBehaviour, MovableCommandable {
 	List<MovableCommand> commands = new List<MovableCommand>();
 
 	public void OnTriggerEnter(Collider other) {

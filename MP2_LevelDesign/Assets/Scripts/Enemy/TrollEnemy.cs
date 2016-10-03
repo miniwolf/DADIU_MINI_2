@@ -60,11 +60,17 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable {
 		return null;
 	}
 
-	public void Warp(Vector3 position) {
-		GetNavMesh().Teleport(position);
-	}
+    public void Warp(Vector3 position) {
+        GetNavMesh().Teleport(position);
+    }
+    public void Idle() {
+        GetNavMesh().Idle();
+    }
+    public void Resume() {
+        GetNavMesh().Resume();
+    }
 
-	public void MoveTo(Vector3 target) {
+    public void MoveTo(Vector3 target) {
 		foreach ( Controller controller in controllers ) {
 			controller.Move(target);
 		}

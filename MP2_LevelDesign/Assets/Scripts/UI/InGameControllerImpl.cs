@@ -73,10 +73,13 @@ public class InGameControllerImpl : UIController, InGameController {
 		score.DecrementValue();
 		UpdateScore();
 	}
+    public float GetScoreValue() {
+        return score.GetValue();
+    }
 
-	public float GetScoreValue() {
-		return score.GetValue();
-	}
+    public float GetLifeValue() {
+        return life.GetValue();
+    }
 
 	public void SetFeedback(FloatingNumberInterface feedBackNumber) {
 		this.feedBackNumber = feedBackNumber;
