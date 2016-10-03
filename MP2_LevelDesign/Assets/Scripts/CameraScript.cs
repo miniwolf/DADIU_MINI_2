@@ -7,7 +7,7 @@ public class CameraScript : MonoBehaviour {
 	private Vector3 cameraPosition;
 	public float offset = 12f;
 	public float cameraDelayTime = 0.5f;
-
+	public float inGameMenuOffset = 3f;
 	// Use this for initialization
 	void Start() {
 		player = GameObject.FindGameObjectWithTag(TagConstants.PLAYER);
@@ -24,7 +24,7 @@ public class CameraScript : MonoBehaviour {
 		yield return new WaitForSeconds(cameraDelayTime);
 		//cameraPosition = new Vector3(player.transform.position.x - offset, offset, player.transform.position.z - offset);
 		//transform.position = cameraPosition;
-		transform.position = new Vector3(playerPos.x, offset, playerPos.z - offset);
+		transform.position = new Vector3(playerPos.x, offset + inGameMenuOffset, playerPos.z - offset);
 
 	}
 }
