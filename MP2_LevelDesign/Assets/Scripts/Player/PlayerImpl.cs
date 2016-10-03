@@ -8,12 +8,12 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	private LayerMask layerMask = 1 << LayerConstants.GroundLayer;
 
 	private GameObject tapFeedback;
-	private Renderer rend;
 	private Color color;
 
 	private PlayerState playerState;
 	private List<Controller> controllers = new List<Controller>();
 	private GameStateManager gameStateManager;
+	private Animator tapAnimator;
 
 	void Awake() {
 		InjectionRegister.Register(this);
@@ -24,7 +24,7 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 		gameStateManager = GameObject.FindGameObjectWithTag(TagConstants.GAME_STATE).GetComponent<GameStateManager>();
 		cam = GameObject.FindGameObjectWithTag(TagConstants.CAMERA).GetComponent<Camera>();
 		tapFeedback = GameObject.FindGameObjectWithTag(TagConstants.TAP_FEEDBACK);
-		rend = tapFeedback.GetComponent<Renderer>();
+		tapAnimator = tapFeedback.GetComponent<Animator>();
 	}
 
 	public void SetupComponents() {
@@ -54,8 +54,9 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	}
 
 	private void TapFeedback(RaycastHit hit) {
-		tapFeedback.transform.position = hit.point;
-		rend.material.color = Color.green;
+		//tapFeedback.transform.position = hit.point;
+		tapFeedback.transform.position = new Vector3(hit.point.x, hit.point.y + 0.1f, hit.point.z);
+		tapAnimator.Play("Scale", -1, 0f);
 	}
 
 	public void SetState(PlayerState newState) {
