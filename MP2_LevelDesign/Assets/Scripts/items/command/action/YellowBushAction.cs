@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class YellowBushCommand : ItemCommand {
+public class YellowBushAction : ItemCommand {
 	private Enemy enemy;
 
-	public YellowBushCommand(Enemy enemy) {
+	public YellowBushAction(Enemy enemy) {
 		this.enemy = enemy;
 	}
 

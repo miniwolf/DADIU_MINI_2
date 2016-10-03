@@ -13,20 +13,19 @@ public class ItemFactory {
 	}
 
 	public void CreateDress(Commandable dress, int thresholdSpeedUp,int thresholdChase) {
-		CreateDressCommand(thresholdChase, thresholdSpeedUp);
-		dress.AddCommand(new DressCommand(inGameController, enemy, thresholdSpeedUp, thresholdChase));
+		dress.AddCommand(new DressSound());
+		dress.AddCommand(new DressAction(inGameController, enemy, thresholdSpeedUp, thresholdChase));
 	}
 
 	private void CreateDressCommand(int thresholdChase, int thresholdSpeedUp) {
-		//throw new System.NotImplementedException();
 	}
 
 	public void CreateBridge(Commandable bridge) {
-		bridge.AddCommand(new BridgeCommand(enemy));
+		bridge.AddCommand(new BridgeAction(enemy));
 	}
 
 	public void CreateYellowBush(Commandable yellowBush) {
-		yellowBush.AddCommand(new YellowBushCommand(enemy));
+		yellowBush.AddCommand(new YellowBushAction(enemy));
 	}
 
 	public void CreateFloatingNumberFeedback(){

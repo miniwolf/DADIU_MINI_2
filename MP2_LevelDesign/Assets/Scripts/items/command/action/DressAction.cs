@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DressCommand : ItemCommand {
+public class DressAction : ItemCommand {
 	private int thresholdSpeedup, thresholdChase;
 	private GameObject dress;
 	private InGameController inGameController;
 	private Enemy enemy;
 
-	public DressCommand(InGameController inGameController, Enemy enemy, int thresholdSpeedUp, int thresholdChase) {
+	public DressAction(InGameController inGameController, Enemy enemy, int thresholdSpeedUp, int thresholdChase) {
 		this.enemy = enemy;
 		this.inGameController = inGameController;
 		this.thresholdSpeedup = thresholdSpeedUp;

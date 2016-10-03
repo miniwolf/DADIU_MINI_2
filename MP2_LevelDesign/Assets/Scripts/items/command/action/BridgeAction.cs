@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BridgeCommand : ItemCommand {
+public class BridgeAction : ItemCommand {
 	private Enemy enemy;
 	private GameObject bridgeObject;
 
-	public BridgeCommand(Enemy enemy) {
+	public BridgeAction(Enemy enemy) {
 		this.enemy = enemy;
 	}
 
