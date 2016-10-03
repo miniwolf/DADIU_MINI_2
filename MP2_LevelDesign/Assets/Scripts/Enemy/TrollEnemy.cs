@@ -1,21 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable, MovableCommandable {
+public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable {
 	private EnemyState state;
 	List<Controller> controllers = new List<Controller>();
 
-	List<MovableCommand> commands = new List<MovableCommand>();
-
-	public TrollEnemy() {
+	void Awake() {
 		InjectionRegister.Register(this);
-		
-		// set animation and sound controller
-	}
-
-	void Start() {
-		state = EnemyState.RandomWalk;
-		TagRegister.Register(gameObject, TagConstants.ENEMY);
+		TagRegister.RegisterSingle(gameObject, TagConstants.ENEMY);
 	}
 
 	// DEBUG
@@ -41,6 +33,7 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable, Movabl
 	}
 
 	public void SetupComponents() {
+		state = EnemyState.RandomWalk;
 	}
 
 	public EnemyState GetState() {
@@ -54,13 +47,7 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable, Movabl
 	public List<Controller> GetControllers() {
 		return controllers;
 	}
-
-	public void OnTriggerEnter(Collider other) {
-		foreach ( MovableCommand command in commands ) {
-			command.Execute(other);
-		}
-	}
-
+		
 	public void AddController(Controller controller) {
 		controllers.Add(controller);
 	}
@@ -71,10 +58,6 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable, Movabl
 
 	public Vector3 GetPosition() {
 		return this.transform.position;
-	}
-
-	public void AddCommand(MovableCommand command) {
-		commands.Add(command);
 	}
 
 	public void SetPosition(Vector3 newPosition) {

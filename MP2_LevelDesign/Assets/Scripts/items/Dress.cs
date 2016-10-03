@@ -4,7 +4,7 @@ using System.Collections;
 public class Dress : Item {
 	void Awake() {
 		InjectionRegister.Register(this);
-		//TagRegister.Register(gameObject, TagConstants.DRESS);
+		TagRegister.RegisterMultiple(gameObject, TagConstants.DRESS);
 	}
 
 	override public string GetTag() {

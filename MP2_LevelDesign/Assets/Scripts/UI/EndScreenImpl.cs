@@ -2,8 +2,22 @@
 using System.Collections;
 using System;
 
-public class EndScreenImpl : EndScreenController {
-	public void ShowEatCakeTogetherAnimation() {
+public class EndScreenImpl : UIController, EndScreenController {
+
+	public override void RefreshText() {
+		throw new NotImplementedException();
+	}
+
+	public override void ResolveDependencies() {
+		throw new NotImplementedException();
+	}
+
+
+	public void ShowFinalScore() {
+		throw new NotImplementedException();
+	}
+
+	public void ShowHighScore() {
 		throw new NotImplementedException();
 	}
 
@@ -11,11 +25,7 @@ public class EndScreenImpl : EndScreenController {
 		throw new NotImplementedException();
 	}
 
-	public void ShowFinalScore() {
-		throw new NotImplementedException();
-	}
-
-	public void ShowHighScore() {
+	public void ShowEatCakeTogetherAnimation() {
 		throw new NotImplementedException();
 	}
 }

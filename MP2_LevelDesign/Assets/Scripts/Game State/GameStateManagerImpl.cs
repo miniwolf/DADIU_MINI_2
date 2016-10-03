@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameStateManagerImpl : GameStateManager{
+public class GameStateManagerImpl : MonoBehaviour, GameStateManager{
 
 	private GameState gameState;
 	
@@ -17,7 +17,7 @@ public class GameStateManagerImpl : GameStateManager{
 			case GameState.Paused:
 				PauseGame();
 				break;
-			case GameState.Ended:
+			case GameState.Idle:
 				EndGame();
 				break;
 		}
@@ -26,13 +26,15 @@ public class GameStateManagerImpl : GameStateManager{
 	}
 
 	private void PlayGame() {
+		Time.timeScale = 1.0f;
+		/*
 		switch(gameState) {
 			case GameState.Paused:
 				// todo unpause game
 				break;
 			default: // todo start a new game
 				break;
-		}
+		}*/
 	}
 
 	private void EndGame() {
@@ -40,11 +42,12 @@ public class GameStateManagerImpl : GameStateManager{
 	}
 
 	private void PauseGame() {
+		Time.timeScale = 0.0f;
+		/*
 		switch (gameState) {
 			case GameState.Playing:
 			// todo pause game
 				break;
-		}
-
+		}*/
 	}
 }

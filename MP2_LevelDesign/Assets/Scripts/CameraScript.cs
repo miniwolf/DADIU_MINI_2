@@ -5,7 +5,7 @@ public class CameraScript : MonoBehaviour {
 
 	private GameObject player;
 	private Vector3 cameraPosition;
-	private float offset = 12f;
+	public float offset = 12f;
 	public float cameraDelayTime = 0.5f;
 
 	// Use this for initialization
