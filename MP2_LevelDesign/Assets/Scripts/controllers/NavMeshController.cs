@@ -3,7 +3,6 @@ using System.Collections;
 
 public class NavMeshController : Controller {
 	private NavMeshAgent agent;
-	private NavMeshPath path = new NavMeshPath();
 	public float slowdown = 1.5f;
 	public int slowdownTime = 3;
 	public float speedup = 1.5f;

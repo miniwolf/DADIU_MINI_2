@@ -28,23 +28,26 @@ public class DressCommand : ItemCommand {
 	/// <param name="other">Object colliding with the dress, only responds to player</param>
 	public void Execute(Collider other) {
 		if ( other.transform.tag == TagConstants.PLAYER ) {
-			dress.SetActive(false);
-			updateScore();
-			enemy.SetState(EnemyState.Chasing);
-			SpeedUp();
+			PickupCloth();
+			SpeedUpTroll();
 		}
 	}
 
-	private void updateScore() {
+	/// <summary>
+	/// Remove the cloth from the game and updates the score.
+	/// </summary>
+	private void PickupCloth() {
+		dress.SetActive(false);
 		inGameController.IncrementScore();
 	}
 
 	/// <summary>
 	/// Increases speed of troll every thresholdSpeedup points
 	/// </summary>
-	private void SpeedUp() {
-		if((int)inGameController.GetScoreValue() % thresholdSpeedup == 0) {
-			enemy.GetNavMesh().SpeedUp();
+	void SpeedUpTroll() {
+		if ((int)inGameController.GetScoreValue() % thresholdSpeedup == 0) {
+			enemy.SetState(EnemyState.CatchGirl);
+			enemy.SpeedUp();
 		}
 	}
 }

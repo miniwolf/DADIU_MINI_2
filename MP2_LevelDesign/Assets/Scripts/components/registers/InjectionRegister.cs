@@ -51,6 +51,9 @@ public class InjectionRegister : MonoBehaviour {
 			case TagConstants.YELLOWBUSH:
 				itemFactory.CreateYellowBush((Commandable) component);
 				break;
+			default:
+				Debug.LogError("Missing implementation for component: '" + component.GetTag() + "' inside InjectionRegister");
+				break;
 		}
 	}
 }

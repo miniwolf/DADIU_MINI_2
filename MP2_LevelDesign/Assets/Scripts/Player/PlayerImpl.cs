@@ -23,21 +23,20 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	}
 		
 	void Update() {
-		foreach(Touch touch in Input.touches) {
+		foreach (Touch touch in Input.touches) {
 			cameraToGround = cam.ScreenPointToRay(touch.position);
-			if ( Physics.Raycast(cameraToGround,out hit,500f,layerMask.value) ) {
+			if ( Physics.Raycast(cameraToGround, out hit, 500f, layerMask.value) ) {
 				foreach ( Controller controller in controllers ) {
 					controller.Move(hit.point);
 				}
 			}
 		}
 
+		// DEBUG> Should be deleted
 		if ( Input.GetMouseButtonDown(1) ) {
 			cameraToGround = cam.ScreenPointToRay(Input.mousePosition);
-			if ( Physics.Raycast(cameraToGround, out hit,500f,layerMask.value) ) {
-				foreach ( Controller controller in controllers ) {
-					controller.Move(hit.point);
-				}
+			if ( Physics.Raycast(cameraToGround, out hit, 500f, layerMask.value) ) {
+				MoveTo(hit.point);
 			}
 		}
 	}
@@ -56,5 +55,11 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 
 	public void AddController(Controller controller) {
 		controllers.Add(controller);
+	}
+
+	public void MoveTo(Vector3 position) {
+		foreach ( Controller controller in controllers ) {
+			controller.Move(position);
+		}
 	}
 }
