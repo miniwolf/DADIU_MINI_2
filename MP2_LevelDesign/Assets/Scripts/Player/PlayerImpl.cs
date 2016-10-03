@@ -75,6 +75,7 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 				controller.Resume();
 			}
 		}
+		// todo animController.Idle();
 	}
 
 	public void GetCaught() {
