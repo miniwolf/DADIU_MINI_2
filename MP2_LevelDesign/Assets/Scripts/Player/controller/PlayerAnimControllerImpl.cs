@@ -28,6 +28,10 @@ public class PlayerAnimControllerImpl : MonoBehaviour, PlayerAnimController {
 		animator.SetBool(BOOL_IS_MOVING, true);
 	}
 
+    public void Resume() {
+
+    }
+
 	public void HitObstacle(GameObject obstacle) {
 		// no animation
 	}

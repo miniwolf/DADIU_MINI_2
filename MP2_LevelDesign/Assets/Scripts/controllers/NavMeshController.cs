@@ -37,6 +37,11 @@ public class NavMeshController : Controller {
         agent.Stop();
     }
 
+    public void Resume() {
+        agent.SetDestination(agent.transform.position);
+        agent.Resume();
+    }
+
     public void Teleport(Vector3 position) {
         agent.Warp(position);
     }

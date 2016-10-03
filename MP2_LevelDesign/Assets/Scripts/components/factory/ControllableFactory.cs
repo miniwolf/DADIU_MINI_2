@@ -24,6 +24,7 @@ public class ControllableFactory {
 	public void CreateEnemyAI(AI ai) {
 		ai.SetPlayer(playerObj.GetComponent<Player>());
 		ai.SetEnemy(enemyObj.GetComponent<Enemy>());
+		ai.SetControllable(enemyObj.GetComponent<Controllable>());
 	}
 
 	private void CreateControllable(Controllable controllable, NavMeshAgent agent) {
