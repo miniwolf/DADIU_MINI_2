@@ -25,7 +25,7 @@ public class LifeCommander : MovableCommand {
                 inGameController.DecrementLife();
             } else {
                 player.SetState(PlayerState.Dead);
-                gameStateManager.NewState(new GameState.End());
+                gameStateManager.NewState(new GameState.Ended());
             }
             enemy.SetState(EnemyState.GirlCaught);
         }
