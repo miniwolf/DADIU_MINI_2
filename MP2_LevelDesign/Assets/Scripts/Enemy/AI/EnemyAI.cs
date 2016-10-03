@@ -53,6 +53,7 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 				break;
 			case EnemyState.GirlCaught:
 				teleport = false;
+
 				// call animation controller of enemy and caught girl that would change the state to WalkAway when it's finished
 				//enemy.GetAnimController().CatchGirl(enemy);
 				break;
@@ -100,7 +101,6 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 		NavMeshHit hit;
         Vector3 randomPoint = referencePosition + Random.insideUnitSphere * radius;
         NavMesh.SamplePosition(randomPoint, out hit, radius, NavMesh.AllAreas);
-        //print(enemy.GetPosition() + " -> " + hit.position);
         return hit.position;
 	}
 
