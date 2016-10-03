@@ -6,20 +6,19 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
     public float teleportRadius = 25f;
     public float teleportRange = 5f;
     public float roamDistanceError = 0.5f;
-	public float distanceForTeleport = 50f;
-	public float sphereRadius = 0.5f;       // radius around a point to check is is collision
+    public float distanceForTeleport = 50f;
+    public float catchDistance = 5f;
+    public float sphereRadius = 10f;       // radius around a point to check is is collision
 	public float walkAwayDistance = 30f;
 
-	private static int MAX_ITERATIONS = 30;
 	private Enemy enemy;
-	private GameObject player;
+	private Controllable controllableEnemy;
+	private Player player;
 	private bool isRoaming;
-	private bool teleport;
 	private Vector3 movingPosition;
 
     void Awake() {
         InjectionRegister.Register(this);
-        teleport = false;
     }
 
     public void SetupComponents() {
@@ -33,27 +32,21 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 		switch ( enemy.GetState() ) {
 			case EnemyState.RandomWalk:
 				FreeRoam(enemy.GetPosition(), roamRadius);
-                teleport = false;
                 break;
 			case EnemyState.WalkAway:
+				FreeRoam(player.GetPosition(), 2 * walkAwayDistance, walkAwayDistance);
 				enemy.SetState(EnemyState.RandomWalk);
-				FreeRoam(player.transform.position, 2 * walkAwayDistance, walkAwayDistance);
-                teleport = false;
                 break;
-			case EnemyState.ObstacleHit: //hit yellow bush
-				StartCoroutine(enemy.GetNavMesh().SlowDown());
-				// if it was chasing the girl it stops now
-				enemy.SetState(EnemyState.RandomWalk);
-				FreeRoam(enemy.GetPosition(), roamRadius); 
-				teleport = false;
-				break;
 			case EnemyState.Chasing:
 				Chaising();
 				break;
 			case EnemyState.GirlCaught:
-				teleport = false;
+                GirlCaught();
 				// call animation controller of enemy and caught girl that would change the state to WalkAway when it's finished
 				//enemy.GetAnimController().CatchGirl(enemy);
+				break;
+			case EnemyState.CatchGirl:
+				TeleportToGirl();
 				break;
 		}
 	}
@@ -62,7 +55,7 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 	private void FreeRoam(Vector3 reference, float maxRadius, float minRadius = 0) {
 		if ( !isRoaming ) {
             movingPosition = GenerateRandomPosition(reference, maxRadius, minRadius);
-            enemy.GetNavMesh().Move(movingPosition);
+			controllableEnemy.MoveTo(movingPosition);
 			isRoaming = true;
 		}
 		//if the enemy is close enough to the end position we stop roaming
@@ -72,26 +65,21 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 	}
 
     private Vector3 GenerateRandomPosition(Vector3 reference, float maxRadius, float minRadius = 0) {
-        Collider[] existingColliders;
+		Collider[] existingColliders = new Collider[0];
         Vector3 generatedPosition = Vector3.zero;
         // If the new position is an object we choose another one 
         // but only try to find a new one for MAX_ITERATIONS
-        for (int i = 0; i < MAX_ITERATIONS; i++) {
-            generatedPosition = GetNextRandomPos(reference, maxRadius);
-            if(Distance(enemy.GetPosition(), generatedPosition) == Mathf.Infinity) {
-                continue;
-            }
-            generatedPosition.y = reference.y;
-            existingColliders = Physics.OverlapSphere(generatedPosition, sphereRadius);
-            // no colliders in the sphere means no object in that position
-            if (existingColliders.Length != 0) {
-                continue;
-            }
-            if (Distance(reference, generatedPosition) > maxRadius 
-                || Distance(reference,  generatedPosition) < minRadius) {
-                continue;
-            }
-        }
+		do {
+			generatedPosition = GetNextRandomPos(reference, maxRadius);
+			if ( Vector3.Distance(enemy.GetPosition(), generatedPosition) == Mathf.Infinity ) {
+				continue;
+			}
+
+			generatedPosition.y = reference.y;
+			existingColliders = Physics.OverlapSphere(generatedPosition, sphereRadius);
+		} while ( existingColliders.Length != 0
+		          || Vector3.Distance(reference, generatedPosition) > maxRadius
+		          || Vector3.Distance(reference, generatedPosition) < minRadius );
         return generatedPosition;
     }
 
@@ -99,33 +87,45 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 		NavMeshHit hit;
         Vector3 randomPoint = referencePosition + Random.insideUnitSphere * radius;
         NavMesh.SamplePosition(randomPoint, out hit, radius, NavMesh.AllAreas);
-		return hit.position;
+        return hit.position;
 	}
 
-    private float Distance(Vector3 v1, Vector3 v2) {
-        return (Mathf.Sqrt(Mathf.Pow(Mathf.Abs(v1.x - v2.x), 2f) + Mathf.Pow(Mathf.Abs(v1.z - v2.z), 2f)));
-    }
+	private void TeleportToGirl() {
+		// check if the troll is far away when the girl picks up laundry for the first time
+		if ( Vector3.Distance(enemy.GetPosition(), player.GetPosition()) > distanceForTeleport ) {
+			Vector3 newPosition = GenerateRandomPosition(player.GetPosition(), teleportRadius + teleportRange, teleportRadius - teleportRange);
+			enemy.Warp(newPosition);
+		}
+		enemy.SetState(EnemyState.Chasing);
+	}
 
     private void Chaising() {
-		// check if the troll is far away when the girl picks up laundry for the first time
-		if ( !teleport ) {
-            isRoaming = false;
-            if ( Distance(enemy.GetPosition(), player.transform.position) > distanceForTeleport ) {
-                Vector3 newPosition = GenerateRandomPosition(player.transform.position, teleportRadius + teleportRange, teleportRadius - teleportRange);
-                enemy.GetNavMesh().Teleport(newPosition);
-            }
-			teleport = true;
-		}
-			
-		enemy.GetNavMesh().Move(player.transform.position);
+		controllableEnemy.MoveTo(player.GetPosition());
 	}
 
-	public void SetPlayer(GameObject player) {
+    private void CatchGirl() {
+        if (Vector3.Distance(enemy.GetPosition(), player.GetPosition()) < catchDistance) {
+            player.GetCaught();
+            enemy.SetState(EnemyState.GirlCaught);
+        }
+    }
+
+    private void GirlCaught() {
+        if (Input.GetKeyDown(KeyCode.R)) {
+            enemy.SetState(EnemyState.WalkAway);
+        }
+    }
+
+    public void SetPlayer(Player player) {
 		this.player = player;
 	}
 
 	public void SetEnemy(Enemy enemy) {
 		this.enemy = enemy;
+	}
+
+	public void SetControllable(Controllable controllableEnemy) {
+		this.controllableEnemy = controllableEnemy;
 	}
 
 	public string GetTag() {

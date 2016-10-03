@@ -4,12 +4,19 @@ using System.Collections;
 public class NavMeshController : Controller {
 	private NavMeshAgent agent;
 	private NavMeshPath path = new NavMeshPath();
-	public float slowdown = 1.5f;
-	public int slowdownTime = 3;
-	public float speedup = 1.5f;
+	private float slowdown = 1.5f;
+	private int slowdownTime = 3;
+	private float speedup = 1.5f;
+	private float maxSpeedOnTroll = 0;
 
 	public NavMeshController(NavMeshAgent agent) {
 		this.agent = agent;
+		this.maxSpeedOnTroll = 8000f;
+	}
+
+	public NavMeshController(NavMeshAgent agent, float maxSpeedOnTroll) {
+		this.agent = agent;
+		this.maxSpeedOnTroll = maxSpeedOnTroll;
 	}
 
 	/// <summary>
@@ -30,22 +37,28 @@ public class NavMeshController : Controller {
         agent.Stop();
     }
 
+    public void Resume() {
+        agent.SetDestination(agent.transform.position);
+        agent.Resume();
+    }
+
     public void Teleport(Vector3 position) {
         agent.Warp(position);
     }
 
     public void HitObstacle(GameObject obstacle) {
-		
+		//Do stun or smth
 	}
 	
 	public IEnumerator SlowDown() {
 		agent.speed -= slowdown;
 		yield return new WaitForSeconds(slowdownTime);
-
 		agent.speed += slowdown;
 	}
 
 	public void SpeedUp() {
-		agent.speed += speedup;
+		if (agent.speed < maxSpeedOnTroll) {
+			agent.speed += speedup;
+		}
 	}
 }

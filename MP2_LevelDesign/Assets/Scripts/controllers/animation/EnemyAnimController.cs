@@ -1,6 +1,3 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public interface EnemyAnimController : Controller {
+﻿public interface EnemyAnimController : Controller {
 	void CatchGirl(Enemy enemy);
 }

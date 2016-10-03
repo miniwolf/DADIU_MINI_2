@@ -13,7 +13,7 @@ public class SpawnObjectsLevelDesignTool : MonoBehaviour {
 
 	public bool randomStateSelection = false;
 
-	void Awake(){
+	void Awake() {
 		if (randomStateSelection) {
 			stateToShow = Random.Range(0, 10);
 		}
@@ -24,27 +24,27 @@ public class SpawnObjectsLevelDesignTool : MonoBehaviour {
 	}
 
 	// Use this for initialization
-	void Start () {
+	void Start() {
 		HideAllGO();
 		for (int i = 0; i < theStates[stateToShow].Count; i++) {
 			theStates[stateToShow][i].SetActive(true);
 		}
 	}
 
-	void HideAllGO(){
-		for(int i=0;i<allChildren.Length;i++){
+	void HideAllGO() {
+		for (int i=0;i<allChildren.Length;i++) {
 			allChildren[i].SetActive(false);
 		}
 
 	}
 
-	void InitStates(){
+	void InitStates() {
 		for (int i = 0; i < theStates.Length; i++) {
 			theStates[i] = new List<GameObject>();
 		}
 	}
 
-	void ReadText () {
+	void ReadText() {
 		//string allData = System.IO.File.ReadAllText("Assets/Resources/LevelDesignSave.txt");
 		string allData = txtFile.text;
 
@@ -62,7 +62,7 @@ public class SpawnObjectsLevelDesignTool : MonoBehaviour {
 		FindObjects();
 	}
 
-	void FindObjects(){
+	void FindObjects() {
 		for (int i = 0; i < organizedSplitData.Length; i++) {
 			if (organizedSplitData[i].Length > 0) {
 				for (int u = 0; u < organizedSplitData[i].Length; u++) {

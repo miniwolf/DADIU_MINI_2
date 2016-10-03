@@ -12,4 +12,5 @@ public class TagConstants {
 	public const string SCORE = "Score";
 	public const string GAME_STATE = "GameState";
 	public const string TAP_FEEDBACK = "TapFeedback";
+	public const string FEEDBACKNUMBER = "FeedbackNumber";
 }
