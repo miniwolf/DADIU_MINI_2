@@ -12,8 +12,8 @@ public class ItemFactory {
 		feedBackNumber = GameObject.FindGameObjectWithTag(TagConstants.FEEDBACKNUMBER).GetComponent<FloatingNumberInterface>();
 	}
 
-	public void CreateDress(Commandable dress, int thresholdSpeedUp) {
-		dress.AddCommand(new DressCommand(inGameController, enemy, thresholdSpeedUp));
+	public void CreateDress(Commandable dress, int thresholdSpeedUp,int thresholdChase) {
+		dress.AddCommand(new DressCommand(inGameController, enemy, thresholdSpeedUp, thresholdChase));
 	}
 
 	public void CreateBridge(Commandable bridge) {

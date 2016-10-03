@@ -6,6 +6,7 @@ public class InjectionRegister : MonoBehaviour {
 	private ControllableFactory controllableFactory;
 	private ItemFactory itemFactory;
 	public int thresholdSpeedUp = 5;
+	public int thresholdChase = 5;
 	public float maxSpeedOnTroll = 12;
 
 	void Awake() {
@@ -45,7 +46,7 @@ public class InjectionRegister : MonoBehaviour {
 				controllableFactory.CreateEnemyAI((AI) component);
 				break;
 			case TagConstants.DRESS:
-				itemFactory.CreateDress((Commandable) component,thresholdSpeedUp);
+				itemFactory.CreateDress((Commandable) component,thresholdSpeedUp, thresholdChase);
 				break;
 			case TagConstants.BRIDGE:
 				itemFactory.CreateBridge((Commandable) component);

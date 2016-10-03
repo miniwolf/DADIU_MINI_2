@@ -53,7 +53,6 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 		playerState = newState;
 	}
     public void Stunned() {
-        print(life.GetValue());
         // Play animation & wait for trigger to change state back to Running
         if (Input.GetKeyDown(KeyCode.R)) {
             playerState = PlayerState.Running;
