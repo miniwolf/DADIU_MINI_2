@@ -39,7 +39,7 @@ public class InjectionRegister : MonoBehaviour {
 				controllableFactory.CreatePlayer((Controllable) component);
 				break;
 			case TagConstants.ENEMY:
-			controllableFactory.CreateEnemy((Controllable) component,maxSpeedOnTroll);
+				controllableFactory.CreateEnemy((Controllable) component,maxSpeedOnTroll);
 				break;
 			case TagConstants.ENEMYAI:
 				controllableFactory.CreateEnemyAI((AI) component);
@@ -52,6 +52,9 @@ public class InjectionRegister : MonoBehaviour {
 				break;
 			case TagConstants.YELLOWBUSH:
 				itemFactory.CreateYellowBush((Commandable) component);
+				break;
+			case TagConstants.FEEDBACKNUMBER:
+				itemFactory.CreateFloatingNumberFeedback();
 				break;
 		}
 	}

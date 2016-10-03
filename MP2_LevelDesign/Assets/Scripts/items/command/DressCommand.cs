@@ -6,12 +6,10 @@ public class DressCommand : ItemCommand {
 	private GameObject dress;
 	private InGameController inGameController;
 	private Enemy enemy;
-	private Value feedBackNumber;
 
-	public DressCommand(InGameController inGameController, Enemy enemy,Value feedBackNumber, int thresholdSpeedUp) {
+	public DressCommand(InGameController inGameController, Enemy enemy, int thresholdSpeedUp) {
 		this.enemy = enemy;
 		this.inGameController = inGameController;
-		this.feedBackNumber = feedBackNumber;
 		this.thresholdSpeedup = thresholdSpeedUp;
 	}
 
@@ -39,7 +37,6 @@ public class DressCommand : ItemCommand {
 
 	private void updateScore() {
 		inGameController.IncrementScore();
-		feedBackNumber.IncrementValue();
 	}
 
 	/// <summary>
