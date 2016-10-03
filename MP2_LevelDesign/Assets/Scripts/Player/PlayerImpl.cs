@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using System.Collections;
 
 public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	private RaycastHit hit;
@@ -9,11 +8,12 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	private LayerMask layerMask = 1 << LayerConstants.GroundLayer;
 	private Life life;
 
-	private PlayerState playerState;
-	private List<Controller> controllers = new List<Controller>();
 	private GameObject tapFeedback;
 	private Renderer rend;
 	private Color color;
+
+	private PlayerState playerState;
+	private List<Controller> controllers = new List<Controller>();
 
 	void Awake() {
 		InjectionRegister.Register(this);
@@ -27,20 +27,17 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	}
 
 	public void SetupComponents() {
+		life = new Life();
+		playerState = PlayerState.Running;
 	}
 
-	private void TapFeedback(RaycastHit hit) {
-		tapFeedback.transform.position = hit.point;
-		rend.material.color = Color.green;
-	}
-
-		
 	void Update() {
 		if (playerState == PlayerState.Running) {
 			foreach (Touch touch in Input.touches) {
 				cameraToGround = cam.ScreenPointToRay(touch.position);
 				if (Physics.Raycast(cameraToGround, out hit, 500f, layerMask.value)) {
 					MoveTo(hit.point);
+					TapFeedback(hit);
 				}
 			}
 
@@ -48,11 +45,18 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 				cameraToGround = cam.ScreenPointToRay(Input.mousePosition);
 				if (Physics.Raycast(cameraToGround, out hit, 500f, layerMask.value)) {
 					MoveTo(hit.point);
+					TapFeedback(hit);
 				}
 			}
-		} else if (playerState == PlayerState.Idle) {
-			Stunned();  
 		}
+		else if (playerState == PlayerState.Idle) {
+			Stunned();
+		}
+	}
+
+	private void TapFeedback(RaycastHit hit) {
+		tapFeedback.transform.position = hit.point;
+		rend.material.color = Color.green;
 	}
 
 	public void SetState(PlayerState newState) {
@@ -100,8 +104,14 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	}
 
 	public void MoveTo(Vector3 position) {
-		foreach ( Controller controller in controllers ) {
+		foreach (Controller controller in controllers) {
 			controller.Move(position);
 		}
 	}
 }
+
+
+
+
+
+
