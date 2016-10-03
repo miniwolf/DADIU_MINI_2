@@ -12,9 +12,9 @@ public class ItemFactory {
 		feedBackNumber = GameObject.FindGameObjectWithTag(TagConstants.FEEDBACKNUMBER).GetComponent<FloatingNumberInterface>();
 	}
 
-	public void CreateDress(Commandable dress, int thresholdSpeedUp,int thresholdChase) {
+	public void CreateDress(Commandable dress) {
 		dress.AddCommand(new DressSound());
-		dress.AddCommand(new DressAction(inGameController, enemy, thresholdSpeedUp, thresholdChase));
+		dress.AddCommand(new DressAction(inGameController, (Actionable) enemy, enemy));
 	}
 
 	private void CreateDressCommand(int thresholdChase, int thresholdSpeedUp) {
@@ -25,7 +25,7 @@ public class ItemFactory {
 	}
 
 	public void CreateYellowBush(Commandable yellowBush) {
-		yellowBush.AddCommand(new YellowBushAction(enemy));
+		yellowBush.AddCommand(new YellowBushAction(enemy, (Actionable) enemy));
 	}
 
 	public void CreateFloatingNumberFeedback(){

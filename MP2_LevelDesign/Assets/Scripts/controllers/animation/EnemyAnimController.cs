@@ -1,3 +1,3 @@
-﻿public interface EnemyAnimController : Controller {
+﻿public interface EnemyAnimController : Action {
 	void CatchGirl(Enemy enemy);
 }

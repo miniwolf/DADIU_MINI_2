@@ -1,20 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
-	private RaycastHit hit;
-	private Camera cam;
-	private Ray cameraToGround;
-	private LayerMask layerMask = 1 << LayerConstants.GroundLayer;
-	private Life life;
-
-	private GameObject tapFeedback;
-	private Renderer rend;
-	private Color color;
-
-	private PlayerState playerState;
-	private List<Controller> controllers = new List<Controller>();
-	private GameStateManager gameStateManager;
+public class PlayerImpl : MonoBehaviour, Player, GameEntity, Actionable {
+	private PlayerState playerState = PlayerState.Running;
+	private Dictionary<Actions, Handler> actions = new Dictionary<Actions, Handler>();
 
 	void Awake() {
 		InjectionRegister.Register(this);
@@ -22,75 +11,34 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	}
 
 	void Start() {
-		gameStateManager = GameObject.FindGameObjectWithTag(TagConstants.GAME_STATE).GetComponent<GameStateManager>();
-		cam = GameObject.FindGameObjectWithTag(TagConstants.CAMERA).GetComponent<Camera>();
-		tapFeedback = GameObject.FindGameObjectWithTag(TagConstants.TAP_FEEDBACK);
-		rend = tapFeedback.GetComponent<Renderer>();
-	}
-
-	public void SetupComponents() {
-		life = new Life();
-		playerState = PlayerState.Running;
+		//gameStateManager = GameObject.FindGameObjectWithTag(TagConstants.GAME_STATE).GetComponent<GameStateManager>();
+		//rend = tapFeedback.GetComponent<Renderer>();
 	}
 
 	void Update() {
-		if (playerState == PlayerState.Running) {
-			foreach (Touch touch in Input.touches) {
-				cameraToGround = cam.ScreenPointToRay(touch.position);
-				if (Physics.Raycast(cameraToGround, out hit, 500f, layerMask.value)) {
-					MoveTo(hit.point);
-					TapFeedback(hit);
-				}
-			}
-
-			if (Input.GetMouseButtonDown(1)) {
-				cameraToGround = cam.ScreenPointToRay(Input.mousePosition);
-				if (Physics.Raycast(cameraToGround, out hit, 500f, layerMask.value)) {
-					MoveTo(hit.point);
-					TapFeedback(hit);
-				}
-			}
-		}
-		else if (playerState == PlayerState.Idle) {
-			Stunned();
+		switch ( playerState ) {
+			case PlayerState.Running:
+				ExecuteAction(Actions.MOVE);
+				break;
+			case PlayerState.Idle:
+				ExecuteAction(Actions.STUN);
+				break;
 		}
 	}
 
-	private void TapFeedback(RaycastHit hit) {
-		tapFeedback.transform.position = hit.point;
-		rend.material.color = Color.green;
+	public void SetupComponents() {
+	}
+
+	public void AddAction(Actions command, Handler action) {
+		actions.Add(command, action);
+	}
+
+	public void ExecuteAction(Actions name) {
+		actions[name].DoAction();
 	}
 
 	public void SetState(PlayerState newState) {
 		playerState = newState;
-	}
-
-	public void Stunned() {
-		// Play animation & wait for trigger to change state back to Running
-		if (Input.GetKeyDown(KeyCode.R)) {
-			playerState = PlayerState.Running;
-			foreach (Controller controller in controllers) {
-				controller.Resume();
-			}
-		}
-	}
-
-	public void GetCaught() {
-		if (playerState != PlayerState.Idle) {
-			life.DecrementValue();
-		}
-		if (life.GetValue() > 0)
-			playerState = PlayerState.Idle;
-		else {
-			playerState = PlayerState.Dead;
-			gameStateManager.NewState(new GameState.End());
-		}
-			
-
-
-		foreach (Controller controller in controllers) {
-			controller.Idle();
-		}
 	}
 
 	public PlayerState GetState() {
@@ -104,20 +52,4 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	public Vector3 GetPosition() {
 		return this.transform.position;
 	}
-
-	public void AddController(Controller controller) {
-		controllers.Add(controller);
-	}
-
-	public void MoveTo(Vector3 position) {
-		foreach (Controller controller in controllers) {
-			controller.Move(position);
-		}
-	}
 }
-
-
-
-
-
-

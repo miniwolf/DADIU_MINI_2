@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyAnimControllerImpl : EnemyAnimController {
+public class EnemyAnimControllerImpl {
 
 	private Animator animator;
 

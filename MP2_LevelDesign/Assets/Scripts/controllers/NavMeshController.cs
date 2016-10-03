@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class NavMeshController : Controller {
+public class NavMeshController {
 	private NavMeshAgent agent;
 	private NavMeshPath path = new NavMeshPath();
 	private float slowdown = 1.5f;
