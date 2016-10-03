@@ -9,12 +9,22 @@ public class FloatingNumberFeedback : MonoBehaviour, Value {
 	private Coroutine displayNumber;
 	private bool displayNumberRunning = false;
 	private Text text;
-
+	private Transform player;
+	private Camera cam;
+	private Vector3 playerPosOnScreen;
+	public float xOffset = 50f,yOffset = 20f;
 	// Use this for initialization
 	void Start () {
 		TagRegister.RegisterSingle(this.gameObject, TagConstants.FEEDBACKNUMBER);
 		text = GameObject.FindGameObjectWithTag(TagConstants.FEEDBACKNUMBER).GetComponent<Text>();
+		player = GameObject.FindGameObjectWithTag(TagConstants.PLAYER).GetComponent<Transform>();
+		cam = GameObject.FindGameObjectWithTag(TagConstants.CAMERA).GetComponent<Camera>();
+
 		gameObject.SetActive(false);
+	}
+	void Update(){
+		playerPosOnScreen = cam.WorldToScreenPoint(player.position);
+		transform.position = new Vector3(playerPosOnScreen.x+xOffset,playerPosOnScreen.y+yOffset,playerPosOnScreen.z);
 	}
 
 	public void IncrementValue(){
@@ -41,11 +51,10 @@ public class FloatingNumberFeedback : MonoBehaviour, Value {
 		gameObject.SetActive(true);
 		displayNumber = StartCoroutine(FunctionalityOfNumber(GetValue()));
 	}
-
+	//Play anim somewhere in here
 	IEnumerator FunctionalityOfNumber(float amount){
 		displayNumberRunning = true;
 		text.text = amount.ToString();
-		//Play animation
 		yield return new WaitForSeconds(secondsUntilDisappear);
 		gameObject.SetActive(false);
 		ResetCurrDressCount();
