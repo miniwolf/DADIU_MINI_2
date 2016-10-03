@@ -18,9 +18,6 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable {
 		else if (Input.GetKeyDown(KeyCode.UpArrow)) {
 			SetState(EnemyState.CatchGirl);
 		}
-		else if (Input.GetKeyDown(KeyCode.DownArrow)) {
-			SetState(EnemyState.WalkAway);
-		}
 	}
 
 	public void SetupComponents() {

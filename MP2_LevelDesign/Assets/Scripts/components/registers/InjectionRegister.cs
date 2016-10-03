@@ -5,6 +5,8 @@ public class InjectionRegister : MonoBehaviour {
 	private static List<GameEntity> components = new List<GameEntity>();
 	private ControllableFactory controllableFactory;
 	private ItemFactory itemFactory;
+	public int thresholdSpeedUp = 5;
+	public float maxSpeedOnTroll = 12;
 
 	void Awake() {
 		controllableFactory = new ControllableFactory();
@@ -37,13 +39,13 @@ public class InjectionRegister : MonoBehaviour {
 				controllableFactory.CreatePlayer((Controllable) component);
 				break;
 			case TagConstants.ENEMY:
-				controllableFactory.CreateEnemy((Controllable) component);
+				controllableFactory.CreateEnemy((Controllable) component,maxSpeedOnTroll);
 				break;
 			case TagConstants.ENEMYAI:
 				controllableFactory.CreateEnemyAI((AI) component);
 				break;
 			case TagConstants.DRESS:
-				itemFactory.CreateDress((Commandable) component);
+				itemFactory.CreateDress((Commandable) component,thresholdSpeedUp);
 				break;
 			case TagConstants.BRIDGE:
 				itemFactory.CreateBridge((Commandable) component);
@@ -51,9 +53,11 @@ public class InjectionRegister : MonoBehaviour {
 			case TagConstants.YELLOWBUSH:
 				itemFactory.CreateYellowBush((Commandable) component);
 				break;
+			case TagConstants.FEEDBACKNUMBER:
+				itemFactory.CreateFloatingNumberFeedback();
+				break;
 			default:
 				Debug.LogError("Missing implementation for component: '" + component.GetTag() + "' inside InjectionRegister");
-				break;
 		}
 	}
 }

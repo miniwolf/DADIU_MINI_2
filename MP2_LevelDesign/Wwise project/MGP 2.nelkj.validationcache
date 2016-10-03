@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationCache Version="1" SchemaVersion="72">
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="2041732812" DateHigh="30546719"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects.wwu" DateLow="3239104186" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Actor-Mixer Hierarchy\Factory Synth One.wwu" DateLow="3239909721" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Attenuations\Default Work Unit.wwu" DateLow="3240029805" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Audio Devices\Default Work Unit.wwu" DateLow="3240094841" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Control Surface Sessions\Default Work Unit.wwu" DateLow="3240159889" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Conversion Settings\Default Work Unit.wwu" DateLow="3240224925" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Conversion Settings\Factory Conversion Settings.wwu" DateLow="3240305036" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Dynamic Dialogue\Default Work Unit.wwu" DateLow="3240385031" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Effects\Default Work Unit.wwu" DateLow="3240455084" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Effects\Factory Auro Headphone.wwu" DateLow="3240530132" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Effects\Factory Effects.wwu" DateLow="3240950407" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Effects\Factory iZotope Box Modeler.wwu" DateLow="3241440738" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Effects\Factory iZotope Delay.wwu" DateLow="3241530792" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Effects\Factory iZotope Dynamics.wwu" DateLow="3241585827" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Effects\Factory iZotope Filters.wwu" DateLow="3241760942" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Effects\Factory iZotope Hybrid Reverb Effects.wwu" DateLow="3241856012" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Effects\Factory iZotope Multiband Distortion.wwu" DateLow="3241946066" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Effects\Factory iZotope Singleband Distortion.wwu" DateLow="3242066150" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Effects\Factory McDSP Effects.wwu" DateLow="3241245602" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Events\Default Work Unit.wwu" DateLow="2041447613" DateHigh="30546719"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Game Parameters\Default Work Unit.wwu" DateLow="3242186242" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Game Parameters\Factory SoundSeed Air Game Syncs.wwu" DateLow="3242226256" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="3242976751" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="3243467070" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\MGP 2.nelkj.wsettings" DateLow="1450821205" DateHigh="30547186"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\MGP 2.wproj" DateLow="3243407039" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Mixing Sessions\Default Work Unit.wwu" DateLow="3243507109" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Modulators\Default Work Unit.wwu" DateLow="3243557136" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Presets\Default Work Unit.wwu" DateLow="3267643710" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Queries\Default Work Unit.wwu" DateLow="3267688725" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Queries\Factory Queries.wwu" DateLow="3267753765" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\SoundBanks\Default Work Unit.wwu" DateLow="2041127434" DateHigh="30546719"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Soundcaster Sessions\Default Work Unit.wwu" DateLow="3267888861" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\States\Default Work Unit.wwu" DateLow="3267948901" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Switches\Default Work Unit.wwu" DateLow="3267988932" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\Triggers\Default Work Unit.wwu" DateLow="3268048972" DateHigh="30546701"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1725517596" DateHigh="30546378"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects.wwu" DateLow="1234099914" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Actor-Mixer Hierarchy\Factory Synth One.wwu" DateLow="1236409474" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Attenuations\Default Work Unit.wwu" DateLow="1238848215" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Audio Devices\Default Work Unit.wwu" DateLow="1238788171" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Control Surface Sessions\Default Work Unit.wwu" DateLow="1238723114" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Conversion Settings\Default Work Unit.wwu" DateLow="315835776" DateHigh="30546346"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Conversion Settings\Factory Conversion Settings.wwu" DateLow="1237627122" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Dynamic Dialogue\Default Work Unit.wwu" DateLow="1238908238" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Effects\Default Work Unit.wwu" DateLow="1237019872" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Effects\Factory Auro Headphone.wwu" DateLow="1237094933" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Effects\Factory Effects.wwu" DateLow="1235055550" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Effects\Factory iZotope Box Modeler.wwu" DateLow="1237196835" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Effects\Factory iZotope Delay.wwu" DateLow="1237296934" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Effects\Factory iZotope Dynamics.wwu" DateLow="1237842280" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Effects\Factory iZotope Filters.wwu" DateLow="1238392639" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Effects\Factory iZotope Hybrid Reverb Effects.wwu" DateLow="1232630213" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Effects\Factory iZotope Multiband Distortion.wwu" DateLow="1237467040" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Effects\Factory iZotope Singleband Distortion.wwu" DateLow="1237772236" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Effects\Factory McDSP Effects.wwu" DateLow="1238057401" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Events\Default Work Unit.wwu" DateLow="2754422878" DateHigh="30546376"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Game Parameters\Default Work Unit.wwu" DateLow="1232430085" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Game Parameters\Factory SoundSeed Air Game Syncs.wwu" DateLow="1234680299" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1238658082" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1232510142" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\MGP 2.nelkj.wsettings" DateLow="135130894" DateHigh="30546381"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\MGP 2.wproj" DateLow="1231899739" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Mixing Sessions\Default Work Unit.wwu" DateLow="1238582754" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Modulators\Default Work Unit.wwu" DateLow="1238517731" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Presets\Default Work Unit.wwu" DateLow="1238172497" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Queries\Default Work Unit.wwu" DateLow="1232149907" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Queries\Factory Queries.wwu" DateLow="1239098391" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\SoundBanks\Default Work Unit.wwu" DateLow="31678933" DateHigh="30546372"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1232064870" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\States\Default Work Unit.wwu" DateLow="1234595258" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Switches\Default Work Unit.wwu" DateLow="1232229981" DateHigh="30546318"/>
+	<ValidationCacheItem File="C:\Users\nelkj\OneDrive\Dokumenter\WwiseProjects\MGP 2\Triggers\Default Work Unit.wwu" DateLow="1238978299" DateHigh="30546318"/>
+</ValidationCache>

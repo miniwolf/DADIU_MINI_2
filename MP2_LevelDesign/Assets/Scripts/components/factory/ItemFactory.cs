@@ -4,14 +4,16 @@ using System.Collections.Generic;
 public class ItemFactory {
 	Enemy enemy;
 	InGameController inGameController;
+	FloatingNumberInterface feedBackNumber;
 
 	public ItemFactory() {
 		inGameController = GameObject.FindGameObjectWithTag(UIConstants.IN_GAME_MENU).GetComponent<InGameController>();
 		enemy = GameObject.FindGameObjectWithTag(TagConstants.ENEMY).GetComponent<Enemy>();
+		feedBackNumber = GameObject.FindGameObjectWithTag(TagConstants.FEEDBACKNUMBER).GetComponent<FloatingNumberInterface>();
 	}
 
-	public void CreateDress(Commandable dress) {
-		dress.AddCommand(new DressCommand(inGameController, enemy));
+	public void CreateDress(Commandable dress, int thresholdSpeedUp) {
+		dress.AddCommand(new DressCommand(inGameController, enemy, thresholdSpeedUp));
 	}
 
 	public void CreateBridge(Commandable bridge) {
@@ -21,4 +23,10 @@ public class ItemFactory {
 	public void CreateYellowBush(Commandable yellowBush) {
 		yellowBush.AddCommand(new YellowBushCommand(enemy));
 	}
+
+	public void CreateFloatingNumberFeedback(){
+		feedBackNumber.SetInGameController(inGameController);
+		inGameController.SetFeedback(feedBackNumber);
+	}
+
 }
