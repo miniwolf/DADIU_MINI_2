@@ -19,6 +19,18 @@ Event	ID	Name			Wwise Object Path	Notes
 	4228143387	trollThrowsAuntie			\Default Work Unit\trollThrowsAuntie	
 	4278488131	concrete_test			\Default Work Unit\concrete_test	
 
+Switch Group	ID	Name			Wwise Object Path	Notes
+	129488886	Troll_surface			\Default Work Unit\Troll_surface	
+	3392155079	Auntie_surface			\Default Work Unit\Auntie_surface	
+
+Switch	ID	Name	Switch Group			Notes
+	155471294	forest_surface	Troll_surface			
+	1851077388	stone_bridge	Troll_surface			
+	3876784398	wood_bridge	Troll_surface			
+	155471294	forest_surface	Auntie_surface			
+	1851077388	stone_bridge	Auntie_surface			
+	3876784398	wood_bridge	Auntie_surface			
+
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	3617496	Throw_7	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Android\SFX\Throw_7_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Throwing\Throw_7		9577
 	42406669	Uoohh	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Android\SFX\Uoohh_523312EE.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Surprised\Uoohh		6943
@@ -44,7 +56,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	485177666	music_menu_comp	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Android\SFX\music_menu_comp_37B59102.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\music_menu_comp		66813
 	548029858	footstep_branch_2	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Android\SFX\footstep_branch_2_09A27E2C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Footsteps\forest_surface\branches\footstep_branch_2		7912
 	563529082	Button	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Android\SFX\menu button_1_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Button		4467
-	617219006	footstep_3	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Android\SFX\footstep_3_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\main_footsteps\footstep_3		4150
+	617219006	footstep_3	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Android\SFX\footstep_3_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Footsteps\forest\main_footsteps\footstep_3		4150
 	641037458	music_troll_comp_2	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Android\SFX\music_troll_comp_2_37B59102.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\music_troll_comp_2		531850
 	662664710	forest_ambience_loop	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Android\SFX\forest_ambience_loop_37B59102.wem		\Actor-Mixer Hierarchy\Default Work Unit\Soundscape\forest_ambience_loop		340851
 	678907684	Gasp (breathing in)	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Android\SFX\Gasp (breathing in)_18BC047D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Surprised\Gasp (breathing in)		10319
