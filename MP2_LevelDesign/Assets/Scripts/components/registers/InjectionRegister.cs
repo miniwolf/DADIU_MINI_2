@@ -59,6 +59,7 @@ public class InjectionRegister : MonoBehaviour {
 				break;
 			default:
 				Debug.LogError("Missing implementation for component: '" + component.GetTag() + "' inside InjectionRegister");
+				break;
 		}
 	}
 }

@@ -5,7 +5,7 @@ public class GameStateManagerImpl : MonoBehaviour, GameStateManager {
 	private GameStates gameState;
 	
 	public void NewState(GameStates newState) {
-		if ( gameState.GetType() == newState.GetType() ) {
+		if ( gameState != null && gameState.GetType() == newState.GetType() ) {
 			return;
 		}
 
