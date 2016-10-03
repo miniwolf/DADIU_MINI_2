@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="118">
 	<RootPaths>
-		<ProjectRoot>C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\GeneratedSoundBanks\Windows\</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\nelkj\OneDrive\Dokumenter\GitHub\DADIU_MINI_2\MP2_LevelDesign\Wwise project\GeneratedSoundBanks\Windows\</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
