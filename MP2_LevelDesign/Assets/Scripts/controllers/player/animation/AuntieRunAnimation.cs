@@ -3,6 +3,7 @@ using System.Collections;
 
 public class AuntieRunAnimation : Action {
 	private Animator animator;
+	private Player player;
 
 	public void Setup(GameObject obj) {
 		animator = obj.GetComponentInChildren<Animator>();

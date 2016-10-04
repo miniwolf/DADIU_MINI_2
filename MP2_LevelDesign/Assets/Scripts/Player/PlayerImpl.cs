@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class PlayerImpl : MonoBehaviour, Player, GameEntity, Actionable {
 	private PlayerState playerState = PlayerState.Running;
@@ -25,6 +26,8 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Actionable {
 	}
 
 	void Update() {
+		Debug.Log(playerState);
+
 		switch ( playerState ) {
 			case PlayerState.Running:
 				ExecuteAction(Actions.MOVE);
@@ -57,5 +60,9 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Actionable {
 
 	public Vector3 GetPosition() {
 		return this.transform.position;
+	}
+
+	public void ExecuteCoroutine(IEnumerator coroutine) {
+		StartCoroutine(coroutine);
 	}
 }
