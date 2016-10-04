@@ -17,7 +17,6 @@ public class  PlayerCaughtAnimation : Action {
 		player.ExecuteCoroutine(GetUpCoroutine());
 	}
 
-
 	private IEnumerator IsThrownCoroutine() {
 		yield return new WaitForSeconds(1);
 		animator.SetBool("isThrown", false);
