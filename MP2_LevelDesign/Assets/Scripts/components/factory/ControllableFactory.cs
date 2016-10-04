@@ -24,15 +24,24 @@ public class ControllableFactory {
 
 	public void CreatePlayer(Actionable actionable) {
 		actionable.AddAction(Actions.MOVE, CreateMovementAuntie(actionable));
+		actionable.AddAction(Actions.DEBUGMOVE, CreateMouseMovementAuntie(actionable));
 		actionable.AddAction(Actions.STUN, CreateStun());
+		actionable.AddAction(Actions.RESUME, CreateResume());
 
 		MovableCommand life = new LifeCommander(player,
 		                                        enemy,
 												GameObject.FindGameObjectWithTag(TagConstants.GAME_STATE).GetComponent<GameStateManager>(),
 												ingameController,
 												(Actionable) player,
-												(Actionable) enemy);
+												(Actionable) enemy,
+												container);
 		playerObj.GetComponentsInChildren<MovableCommandable>()[0].AddCommand(life);
+	}
+
+	private Handler CreateResume () {
+		Handler resume = new ActionHandler();
+		resume.AddAction(new ResumeAction(player));
+		return resume;
 	}
 
 	private Handler CreateStun() {
@@ -40,9 +49,21 @@ public class ControllableFactory {
 		stun.AddAction(new StopAction(player));
 		return stun;
 	}
-		
-	private MouseMove CreateMovementAuntie(Actionable controllable) {
+
+	private MouseMove CreateMouseMovementAuntie(Actionable actionable) {
 		MouseMove move = new MouseMove(camera);
+		move.AddMoveAction(new MoveActionImpl());
+		move.AddAction(new AuntieRunAnimation());
+
+		GameObject tapObj = GameObject.FindGameObjectWithTag(TagConstants.TAP_FEEDBACK);
+		move.AddMoveAction(new TapFeedback(tapObj));
+		move.AddAction(new TapAnimation(tapObj.GetComponent<Animator>()));
+		return move;
+	}
+		
+	private TouchMove CreateMovementAuntie(Actionable controllable) {
+		TouchMove move = new TouchMove(camera);
+		move.AddAction(new StartMovingAuntieSound());
 		move.AddMoveAction(new MoveActionImpl());
 		move.AddAction(new AuntieRunAnimation());
 
@@ -60,9 +81,24 @@ public class ControllableFactory {
 		actionable.AddAction(Actions.WALKAWAY, CreateWalkAwayEnemy());
 		actionable.AddAction(Actions.WARP, CreateWarpEnemy());
 		actionable.AddAction(Actions.CAUGHT, CreateCaught());
+		actionable.AddAction(Actions.ROAM, CreateRoam());
+		actionable.AddAction(Actions.CHASE, CreateChase());
 		//CreateControllable(enemy, enemyAgent,maxSpeedOnTroll);
 		enemyObj.GetComponentsInChildren<MovableCommandable>()[0].AddCommand(new ChaseCommand(enemy));
 	}
+
+	Handler CreateRoam() {
+		Handler roam = new ActionHandler();
+		roam.AddAction(new RoamAction(enemy));
+		return roam;
+	}
+
+	Handler CreateChase() {
+		Handler chase = new ActionHandler();
+		chase.AddAction(new ChaseAction(enemy));
+		return chase;
+	}
+
 
 	Handler CreateCaught() {
 		Handler catchGirl = new ActionHandler();
@@ -85,7 +121,7 @@ public class ControllableFactory {
 
 	private Handler CreateSpeedEnemy() {
 		Handler speedUp = new ActionHandler();
-		speedUp.AddAction(new SpeedUpAction());
+		speedUp.AddAction(new SpeedUpAction(enemy));
 		return speedUp;
 	}
 

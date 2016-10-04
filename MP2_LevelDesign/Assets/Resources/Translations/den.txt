@@ -1,15 +1,15 @@
-mainPlayGame;Play game dk
-mainHowtoPlay;How to Play dk
-mainSettings;Settings dk
-mainExitGame;Exit Game dk
-settingsToggleSound;  Toggle Sound   dk
-settingsChangeLanguage; Change Language dk
-settingsReturnToMainMenu;Return to Main Menu dk
-ingameExit; Exit dk
-ingameRetry;Retry dk
-ingameLife;Life: dk
-ingameScore;Score: dk
-endSceneHighscore;The highscore is: dk 
-endSceneMyScore;Your score is: dk
+mainPlayGame;Start
+mainHowtoPlay;Guide
+mainSettings;Instillinger
+mainExitGame;Exit
+settingsToggleSound;Lyd
+settingsChangeLanguage;
+settingsReturnToMainMenu;Tilbage
+ingameExit;
+ingameRetry;
+ingameLife;
+ingameScore;Score:
+endSceneHighscore;Highscore: 
+endSceneMyScore;Score:
 endSceneMotivationalL;Great job, try again and see if you can beat the highscore next time dk
 endSceneMotivationalW;You are an amazing player you beat the highscore good job dk
