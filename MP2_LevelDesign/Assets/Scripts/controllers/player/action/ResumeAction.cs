@@ -13,7 +13,7 @@ public class ResumeAction : Action {
 	}
 
 	public void Execute(){
-		player.SetState(PlayerState.Idle);
+		player.SetState(PlayerState.Running);
 	}
 }
 
