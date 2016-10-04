@@ -15,4 +15,5 @@ public class TagConstants {
 	public const string FEEDBACKNUMBER = "FeedbackNumber";
 	public const string ENDSCREENMOTIVATIONAL = "Motivational";
 	public const string ENDSCREENHIGHSCORE = "HighScore";
+	public const string WOODBRIDGENAVMESH = "WoodBridgeNavMesh";
 }
