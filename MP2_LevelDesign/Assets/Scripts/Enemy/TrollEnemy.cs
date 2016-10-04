@@ -1,9 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable {
-	private EnemyState state;
-	List<Controller> controllers = new List<Controller>();
+public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Actionable {
+	private EnemyState state = EnemyState.RandomWalk;
+	private Dictionary<Actions, Handler> actions = new Dictionary<Actions, Handler>();
+	private Vector3 destination = Vector3.zero;
+
+	public float slowdownTime = 2f;
+	public float slowdown = 1.5f;
+	public float speedUp = 1.5f;
+
+	public int thresholdSpeed = 2;
+	public int thresholdChase = 2;
 
 	void Awake() {
 		InjectionRegister.Register(this);
@@ -13,24 +21,17 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable {
 	// DEBUG
 	void Update() {
 		if (Input.GetKeyDown(KeyCode.Space)) {
-			SetState(EnemyState.ObstacleHit);
+			SetState(EnemyState.RandomWalk);
 		}
 		else if (Input.GetKeyDown(KeyCode.UpArrow)) {
-			SetState(EnemyState.Chasing);
+			SetState(EnemyState.StartChase);
 		}
-	}
-
-	public NavMeshController GetNavMesh() {
-		foreach ( Controller controller in controllers ) {
-			if ( controller.GetType() == typeof(NavMeshController) ) {
-				return (NavMeshController) controller;
-			}
-		}
-		return null;
 	}
 
 	public void SetupComponents() {
-		state = EnemyState.RandomWalk;
+		foreach ( Handler action in actions.Values ) {
+			action.SetupComponents(gameObject);
+		}
 	}
 
 	public EnemyState GetState() {
@@ -41,23 +42,59 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable {
 		state = newState;
 	}
 
-	public List<Controller> GetControllers() {
-		return controllers;
-	}
-		
-	public void AddController(Controller controller) {
-		controllers.Add(controller);
-	}
-
 	public string GetTag() {
 		return TagConstants.ENEMY;
 	}
 
 	public Vector3 GetPosition() {
-		return this.transform.position;
+		return transform.position;
 	}
 
-	public void SetPosition(Vector3 newPosition) {
-		this.transform.position = newPosition;
+	public void AddAction(Actions actionName, Handler handler) {
+		actions.Add(actionName, handler);
+	}
+
+	public void ExecuteAction(Actions actionName) {
+		actions[actionName].DoAction();
+	}
+
+	public float GetSlowdownTime() {
+		return slowdownTime;
+	}
+
+	public void SetSlowdownTime(float slowdownTime) {
+		this.slowdownTime = slowdownTime;
+	}
+
+	public float GetSlowdown() {
+		return slowdown;
+	}
+
+	public void SetSlowdown(float slowdown) {
+		this.slowdown = slowdown;
+	}
+
+	public float GetSpeedUp() {
+		return speedUp;
+	}
+
+	public void SetSpeedUp(float speedUp) {
+		this.speedUp = speedUp;
+	}
+
+	public void SetDestination(Vector3 destination) {
+		this.destination = destination;
+	}
+
+	public Vector3 GetDestination() {
+		return destination;
+	}
+
+	public int GetThresholdSpeedup() {
+		return thresholdSpeed;
+	}
+
+	public int GetThresholdChase() {
+		return thresholdChase;
 	}
 }

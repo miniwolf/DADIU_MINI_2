@@ -57,6 +57,10 @@ public class InGameControllerImpl : UIController, InGameController {
 
 	public void IncrementScore() {
 		score.IncrementValue();
+		PlayerPrefs.SetFloat(PlayerPrefsConstants.MYSCORE, score.GetValue());
+		if (score.GetValue() > PlayerPrefs.GetFloat(PlayerPrefsConstants.HIGHSCORE)) {
+			PlayerPrefs.SetFloat(PlayerPrefsConstants.HIGHSCORE, score.GetValue());
+		}
 		feedBackNumber.IncrementValue();
 	}
 
@@ -69,10 +73,13 @@ public class InGameControllerImpl : UIController, InGameController {
 		score.DecrementValue();
 		UpdateScore();
 	}
+    public float GetScoreValue() {
+        return score.GetValue();
+    }
 
-	public float GetScoreValue() {
-		return score.GetValue();
-	}
+    public float GetLifeValue() {
+        return life.GetValue();
+    }
 
 	public void SetFeedback(FloatingNumberInterface feedBackNumber) {
 		this.feedBackNumber = feedBackNumber;

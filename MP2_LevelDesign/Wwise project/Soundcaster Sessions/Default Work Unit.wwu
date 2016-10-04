@@ -6,15 +6,31 @@
 				<SoundcasterSession Name="New Soundcaster Session" ID="{F1563F7D-40A4-40CA-AAB1-808C3AC7AEAA}">
 					<ModuleList>
 						<Module>
-							<ObjectRef Name="Catching_auntie" ID="{3DB738C7-0BAA-418C-8AE8-C340FAD8C831}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
+							<ObjectRef Name="playForestSoundscape" ID="{796F6D74-E6B8-42E1-9151-33A340958F0B}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}"/>
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Throwing" ID="{92D7EA33-DDD5-46C5-AD13-589C6A8BE78D}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
+							<ObjectRef Name="playMenuMusic" ID="{B10B9A4F-B953-4A24-8626-94BD1D1DD38A}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="auntieFootsteps" ID="{44ADE32D-FF22-4AA3-AA3B-69D4D9B78B3D}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="running_river" ID="{E5791DBD-B780-4B1D-8BB6-E74534D6323A}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
 							<Position X="1" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Troll_falling_longs" ID="{1AF0E5C6-731B-4147-9AFA-B8A6B5F8D811}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
+							<ObjectRef Name="playLevelMusic" ID="{DB5F1819-1128-4CFB-86BF-14681B7D3D2B}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="trollFootsteps" ID="{441AE6FC-175B-4732-8E96-E0C78F786837}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="frog_soundscape_loop_1" ID="{AEDE5E54-A0EE-49F5-A3F5-1F71E08EA898}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
 							<Position X="2" Y="0"/>
 						</Module>
 					</ModuleList>
@@ -61,7 +77,9 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>
-					<CurrentSwitchList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="forest_surface" ID="{909B7191-F68A-400E-91F6-E4C24633F277}"/>
+					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>
 		</WorkUnit>

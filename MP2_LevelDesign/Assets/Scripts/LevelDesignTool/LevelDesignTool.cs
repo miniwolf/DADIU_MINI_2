@@ -6,20 +6,21 @@ using System;
 public class LevelDesignTool : MonoBehaviour {
 	public List<GameObject>[] theStates = new List<GameObject>[10];
 	public GameObject parentOfLaundryFormation;
-	private bool statesInit = false;
 	public int stateToShowIn, stateToSaveIn;
-	string allData;
-	string[] splitData;
-	List<string>[] organizedSplitData;
 
-	public void InittheStates () {
+	private bool statesInit = false;
+	private string allData;
+	private string[] splitData;
+	private List<string>[] organizedSplitData;
+
+	public void InittheStates() {
 		for (int i = 0; i < theStates.Length; i++) {
 			theStates[i] = new List<GameObject>();
 		}
 		statesInit = true;
 	}
 
-	bool StatesInit () {
+	private bool StatesInit() {
 		for (int i = 0; i < theStates.Length; i++) {
 			if (theStates[i] == null) {
 				return false;
@@ -28,7 +29,7 @@ public class LevelDesignTool : MonoBehaviour {
 		return true;
 	}
 
-	public void SaveActiveObjects (int stateToSaveIn) {
+	public void SaveActiveObjects(int stateToSaveIn) {
 		if (!StatesInit()) {
 			InittheStates();
 		}
@@ -46,45 +47,35 @@ public class LevelDesignTool : MonoBehaviour {
 		SaveToText();
 	}
 
-	void SaveToText () {
+	private void SaveToText() {
 		System.IO.File.WriteAllText("Assets/Resources/LevelDesignSave.txt", ConvertDataToString());
 	}
 
-	string ConvertDataToString () {
+	private string ConvertDataToString() {
 		string allDataToSave = "";
 		for (int i = 0; i < theStates.Length; i++) {
-			if (i == 0) {
-				allDataToSave = string.Concat(allDataToSave, i.ToString());
-			} else {
-				allDataToSave = string.Concat(allDataToSave, ":" + i.ToString());
-			}
+			allDataToSave = string.Concat(allDataToSave, (i == 0 ? "" : ":") + i.ToString());
+
 			for (int u = 0; u < organizedSplitData[i].Count; u++) {
 				allDataToSave = string.Concat(allDataToSave, "," + organizedSplitData[i][u]);
-				//allDataToSave += theStates [i] [u].gameObject.name + " ";
 			}
 		}
 		return allDataToSave;
 	}
-		
-	void PrintSavedActiveObjects () {
-		for (int i = 0; i < theStates[0].Count; i++) {
-			print(theStates[0][i].gameObject.name);
-		}
-	}
 
-	public void ShowAll () {
+	public void ShowAll() {
 		foreach (Transform go in parentOfLaundryFormation.GetComponentInChildren<Transform>()) {
 			go.gameObject.SetActive(true);
 		}
 	}
 
-	public void HideAll () {
+	public void HideAll() {
 		foreach (Transform go in parentOfLaundryFormation.GetComponentInChildren<Transform>()) {
 			go.gameObject.SetActive(false);
 		}
 	}
 
-	public void ShowState (int stateToShow) {
+	public void ShowState(int stateToShow) {
 		if (StatesInit()) {
 			HideAll();
 			for (int i = 0; i < theStates[stateToShow].Count; i++) {
@@ -93,7 +84,7 @@ public class LevelDesignTool : MonoBehaviour {
 		}
 	}
 
-	public void LoadAllStates () {
+	public void LoadAllStates() {
 		if (!StatesInit()) {
 			InittheStates();
 		}
@@ -112,7 +103,7 @@ public class LevelDesignTool : MonoBehaviour {
 		}
 	}
 
-	void ReadText () {
+	private void ReadText() {
 		allData = System.IO.File.ReadAllText("Assets/Resources/LevelDesignSave.txt");
 		splitData = allData.Split(':');
 		organizedSplitData = new List<string>[splitData.Length];
