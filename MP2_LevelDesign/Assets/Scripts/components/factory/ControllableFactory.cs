@@ -50,8 +50,8 @@ public class ControllableFactory {
 		return stun;
 	}
 		
-	private MouseMove CreateMovementAuntie(Actionable controllable) {
-		MouseMove move = new MouseMove(camera);
+	private TouchMove CreateMovementAuntie(Actionable controllable) {
+		TouchMove move = new TouchMove(camera);
 		move.AddAction(new StartMovingAuntieSound());
 		move.AddMoveAction(new MoveActionImpl());
 		move.AddAction(new AuntieRunAnimation());
