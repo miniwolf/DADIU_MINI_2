@@ -47,7 +47,7 @@ public class ControllableFactory {
 
 	private Handler CreateAuntieStop () {
 		Handler resume = new ActionHandler();
-		resume.AddAction(new PlayerIdleAnimation(player));
+		resume.AddAction(new PlayerIdleAnimation());
 		return resume;
 	}
 
