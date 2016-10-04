@@ -7,21 +7,27 @@ public class EndGame : MonoBehaviour {
 
 	GameObject fadeGO;
 	bool isFading = false;
+	Vector3 origPos;
 
 	void Start(){
 		fadeGO = GameObject.FindGameObjectWithTag("FadingObj");
-		fadeGO.SetActive(false);
+		Color color = Color.black;
+		color.a = 0f;
+		fadeGO.GetComponent<Image>().color = color;
+		origPos = fadeGO.transform.position;
+		fadeGO.transform.position += new Vector3(10000f, 10000f, 10000f);
 	}
 
 	public void BeginFade(){
-		fadeGO.SetActive(true);
+		fadeGO.transform.position = origPos;
+		Time.timeScale = 1;
 		if (!isFading) {
 			StartCoroutine(StartFade());
 		}
 	}
 
 	IEnumerator StartFade (){
-		isFading = true;
+		isFading = true		;
 		Color col = Color.black;
 		col.a = 0;
 		fadeGO.GetComponent<Image>().color = col;
