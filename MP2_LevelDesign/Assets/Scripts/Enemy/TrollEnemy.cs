@@ -12,6 +12,7 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Actionable {
 
 	public int thresholdSpeed = 2;
 	public int thresholdChase = 2;
+	public float maxSpeed = 12;
 
 	void Awake() {
 		InjectionRegister.Register(this);
@@ -96,5 +97,9 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Actionable {
 
 	public int GetThresholdChase() {
 		return thresholdChase;
+	}
+
+	public float GetMaxSpeed(){
+		return maxSpeed;	
 	}
 }

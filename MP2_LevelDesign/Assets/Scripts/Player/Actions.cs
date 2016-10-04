@@ -9,5 +9,6 @@ public enum Actions {
 	WALKAWAY,
 	STOP,
 	STUN,
-	MOVE
+	MOVE,
+	RESUME
 }

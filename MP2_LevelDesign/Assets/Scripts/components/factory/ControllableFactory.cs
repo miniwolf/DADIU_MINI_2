@@ -25,14 +25,22 @@ public class ControllableFactory {
 	public void CreatePlayer(Actionable actionable) {
 		actionable.AddAction(Actions.MOVE, CreateMovementAuntie(actionable));
 		actionable.AddAction(Actions.STUN, CreateStun());
+		actionable.AddAction(Actions.RESUME, CreateResume());
 
 		MovableCommand life = new LifeCommander(player,
 		                                        enemy,
 												GameObject.FindGameObjectWithTag(TagConstants.GAME_STATE).GetComponent<GameStateManager>(),
 												ingameController,
 												(Actionable) player,
-												(Actionable) enemy);
+												(Actionable) enemy,
+												container);
 		playerObj.GetComponentsInChildren<MovableCommandable>()[0].AddCommand(life);
+	}
+
+	private Handler CreateResume () {
+		Handler resume = new ActionHandler();
+		resume.AddAction(new ResumeAction(player));
+		return resume;
 	}
 
 	private Handler CreateStun() {
@@ -87,7 +95,7 @@ public class ControllableFactory {
 
 	private Handler CreateSpeedEnemy() {
 		Handler speedUp = new ActionHandler();
-		speedUp.AddAction(new SpeedUpAction());
+		speedUp.AddAction(new SpeedUpAction(enemy));
 		return speedUp;
 	}
 
