@@ -47,13 +47,11 @@ public class ControllableFactory {
 	private Handler CreateStun() {
 		Handler stun = new Stun();
 		stun.AddAction(new StopAction(player));
-		stun.AddAction(new StopMovingAuntieSound());
 		return stun;
 	}
 
 	private MouseMove CreateMouseMovementAuntie(Actionable actionable) {
 		MouseMove move = new MouseMove(camera);
-		move.AddAction(new StartMovingAuntieSound());
 		move.AddMoveAction(new MoveActionImpl());
 		move.AddAction(new AuntieRunAnimation());
 
@@ -136,14 +134,12 @@ public class ControllableFactory {
 	private Handler CreateEnemyMovement() {
 		Handler enemyMovement = new ActionHandler();
 		enemyMovement.AddAction(new TrollMove(enemy));
-		enemyMovement.AddAction(new TrollMoveSound());
 		return enemyMovement;
 	}
 
 	private Handler CreateStopEnemy() {
 		Handler enemyStop = new ActionHandler();
 		enemyStop.AddAction(new StopAction(player));
-		enemyStop.AddAction(new StopTrollSound());
 		return enemyStop;
 	}
 
