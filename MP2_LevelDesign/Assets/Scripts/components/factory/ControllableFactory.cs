@@ -93,6 +93,7 @@ public class ControllableFactory {
 	Handler CreateRoam() {
 		Handler roam = new ActionHandler();
 		roam.AddAction(new RoamAction(enemy));
+		roam.AddAction(new EnemyRoamingAnimation());
 		return roam;
 	}
 
