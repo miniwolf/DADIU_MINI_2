@@ -23,7 +23,6 @@ public class YellowBushAction : ItemCommand {
 	/// <param name="other">Colliding object</param>
 	public void Execute(Collider other) {
 		if ( other.transform.tag == TagConstants.ENEMY ) {
-			enemy.SetState(EnemyState.RandomWalk);
 			actionableEnemy.ExecuteAction(Actions.SLOWDOWN);
 		}
 	}
