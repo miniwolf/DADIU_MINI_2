@@ -13,7 +13,6 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Actionable {
 		player = GameObject.FindGameObjectWithTag(TagConstants.PLAYER);
 		tapObj = GameObject.FindGameObjectWithTag(TagConstants.TAP_FEEDBACK);
 
-
 		InjectionRegister.Register(this);
 		TagRegister.RegisterSingle(gameObject, TagConstants.PLAYER);
 	}
