@@ -92,6 +92,7 @@ public class ControllableFactory {
 
 	Handler CreateRoam() {
 		Handler roam = new ActionHandler();
+		roam.AddAction(new RoamingMusic());
 		roam.AddAction(new RoamAction(enemy));
 		roam.AddAction(new EnemyRoamingAnimation());
 		return roam;
@@ -99,6 +100,7 @@ public class ControllableFactory {
 
 	Handler CreateChase() {
 		Handler chase = new ActionHandler();
+		chase.AddAction(new ChasingMusic(enemy));
 		chase.AddAction(new ChaseAction(enemy));
 		return chase;
 	}

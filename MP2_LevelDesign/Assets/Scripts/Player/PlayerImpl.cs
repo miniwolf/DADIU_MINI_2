@@ -27,8 +27,6 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Actionable {
 	}
 
 	void Update() {
-		Debug.Log(playerState);
-
 		switch ( playerState ) {
 			case PlayerState.Running:
 				ExecuteAction(Actions.MOVE);
