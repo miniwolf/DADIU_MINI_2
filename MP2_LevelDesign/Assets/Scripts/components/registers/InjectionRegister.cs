@@ -5,10 +5,12 @@ public class InjectionRegister : MonoBehaviour {
 	private static List<GameEntity> components = new List<GameEntity>();
 	private ControllableFactory controllableFactory;
 	private ItemFactory itemFactory;
+	private CoroutineDelegateContainer container;
 
 	void Awake() {
-		controllableFactory = new ControllableFactory(GetComponent<CoroutineDelegateContainer>());
-		itemFactory = new ItemFactory();
+		container = GetComponent<CoroutineDelegateContainer>();
+		controllableFactory = new ControllableFactory(container);
+		itemFactory = new ItemFactory(container);
 	}
 
 	// Use this for initialization
