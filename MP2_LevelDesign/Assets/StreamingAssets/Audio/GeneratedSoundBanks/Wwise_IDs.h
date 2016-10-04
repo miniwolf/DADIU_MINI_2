@@ -17,14 +17,14 @@ namespace AK
         static const AkUniqueID DRESSPICKUP = 2867536338U;
         static const AkUniqueID MENUBACKWARDCLICK = 3139869105U;
         static const AkUniqueID MENUFORWARDCLICK = 4028748541U;
+        static const AkUniqueID PLAYCHASINGMUSIC = 4109667655U;
         static const AkUniqueID PLAYFORESTSOUNDSCAPE = 1477059561U;
         static const AkUniqueID PLAYLAKEAMBIENCE = 3889299310U;
-        static const AkUniqueID PLAYLEVELMUSIC = 1148261388U;
         static const AkUniqueID PLAYMENUMUSIC = 413545259U;
         static const AkUniqueID PLAYRIVERAMBIENCE = 251180667U;
+        static const AkUniqueID PLAYROAMINGMUSIC = 2415596161U;
         static const AkUniqueID STOPALLMUSIC = 2907867019U;
         static const AkUniqueID STOPALLSOUNDSCAPES = 3284803258U;
-        static const AkUniqueID STOPAUNTIEHAPPYVOICE = 1813615719U;
         static const AkUniqueID TROLLCATCHAUNTIE = 3227179805U;
         static const AkUniqueID TROLLFALLSINTOWATER = 1919802259U;
         static const AkUniqueID TROLLFOOTSTEPS = 4032712899U;
