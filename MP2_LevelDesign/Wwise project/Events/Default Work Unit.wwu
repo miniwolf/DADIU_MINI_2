@@ -451,6 +451,28 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Event Name="playLakeSoundscape" ID="{425F7A6A-EA35-4E50-9D9B-3DB0C039DAA1}">
+					<ChildrenList>
+						<Action Name="Play" ID="{83D1D56A-AA25-432D-9862-8D8CB3DBA245}" ShortID="974330160" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{FADDE326-31CA-4709-A854-982FA78B32EB}" Global="false">
+									<ObjectRef Name="frog_soundscape_loop_1" ID="{AEDE5E54-A0EE-49F5-A3F5-1F71E08EA898}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="playRiverSound" ID="{02D0967D-B1C1-4825-B3B2-65066445DAC5}">
+					<ChildrenList>
+						<Action Name="Play" ID="{46A3D5BC-A765-48D8-85C0-1F6CCF5AC08B}" ShortID="852279737" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{44A4F623-F24C-40AD-B5CC-CB6270D8D897}" Global="false">
+									<ObjectRef Name="running_river" ID="{E5791DBD-B780-4B1D-8BB6-E74534D6323A}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
