@@ -25,14 +25,14 @@
 				<Event Id="2867536338" Name="dressPickup" ObjectPath="\Events\Default Work Unit\dressPickup"/>
 				<Event Id="3139869105" Name="menuBackwardClick" ObjectPath="\Events\Default Work Unit\menuBackwardClick"/>
 				<Event Id="4028748541" Name="menuForwardClick" ObjectPath="\Events\Default Work Unit\menuForwardClick"/>
+				<Event Id="4109667655" Name="playChasingMusic" ObjectPath="\Events\Default Work Unit\musicEvents\playChasingMusic"/>
 				<Event Id="1477059561" Name="playForestSoundscape" ObjectPath="\Events\Default Work Unit\playForestSoundscape"/>
 				<Event Id="3889299310" Name="playLakeAmbience" ObjectPath="\Events\Default Work Unit\playLakeAmbience" MaxAttenuation="50.000000"/>
-				<Event Id="1148261388" Name="playLevelMusic" ObjectPath="\Events\Default Work Unit\musicEvents\playLevelMusic" MaxAttenuation="50.000000"/>
 				<Event Id="413545259" Name="playMenuMusic" ObjectPath="\Events\Default Work Unit\musicEvents\playMenuMusic"/>
 				<Event Id="251180667" Name="playRiverAmbience" ObjectPath="\Events\Default Work Unit\playRiverAmbience" MaxAttenuation="25.000000"/>
+				<Event Id="2415596161" Name="playRoamingMusic" ObjectPath="\Events\Default Work Unit\musicEvents\playRoamingMusic"/>
 				<Event Id="2907867019" Name="stopAllMusic" ObjectPath="\Events\Default Work Unit\musicEvents\stopAllMusic" MaxAttenuation="0.000000"/>
 				<Event Id="3284803258" Name="stopAllSoundscapes" ObjectPath="\Events\Default Work Unit\stopEvents\stopAllSoundscapes" MaxAttenuation="0.000000"/>
-				<Event Id="1813615719" Name="stopAuntieHappyVoice" ObjectPath="\Events\Default Work Unit\stopEvents\stopAuntieHappyVoice" MaxAttenuation="0.000000"/>
 				<Event Id="3227179805" Name="trollCatchAuntie" ObjectPath="\Events\Default Work Unit\trollCatchAuntie"/>
 				<Event Id="1919802259" Name="trollFallsIntoWater" ObjectPath="\Events\Default Work Unit\trollFallsIntoWater"/>
 				<Event Id="4032712899" Name="trollFootsteps" ObjectPath="\Events\Default Work Unit\trollFootsteps" MaxAttenuation="50.000000"/>
@@ -155,10 +155,6 @@
 					<ShortName>reward_points.wav</ShortName>
 					<Path>SFX\reward_points_7A2D2D50.wem</Path>
 				</File>
-				<File Id="890164264" Language="SFX">
-					<ShortName>water_splash_1.wav</ShortName>
-					<Path>SFX\water_splash_1_5647B0B5.wem</Path>
-				</File>
 				<File Id="898376589" Language="SFX">
 					<ShortName>Eeiii.wav</ShortName>
 					<Path>SFX\Eeiii_601470EA.wem</Path>
@@ -178,6 +174,10 @@
 				<File Id="1007633232" Language="SFX">
 					<ShortName>pick_up_auntie_1.wav</ShortName>
 					<Path>SFX\pick_up_auntie_1_CDFE0F68.wem</Path>
+				</File>
+				<File Id="1037391752" Language="SFX">
+					<ShortName>footstep_concrete_1.wav</ShortName>
+					<Path>SFX\footstep_concrete_1_353E0806.wem</Path>
 				</File>
 				<File Id="1072344928" Language="SFX">
 					<ShortName>Troll_catching_auntie_4.wav</ShortName>
