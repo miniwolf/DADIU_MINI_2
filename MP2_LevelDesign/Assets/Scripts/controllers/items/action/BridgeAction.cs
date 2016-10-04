@@ -4,9 +4,11 @@ using System.Collections;
 public class BridgeAction : ItemCommand {
 	private Enemy enemy;
 	private GameObject bridgeObject;
+	private CoroutineDelegateContainer coroutineDelegator;
 
-	public BridgeAction(Enemy enemy) {
+	public BridgeAction(Enemy enemy, CoroutineDelegateContainer corout) {
 		this.enemy = enemy;
+		this.coroutineDelegator = corout;
 	}
 
 	/// <summary>
@@ -15,7 +17,6 @@ public class BridgeAction : ItemCommand {
 	/// <param name="gameObject">Game object of the bridge</param>
 	public void Setup(GameObject gameObject) {
 		this.bridgeObject = gameObject;
-		gameObject.GetComponent<Rigidbody>().isKinematic = true;
 	}
 
 	/// <summary>
@@ -24,8 +25,19 @@ public class BridgeAction : ItemCommand {
 	/// <param name="other">Colliding object</param>
 	public void Execute(Collider other) {
 		if ( other.transform.tag == TagConstants.ENEMY ) {
-			bridgeObject.GetComponent<Rigidbody>().isKinematic = false;
+			foreach (Transform child in bridgeObject.GetComponentInChildren<Transform>()) {
+				child.GetComponent<Rigidbody>().isKinematic = false;	
+			}
 			enemy.SetState(EnemyState.RandomWalk);
+			coroutineDelegator.StartCoroutine(RemoveBridgeAfterTime());
 		}
 	}
+
+	private IEnumerator RemoveBridgeAfterTime() {
+		yield return new WaitForSeconds(bridgeObject.GetComponent<Bridge>().timeForBrokenBridgeToDisappear);
+		bridgeObject.SetActive(false);
+	}
+
+
+
 }
