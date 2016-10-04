@@ -47,10 +47,6 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Actionable {
 		playerState = newState;
 	}
 
-    public void GetCaught() {
-		ExecuteAction(Actions.CAUGHT);
-    }
-
 	public PlayerState GetState() {
 		return playerState;
 	}

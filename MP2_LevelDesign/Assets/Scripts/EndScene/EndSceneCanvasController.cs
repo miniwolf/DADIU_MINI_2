@@ -23,12 +23,12 @@ public class EndSceneCanvasController : MonoBehaviour {
 
 		highScoreFloat = PlayerPrefs.GetFloat(PlayerPrefsConstants.HIGHSCORE);
 		myScoreFloat = PlayerPrefs.GetFloat(PlayerPrefsConstants.MYSCORE);
-		highScore.text = "The highscore is: " + highScoreFloat.ToString();
-		yourScore.text = "Your score is: " + myScoreFloat.ToString();
+		highScore.text = TranslateApi.GetString(LocalizedString.endSceneHighscore) + " " + highScoreFloat.ToString();
+		yourScore.text = TranslateApi.GetString(LocalizedString.endSceneMyScore) + " " + myScoreFloat.ToString();
 		if (myScoreFloat > highScoreFloat) {
-			motivational.text = motivationalText[0];
+			motivational.text = TranslateApi.GetString(LocalizedString.endSceneMotivationalW);
 		} else {
-			motivational.text = motivationalText[1];
+			motivational.text = TranslateApi.GetString(LocalizedString.endSceneMotivationalL);		
 		}
 	}
 
