@@ -10,22 +10,15 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Actionable {
 	public float slowdown = 1.5f;
 	public float speedUp = 1.5f;
 
+	public float roamSpeed = 5f;
+	public float chaseSpeed = 6f;
+
 	public int thresholdSpeed = 2;
 	public int thresholdChase = 2;
 
 	void Awake() {
 		InjectionRegister.Register(this);
 		TagRegister.RegisterSingle(gameObject, TagConstants.ENEMY);
-	}
-
-	// DEBUG
-	void Update() {
-		if (Input.GetKeyDown(KeyCode.Space)) {
-			SetState(EnemyState.RandomWalk);
-		}
-		else if (Input.GetKeyDown(KeyCode.UpArrow)) {
-			SetState(EnemyState.StartChase);
-		}
 	}
 
 	public void SetupComponents() {
@@ -96,5 +89,13 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Actionable {
 
 	public int GetThresholdChase() {
 		return thresholdChase;
+	}
+
+	public float GetRoamSpeed() {
+		return roamSpeed;
+	}
+
+	public float GetChaseSpeed() {
+		return chaseSpeed;
 	}
 }

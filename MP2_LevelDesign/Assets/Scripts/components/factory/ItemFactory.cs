@@ -24,7 +24,7 @@ public class ItemFactory {
 	}
 
 	public void CreateBridge(Commandable bridge) {
-		bridge.AddCommand(new BridgeAction(enemy, container));
+		bridge.AddCommand(new BridgeAction(enemy, container, (Actionable) enemy));
 	}
 
 	public void CreateYellowBush(Commandable yellowBush) {
