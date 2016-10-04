@@ -62,9 +62,24 @@ public class ControllableFactory {
 		actionable.AddAction(Actions.WALKAWAY, CreateWalkAwayEnemy());
 		actionable.AddAction(Actions.WARP, CreateWarpEnemy());
 		actionable.AddAction(Actions.CAUGHT, CreateCaught());
+		actionable.AddAction(Actions.ROAM, CreateRoam());
+		actionable.AddAction(Actions.CHASE, CreateChase());
 		//CreateControllable(enemy, enemyAgent,maxSpeedOnTroll);
 		enemyObj.GetComponentsInChildren<MovableCommandable>()[0].AddCommand(new ChaseCommand(enemy));
 	}
+
+	Handler CreateRoam() {
+		Handler roam = new ActionHandler();
+		roam.AddAction(new RoamAction(enemy));
+		return roam;
+	}
+
+	Handler CreateChase() {
+		Handler chase = new ActionHandler();
+		chase.AddAction(new ChaseAction(enemy));
+		return chase;
+	}
+
 
 	Handler CreateCaught() {
 		Handler catchGirl = new ActionHandler();
