@@ -9,7 +9,6 @@ public class DressSound : ItemCommand {
 
 	public void Execute(Collider other) {
 		if ( other.tag == TagConstants.PLAYER ) {
-			AkSoundEngine.PostEvent("stopAuntieHappyVoice", dress);
 			AkSoundEngine.PostEvent("dressPickup", dress);
 		}
 	}
