@@ -50,7 +50,8 @@ public class ControllableFactory {
 
 		GameObject tapObj = GameObject.FindGameObjectWithTag(TagConstants.TAP_FEEDBACK);
 		move.AddMoveAction(new TapFeedback(tapObj));
-		move.AddAction(new TapAnimation(tapObj.GetComponent<Animator>()));
+		move.AddAction(new TapAnimation(tapObj.GetComponent<Animator>()));		
+
 		return move;
 	}
 
