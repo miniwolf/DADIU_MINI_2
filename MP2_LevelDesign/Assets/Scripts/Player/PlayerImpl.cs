@@ -40,13 +40,6 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Actionable {
 		}
 	}
 
-	void OnTriggerEnter(Collider other) {
-		if (other.gameObject.tag == TagConstants.TAP_FEEDBACK) {
-			playerState = PlayerState.Idle;
-			Debug.Log("COLLISION WITH TOUCH, CALL IDLE ANIMATION");
-		}
-	}
-
 	public void AddAction(Actions command, Handler action) {
 		actions.Add(command, action);
 	}
