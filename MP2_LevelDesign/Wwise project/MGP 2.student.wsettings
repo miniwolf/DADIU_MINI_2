@@ -18,7 +18,7 @@
 				<Property Name="General\LatestLanguage" Type="int32" Value="12"/>
 				<Property Name="General\LatestPlatform" Type="string" Value="Android"/>
 				<Property Name="GenerateSoundBanks\x64_SelectedLanguages" Type="string" Value="DAAAAA=="/>
-				<Property Name="GenerateSoundBanks\x64_SelectedPlatforms" Type="string" Value="Jh/95gs4d0+blJJakZHSWA=="/>
+				<Property Name="GenerateSoundBanks\x64_SelectedPlatforms" Type="string" Value="Jh/95gs4d0+blJJakZHSWDmOwLG2591IjlRSszOc7jQ="/>
 				<Property Name="GenerateSoundBanks\x64_SelectedSoundBanks" Type="string" Value="0TQ6jtDsakuNfcfbpoM/cQ=="/>
 				<Property Name="HardwareController\CurrentSession" Type="string" Value="{00000000-0000-0000-0000-000000000000}"/>
 				<Property Name="MeterView\LastObject1" Type="string" Value="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
@@ -46,9 +46,9 @@
 				<Property Name="ProjectExplorer\x64_Expanded_19_1" Type="string" Value=""/>
 				<Property Name="ProjectExplorer\x64_Expanded_1_1" Type="string" Value="xTzTn9H63EmWXd8O6kfd0Q=="/>
 				<Property Name="ProjectExplorer\x64_Expanded_20_1" Type="string" Value=""/>
-				<Property Name="ProjectExplorer\x64_Expanded_2_1" Type="string" Value="01DgcwM+XUWmLWpWYMuAmon0M4yjdZlFtq9W9X3eQXvjVJlRE2/SR5MjA2GEHJVj"/>
-				<Property Name="ProjectExplorer\x64_Expanded_3_1" Type="string" Value="cfKnFTkts0ygP4WzrBm7An8sZ/CGkc9OpM9BCu+EsF/ZCvEEHHf3Tp1ylAlOdiW8"/>
-				<Property Name="ProjectExplorer\x64_Expanded_4_1" Type="string" Value=""/>
+				<Property Name="ProjectExplorer\x64_Expanded_2_1" Type="string" Value="01DgcwM+XUWmLWpWYMuAmg=="/>
+				<Property Name="ProjectExplorer\x64_Expanded_3_1" Type="string" Value="fyxn8IaRz06kz0EK74SwX9kK8QQcd/dOnXKUCU52Jbw="/>
+				<Property Name="ProjectExplorer\x64_Expanded_4_1" Type="string" Value="+JFwaXHJmkyHLeEe91ipqg=="/>
 				<Property Name="ProjectExplorer\x64_Expanded_5_1" Type="string" Value=""/>
 				<Property Name="ProjectExplorer\x64_Expanded_6_1" Type="string" Value="B0UbLtbPE0m6e1v4hKqivg=="/>
 				<Property Name="ProjectExplorer\x64_Expanded_7_1" Type="string" Value=""/>

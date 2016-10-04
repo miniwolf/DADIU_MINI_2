@@ -6,71 +6,72 @@ Event	ID	Name			Wwise Object Path	Notes
 	1454203074	auntieLaugh			\Default Work Unit\auntieLaugh	
 	1477059561	playForestSoundscape			\Default Work Unit\playForestSoundscape	
 	1747696776	auntieFootsteps			\Default Work Unit\auntieFootsteps	
-	1917263390	stopMusic			\Default Work Unit\stopEvents\stopMusic	
 	1919802259	trollFallsIntoWater			\Default Work Unit\trollFallsIntoWater	
 	2867536338	dressPickup			\Default Work Unit\dressPickup	
 	2907867019	stopAllMusic			\Default Work Unit\musicEvents\stopAllMusic	
 	3139869105	menuBackwardClick			\Default Work Unit\menuBackwardClick	
+	3175730599	playLakeSoundscape			\Default Work Unit\playLakeSoundscape	
 	3227179805	trollCatchAuntie			\Default Work Unit\trollCatchAuntie	
 	3284803258	stopAllSoundscapes			\Default Work Unit\stopEvents\stopAllSoundscapes	
 	3527026064	stopAuntieFootsteps			\Default Work Unit\stopEvents\stopAuntieFootsteps	
+	3761099264	playRiverSound			\Default Work Unit\playRiverSound	
 	4028748541	menuForwardClick			\Default Work Unit\menuForwardClick	
 	4032712899	trollFootsteps			\Default Work Unit\trollFootsteps	
 	4228143387	trollThrowsAuntie			\Default Work Unit\trollThrowsAuntie	
-	4278488131	concrete_test			\Default Work Unit\concrete_test	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	3617496	Throw_7	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Throw_7_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Throwing\Throw_7		9577
-	42406669	Uoohh	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Uoohh_523312EE.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Surprised\Uoohh		6943
-	53723177	clothes_pickup	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\clothes_pickup_A296EAD0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\Clothes\clothes_pickup		10857
-	68472481	Uhhuhh	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Uhhuhh_41CEA8EC.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Surprised\Uhhuhh		6710
-	69649271	Laughing_12	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Laughing_12_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Laughs_long\Laughing_12		16375
-	123859518	Laughing_4	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Laughing_4_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Laughs_long\Laughing_4		16401
-	140875607	Throw_5	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Throw_5_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Throwing\Throw_5		12282
-	205310487	footstep_branch_1	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\footstep_branch_1_414C7702.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Footsteps\forest_surface\branches\footstep_branch_1		9262
-	208407703	music_notroll_comp	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\music_notroll_comp_37B59102.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\music_notroll_comp		58566
-	216424462	footstep_branch_5	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\footstep_branch_5_5E7FFB93.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Footsteps\forest_surface\branches\footstep_branch_5		11899
-	219351695	footstep_4	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\footstep_4_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\main_footsteps\footstep_4		4062
-	238472842	footstep_branch_4	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\footstep_branch_4_AEE5A79E.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Footsteps\forest_surface\branches\footstep_branch_4		9233
-	254228712	Laughing_6	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Laughing_6_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Laughs_long\Laughing_6		16552
-	294334297	Troll_falling_short_3	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Troll_falling_short_3_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Troll_falling_shorts\Troll_falling_short_3		13573
-	317099075	auntie_ground_impact_2	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\auntie_ground_impact_2_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Auntie_ground_impact\auntie_ground_impact_2		6676
-	330978246	bridge_breaking	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\bridge_breaking_19E6728E.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\bridge_breaking		44254
-	341112838	Troll_catching_auntie_5	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Troll_catching_auntie_5_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Catching_auntie\Troll_catching_auntie_5		11120
-	349754821	troll_footstep_1	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\troll_footstep_1_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Footsteps\forest_surface\footsteps\troll_footstep_1		2902
-	350202146	Troll_catching_auntie_2	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Troll_catching_auntie_2_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Catching_auntie\Troll_catching_auntie_2		19171
-	353118122	footstep_branch_3	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\footstep_branch_3_23ED9BEF.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Footsteps\forest_surface\branches\footstep_branch_3		5401
-	360738613	Troll_falling_short_1	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Troll_falling_short_1_2C147F71.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Troll_falling_shorts\Troll_falling_short_1		13448
-	386831373	Troll_catching_auntie_1	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Troll_catching_auntie_1_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Catching_auntie\Troll_catching_auntie_1		22500
-	388534933	footstep_5	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\footstep_5_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\main_footsteps\footstep_5		4425
-	422205118	Yubii	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Yubii_4A89DC03.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Happy\Yubii		15384
-	422937860	Troll_falling_short_2	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Troll_falling_short_2_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Troll_falling_shorts\Troll_falling_short_2		14644
-	480542494	Troll_catching_auntie_3	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Troll_catching_auntie_3_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Catching_auntie\Troll_catching_auntie_3		13143
-	485177666	music_menu_comp	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\music_menu_comp_37B59102.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\music_menu_comp		66813
-	490652533	footstep_1	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\footstep_1_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\main_footsteps\footstep_1		4879
-	525770084	Throw_6	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Throw_6_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Throwing\Throw_6		16231
-	548029858	footstep_branch_2	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\footstep_branch_2_09A27E2C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Footsteps\forest_surface\branches\footstep_branch_2		7912
-	563529082	Button	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\menu button_1_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Button		4467
-	617219006	footstep_3	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\footstep_3_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\main_footsteps\footstep_3		4150
-	641037458	music_troll_comp_2	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\music_troll_comp_2_37B59102.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\music_troll_comp_2		531850
-	662664710	forest_ambience_loop	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\forest_ambience_loop_37B59102.wem		\Actor-Mixer Hierarchy\Default Work Unit\Soundscape\forest_ambience_loop		340851
-	678907684	Gasp (breathing in)	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Gasp (breathing in)_18BC047D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Surprised\Gasp (breathing in)		10319
-	686164433	Yaay	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Yaay_C628F4AD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Happy\Yaay		12514
-	729135460	Laughing_9	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Laughing_9_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Laughs_long\Laughing_9		14129
-	738345270	Troll_catching_auntie_6	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Troll_catching_auntie_6_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Catching_auntie\Troll_catching_auntie_6		16409
-	784167980	Oihh	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Oihh_899DA06C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Surprised\Oihh		8038
-	797668121	Throw_2	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Throw_2_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Throwing\Throw_2		16508
-	832173311	footstep_2	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\footstep_2_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\main_footsteps\footstep_2		4855
-	835311108	Laughing_8	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Laughing_8_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Laughs_long\Laughing_8		24269
-	873381179	Laughing_3	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Laughing_3_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Laughs_long\Laughing_3		18385
-	889290242	reward_points	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\reward_points_7A2D2D50.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\reward_points		26227
-	890164264	water_splash_1	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\water_splash_1_5647B0B5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\water_splash_1		40168
-	897412089	footstep_branch_6	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\footstep_branch_6_0198F85E.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Footsteps\forest_surface\branches\footstep_branch_6		5954
-	898376589	Eeiii	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Eeiii_601470EA.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Surprised\Eeiii		8611
-	977389573	Laughing_7	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Laughing_7_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Laughs_long\Laughing_7		14477
-	977528163	troll_footstep_4	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\troll_footstep_4_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Footsteps\forest_surface\footsteps\troll_footstep_4		3896
-	979268561	auntie_ground_impact_1	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\auntie_ground_impact_1_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Auntie_ground_impact\auntie_ground_impact_1		4188
-	1007633232	pick_up_auntie_1	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\pick_up_auntie_1_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\pick_up_auntie_1		3764
-	1037391752	footstep_concrete_1	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\footstep_concrete_1_353E0806.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Footsteps\concrete\footstep_concrete_1		1349
-	1072344928	Troll_catching_auntie_4	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Troll_catching_auntie_4_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Catching_auntie\Troll_catching_auntie_4		15217
+	3617496	Throw_7	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Throw_7_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Throwing\Throw_7		106616
+	17854566	footstep_branch_1	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\footstep_branch_1_B50CFD8D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Footsteps\forest_surface\branches\footstep_branch_1		110208
+	42406669	Uoohh	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Uoohh_B3B572F1.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Surprised\Uoohh		81740
+	53723177	clothes_pickup	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\clothes_pickup_D3005BEB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\Clothes\clothes_pickup		198872
+	68472481	Uhhuhh	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Uhhuhh_CF17B03B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Surprised\Uhhuhh		66208
+	69649271	Laughing_12	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Laughing_12_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Laughs_long\Laughing_12		174216
+	123859518	Laughing_4	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Laughing_4_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Laughs_long\Laughing_4		168692
+	140875607	Throw_5	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Throw_5_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Throwing\Throw_5		144924
+	208407703	music_notroll_comp	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\music_notroll_comp_4B8CC0C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\music_notroll_comp		768064
+	219351695	footstep_4	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\footstep_4_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\main_footsteps\footstep_4		49952
+	254228712	Laughing_6	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Laughing_6_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Laughs_long\Laughing_6		178036
+	264189254	footstep_branch_2	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\footstep_branch_2_1A25F72F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Footsteps\forest_surface\branches\footstep_branch_2		57348
+	294334297	Troll_falling_short_3	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Troll_falling_short_3_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Troll_falling_shorts\Troll_falling_short_3		161184
+	317099075	auntie_ground_impact_2	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\auntie_ground_impact_2_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Auntie_ground_impact\auntie_ground_impact_2		77632
+	330978246	bridge_breaking	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\bridge_breaking_9DB20DF9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\bridge_breaking		338228
+	341112838	Troll_catching_auntie_5	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Troll_catching_auntie_5_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Catching_auntie\Troll_catching_auntie_5		117600
+	349754821	troll_footstep_1	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\troll_footstep_1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Footsteps\forest_surface\footsteps\troll_footstep_1		22432
+	350202146	Troll_catching_auntie_2	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Troll_catching_auntie_2_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Catching_auntie\Troll_catching_auntie_2		220644
+	360738613	Troll_falling_short_1	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Troll_falling_short_1_D19EFF7E.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Troll_falling_shorts\Troll_falling_short_1		154548
+	386831373	Troll_catching_auntie_1	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Troll_catching_auntie_1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Catching_auntie\Troll_catching_auntie_1		251992
+	388534933	footstep_5	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\footstep_5_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\main_footsteps\footstep_5		61056
+	422205118	Yubii	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Yubii_72F4AB5C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Happy\Yubii		174788
+	422937860	Troll_falling_short_2	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Troll_falling_short_2_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Troll_falling_shorts\Troll_falling_short_2		162544
+	423969624	footstep_branch_4	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\footstep_branch_4_4C3E55CD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Footsteps\forest_surface\branches\footstep_branch_4		84964
+	479482607	frog_soundscape_loop_1	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\frog_soundscape_loop_1_4B8CC0C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Soundscape\frog_soundscape_loop_1		1536068
+	480542494	Troll_catching_auntie_3	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Troll_catching_auntie_3_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Catching_auntie\Troll_catching_auntie_3		135320
+	485177666	music_menu_comp	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\music_menu_comp_4B8CC0C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\music_menu_comp		921664
+	490652533	footstep_1	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\footstep_1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\main_footsteps\footstep_1		62220
+	525770084	Throw_6	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Throw_6_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Throwing\Throw_6		181240
+	563529082	Button	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\menu button_1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Button		53928
+	617219006	footstep_3	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\footstep_3_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\main_footsteps\footstep_3		56784
+	641037458	music_troll_comp_2	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\music_troll_comp_2_4B8CC0C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\music_troll_comp_2		6144064
+	662664710	forest_ambience_loop	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\forest_ambience_loop_4B8CC0C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Soundscape\forest_ambience_loop		4159744
+	678907684	Gasp (breathing in)	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Gasp (breathing in)_610AD98A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Surprised\Gasp (breathing in)		122152
+	686164433	Yaay	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Yaay_1938E82A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Happy\Yaay		143340
+	729135460	Laughing_9	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Laughing_9_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Laughs_long\Laughing_9		157224
+	738345270	Troll_catching_auntie_6	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Troll_catching_auntie_6_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Catching_auntie\Troll_catching_auntie_6		170320
+	784167980	Oihh	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Oihh_4BC9FDFB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Surprised\Oihh		82692
+	786908410	footstep_branch_3	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\footstep_branch_3_9E9C6310.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Footsteps\forest_surface\branches\footstep_branch_3		49378
+	797668121	Throw_2	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Throw_2_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Throwing\Throw_2		191616
+	832173311	footstep_2	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\footstep_2_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\main_footsteps\footstep_2		67840
+	835311108	Laughing_8	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Laughing_8_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Laughs_long\Laughing_8		276144
+	873381179	Laughing_3	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Laughing_3_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Laughs_long\Laughing_3		207344
+	882369756	footstep_branch_5	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\footstep_branch_5_05EB7088.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Footsteps\forest_surface\branches\footstep_branch_5		79572
+	889290242	reward_points	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\reward_points_B551A40F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\reward_points		345664
+	890164264	water_splash_1	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\water_splash_1_9B6844F6.wem		\Actor-Mixer Hierarchy\Default Work Unit\Items\water_splash_1		422284
+	898376589	Eeiii	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Eeiii_F82A2A69.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Surprised\Eeiii		93432
+	964849120	footstep_branch_6	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\footstep_branch_6_D6DF0B31.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Footsteps\forest_surface\branches\footstep_branch_6		49094
+	977389573	Laughing_7	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Laughing_7_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Laughs_long\Laughing_7		146604
+	977528163	troll_footstep_4	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\troll_footstep_4_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Footsteps\forest_surface\footsteps\troll_footstep_4		22624
+	979268561	auntie_ground_impact_1	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\auntie_ground_impact_1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Auntie_ground_impact\auntie_ground_impact_1		40604
+	998932725	running_river	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\running_river_4B8CC0C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Soundscape\running_river		2942256
+	1007633232	pick_up_auntie_1	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\pick_up_auntie_1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\pick_up_auntie_1		55548
+	1072344928	Troll_catching_auntie_4	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Troll_catching_auntie_4_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Catching_auntie\Troll_catching_auntie_4		166432
 
