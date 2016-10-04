@@ -56,7 +56,7 @@ public class ControllableFactory {
 
 		GameObject tapObj = GameObject.FindGameObjectWithTag(TagConstants.TAP_FEEDBACK);
 		move.AddMoveAction(new TapFeedback(tapObj));
-		//move.AddAction(new TapAnimation(tapObj.GetComponent<Animator>()));
+		move.AddAction(new TapAnimation(tapObj.GetComponent<Animator>()));
 		return move;
 	}
 
@@ -64,8 +64,22 @@ public class ControllableFactory {
 		actionable.AddAction(Actions.SLOWDOWN, CreateSlowDown());
 		actionable.AddAction(Actions.MOVE, CreateEnemyMovement());
 		actionable.AddAction(Actions.STOP, CreateStopEnemy());
+		actionable.AddAction(Actions.SPEEDUP, CreateSpeedEnemy());
+		actionable.AddAction(Actions.WARP, CreateWarpEnemy());
 		//CreateControllable(enemy, enemyAgent,maxSpeedOnTroll);
 		enemyObj.GetComponentsInChildren<MovableCommandable>()[0].AddCommand(new ChaseCommand(enemy));
+	}
+
+	Handler CreateWarpEnemy() {
+		Handler warp = new ActionHandler();
+		warp.AddAction(new WarpAction(enemy));
+		return warp;
+	}
+
+	private Handler CreateSpeedEnemy() {
+		Handler speedUp = new ActionHandler();
+		speedUp.AddAction(new SpeedUpAction());
+		return speedUp;
 	}
 
 	public Handler CreateSlowDown() {

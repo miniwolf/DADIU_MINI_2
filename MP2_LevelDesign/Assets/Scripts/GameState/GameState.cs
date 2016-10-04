@@ -18,7 +18,7 @@ public class GameState {
 		EndGame endGame;
 
 		public Ended(){
-			endGame = GameObject.FindGameObjectWithTag("GameEnd").GetComponent<EndGame>();
+			endGame = GameObject.FindGameObjectWithTag("FadingObj").GetComponent<EndGame>();
 		}
 
 		public void Execute(){

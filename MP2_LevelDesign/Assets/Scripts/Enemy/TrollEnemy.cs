@@ -10,8 +10,8 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Actionable {
 	public float slowdown = 1.5f;
 	public float speedUp = 1.5f;
 
-	public int thresholdSpeed;
-	public int thresholdChase;
+	public int thresholdSpeed = 2;
+	public int thresholdChase = 2;
 
 	void Awake() {
 		InjectionRegister.Register(this);
