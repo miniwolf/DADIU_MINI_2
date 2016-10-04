@@ -1,2 +1,2 @@
-﻿public interface SoundController : Controller {
+﻿public interface SoundController : Action {
 }

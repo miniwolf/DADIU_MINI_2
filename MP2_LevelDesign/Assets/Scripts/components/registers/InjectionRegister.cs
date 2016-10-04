@@ -5,12 +5,9 @@ public class InjectionRegister : MonoBehaviour {
 	private static List<GameEntity> components = new List<GameEntity>();
 	private ControllableFactory controllableFactory;
 	private ItemFactory itemFactory;
-	public int thresholdSpeedUp = 5;
-	public int thresholdChase = 5;
-	public float maxSpeedOnTroll = 12;
 
 	void Awake() {
-		controllableFactory = new ControllableFactory();
+		controllableFactory = new ControllableFactory(GetComponent<CoroutineDelegateContainer>());
 		itemFactory = new ItemFactory();
 	}
 
@@ -37,16 +34,16 @@ public class InjectionRegister : MonoBehaviour {
 	private void InitializeComponent(GameEntity component) {
 		switch ( component.GetTag() ) {
 			case TagConstants.PLAYER:
-				controllableFactory.CreatePlayer((Controllable) component);
+				controllableFactory.CreatePlayer((Actionable) component);
 				break;
 			case TagConstants.ENEMY:
-				controllableFactory.CreateEnemy((Controllable) component,maxSpeedOnTroll);
+				controllableFactory.CreateEnemy((Actionable) component);
 				break;
 			case TagConstants.ENEMYAI:
 				controllableFactory.CreateEnemyAI((AI) component);
 				break;
 			case TagConstants.DRESS:
-				itemFactory.CreateDress((Commandable) component,thresholdSpeedUp, thresholdChase);
+				itemFactory.CreateDress((Commandable) component);
 				break;
 			case TagConstants.BRIDGE:
 				itemFactory.CreateBridge((Commandable) component);
