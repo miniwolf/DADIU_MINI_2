@@ -24,7 +24,7 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Actionable {
 			SetState(EnemyState.RandomWalk);
 		}
 		else if (Input.GetKeyDown(KeyCode.UpArrow)) {
-			SetState(EnemyState.CatchGirl);
+			SetState(EnemyState.StartChase);
 		}
 	}
 
