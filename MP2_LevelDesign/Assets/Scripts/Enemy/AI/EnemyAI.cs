@@ -32,9 +32,8 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 			return;
 		}
 		switch ( enemy.GetState() ) {
-			case EnemyState.RandomWalk:
-				actionableEnemy.ExecuteAction(Actions.ROAM);
-				FreeRoam(enemy.GetPosition(), roamRadius);
+		case EnemyState.RandomWalk:
+				FreeRoam (enemy.GetPosition (), roamRadius);
                 break;
 			case EnemyState.WalkAway:
 				FreeRoam(player.GetPosition(), 2 * walkAwayDistance, walkAwayDistance);
@@ -61,7 +60,7 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 			isRoaming = true;
 		}
 		//if the enemy is close enough to the end position we stop roaming
-		if ( Vector3.Distance(enemy.GetPosition(), movingPosition) < roamDistanceError ) {
+		if ( Vector3.Distance(enemy.GetPosition(), enemy.GetDestination()) < roamDistanceError) {
 			isRoaming = false;
 		}
 	}
