@@ -15,6 +15,6 @@ public class ChaseAction : Action {
 
 	public void Execute() {
 		enemy.SetState(EnemyState.Chasing);
-		agent.speed = enemy.GetChaseSpeed();
+		//agent.speed = enemy.GetChaseSpeed();
 	}
 }
