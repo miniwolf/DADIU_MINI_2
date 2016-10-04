@@ -1,14 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
-	private RaycastHit hit;
-	private Camera cam;
-	private Ray cameraToGround;
-	private LayerMask layerMask = 1 << LayerConstants.GroundLayer;
+public class PlayerImpl : MonoBehaviour, Player, GameEntity, Actionable {
+	private PlayerState playerState = PlayerState.Running;
+	private Dictionary<Actions, Handler> actions = new Dictionary<Actions, Handler>();
 
-	private PlayerState playerState;
-	private List<Controller> controllers = new List<Controller>();
+	private GameStateManager gameStateManager;
+	private Animator tapAnimator;
 
 	void Awake() {
 		InjectionRegister.Register(this);
@@ -16,30 +14,33 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 	}
 
 	void Start() {
-		cam = GameObject.FindGameObjectWithTag(TagConstants.CAMERA).GetComponent<Camera>();
+		//gameStateManager = GameObject.FindGameObjectWithTag(TagConstants.GAME_STATE).GetComponent<GameStateManager>();
+		//rend = tapFeedback.GetComponent<Renderer>();
 	}
 
 	public void SetupComponents() {
+		foreach ( Handler action in actions.Values ) {
+			action.SetupComponents(gameObject);
+		}
 	}
-		
-	void Update() {
-		foreach(Touch touch in Input.touches) {
-			cameraToGround = cam.ScreenPointToRay(touch.position);
-			if ( Physics.Raycast(cameraToGround,out hit,500f,layerMask.value) ) {
-				foreach ( Controller controller in controllers ) {
-					controller.Move(hit.point);
-				}
-			}
-		}
 
-		if ( Input.GetMouseButtonDown(1) ) {
-			cameraToGround = cam.ScreenPointToRay(Input.mousePosition);
-			if ( Physics.Raycast(cameraToGround, out hit,500f,layerMask.value) ) {
-				foreach ( Controller controller in controllers ) {
-					controller.Move(hit.point);
-				}
-			}
+	void Update() {
+		switch ( playerState ) {
+			case PlayerState.Running:
+				ExecuteAction(Actions.MOVE);
+				break;
+			case PlayerState.Idle:
+				ExecuteAction(Actions.STUN);
+				break;
 		}
+	}
+
+	public void AddAction(Actions command, Handler action) {
+		actions.Add(command, action);
+	}
+
+	public void ExecuteAction(Actions name) {
+		actions[name].DoAction();
 	}
 
 	public void SetState(PlayerState newState) {
@@ -54,7 +55,7 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 		return TagConstants.PLAYER;
 	}
 
-	public void AddController(Controller controller) {
-		controllers.Add(controller);
+	public Vector3 GetPosition() {
+		return this.transform.position;
 	}
 }

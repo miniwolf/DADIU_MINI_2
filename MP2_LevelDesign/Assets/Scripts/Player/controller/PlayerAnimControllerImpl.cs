@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerAnimControllerImpl : PlayerAnimController {
+public class PlayerAnimControllerImpl {
 	private Animator animator;
 
 	public PlayerAnimControllerImpl(Animator animator) {
@@ -13,10 +13,13 @@ public class PlayerAnimControllerImpl : PlayerAnimController {
 	}
 
 	public void Idle() {
-	
-	}
 
-	public void Move(Vector3 moveTo) {
+    }
+    public void Resume() {
+
+    }
+
+    public void Move(Vector3 moveTo) {
 	
 	}
 

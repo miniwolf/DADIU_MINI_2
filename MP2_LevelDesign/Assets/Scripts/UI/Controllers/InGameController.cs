@@ -12,4 +12,9 @@ public interface InGameController {
 	void DecrementScore();
 
 	float GetScoreValue();
+    float GetLifeValue();
+
+	void UpdateScore ();
+
+	void SetFeedback (FloatingNumberInterface floatingNumberFeedback);
 }

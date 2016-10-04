@@ -25,6 +25,12 @@ public class CanvasScript : MonoBehaviour {
 		ShowMainMenu();
 	}
 
+	void Update(){
+		if (Input.GetKey(KeyCode.K)) {
+			GameEnded();
+		}
+	}
+
 	public void ShowMainMenu() {
 		menuController.SetVisible();
 		settingsController.SetInvisible();
@@ -32,7 +38,7 @@ public class CanvasScript : MonoBehaviour {
 
 		howToPlayMenu.gameObject.SetActive(false);
 
-		gameStateManager.NewState(GameState.Paused);
+		gameStateManager.NewState(new GameState.Paused());
 	}
 
 	public void ShowSettings() {
@@ -42,7 +48,7 @@ public class CanvasScript : MonoBehaviour {
 
 		howToPlayMenu.gameObject.SetActive(false);
 
-		gameStateManager.NewState(GameState.Paused);
+		gameStateManager.NewState(new GameState.Paused());
 	}
 
 	public void ShowPlayGame() {
@@ -52,7 +58,7 @@ public class CanvasScript : MonoBehaviour {
 
 		howToPlayMenu.gameObject.SetActive(false);
 
-		gameStateManager.NewState(GameState.Playing);
+		gameStateManager.NewState(new GameState.Playing());
 	}
 
 	public void ShowHowToPlayMenu() {
@@ -61,7 +67,7 @@ public class CanvasScript : MonoBehaviour {
 		inGameController.SetInvisible();
 		howToPlayMenu.gameObject.SetActive(true);
 
-		gameStateManager.NewState(GameState.Playing);
+		gameStateManager.NewState(new GameState.Paused());
 	}
 
 	public void ReturnToMainMenu() {
@@ -73,5 +79,9 @@ public class CanvasScript : MonoBehaviour {
 		menuController.RefreshText();
 		inGameController.RefreshText();
 		// todo on how to play menu
+	}
+
+	public void GameEnded() {
+		gameStateManager.NewState(new GameState.Ended());
 	}
 }

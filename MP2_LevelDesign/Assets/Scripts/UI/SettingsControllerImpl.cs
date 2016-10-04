@@ -3,7 +3,6 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class SettingsControllerImpl : UIController, SettingsController {
-
 	private Text textToggleSound;
 	private Text textLanguage;
 	private Text textReturnToMain;
@@ -13,13 +12,7 @@ public class SettingsControllerImpl : UIController, SettingsController {
 	}
 
 	public void ToggleLanguage() {
-
-		SupportedLanguage language = TranslateApi.GetCurrentLanguage();
-		if(language.Equals(SupportedLanguage.DEN)) {
-			language = SupportedLanguage.ENG;
-		} else {
-			language = SupportedLanguage.DEN;
-		}
+		SupportedLanguage language = TranslateApi.GetCurrentLanguage().Equals(SupportedLanguage.DEN) ? SupportedLanguage.ENG : SupportedLanguage.DEN;
 
 		TranslateApi.ChangeLanguage(language);
 		canvas.OnLanguageChanged();
