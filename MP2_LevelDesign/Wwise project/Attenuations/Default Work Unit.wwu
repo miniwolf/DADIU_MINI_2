@@ -3,7 +3,7 @@
 	<Attenuations>
 		<WorkUnit Name="Default Work Unit" ID="{63DF6E17-55A9-467C-ACFF-5AAB3B339977}" PersistMode="Standalone">
 			<ChildrenList>
-				<Attenuation Name="troll" ID="{E81650FA-4FED-4263-9118-37C2E5A49D48}" ShortID="41468640">
+				<Attenuation Name="distance_50" ID="{E81650FA-4FED-4263-9118-37C2E5A49D48}" ShortID="41468640">
 					<PropertyList>
 						<Property Name="RadiusMax" Type="Real64" Value="50"/>
 					</PropertyList>
@@ -168,7 +168,7 @@
 						</FocusUsage>
 					</CurveUsageInfoList>
 				</Attenuation>
-				<Attenuation Name="river" ID="{EC00DD4F-F111-4B17-824D-7E80CE965C5C}" ShortID="200485334">
+				<Attenuation Name="distance_25" ID="{EC00DD4F-F111-4B17-824D-7E80CE965C5C}" ShortID="200485334">
 					<PropertyList>
 						<Property Name="RadiusMax" Type="Real64" Value="25"/>
 					</PropertyList>

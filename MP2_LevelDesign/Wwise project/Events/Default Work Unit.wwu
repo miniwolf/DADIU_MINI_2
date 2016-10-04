@@ -5,6 +5,16 @@
 			<ChildrenList>
 				<Event Name="dressPickup" ID="{1D2FB92B-7CF8-4ED3-877A-F3B524A11323}">
 					<ChildrenList>
+						<Action Name="Stop" ID="{31B443D0-260C-4B02-BBF2-1AA75E9A0439}" ShortID="901350851" Type="Stop" Scope="One" Global="false">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="0.05"/>
+							</PropertyList>
+							<ElementList>
+								<Element ID="{26C0A33E-CC9D-49AB-923C-E8EBBE6D3CD9}" Global="false">
+									<ObjectRef Name="Happy" ID="{789E2083-605F-430C-B95C-3173925D8D75}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
+								</Element>
+							</ElementList>
+						</Action>
 						<Action Name="Play" ID="{2B8E6EF7-671E-4879-9729-DE1DFDC86096}" ShortID="269519265" Type="Play" Scope="One" Global="false">
 							<ElementList>
 								<Element ID="{A71D1552-A379-45F5-8BB6-88886FD7E2C6}" Global="false">
@@ -231,24 +241,6 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="concrete_test" ID="{89FF40E6-7287-4B28-A360-09C40A90A4B3}">
-					<ChildrenList>
-						<Action Name="Play" ID="{06B02E4C-E2D0-4D4B-9032-4784818362A0}" ShortID="162127903" Type="Play" Scope="One" Global="false">
-							<ElementList>
-								<Element ID="{E68BE083-518A-4C73-8F14-3E13A9DF869D}" Global="false">
-									<ObjectRef Name="concrete" ID="{333E35E1-FEAB-4A0A-BBAD-4B585083F635}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
-								</Element>
-							</ElementList>
-						</Action>
-						<Action Name="Play" ID="{8ACBEFBC-5684-495A-8DAA-30D88D5B910E}" ShortID="835434596" Type="Play" Scope="One" Global="false">
-							<ElementList>
-								<Element ID="{77FC1827-B6FC-430F-92CB-52CB7E645A02}" Global="false">
-									<ObjectRef Name="main_footsteps" ID="{F8BF36C5-0F20-4E9C-8E78-DA1C8A152945}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
-								</Element>
-							</ElementList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="playForestSoundscape" ID="{796F6D74-E6B8-42E1-9151-33A340958F0B}">
 					<ChildrenList>
 						<Action Name="Play" ID="{C055A09F-E5DD-4477-A56A-CCDF34F89F73}" ShortID="1029326580" Type="Play" Scope="One" Global="false">
@@ -354,7 +346,6 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="stopMusic" ID="{25566EC3-947E-4A59-8BDC-8CD2B88F61F3}"/>
 						<Event Name="stopAllSoundscapes" ID="{305D0F20-8E52-42C4-B77E-A55EC21E046E}"/>
 					</ChildrenList>
 				</Folder>
