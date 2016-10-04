@@ -29,14 +29,13 @@ public class BridgeAction : ItemCommand {
 	public void Execute(Collider other) {
 		if ( other.transform.tag == TagConstants.ENEMY ) {
 			foreach (Transform child in bridgeObject.GetComponentInChildren<Transform>()) {
-				if (child.GetComponent<Rigidbody>() != null) {
-					child.GetComponent<Rigidbody>().isKinematic = false;	
+				if (child.GetComponent<Rigidbody> () != null) {
+					child.GetComponent<Rigidbody> ().isKinematic = false;	
+				} else {
+					child.GetComponent<NavMeshObstacle>().enabled = true;
+					child.transform.parent = null;
 				}
 			}
-
-			woodBridgeNavMesh = GameObject.FindGameObjectWithTag(TagConstants.WOODBRIDGENAVMESH);
-			woodBridgeNavMesh.GetComponent<NavMeshObstacle>().enabled = true;
-			woodBridgeNavMesh.transform.parent = null;
 			actionableEnemy.ExecuteAction(Actions.ROAM);
 			coroutineDelegator.StartCoroutine(RemoveBridgeAfterTime());
 		}

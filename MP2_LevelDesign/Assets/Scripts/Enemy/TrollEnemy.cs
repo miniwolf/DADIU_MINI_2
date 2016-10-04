@@ -22,6 +22,10 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Actionable {
 		TagRegister.RegisterSingle(gameObject, TagConstants.ENEMY);
 	}
 
+	void Start(){
+		GetComponent<NavMeshAgent> ().speed = roamSpeed;
+	}
+
 	public void SetupComponents() {
 		foreach ( Handler action in actions.Values ) {
 			action.SetupComponents(gameObject);
