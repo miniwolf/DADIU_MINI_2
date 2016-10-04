@@ -10,5 +10,10 @@ public enum Actions {
 	STOP,
 	STUN,
 	MOVE,
+<<<<<<< HEAD
 	RESUME
+=======
+	CHASE,
+	ROAM
+>>>>>>> bf0166880bcc41939181d06d6381c64fc345cb15
 }

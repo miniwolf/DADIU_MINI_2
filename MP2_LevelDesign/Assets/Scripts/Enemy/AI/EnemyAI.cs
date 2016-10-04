@@ -33,11 +33,12 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 		}
 		switch ( enemy.GetState() ) {
 			case EnemyState.RandomWalk:
+				actionableEnemy.ExecuteAction(Actions.ROAM);
 				FreeRoam(enemy.GetPosition(), roamRadius);
                 break;
 			case EnemyState.WalkAway:
 				FreeRoam(player.GetPosition(), 2 * walkAwayDistance, walkAwayDistance);
-				enemy.SetState(EnemyState.RandomWalk);
+				actionableEnemy.ExecuteAction(Actions.ROAM);
                 break;
 			case EnemyState.Chasing:
 				Chaising();
@@ -103,7 +104,7 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 			enemy.SetDestination(newPosition);
 			actionableEnemy.ExecuteAction(Actions.WARP);
 		}
-		enemy.SetState(EnemyState.Chasing);
+		actionableEnemy.ExecuteAction(Actions.CHASE);
 	}
 
     private void Chaising() {
