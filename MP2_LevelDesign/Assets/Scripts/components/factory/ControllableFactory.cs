@@ -31,7 +31,8 @@ public class ControllableFactory {
 												GameObject.FindGameObjectWithTag(TagConstants.GAME_STATE).GetComponent<GameStateManager>(),
 												ingameController,
 												(Actionable) player,
-												(Actionable) enemy);
+												(Actionable) enemy,
+												container);
 		playerObj.GetComponentsInChildren<MovableCommandable>()[0].AddCommand(life);
 	}
 
