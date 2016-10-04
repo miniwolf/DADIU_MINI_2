@@ -6,17 +6,19 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Actionable {
 	private PlayerState playerState = PlayerState.Running;
 	private Dictionary<Actions, Handler> actions = new Dictionary<Actions, Handler>();
 
-	private GameStateManager gameStateManager;
-	private Animator tapAnimator;
+	private GameObject player;
+	private GameObject tapObj;
 
 	void Awake() {
+		player = GameObject.FindGameObjectWithTag(TagConstants.PLAYER);
+		tapObj = GameObject.FindGameObjectWithTag(TagConstants.TAP_FEEDBACK);
+
+
 		InjectionRegister.Register(this);
 		TagRegister.RegisterSingle(gameObject, TagConstants.PLAYER);
 	}
 
 	void Start() {
-		//gameStateManager = GameObject.FindGameObjectWithTag(TagConstants.GAME_STATE).GetComponent<GameStateManager>();
-		//rend = tapFeedback.GetComponent<Renderer>();
 	}
 
 	public void SetupComponents() {
@@ -36,6 +38,13 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Actionable {
 			case PlayerState.Idle:
 				ExecuteAction(Actions.STUN);
 				break;
+		}
+	}
+
+	void OnTriggerEnter(Collider other) {
+		if (other.gameObject.tag == TagConstants.TAP_FEEDBACK) {
+			playerState = PlayerState.Idle;
+			Debug.Log("COLLISION WITH TOUCH, CALL IDLE ANIMATION");
 		}
 	}
 
