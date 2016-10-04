@@ -12,5 +12,9 @@ public enum LocalizedString  {
 	ingameExit,
 	ingameRetry,
 	ingameLife,
-	ingameScore
+	ingameScore,
+	endSceneHighscore,
+	endSceneMyScore,
+	endSceneMotivationalL,
+	endSceneMotivationalW
 }
