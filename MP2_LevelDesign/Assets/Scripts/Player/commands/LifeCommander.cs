@@ -6,9 +6,13 @@ public class LifeCommander : MovableCommand {
     InGameController inGameController;
     GameStateManager gameStateManager;
     Player player;
-    Enemy enemy;
+	Enemy enemy;
+	Actionable actionablePlayer;
+	Actionable actionableEnemy;
 
-    public LifeCommander(Player player, Enemy enemy, GameStateManager gameStateManager, InGameController inGameController) {
+	public LifeCommander(Player player, Enemy enemy, GameStateManager gameStateManager, InGameController inGameController, Actionable actionablePlayer, Actionable actionableEnemy) {
+		this.actionablePlayer = actionablePlayer;
+		this.actionableEnemy = actionableEnemy;
         this.player = player;
         this.enemy = enemy;
         this.gameStateManager = gameStateManager;
@@ -21,7 +25,8 @@ public class LifeCommander : MovableCommand {
         }
         if (player.GetState() != PlayerState.Idle) {
             if (inGameController.GetLifeValue() >= 0) {
-                player.SetState(PlayerState.Idle);
+				actionablePlayer.ExecuteAction(Actions.STUN);
+				actionableEnemy.ExecuteAction(Actions.CAUGHT);
                 inGameController.DecrementLife();
             } else {
                 player.SetState(PlayerState.Dead);

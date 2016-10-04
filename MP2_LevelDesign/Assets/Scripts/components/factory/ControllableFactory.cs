@@ -24,30 +24,24 @@ public class ControllableFactory {
 
 	public void CreatePlayer(Actionable actionable) {
 		actionable.AddAction(Actions.MOVE, CreateMovementAuntie(actionable));
-		actionable.AddAction(Actions.STUN, CreateStun(actionable));
-		actionable.AddAction(Actions.CAUGHT, CreateCaught(actionable));
+		actionable.AddAction(Actions.STUN, CreateStun());
 
 		MovableCommand life = new LifeCommander(player,
 		                                        enemy,
-		                                        GameObject.FindGameObjectWithTag(TagConstants.GAME_STATE).GetComponent<GameStateManager>(),
-		                                        ingameController);
-		//playerObj.GetComponentsInChildren<MovableCommandable>()[0].AddCommand(life);
+												GameObject.FindGameObjectWithTag(TagConstants.GAME_STATE).GetComponent<GameStateManager>(),
+												ingameController,
+												(Actionable) player,
+												(Actionable) enemy);
+		playerObj.GetComponentsInChildren<MovableCommandable>()[0].AddCommand(life);
 	}
 
-	private Handler CreateCaught(Actionable actionable) {
-		Handler caught = new GotCaughtHandler();
-		caught.AddAction(new GotCaught(ingameController, player));
-		caught.AddAction(new GotCaughtSound());
-		return caught;
-	}
-
-	private Handler CreateStun(Actionable player) {
+	private Handler CreateStun() {
 		Handler stun = new Stun();
-		stun.AddAction(new StopAction());
+		stun.AddAction(new StopAction(player));
 		stun.AddAction(new StopMovingAuntieSound());
 		return stun;
 	}
-
+		
 	private MouseMove CreateMovementAuntie(Actionable controllable) {
 		MouseMove move = new MouseMove(camera);
 		move.AddAction(new StartMovingAuntieSound());
@@ -65,9 +59,24 @@ public class ControllableFactory {
 		actionable.AddAction(Actions.MOVE, CreateEnemyMovement());
 		actionable.AddAction(Actions.STOP, CreateStopEnemy());
 		actionable.AddAction(Actions.SPEEDUP, CreateSpeedEnemy());
+		actionable.AddAction(Actions.WALKAWAY, CreateWalkAwayEnemy());
 		actionable.AddAction(Actions.WARP, CreateWarpEnemy());
+		actionable.AddAction(Actions.CAUGHT, CreateCaught());
 		//CreateControllable(enemy, enemyAgent,maxSpeedOnTroll);
 		enemyObj.GetComponentsInChildren<MovableCommandable>()[0].AddCommand(new ChaseCommand(enemy));
+	}
+
+	Handler CreateCaught() {
+		Handler catchGirl = new ActionHandler();
+		catchGirl.AddAction(new CatchGirlAction(enemy));
+		catchGirl.AddAction(new GotCaughtSound());
+		return catchGirl;
+	}
+		
+	Handler CreateWalkAwayEnemy() {
+		Handler walkaway = new ActionHandler();
+		walkaway.AddAction(new WalkAwayAction(enemy));
+		return walkaway;
 	}
 
 	Handler CreateWarpEnemy() {
@@ -97,7 +106,7 @@ public class ControllableFactory {
 
 	private Handler CreateStopEnemy() {
 		Handler enemyStop = new ActionHandler();
-		enemyStop.AddAction(new StopAction());
+		enemyStop.AddAction(new StopAction(player));
 		enemyStop.AddAction(new StopTrollSound());
 		return enemyStop;
 	}

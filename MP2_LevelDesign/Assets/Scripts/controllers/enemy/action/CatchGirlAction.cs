@@ -1,20 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StopAction : Action {
+public class CatchGirlAction : Action {
 	NavMeshAgent agent;
-	private Player player;
+	private Enemy enemy;
 
-	public StopAction(Player player) {
-		this.player = player;
+	public CatchGirlAction(Enemy enemy) {
+		this.enemy = enemy;
 	}
 
 	public void Setup(GameObject obj) {
 		agent = obj.GetComponent<NavMeshAgent>();
 	}
 
+
 	public void Execute() {
-		player.SetState(PlayerState.Idle);
+		enemy.SetState(EnemyState.GirlCaught);
 		agent.Stop();
 	}
 }
