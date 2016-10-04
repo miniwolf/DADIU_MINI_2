@@ -6,10 +6,12 @@ public class BridgeAction : ItemCommand {
 	private GameObject bridgeObject;
 	private CoroutineDelegateContainer coroutineDelegator;
 	private GameObject woodBridgeNavMesh;
+	private Actionable actionableEnemy;
 
-	public BridgeAction(Enemy enemy, CoroutineDelegateContainer corout) {
+	public BridgeAction(Enemy enemy, CoroutineDelegateContainer corout, Actionable actionableEnemy) {
 		this.enemy = enemy;
 		this.coroutineDelegator = corout;
+		this.actionableEnemy = actionableEnemy;
 	}
 
 	/// <summary>
@@ -35,7 +37,7 @@ public class BridgeAction : ItemCommand {
 			woodBridgeNavMesh = GameObject.FindGameObjectWithTag(TagConstants.WOODBRIDGENAVMESH);
 			woodBridgeNavMesh.GetComponent<NavMeshObstacle>().enabled = true;
 			woodBridgeNavMesh.transform.parent = null;
-			enemy.SetState(EnemyState.RandomWalk);
+			actionableEnemy.ExecuteAction(Actions.ROAM);
 			coroutineDelegator.StartCoroutine(RemoveBridgeAfterTime());
 		}
 	}
@@ -44,7 +46,4 @@ public class BridgeAction : ItemCommand {
 		yield return new WaitForSeconds(bridgeObject.GetComponent<Bridge>().timeForBrokenBridgeToDisappear);
 		bridgeObject.SetActive(false);
 	}
-
-
-
 }

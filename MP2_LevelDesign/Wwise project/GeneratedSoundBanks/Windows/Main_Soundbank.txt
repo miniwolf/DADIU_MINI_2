@@ -16,14 +16,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	4032712899	trollFootsteps			\Default Work Unit\trollFootsteps	
 	4228143387	trollThrowsAuntie			\Default Work Unit\trollThrowsAuntie	
 
-Switch Group	ID	Name			Wwise Object Path	Notes
-	2385628198	footsteps			\Default Work Unit\footsteps	
-
-Switch	ID	Name	Switch Group			Notes
-	155471294	forest_surface	footsteps			
-	2236647400	stone_bridge_surface	footsteps			
-	3160841550	wood_bridge_surface	footsteps			
-
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	3617496	Throw_7	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Throw_7_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Throwing\Throw_7		9577
 	42406669	Uoohh	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Uoohh_523312EE.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Surprised\Uoohh		6943
@@ -71,6 +63,5 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	979268561	auntie_ground_impact_1	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\auntie_ground_impact_1_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Auntie_ground_impact\auntie_ground_impact_1		4188
 	998932725	running_river	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\running_river_37B59102.wem		\Actor-Mixer Hierarchy\Default Work Unit\Soundscape\running_river		257428
 	1007633232	pick_up_auntie_1	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\pick_up_auntie_1_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\pick_up_auntie_1		3764
-	1037391752	footstep_concrete_1	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\footstep_concrete_1_353E0806.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Footsteps\concrete\footstep_concrete_1		1349
 	1072344928	Troll_catching_auntie_4	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Windows\SFX\Troll_catching_auntie_4_CDFE0F68.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Catching_auntie\Troll_catching_auntie_4		15217
 

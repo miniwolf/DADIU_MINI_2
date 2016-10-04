@@ -85,10 +85,10 @@
 					</PropertyList>
 					<ConversionPluginInfoList>
 						<ConversionPluginInfo Platform="Windows">
-							<ConversionPlugin Name="" ID="{C6B31167-938C-453A-8E38-68F9A5A2FF34}" PluginName="ADPCM" CompanyID="0" PluginID="2"/>
+							<ConversionPlugin Name="" ID="{CA8A8C95-3E95-4020-A9A4-8717D81A8D60}" PluginName="Vorbis" CompanyID="0" PluginID="4"/>
 						</ConversionPluginInfo>
 						<ConversionPluginInfo Platform="Android">
-							<ConversionPlugin Name="" ID="{878891F7-5D45-4B9B-8A40-94F3AF7DC59F}" PluginName="ADPCM" CompanyID="0" PluginID="2"/>
+							<ConversionPlugin Name="" ID="{A3010CBF-A068-409C-A206-6935E8B3D75E}" PluginName="Vorbis" CompanyID="0" PluginID="4"/>
 						</ConversionPluginInfo>
 					</ConversionPluginInfoList>
 				</Conversion>
