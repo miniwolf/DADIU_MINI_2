@@ -2,6 +2,7 @@
 using System.Collections;
 
 public enum Actions {
+	DEBUGMOVE,
 	SPEEDUP,
 	WARP,
 	SLOWDOWN,
@@ -9,5 +10,9 @@ public enum Actions {
 	WALKAWAY,
 	STOP,
 	STUN,
-	MOVE
+	MOVE,
+	RESUME,
+	CHASE,
+	ROAM
+
 }

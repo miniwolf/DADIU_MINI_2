@@ -5,6 +5,8 @@ public class GameState {
 	public class Playing : GameStates {
 		public void Execute() {
 			Time.timeScale = 1.0f;
+			Action action = new LevelMusic();
+			action.Execute();
 		}
 	}
 
