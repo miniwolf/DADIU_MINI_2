@@ -91,11 +91,13 @@ public class ControllableFactory {
 	Handler CreateRoam() {
 		Handler roam = new ActionHandler();
 		roam.AddAction(new RoamAction(enemy));
+		roam.AddAction(new RoamingMusic());
 		return roam;
 	}
 
 	Handler CreateChase() {
 		Handler chase = new ActionHandler();
+		chase.AddAction(new ChasingMusic(enemy));
 		chase.AddAction(new ChaseAction(enemy));
 		return chase;
 	}
