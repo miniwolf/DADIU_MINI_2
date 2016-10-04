@@ -15,7 +15,6 @@ public class TapFeedback : MoveAction {
 	}
 
 	public void Execute(Vector3 pos) {
-		//tapFeedback.transform.position = new Vector3(pos.x, pos.y + 0.1f, pos.z);
-//			tapAnimator.Play("Scale", -1, 0f);
+		tapFeedback.transform.position = new Vector3(pos.x, pos.y + 0.1f, pos.z);
 	}
 }
