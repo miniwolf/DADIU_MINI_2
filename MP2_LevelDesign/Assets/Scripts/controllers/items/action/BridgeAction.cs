@@ -5,6 +5,7 @@ public class BridgeAction : ItemCommand {
 	private Enemy enemy;
 	private GameObject bridgeObject;
 	private CoroutineDelegateContainer coroutineDelegator;
+	private GameObject woodBridgeNavMesh;
 
 	public BridgeAction(Enemy enemy, CoroutineDelegateContainer corout) {
 		this.enemy = enemy;
@@ -26,8 +27,14 @@ public class BridgeAction : ItemCommand {
 	public void Execute(Collider other) {
 		if ( other.transform.tag == TagConstants.ENEMY ) {
 			foreach (Transform child in bridgeObject.GetComponentInChildren<Transform>()) {
-				child.GetComponent<Rigidbody>().isKinematic = false;	
+				if (child.GetComponent<Rigidbody>() != null) {
+					child.GetComponent<Rigidbody>().isKinematic = false;	
+				}
 			}
+
+			woodBridgeNavMesh = GameObject.FindGameObjectWithTag(TagConstants.WOODBRIDGENAVMESH);
+			woodBridgeNavMesh.GetComponent<NavMeshObstacle>().enabled = true;
+			woodBridgeNavMesh.transform.parent = null;
 			enemy.SetState(EnemyState.RandomWalk);
 			coroutineDelegator.StartCoroutine(RemoveBridgeAfterTime());
 		}

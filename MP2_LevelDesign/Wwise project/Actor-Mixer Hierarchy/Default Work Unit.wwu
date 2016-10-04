@@ -85,9 +85,6 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
-								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
@@ -164,16 +161,13 @@
 								<Property Name="Spatialization" Type="bool" Value="False"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-22</Value>
+										<Value>-10</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="river_ambience" ID="{4DBD4E5C-7A6C-435D-9E27-E04D7ED6FAAD}" WorkUnitID="{63DF6E17-55A9-467C-ACFF-5AAB3B339977}"/>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="distance_25" ID="{EC00DD4F-F111-4B17-824D-7E80CE965C5C}" WorkUnitID="{63DF6E17-55A9-467C-ACFF-5AAB3B339977}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -201,16 +195,13 @@
 								<Property Name="Spatialization" Type="bool" Value="False"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-17</Value>
+										<Value>-3</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="lake_ambience" ID="{5739C1B0-23E1-467D-8A6D-61342BB7D655}" WorkUnitID="{63DF6E17-55A9-467C-ACFF-5AAB3B339977}"/>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="distance_50" ID="{E81650FA-4FED-4263-9118-37C2E5A49D48}" WorkUnitID="{63DF6E17-55A9-467C-ACFF-5AAB3B339977}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -236,9 +227,6 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
-								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
@@ -266,9 +254,6 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
-								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
@@ -280,6 +265,7 @@
 										<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
 										<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
 										<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.3"/>
+										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
 												<Value>-5</Value>
@@ -348,9 +334,6 @@
 													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>footstep_branch_1.wav</AudioFile>
-													<ConvertedFileIDList>
-														<File ID="205310487"/>
-													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
@@ -376,9 +359,6 @@
 													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>footstep_branch_2.wav</AudioFile>
-													<ConvertedFileIDList>
-														<File ID="548029858"/>
-													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
@@ -407,9 +387,6 @@
 													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>footstep_branch_3.wav</AudioFile>
-													<ConvertedFileIDList>
-														<File ID="353118122"/>
-													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
@@ -444,9 +421,6 @@
 													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>footstep_branch_4.wav</AudioFile>
-													<ConvertedFileIDList>
-														<File ID="238472842"/>
-													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
@@ -478,9 +452,6 @@
 													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>footstep_branch_5.wav</AudioFile>
-													<ConvertedFileIDList>
-														<File ID="216424462"/>
-													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
@@ -509,9 +480,6 @@
 													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>footstep_branch_6.wav</AudioFile>
-													<ConvertedFileIDList>
-														<File ID="897412089"/>
-													</ConvertedFileIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
@@ -526,6 +494,7 @@
 										<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
 										<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
 										<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.3"/>
+										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
 												<Value>-5</Value>
@@ -596,8 +565,8 @@
 								</RandomSequenceContainer>
 							</ChildrenList>
 							<GroupingInfo>
-								<GroupRef Name="footsteps" ID="{345FAAA6-6554-47F9-9697-5CCB9B9675C2}"/>
-								<DefaultSwitchRef Name="forest_surface" ID="{909B7191-F68A-400E-91F6-E4C24633F277}"/>
+								<GroupRef Name="" ID="{00000000-0000-0000-0000-000000000000}"/>
+								<DefaultSwitchRef Name="" ID="{00000000-0000-0000-0000-000000000000}"/>
 								<GroupingBehaviorList>
 									<GroupingBehavior>
 										<ItemRef Name="forest" ID="{897720E0-A224-47A4-A584-4DCA4B76813E}"/>
@@ -606,33 +575,10 @@
 										<ItemRef Name="concrete" ID="{333E35E1-FEAB-4A0A-BBAD-4B585083F635}"/>
 									</GroupingBehavior>
 								</GroupingBehaviorList>
-								<GroupingList>
-									<Grouping>
-										<SwitchRef Name="wood_bridge_surface" ID="{5B0B6174-5EE6-4104-92D9-02314B9D8673}"/>
-										<ItemList>
-											<ItemRef Name="forest" ID="{897720E0-A224-47A4-A584-4DCA4B76813E}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="forest_surface" ID="{909B7191-F68A-400E-91F6-E4C24633F277}"/>
-										<ItemList>
-											<ItemRef Name="forest" ID="{897720E0-A224-47A4-A584-4DCA4B76813E}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="stone_bridge_surface" ID="{3BCFDCA6-3782-48F6-8B78-1A0790076127}"/>
-										<ItemList>
-											<ItemRef Name="concrete" ID="{333E35E1-FEAB-4A0A-BBAD-4B585083F635}"/>
-										</ItemList>
-									</Grouping>
-								</GroupingList>
 							</GroupingInfo>
 						</SwitchContainer>
 						<RandomSequenceContainer Name="Happy" ID="{789E2083-605F-430C-B95C-3173925D8D75}" ShortID="52046257">
 							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
-								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
@@ -707,9 +653,6 @@
 							<ChildrenList>
 								<Sound Name="Uuooouuhh (flying)" ID="{6CE883AB-409C-45B0-A464-B998A3CFF9D9}" ShortID="404095185" Type="SoundFX">
 									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
-										</Reference>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Master Secondary Bus" ID="{D2E0BC7E-7B3F-4FFE-A670-FAE02761B631}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 										</Reference>
@@ -726,9 +669,6 @@
 								</Sound>
 								<Sound Name="Uuuaaaoooooo (flying)" ID="{DFC75EBC-B327-444D-BFEC-0C3A95BADEE9}" ShortID="587987356" Type="SoundFX">
 									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
-										</Reference>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Master Secondary Bus" ID="{D2E0BC7E-7B3F-4FFE-A670-FAE02761B631}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 										</Reference>
@@ -745,9 +685,6 @@
 								</Sound>
 								<Sound Name="WaaaoUuuuuhh (flying)" ID="{019DA305-D3F1-454A-9F81-8EFAEE33B34F}" ShortID="415261507" Type="SoundFX">
 									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
-										</Reference>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Master Secondary Bus" ID="{D2E0BC7E-7B3F-4FFE-A670-FAE02761B631}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 										</Reference>
@@ -764,9 +701,6 @@
 								</Sound>
 								<Sound Name="Wiiihuihii (flying)" ID="{3E6A8208-DE3D-4A20-B2E0-587B42DEFCAB}" ShortID="280062759" Type="SoundFX">
 									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
-										</Reference>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Master Secondary Bus" ID="{D2E0BC7E-7B3F-4FFE-A670-FAE02761B631}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 										</Reference>
@@ -786,9 +720,6 @@
 								</Sound>
 								<Sound Name="Wiiii (flying)" ID="{D1FF6C29-4C9D-4B54-9F70-46E48D8A76EE}" ShortID="441812914" Type="SoundFX">
 									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
-										</Reference>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Master Secondary Bus" ID="{D2E0BC7E-7B3F-4FFE-A670-FAE02761B631}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 										</Reference>
@@ -814,9 +745,6 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
-								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
@@ -980,9 +908,6 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
-								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
@@ -1103,9 +1028,6 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
-								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
@@ -1238,9 +1160,6 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
-								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
@@ -1395,11 +1314,9 @@
 								<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
 								<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
 								<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.3"/>
+								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 							</PropertyList>
 							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
-								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
@@ -1550,9 +1467,6 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
-								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
@@ -1622,10 +1536,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="troll" ID="{E81650FA-4FED-4263-9118-37C2E5A49D48}" WorkUnitID="{63DF6E17-55A9-467C-ACFF-5AAB3B339977}"/>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="distance_50" ID="{E81650FA-4FED-4263-9118-37C2E5A49D48}" WorkUnitID="{63DF6E17-55A9-467C-ACFF-5AAB3B339977}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -1648,6 +1559,7 @@
 												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
 												<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
 												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.5"/>
+												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -1683,6 +1595,9 @@
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>footstep_branch_5.wav</AudioFile>
+															<ConvertedFileIDList>
+																<File ID="882369756"/>
+															</ConvertedFileIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
@@ -1711,6 +1626,9 @@
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>footstep_branch_6.wav</AudioFile>
+															<ConvertedFileIDList>
+																<File ID="964849120"/>
+															</ConvertedFileIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
@@ -1736,6 +1654,9 @@
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>footstep_branch_2.wav</AudioFile>
+															<ConvertedFileIDList>
+																<File ID="264189254"/>
+															</ConvertedFileIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
@@ -1764,6 +1685,9 @@
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>footstep_branch_3.wav</AudioFile>
+															<ConvertedFileIDList>
+																<File ID="786908410"/>
+															</ConvertedFileIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
@@ -1798,6 +1722,9 @@
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>footstep_branch_4.wav</AudioFile>
+															<ConvertedFileIDList>
+																<File ID="423969624"/>
+															</ConvertedFileIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
@@ -1857,6 +1784,9 @@
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>footstep_branch_1.wav</AudioFile>
+															<ConvertedFileIDList>
+																<File ID="17854566"/>
+															</ConvertedFileIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
@@ -1916,6 +1846,7 @@
 												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
 												<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
 												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.5"/>
+												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
 														<Value>-12</Value>
@@ -1975,33 +1906,13 @@
 								</BlendContainer>
 							</ChildrenList>
 							<GroupingInfo>
-								<GroupRef Name="footsteps" ID="{345FAAA6-6554-47F9-9697-5CCB9B9675C2}"/>
+								<GroupRef Name="" ID="{00000000-0000-0000-0000-000000000000}"/>
 								<DefaultSwitchRef Name="" ID="{00000000-0000-0000-0000-000000000000}"/>
 								<GroupingBehaviorList>
 									<GroupingBehavior>
 										<ItemRef Name="forest_surface" ID="{244A00A9-B4A8-4651-838F-FE1EBE6E7A2C}"/>
 									</GroupingBehavior>
 								</GroupingBehaviorList>
-								<GroupingList>
-									<Grouping>
-										<SwitchRef Name="wood_bridge_surface" ID="{5B0B6174-5EE6-4104-92D9-02314B9D8673}"/>
-										<ItemList>
-											<ItemRef Name="forest_surface" ID="{244A00A9-B4A8-4651-838F-FE1EBE6E7A2C}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="forest_surface" ID="{909B7191-F68A-400E-91F6-E4C24633F277}"/>
-										<ItemList>
-											<ItemRef Name="forest_surface" ID="{244A00A9-B4A8-4651-838F-FE1EBE6E7A2C}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="stone_bridge_surface" ID="{3BCFDCA6-3782-48F6-8B78-1A0790076127}"/>
-										<ItemList>
-											<ItemRef Name="forest_surface" ID="{244A00A9-B4A8-4651-838F-FE1EBE6E7A2C}"/>
-										</ItemList>
-									</Grouping>
-								</GroupingList>
 							</GroupingInfo>
 						</SwitchContainer>
 						<RandomSequenceContainer Name="Throwing" ID="{92D7EA33-DDD5-46C5-AD13-589C6A8BE78D}" ShortID="750989399">
@@ -2026,10 +1937,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="troll" ID="{E81650FA-4FED-4263-9118-37C2E5A49D48}" WorkUnitID="{63DF6E17-55A9-467C-ACFF-5AAB3B339977}"/>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="distance_50" ID="{E81650FA-4FED-4263-9118-37C2E5A49D48}" WorkUnitID="{63DF6E17-55A9-467C-ACFF-5AAB3B339977}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -2143,10 +2051,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="troll" ID="{E81650FA-4FED-4263-9118-37C2E5A49D48}" WorkUnitID="{63DF6E17-55A9-467C-ACFF-5AAB3B339977}"/>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="distance_50" ID="{E81650FA-4FED-4263-9118-37C2E5A49D48}" WorkUnitID="{63DF6E17-55A9-467C-ACFF-5AAB3B339977}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -2318,9 +2223,6 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
-								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Secondary Bus" ID="{D2E0BC7E-7B3F-4FFE-A670-FAE02761B631}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
@@ -2357,10 +2259,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="troll" ID="{E81650FA-4FED-4263-9118-37C2E5A49D48}" WorkUnitID="{63DF6E17-55A9-467C-ACFF-5AAB3B339977}"/>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="distance_50" ID="{E81650FA-4FED-4263-9118-37C2E5A49D48}" WorkUnitID="{63DF6E17-55A9-467C-ACFF-5AAB3B339977}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -2488,10 +2387,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="troll" ID="{E81650FA-4FED-4263-9118-37C2E5A49D48}" WorkUnitID="{63DF6E17-55A9-467C-ACFF-5AAB3B339977}"/>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="distance_50" ID="{E81650FA-4FED-4263-9118-37C2E5A49D48}" WorkUnitID="{63DF6E17-55A9-467C-ACFF-5AAB3B339977}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -2598,7 +2494,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -2683,9 +2579,6 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
-								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
@@ -2715,9 +2608,6 @@
 								<Reference Name="Attenuation">
 									<ObjectRef Name="music_attenuation_notroll" ID="{20BF5940-6D5F-4517-B23D-E8E27653DD3C}" WorkUnitID="{63DF6E17-55A9-467C-ACFF-5AAB3B339977}"/>
 								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
-								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
@@ -2730,6 +2620,41 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="music_notroll_comp" ID="{1A847D57-76C6-4602-8374-399431FE15EE}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="music_troll_comp_1" ID="{05F89710-69A4-4FFB-83BC-63C3F475E08F}" ShortID="350934793" Type="SoundFX">
+							<ExcludedPlatformList>
+								<Platform>Android</Platform>
+							</ExcludedPlatformList>
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="PositioningType" Type="int16" Value="1"/>
+								<Property Name="Spatialization" Type="bool" Value="False"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-11</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="distance_50" ID="{E81650FA-4FED-4263-9118-37C2E5A49D48}" WorkUnitID="{63DF6E17-55A9-467C-ACFF-5AAB3B339977}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="music_troll_comp_1" ID="{7ADF0143-FD26-4B4F-B38E-9A9CA5BC8E13}" ShortID="1022230410">
+									<Language>SFX</Language>
+									<AudioFile>music_troll_comp_1.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="music_troll_comp_1" ID="{7ADF0143-FD26-4B4F-B38E-9A9CA5BC8E13}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="music_troll_comp_2" ID="{0C9A8079-A0F7-4E5B-9E44-6540F13E99CC}" ShortID="709045126" Type="SoundFX">
@@ -2746,9 +2671,6 @@
 							<ReferenceList>
 								<Reference Name="Attenuation">
 									<ObjectRef Name="music_attenuation_troll" ID="{6E9C01CB-E261-427C-B4EB-7E08C78EEA0E}" WorkUnitID="{63DF6E17-55A9-467C-ACFF-5AAB3B339977}"/>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
@@ -2785,9 +2707,6 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
-								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
@@ -2816,9 +2735,6 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
-								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
@@ -2842,9 +2758,6 @@
 					<ChildrenList>
 						<RandomSequenceContainer Name="Clothes" ID="{0BA4A537-E94B-498A-81CF-A396A575507F}" ShortID="904004799">
 							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
-								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
@@ -2916,9 +2829,6 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
-								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
@@ -2951,9 +2861,6 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
-								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
