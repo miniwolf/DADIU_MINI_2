@@ -26,7 +26,7 @@
 				<Event Id="3139869105" Name="menuBackwardClick" ObjectPath="\Events\Default Work Unit\menuBackwardClick"/>
 				<Event Id="4028748541" Name="menuForwardClick" ObjectPath="\Events\Default Work Unit\menuForwardClick"/>
 				<Event Id="1477059561" Name="playForestSoundscape" ObjectPath="\Events\Default Work Unit\playForestSoundscape"/>
-				<Event Id="3889299310" Name="playLakeAmbience" ObjectPath="\Events\Default Work Unit\playLakeAmbience" MaxAttenuation="40.000000"/>
+				<Event Id="3889299310" Name="playLakeAmbience" ObjectPath="\Events\Default Work Unit\playLakeAmbience" MaxAttenuation="50.000000"/>
 				<Event Id="1148261388" Name="playLevelMusic" ObjectPath="\Events\Default Work Unit\musicEvents\playLevelMusic" MaxAttenuation="50.000000"/>
 				<Event Id="413545259" Name="playMenuMusic" ObjectPath="\Events\Default Work Unit\musicEvents\playMenuMusic"/>
 				<Event Id="251180667" Name="playRiverAmbience" ObjectPath="\Events\Default Work Unit\playRiverAmbience" MaxAttenuation="25.000000"/>
@@ -178,10 +178,6 @@
 				<File Id="1007633232" Language="SFX">
 					<ShortName>pick_up_auntie_1.wav</ShortName>
 					<Path>SFX\pick_up_auntie_1_CDFE0F68.wem</Path>
-				</File>
-				<File Id="1037391752" Language="SFX">
-					<ShortName>footstep_concrete_1.wav</ShortName>
-					<Path>SFX\footstep_concrete_1_353E0806.wem</Path>
 				</File>
 				<File Id="1072344928" Language="SFX">
 					<ShortName>Troll_catching_auntie_4.wav</ShortName>

@@ -25,6 +25,15 @@ public class CanvasScript : MonoBehaviour {
 		ShowMainMenu();
 	}
 
+	void Start() {
+		Action menuMusic = new MenuMusic();
+		menuMusic.Setup(gameObject);
+		menuMusic.Execute();
+		Action soundScape = new SoundScapeMusic();
+		soundScape.Setup(gameObject);
+		soundScape.Execute();
+	}
+
 	void Update(){
 		if (Input.GetKey(KeyCode.K)) {
 			GameEnded();
@@ -39,6 +48,12 @@ public class CanvasScript : MonoBehaviour {
 		howToPlayMenu.gameObject.SetActive(false);
 
 		gameStateManager.NewState(new GameState.Paused());
+		Action menuMusic = new MenuMusic();
+		menuMusic.Setup(gameObject);
+		menuMusic.Execute();
+		Action soundScape = new SoundScapeMusic();
+		soundScape.Setup(gameObject);
+		soundScape.Execute();
 	}
 
 	public void ShowSettings() {
@@ -47,7 +62,9 @@ public class CanvasScript : MonoBehaviour {
 		inGameController.SetInvisible();
 
 		howToPlayMenu.gameObject.SetActive(false);
-
+		Action action = new ForwardMenuFeedbackSound();
+		action.Setup(gameObject);
+		action.Execute();
 		gameStateManager.NewState(new GameState.Paused());
 	}
 
@@ -58,6 +75,9 @@ public class CanvasScript : MonoBehaviour {
 
 		howToPlayMenu.gameObject.SetActive(false);
 
+		Action action = new LevelMusic();
+		action.Setup(gameObject);
+		action.Execute();
 		gameStateManager.NewState(new GameState.Playing());
 	}
 
@@ -66,11 +86,17 @@ public class CanvasScript : MonoBehaviour {
 		settingsController.SetInvisible();
 		inGameController.SetInvisible();
 		howToPlayMenu.gameObject.SetActive(true);
+		Action action = new ForwardMenuFeedbackSound();
+		action.Setup(gameObject);
+		action.Execute();
 
 		gameStateManager.NewState(new GameState.Paused());
 	}
 
 	public void ReturnToMainMenu() {
+		Action action = new BackwardMenuFeedbackSound();
+		action.Setup(gameObject);
+		action.Execute();
 		ShowMainMenu();
 	}
 
