@@ -19,8 +19,10 @@ namespace AK
         static const AkUniqueID MENUBACKWARDCLICK = 3139869105U;
         static const AkUniqueID MENUFORWARDCLICK = 4028748541U;
         static const AkUniqueID PLAYFORESTSOUNDSCAPE = 1477059561U;
+        static const AkUniqueID PLAYLAKESOUNDSCAPE = 3175730599U;
         static const AkUniqueID PLAYLEVELMUSIC = 1148261388U;
         static const AkUniqueID PLAYMENUMUSIC = 413545259U;
+        static const AkUniqueID PLAYRIVERSOUND = 3761099264U;
         static const AkUniqueID STOPALLMUSIC = 2907867019U;
         static const AkUniqueID STOPALLSOUNDSCAPES = 3284803258U;
         static const AkUniqueID STOPAUNTIEDRESSPICKUPVOICE = 1422264338U;

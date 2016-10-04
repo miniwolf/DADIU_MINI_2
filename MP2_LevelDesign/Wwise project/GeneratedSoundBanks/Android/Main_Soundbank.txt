@@ -10,9 +10,11 @@ Event	ID	Name			Wwise Object Path	Notes
 	2867536338	dressPickup			\Default Work Unit\dressPickup	
 	2907867019	stopAllMusic			\Default Work Unit\musicEvents\stopAllMusic	
 	3139869105	menuBackwardClick			\Default Work Unit\menuBackwardClick	
+	3175730599	playLakeSoundscape			\Default Work Unit\playLakeSoundscape	
 	3227179805	trollCatchAuntie			\Default Work Unit\trollCatchAuntie	
 	3284803258	stopAllSoundscapes			\Default Work Unit\stopEvents\stopAllSoundscapes	
 	3527026064	stopAuntieFootsteps			\Default Work Unit\stopEvents\stopAuntieFootsteps	
+	3761099264	playRiverSound			\Default Work Unit\playRiverSound	
 	4028748541	menuForwardClick			\Default Work Unit\menuForwardClick	
 	4032712899	trollFootsteps			\Default Work Unit\trollFootsteps	
 	4228143387	trollThrowsAuntie			\Default Work Unit\trollThrowsAuntie	
@@ -37,6 +39,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	360738613	Troll_falling_short_1	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Android\SFX\Troll_falling_short_1_D19EFF7E.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Troll_falling_shorts\Troll_falling_short_1		154548
 	422205118	Yubii	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Android\SFX\Yubii_72F4AB5C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Happy\Yubii		174788
 	422937860	Troll_falling_short_2	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Android\SFX\Troll_falling_short_2_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Troll_falling_shorts\Troll_falling_short_2		162544
+	479482607	frog_soundscape_loop_1	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Android\SFX\frog_soundscape_loop_1_4B8CC0C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Soundscape\frog_soundscape_loop_1		1536068
 	480542494	Troll_catching_auntie_3	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Android\SFX\Troll_catching_auntie_3_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Catching_auntie\Troll_catching_auntie_3		135320
 	485177666	music_menu_comp	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Android\SFX\music_menu_comp_4B8CC0C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\music_menu_comp		921664
 	563529082	Button	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Android\SFX\menu button_1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Button		53928
@@ -57,6 +60,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	977389573	Laughing_7	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Android\SFX\Laughing_7_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Laughs_long\Laughing_7		146604
 	977528163	troll_footstep_4	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Android\SFX\troll_footstep_4_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Footsteps\forest_surface\footsteps\troll_footstep_4		22624
 	979268561	auntie_ground_impact_1	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Android\SFX\auntie_ground_impact_1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Auntie\Auntie_ground_impact\auntie_ground_impact_1		40604
+	998932725	running_river	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Android\SFX\running_river_4B8CC0C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Soundscape\running_river		2942256
 	1007633232	pick_up_auntie_1	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Android\SFX\pick_up_auntie_1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\pick_up_auntie_1		55548
 	1072344928	Troll_catching_auntie_4	C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Android\SFX\Troll_catching_auntie_4_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Troll\Catching_auntie\Troll_catching_auntie_4		166432
 

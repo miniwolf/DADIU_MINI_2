@@ -27,8 +27,10 @@
 				<Event Id="3139869105" Name="menuBackwardClick" ObjectPath="\Events\Default Work Unit\menuBackwardClick"/>
 				<Event Id="4028748541" Name="menuForwardClick" ObjectPath="\Events\Default Work Unit\menuForwardClick"/>
 				<Event Id="1477059561" Name="playForestSoundscape" ObjectPath="\Events\Default Work Unit\playForestSoundscape"/>
+				<Event Id="3175730599" Name="playLakeSoundscape" ObjectPath="\Events\Default Work Unit\playLakeSoundscape" MaxAttenuation="50.000000"/>
 				<Event Id="1148261388" Name="playLevelMusic" ObjectPath="\Events\Default Work Unit\musicEvents\playLevelMusic" MaxAttenuation="50.000000"/>
 				<Event Id="413545259" Name="playMenuMusic" ObjectPath="\Events\Default Work Unit\musicEvents\playMenuMusic"/>
+				<Event Id="3761099264" Name="playRiverSound" ObjectPath="\Events\Default Work Unit\playRiverSound" MaxAttenuation="25.000000"/>
 				<Event Id="2907867019" Name="stopAllMusic" ObjectPath="\Events\Default Work Unit\musicEvents\stopAllMusic" MaxAttenuation="0.000000"/>
 				<Event Id="3284803258" Name="stopAllSoundscapes" ObjectPath="\Events\Default Work Unit\stopEvents\stopAllSoundscapes" MaxAttenuation="0.000000"/>
 				<Event Id="1422264338" Name="stopAuntieDressPickupVoice" ObjectPath="\Events\Default Work Unit\stopEvents\stopAuntieDressPickupVoice" MaxAttenuation="0.000000"/>
@@ -136,6 +138,10 @@
 					<ShortName>footstep_branch_4.wav</ShortName>
 					<Path>SFX\footstep_branch_4_4C3E55CD.wem</Path>
 				</File>
+				<File Id="479482607" Language="SFX">
+					<ShortName>frog_soundscape_loop_1.wav</ShortName>
+					<Path>SFX\frog_soundscape_loop_1_4B8CC0C5.wem</Path>
+				</File>
 				<File Id="480542494" Language="SFX">
 					<ShortName>Troll_catching_auntie_3.wav</ShortName>
 					<Path>SFX\Troll_catching_auntie_3_9E69E797.wem</Path>
@@ -239,6 +245,10 @@
 				<File Id="979268561" Language="SFX">
 					<ShortName>auntie_ground_impact_1.wav</ShortName>
 					<Path>SFX\auntie_ground_impact_1_9E69E797.wem</Path>
+				</File>
+				<File Id="998932725" Language="SFX">
+					<ShortName>running_river.wav</ShortName>
+					<Path>SFX\running_river_4B8CC0C5.wem</Path>
 				</File>
 				<File Id="1007633232" Language="SFX">
 					<ShortName>pick_up_auntie_1.wav</ShortName>
