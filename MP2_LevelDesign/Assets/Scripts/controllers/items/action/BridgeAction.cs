@@ -4,9 +4,12 @@ using System.Collections;
 public class BridgeAction : ItemCommand {
 	private Enemy enemy;
 	private GameObject bridgeObject;
+	private CoroutineDelegateContainer coroutineDelegator;
+	private GameObject woodBridgeNavMesh;
 
-	public BridgeAction(Enemy enemy) {
+	public BridgeAction(Enemy enemy, CoroutineDelegateContainer corout) {
 		this.enemy = enemy;
+		this.coroutineDelegator = corout;
 	}
 
 	/// <summary>
@@ -15,7 +18,6 @@ public class BridgeAction : ItemCommand {
 	/// <param name="gameObject">Game object of the bridge</param>
 	public void Setup(GameObject gameObject) {
 		this.bridgeObject = gameObject;
-		gameObject.GetComponent<Rigidbody>().isKinematic = true;
 	}
 
 	/// <summary>
@@ -24,8 +26,25 @@ public class BridgeAction : ItemCommand {
 	/// <param name="other">Colliding object</param>
 	public void Execute(Collider other) {
 		if ( other.transform.tag == TagConstants.ENEMY ) {
-			bridgeObject.GetComponent<Rigidbody>().isKinematic = false;
+			foreach (Transform child in bridgeObject.GetComponentInChildren<Transform>()) {
+				if (child.GetComponent<Rigidbody>() != null) {
+					child.GetComponent<Rigidbody>().isKinematic = false;	
+				}
+			}
+
+			woodBridgeNavMesh = GameObject.FindGameObjectWithTag(TagConstants.WOODBRIDGENAVMESH);
+			woodBridgeNavMesh.GetComponent<NavMeshObstacle>().enabled = true;
+			woodBridgeNavMesh.transform.parent = null;
 			enemy.SetState(EnemyState.RandomWalk);
+			coroutineDelegator.StartCoroutine(RemoveBridgeAfterTime());
 		}
 	}
+
+	private IEnumerator RemoveBridgeAfterTime() {
+		yield return new WaitForSeconds(bridgeObject.GetComponent<Bridge>().timeForBrokenBridgeToDisappear);
+		bridgeObject.SetActive(false);
+	}
+
+
+
 }

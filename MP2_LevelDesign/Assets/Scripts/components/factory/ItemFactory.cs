@@ -6,10 +6,13 @@ public class ItemFactory {
 	InGameController inGameController;
 	FloatingNumberInterface feedBackNumber;
 
-	public ItemFactory() {
+	CoroutineDelegateContainer container;
+
+	public ItemFactory(CoroutineDelegateContainer container) {
 		inGameController = GameObject.FindGameObjectWithTag(UIConstants.IN_GAME_MENU).GetComponent<InGameController>();
 		enemy = GameObject.FindGameObjectWithTag(TagConstants.ENEMY).GetComponent<Enemy>();
 		feedBackNumber = GameObject.FindGameObjectWithTag(TagConstants.FEEDBACKNUMBER).GetComponent<FloatingNumberInterface>();
+		this.container = container;
 	}
 
 	public void CreateDress(Commandable dress) {
@@ -21,7 +24,7 @@ public class ItemFactory {
 	}
 
 	public void CreateBridge(Commandable bridge) {
-		bridge.AddCommand(new BridgeAction(enemy));
+		bridge.AddCommand(new BridgeAction(enemy, container));
 	}
 
 	public void CreateYellowBush(Commandable yellowBush) {

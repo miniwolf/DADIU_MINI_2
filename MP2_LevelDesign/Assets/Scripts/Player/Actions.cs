@@ -6,6 +6,7 @@ public enum Actions {
 	WARP,
 	SLOWDOWN,
 	CAUGHT,
+	WALKAWAY,
 	STOP,
 	STUN,
 	MOVE

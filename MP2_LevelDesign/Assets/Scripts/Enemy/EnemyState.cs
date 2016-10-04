@@ -1,1 +1,1 @@
-﻿public enum EnemyState { Chasing, RandomWalk, WalkAway, GirlCaught, CatchGirl};
+﻿public enum EnemyState { Chasing, RandomWalk, WalkAway, GirlCaught, StartChase};
