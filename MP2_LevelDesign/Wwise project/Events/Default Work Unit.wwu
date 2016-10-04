@@ -5,16 +5,6 @@
 			<ChildrenList>
 				<Event Name="dressPickup" ID="{1D2FB92B-7CF8-4ED3-877A-F3B524A11323}">
 					<ChildrenList>
-						<Action Name="Stop" ID="{6053B07D-2149-40AB-95C9-5D5A46276B5E}" ShortID="271433732" Type="Stop" Scope="One" Global="false">
-							<PropertyList>
-								<Property Name="FadeTime" Type="Real64" Value="0.05"/>
-							</PropertyList>
-							<ElementList>
-								<Element ID="{226334F0-16BC-48C7-AB37-59E881E7AA18}" Global="false">
-									<ObjectRef Name="Happy" ID="{789E2083-605F-430C-B95C-3173925D8D75}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
-								</Element>
-							</ElementList>
-						</Action>
 						<Action Name="Play" ID="{2B8E6EF7-671E-4879-9729-DE1DFDC86096}" ShortID="269519265" Type="Play" Scope="One" Global="false">
 							<ElementList>
 								<Element ID="{A71D1552-A379-45F5-8BB6-88886FD7E2C6}" Global="false">
@@ -227,38 +217,6 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="auntieLaugh" ID="{14A01EC7-085E-4806-BF08-80BA04C8A2E6}">
-					<ChildrenList>
-						<Action Name="Play" ID="{234B8A47-9AF8-4726-A0C1-A4B2D64D5DE2}" ShortID="584805439" Type="Play" Scope="One" Global="false">
-							<PropertyList>
-								<Property Name="Delay" Type="Real64" Value="0.6"/>
-							</PropertyList>
-							<ElementList>
-								<Element ID="{C3E7261B-47A8-48C9-9210-4A5E8570D9A4}" Global="false">
-									<ObjectRef Name="Laughs_long" ID="{4A05CE71-FEF4-4FE9-AD41-48E0881A3CB0}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
-								</Element>
-							</ElementList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="concrete_test" ID="{89FF40E6-7287-4B28-A360-09C40A90A4B3}">
-					<ChildrenList>
-						<Action Name="Play" ID="{06B02E4C-E2D0-4D4B-9032-4784818362A0}" ShortID="162127903" Type="Play" Scope="One" Global="false">
-							<ElementList>
-								<Element ID="{E68BE083-518A-4C73-8F14-3E13A9DF869D}" Global="false">
-									<ObjectRef Name="concrete" ID="{333E35E1-FEAB-4A0A-BBAD-4B585083F635}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
-								</Element>
-							</ElementList>
-						</Action>
-						<Action Name="Play" ID="{8ACBEFBC-5684-495A-8DAA-30D88D5B910E}" ShortID="835434596" Type="Play" Scope="One" Global="false">
-							<ElementList>
-								<Element ID="{77FC1827-B6FC-430F-92CB-52CB7E645A02}" Global="false">
-									<ObjectRef Name="main_footsteps" ID="{F8BF36C5-0F20-4E9C-8E78-DA1C8A152945}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
-								</Element>
-							</ElementList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="playForestSoundscape" ID="{796F6D74-E6B8-42E1-9151-33A340958F0B}">
 					<ChildrenList>
 						<Action Name="Play" ID="{C055A09F-E5DD-4477-A56A-CCDF34F89F73}" ShortID="1029326580" Type="Play" Scope="One" Global="false">
@@ -313,48 +271,26 @@
 				</Event>
 				<Folder Name="stopEvents" ID="{15A7F271-2D39-4CB3-A03F-85B3AC19BB02}" ShortID="859763544">
 					<ChildrenList>
-						<Event Name="stopTrollFootsteps" ID="{558F8B5A-3A3D-4CD2-9BC2-C87C7A501F20}">
-							<ChildrenList>
-								<Action Name="Stop" ID="{D52BC8D7-DE2C-4E76-9B42-97C447E524F9}" ShortID="222985809" Type="Stop" Scope="One" Global="false">
-									<ElementList>
-										<Element ID="{E7D90FFF-BB52-4D91-AE6A-90A7A09671B0}" Global="false">
-											<ObjectRef Name="forest_surface" ID="{244A00A9-B4A8-4651-838F-FE1EBE6E7A2C}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
-										</Element>
-									</ElementList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="stopAuntieFootsteps" ID="{90D1E0FE-9FDC-42BA-A3F3-8FC7A251B0D4}">
-							<ChildrenList>
-								<Action Name="Stop" ID="{1AF248D8-A536-4DEF-A9B2-FBDD5F1CAB3D}" ShortID="485575921" Type="Stop" Scope="One" Global="false">
-									<ElementList>
-										<Element ID="{8B7ECEE9-AA06-463D-82BD-576AF643D632}" Global="false">
-											<ObjectRef Name="main_footsteps" ID="{F8BF36C5-0F20-4E9C-8E78-DA1C8A152945}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
-										</Element>
-									</ElementList>
-								</Action>
-								<Action Name="Stop" ID="{B4682CA9-CF77-4867-8C5D-21C88567F504}" ShortID="684331066" Type="Stop" Scope="One" Global="false">
-									<ElementList>
-										<Element ID="{3461156E-48A8-40E8-A1FA-0B703C4CDF13}" Global="false">
-											<ObjectRef Name="forest" ID="{897720E0-A224-47A4-A584-4DCA4B76813E}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
-										</Element>
-									</ElementList>
-								</Action>
-								<Action Name="Stop" ID="{5D77AC1C-49C6-4902-9A8B-72950214969A}" ShortID="585807166" Type="Stop" Scope="One" Global="false">
-									<ElementList>
-										<Element ID="{B4BF4D06-5158-4D99-B1EF-50BFFB2E1809}" Global="false">
-											<ObjectRef Name="concrete" ID="{333E35E1-FEAB-4A0A-BBAD-4B585083F635}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
-										</Element>
-									</ElementList>
-								</Action>
-							</ChildrenList>
-						</Event>
 						<Event Name="stopAllSoundscapes" ID="{305D0F20-8E52-42C4-B77E-A55EC21E046E}">
 							<ChildrenList>
 								<Action Name="Stop" ID="{85800478-01D1-42F2-A46F-30DFAF632825}" ShortID="676276299" Type="Stop" Scope="One" Global="false">
 									<ElementList>
 										<Element ID="{699C3952-7BAB-4508-8639-E45672021EBE}" Global="false">
 											<ObjectRef Name="frog_soundscape_loop_1" ID="{AEDE5E54-A0EE-49F5-A3F5-1F71E08EA898}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
+										</Element>
+									</ElementList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="stopAuntieHappyVoice" ID="{D16E2514-DF84-4348-A6F0-D641F5A4FBCB}">
+							<ChildrenList>
+								<Action Name="Stop" ID="{72C7066B-9C8B-4CBD-B8C1-74D6604C5BFD}" ShortID="246444246" Type="Stop" Scope="One" Global="false">
+									<PropertyList>
+										<Property Name="FadeTime" Type="Real64" Value="0.05"/>
+									</PropertyList>
+									<ElementList>
+										<Element ID="{4BB559C7-2217-4129-866D-C37863F3D25D}" Global="false">
+											<ObjectRef Name="Happy" ID="{789E2083-605F-430C-B95C-3173925D8D75}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
 										</Element>
 									</ElementList>
 								</Action>

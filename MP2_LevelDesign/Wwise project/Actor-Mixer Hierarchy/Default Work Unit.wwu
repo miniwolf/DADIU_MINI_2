@@ -258,12 +258,19 @@
 				<Folder Name="Auntie" ID="{71C37AE1-CDF3-4369-A95A-4174585D64F6}" ShortID="959945274">
 					<ChildrenList>
 						<SwitchContainer Name="Footsteps" ID="{4187A11D-B99F-4349-88AA-494267B815C9}" ShortID="986250263">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-20</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Secondary Bus" ID="{D2E0BC7E-7B3F-4FFE-A670-FAE02761B631}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
+									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -627,7 +634,7 @@
 									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Secondary Bus" ID="{D2E0BC7E-7B3F-4FFE-A670-FAE02761B631}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
+									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -694,6 +701,9 @@
 							</ChildrenList>
 						</RandomSequenceContainer>
 						<Folder Name="Flying" ID="{635DAC7F-592F-4135-BE03-B48321D2B49F}" ShortID="1056396517">
+							<ExcludedPlatformList>
+								<Platform>Android</Platform>
+							</ExcludedPlatformList>
 							<ChildrenList>
 								<Sound Name="Uuooouuhh (flying)" ID="{6CE883AB-409C-45B0-A464-B998A3CFF9D9}" ShortID="404095185" Type="SoundFX">
 									<ReferenceList>
@@ -808,7 +818,7 @@
 									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Secondary Bus" ID="{D2E0BC7E-7B3F-4FFE-A670-FAE02761B631}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
+									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -974,7 +984,7 @@
 									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Secondary Bus" ID="{D2E0BC7E-7B3F-4FFE-A670-FAE02761B631}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
+									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -1097,7 +1107,7 @@
 									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Secondary Bus" ID="{D2E0BC7E-7B3F-4FFE-A670-FAE02761B631}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
+									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -1232,7 +1242,7 @@
 									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Secondary Bus" ID="{D2E0BC7E-7B3F-4FFE-A670-FAE02761B631}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
+									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -1391,7 +1401,7 @@
 									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Secondary Bus" ID="{D2E0BC7E-7B3F-4FFE-A670-FAE02761B631}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
+									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -1544,7 +1554,7 @@
 									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Secondary Bus" ID="{D2E0BC7E-7B3F-4FFE-A670-FAE02761B631}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
+									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -1568,6 +1578,9 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="auntie_ground_impact_2" ID="{772C2F09-3D1F-4169-A63B-7A6C3F3E22BC}" ShortID="215050845" Type="SoundFX">
+									<ExcludedPlatformList>
+										<Platform>Android</Platform>
+									</ExcludedPlatformList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
@@ -1601,6 +1614,11 @@
 								</Property>
 								<Property Name="PositioningType" Type="int16" Value="1"/>
 								<Property Name="Spatialization" Type="bool" Value="False"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-15</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -1610,7 +1628,7 @@
 									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Secondary Bus" ID="{D2E0BC7E-7B3F-4FFE-A670-FAE02761B631}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
+									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -2014,7 +2032,7 @@
 									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Secondary Bus" ID="{D2E0BC7E-7B3F-4FFE-A670-FAE02761B631}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
+									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -2131,7 +2149,7 @@
 									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Secondary Bus" ID="{D2E0BC7E-7B3F-4FFE-A670-FAE02761B631}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
+									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -2345,7 +2363,7 @@
 									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Secondary Bus" ID="{D2E0BC7E-7B3F-4FFE-A670-FAE02761B631}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
+									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -2476,7 +2494,7 @@
 									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Secondary Bus" ID="{D2E0BC7E-7B3F-4FFE-A670-FAE02761B631}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
+									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -2583,7 +2601,7 @@
 									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Secondary Bus" ID="{D2E0BC7E-7B3F-4FFE-A670-FAE02761B631}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
+									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -2793,7 +2811,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-10</Value>
+										<Value>-15</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -2836,7 +2854,7 @@
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-13</Value>
+												<Value>-15</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -2902,7 +2920,7 @@
 									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Secondary Bus" ID="{D2E0BC7E-7B3F-4FFE-A670-FAE02761B631}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
+									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -2937,7 +2955,7 @@
 									<ObjectRef Name="super compressed" ID="{A888C025-4531-4F1F-93C9-A155EC34251C}" WorkUnitID="{CC7E58CD-E339-4147-9AC6-47044CC0FEF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Secondary Bus" ID="{D2E0BC7E-7B3F-4FFE-A670-FAE02761B631}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
+									<ObjectRef Name="Reverb" ID="{4AAD818F-0987-4A64-AEE7-86894F8CDF9D}" WorkUnitID="{9FD33CC5-FAD1-49DC-965D-DF0EEA47DDD1}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
