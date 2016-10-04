@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{2E1B4507-CFD6-4913-BA7B-5BF884AAA2BE}" SchemaVersion="72">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{2E1B4507-CFD6-4913-BA7B-5BF884AAA2BE}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Main_Soundbank" ID="{8E3A34D1-ECD0-4B6A-8D7D-C7DBA6833F71}">
+					<ObjectInclusionList>
+						<ObjectRef Name="playChasingMusic" ID="{FEAD006F-FAB9-4012-95C5-5D0556D13070}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="playRiverAmbience" ID="{7CB7DF8A-22CE-4219-B52C-0F19C4369479}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="trollFallsIntoWater" ID="{A75FD346-D57D-4280-BEF5-B91F51B9409C}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="stopAllSoundscapes" ID="{305D0F20-8E52-42C4-B77E-A55EC21E046E}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="playForestSoundscape" ID="{796F6D74-E6B8-42E1-9151-33A340958F0B}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="trollCatchAuntie" ID="{0735D53C-9CC2-4308-A8E3-E292CC2B79EC}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="playLakeAmbience" ID="{85A7D810-44D8-45A4-8FE7-B9A6B031337B}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="trollFootsteps" ID="{441AE6FC-175B-4732-8E96-E0C78F786837}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="menuBackwardClick" ID="{9AE2FF85-5998-48DF-9A7A-7424F7DB6C49}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="trollThrowsAuntie" ID="{2C3B8921-1CAD-4998-9D44-9340DE3174F8}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="playRoamingMusic" ID="{0AE47380-F4EB-4A0E-A143-BF48A0DCF7CC}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="playMenuMusic" ID="{B10B9A4F-B953-4A24-8626-94BD1D1DD38A}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="auntieFootsteps" ID="{44ADE32D-FF22-4AA3-AA3B-69D4D9B78B3D}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="dressPickup" ID="{1D2FB92B-7CF8-4ED3-877A-F3B524A11323}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="menuForwardClick" ID="{E5ED313F-A92A-4FA0-B6B0-70228321DC6F}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="stopAllMusic" ID="{37970A6B-97CB-4FE6-B44F-69EDC5DA32BB}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

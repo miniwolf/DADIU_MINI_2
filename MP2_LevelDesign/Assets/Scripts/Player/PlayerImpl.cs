@@ -1,45 +1,56 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
-public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
-	private RaycastHit hit;
-	private Camera cam;
-	private Ray cameraToGround;
-	private LayerMask layerMask = 1 << LayerConstants.GroundLayer;
+public class PlayerImpl : MonoBehaviour, Player, GameEntity, Actionable {
+	private PlayerState playerState = PlayerState.Running;
+	private Dictionary<Actions, Handler> actions = new Dictionary<Actions, Handler>();
 
-	private PlayerState playerState;
-	private List<Controller> controllers = new List<Controller>();
+	private GameObject player;
+	private GameObject tapObj;
 
 	void Awake() {
+		player = GameObject.FindGameObjectWithTag(TagConstants.PLAYER);
+		tapObj = GameObject.FindGameObjectWithTag(TagConstants.TAP_FEEDBACK);
+
 		InjectionRegister.Register(this);
 		TagRegister.RegisterSingle(gameObject, TagConstants.PLAYER);
 	}
 
 	void Start() {
-		cam = GameObject.FindGameObjectWithTag(TagConstants.CAMERA).GetComponent<Camera>();
 	}
 
 	public void SetupComponents() {
+		foreach ( Handler action in actions.Values ) {
+			action.SetupComponents(gameObject);
+		}
 	}
-		
-	void Update() {
-		foreach(Touch touch in Input.touches) {
-			cameraToGround = cam.ScreenPointToRay(touch.position);
-			if ( Physics.Raycast(cameraToGround,out hit,500f,layerMask.value) ) {
-				foreach ( Controller controller in controllers ) {
-					controller.Move(hit.point);
-				}
-			}
-		}
 
-		if ( Input.GetMouseButtonDown(1) ) {
-			cameraToGround = cam.ScreenPointToRay(Input.mousePosition);
-			if ( Physics.Raycast(cameraToGround, out hit,500f,layerMask.value) ) {
-				foreach ( Controller controller in controllers ) {
-					controller.Move(hit.point);
-				}
-			}
+	void Update() {
+		switch ( playerState ) {
+			case PlayerState.Running:
+				ExecuteAction(Actions.MOVE);
+			ExecuteAction(Actions.DEBUGMOVE);
+				break;
+			case PlayerState.Idle:
+				ExecuteAction(Actions.STUN);
+				break;
 		}
+	}
+
+	void OnTriggerEnter(Collider other) {
+		if (other.gameObject.tag == TagConstants.TAP_FEEDBACK) {
+			playerState = PlayerState.Idle;
+			Debug.Log("COLLISION WITH TOUCH, CALL IDLE ANIMATION");
+		}
+	}
+
+	public void AddAction(Actions command, Handler action) {
+		actions.Add(command, action);
+	}
+
+	public void ExecuteAction(Actions name) {
+		actions[name].DoAction();
 	}
 
 	public void SetState(PlayerState newState) {
@@ -54,7 +65,11 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Controllable {
 		return TagConstants.PLAYER;
 	}
 
-	public void AddController(Controller controller) {
-		controllers.Add(controller);
+	public Vector3 GetPosition() {
+		return this.transform.position;
+	}
+
+	public void ExecuteCoroutine(IEnumerator coroutine) {
+		StartCoroutine(coroutine);
 	}
 }

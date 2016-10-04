@@ -4,34 +4,25 @@ using System;
 using UnityEngine.UI;
 
 public class MenuControllerImpl : UIController, MenuController {
-
 	private Text textPlayGame;
 	private Text textSettings;
 	private Text textExitGame;
 	private Text textHowToPlay;
 
-	void OnDestroy() {
-		textPlayGame = textSettings = textExitGame = textHowToPlay = null;
-	}
-
 	public void ShowHowToPlay() {
 		canvas.ShowHowToPlayMenu();
-		gameStateManager.NewState(GameState.Paused);
 	}
 
 	public void ShowMainMenu() {
 		canvas.ShowMainMenu();
-		gameStateManager.NewState(GameState.Paused);
 	}
 
 	public void ShowSettings() {
 		canvas.ShowSettings();
-		gameStateManager.NewState(GameState.Paused);
 	}
 
 	public void ShowPlayGame() {
 		canvas.ShowPlayGame();
-		gameStateManager.NewState(GameState.Playing);
 	}
 
 	public void ExitGame() {

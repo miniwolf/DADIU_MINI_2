@@ -25,6 +25,21 @@ public class CanvasScript : MonoBehaviour {
 		ShowMainMenu();
 	}
 
+	void Start() {
+		Action menuMusic = new MenuMusic();
+		menuMusic.Setup(gameObject);
+		menuMusic.Execute();
+		Action soundScape = new SoundScapeMusic();
+		soundScape.Setup(gameObject);
+		soundScape.Execute();
+	}
+
+	void Update(){
+		if (Input.GetKey(KeyCode.K)) {
+			GameEnded();
+		}
+	}
+
 	public void ShowMainMenu() {
 		menuController.SetVisible();
 		settingsController.SetInvisible();
@@ -32,7 +47,13 @@ public class CanvasScript : MonoBehaviour {
 
 		howToPlayMenu.gameObject.SetActive(false);
 
-		gameStateManager.NewState(GameState.Paused);
+		gameStateManager.NewState(new GameState.Paused());
+		Action menuMusic = new MenuMusic();
+		menuMusic.Setup(gameObject);
+		menuMusic.Execute();
+		Action soundScape = new SoundScapeMusic();
+		soundScape.Setup(gameObject);
+		soundScape.Execute();
 	}
 
 	public void ShowSettings() {
@@ -41,8 +62,10 @@ public class CanvasScript : MonoBehaviour {
 		inGameController.SetInvisible();
 
 		howToPlayMenu.gameObject.SetActive(false);
-
-		gameStateManager.NewState(GameState.Paused);
+		Action action = new ForwardMenuFeedbackSound();
+		action.Setup(gameObject);
+		action.Execute();
+		gameStateManager.NewState(new GameState.Paused());
 	}
 
 	public void ShowPlayGame() {
@@ -52,7 +75,11 @@ public class CanvasScript : MonoBehaviour {
 
 		howToPlayMenu.gameObject.SetActive(false);
 
-		gameStateManager.NewState(GameState.Playing);
+
+		Action soundScape = new SoundScapeMusic();
+		soundScape.Setup(gameObject);
+		soundScape.Execute();
+		gameStateManager.NewState(new GameState.Playing());
 	}
 
 	public void ShowHowToPlayMenu() {
@@ -60,11 +87,17 @@ public class CanvasScript : MonoBehaviour {
 		settingsController.SetInvisible();
 		inGameController.SetInvisible();
 		howToPlayMenu.gameObject.SetActive(true);
+		Action action = new ForwardMenuFeedbackSound();
+		action.Setup(gameObject);
+		action.Execute();
 
-		gameStateManager.NewState(GameState.Playing);
+		gameStateManager.NewState(new GameState.Paused());
 	}
 
 	public void ReturnToMainMenu() {
+		Action action = new BackwardMenuFeedbackSound();
+		action.Setup(gameObject);
+		action.Execute();
 		ShowMainMenu();
 	}
 
@@ -73,5 +106,9 @@ public class CanvasScript : MonoBehaviour {
 		menuController.RefreshText();
 		inGameController.RefreshText();
 		// todo on how to play menu
+	}
+
+	public void GameEnded() {
+		gameStateManager.NewState(new GameState.Ended());
 	}
 }

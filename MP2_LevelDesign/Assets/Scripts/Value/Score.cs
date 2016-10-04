@@ -15,9 +15,9 @@ public class Score : Value {
 
 	public void IncrementValue() {
 		score++;
-		PlayerPrefs.SetFloat(PlayerPrefsConstants.MYSCORE, score);
-		if (PlayerPrefs.GetFloat(PlayerPrefsConstants.HIGHSCORE) < score) {
-			PlayerPrefs.SetFloat(PlayerPrefsConstants.HIGHSCORE, score);
-		}
+		//PlayerPrefs.SetFloat(PlayerPrefsConstants.MYSCORE, score);
+		//if (PlayerPrefs.GetFloat(PlayerPrefsConstants.HIGHSCORE) < score) {
+	//		PlayerPrefs.SetFloat(PlayerPrefsConstants.HIGHSCORE, score);
+	//	}
 	}
 }

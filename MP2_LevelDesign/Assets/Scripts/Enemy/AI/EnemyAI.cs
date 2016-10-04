@@ -3,24 +3,27 @@ using System.Collections;
 
 public class EnemyAI : MonoBehaviour, AI, GameEntity {
 	public float roamRadius = 15.0f;
-	public float teleportRadius = 25f;
-	public float roamDistanceError = 0.5f;
-	public float distanceForTeleport = 50f;
-	public float sphereRadius = 0.5f;       // radius around a point to check is is collision
+    public float teleportRadius = 25f;
+    public float teleportRange = 5f;
+    public float roamDistanceError = 0.5f;
+    public float distanceForTeleport = 50f;
+    public float catchDistance = 5f;
+    public float sphereRadius = 10f;       // radius around a point to check is is collision
 	public float walkAwayDistance = 30f;
 
-	private static int MAX_ITERATIONS = 30;
 	private Enemy enemy;
-	private GameObject player;
+	private Player player;
+	private Actionable actionablePlayer;
+	private Actionable actionableEnemy;
+
 	private bool isRoaming;
-	private bool teleport;
 	private Vector3 movingPosition;
 
-	void Awake() {
-		InjectionRegister.Register(this);
-	}
+    void Awake() {
+        InjectionRegister.Register(this);
+    }
 
-	public void SetupComponents() {
+    public void SetupComponents() {
 		movingPosition = enemy.GetPosition();
 	}
 
@@ -29,28 +32,21 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 			return;
 		}
 		switch ( enemy.GetState() ) {
-			case EnemyState.RandomWalk:
-				FreeRoam(enemy.GetPosition(), roamRadius);
-				break;
+		case EnemyState.RandomWalk:
+				FreeRoam (enemy.GetPosition (), roamRadius);
+                break;
 			case EnemyState.WalkAway:
-				enemy.SetState(EnemyState.RandomWalk);
-				FreeRoam(player.transform.position, 2 * walkAwayDistance, walkAwayDistance);
-				break;
-			case EnemyState.ObstacleHit: //hit yellow bush
-				StartCoroutine(enemy.GetNavMesh().SlowDown());
-				// if it was chasing the girl it stops now
-				enemy.SetState(EnemyState.RandomWalk);
-				FreeRoam(enemy.GetPosition(), roamRadius); 
-				teleport = false;
-				break;
+				FreeRoam(player.GetPosition(), 2 * walkAwayDistance, walkAwayDistance);
+				actionableEnemy.ExecuteAction(Actions.ROAM);
+                break;
 			case EnemyState.Chasing:
-				isRoaming = false;
 				Chaising();
 				break;
 			case EnemyState.GirlCaught:
-				teleport = false;
-				// call animation controller of enemy and caught girl that would change the state to WalkAway when it's finished
-				//enemy.GetAnimController().CatchGirl(enemy);
+                //do nothing: waiting for trigger finishing animation
+				break;
+			case EnemyState.StartChase: 
+				TeleportToGirl();
 				break;
 		}
 	}
@@ -59,60 +55,85 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 	private void FreeRoam(Vector3 reference, float maxRadius, float minRadius = 0) {
 		if ( !isRoaming ) {
             movingPosition = GenerateRandomPosition(reference, maxRadius, minRadius);
-            enemy.GetNavMesh().Move(movingPosition);
+			enemy.SetDestination(movingPosition);
+			actionableEnemy.ExecuteAction(Actions.MOVE);
 			isRoaming = true;
 		}
-
 		//if the enemy is close enough to the end position we stop roaming
-		if ( Vector3.Distance(enemy.GetPosition(), movingPosition) < roamDistanceError ) {
+		if ( Vector3.Distance(enemy.GetPosition(), enemy.GetDestination()) < roamDistanceError) {
 			isRoaming = false;
 		}
 	}
 
-    private Vector3 GenerateRandomPosition(Vector3 reference, float maxRadius, float minRadius, bool distanceToPlayer = false) {
-        Collider[] existingColliders;
+    private Vector3 GenerateRandomPosition(Vector3 reference, float maxRadius, float minRadius = 0) {
+		Collider[] existingColliders = new Collider[0];
         Vector3 generatedPosition = Vector3.zero;
         // If the new position is an object we choose another one 
         // but only try to find a new one for MAX_ITERATIONS
-        for (int i = 0; i < MAX_ITERATIONS; i++) {
-            generatedPosition = GetNextRandomPos(reference, maxRadius);
-            generatedPosition.y = reference.y;
-            existingColliders = Physics.OverlapSphere(generatedPosition, sphereRadius);
-            // no colliders in the sphere means no object in that position
-            if (existingColliders.Length != 0) {
-                continue;
-            }
-            if (Vector3.Distance(enemy.GetPosition(), (distanceToPlayer ? player.transform.position: generatedPosition)) > maxRadius 
-                || Vector3.Distance(enemy.GetPosition(), (distanceToPlayer ? player.transform.position : generatedPosition)) < minRadius) {
-                continue;
-            }
-        }
+		int i = 0;
+		do {
+			generatedPosition = GetNextRandomPos(reference, maxRadius);
+			if ( Vector3.Distance(enemy.GetPosition(), generatedPosition) == Mathf.Infinity ) {
+				continue;
+			}
+
+			generatedPosition.y = reference.y;
+			existingColliders = Physics.OverlapSphere(generatedPosition, sphereRadius);
+			if ( i > 300 ) {
+				break;
+			}
+			i++;
+		} while ( existingColliders.Length != 0
+		          || Vector3.Distance(reference, generatedPosition) > maxRadius
+		          || Vector3.Distance(reference, generatedPosition) < minRadius );
         return generatedPosition;
     }
 
 	private Vector3 GetNextRandomPos(Vector3 referencePosition, float radius) {
 		NavMeshHit hit;
-		Vector3 randomPoint = referencePosition + Random.insideUnitSphere * radius;
-		randomPoint.y = 0;
-		NavMesh.SamplePosition(randomPoint, out hit, radius, NavMesh.AllAreas);
-		return hit.position;
+        Vector3 randomPoint = referencePosition + Random.insideUnitSphere * radius;
+        NavMesh.SamplePosition(randomPoint, out hit, radius, NavMesh.AllAreas);
+        return hit.position;
 	}
 
-	private void Chaising() {
+	private void TeleportToGirl() {
 		// check if the troll is far away when the girl picks up laundry for the first time
-		if ( !teleport ) {
-			if ( Vector3.Distance(enemy.GetPosition(), player.transform.position) > distanceForTeleport ) {
-                Vector3 newPosition = GenerateRandomPosition(player.transform.position, teleportRadius, 0, true);
-				enemy.SetPosition(newPosition);
-			}
-			teleport = true;
+		if ( Distance(enemy.GetPosition(), player.GetPosition()) > distanceForTeleport ) {
+			Vector3 newPosition = GenerateRandomPosition(player.GetPosition(), teleportRadius + teleportRange, teleportRadius - teleportRange);
+			enemy.SetDestination(newPosition);
+			actionableEnemy.ExecuteAction(Actions.WARP);
 		}
-			
-		enemy.GetNavMesh().Move(player.transform.position);
+		actionableEnemy.ExecuteAction(Actions.CHASE);
 	}
 
-	public void SetPlayer(GameObject player) {
+    private void Chaising() {
+		isRoaming = false;
+		enemy.SetDestination(player.GetPosition());
+		actionableEnemy.ExecuteAction(Actions.MOVE);
+	}
+
+	/*
+	private void CatchGirl() {
+		if ( Distance(enemy.GetPosition(), player.GetPosition()) < catchDistance ) {
+			actionablePlayer.ExecuteAction(Actions.CAUGHT);
+            enemy.SetState(EnemyState.GirlCaught);
+        }
+    }*/
+
+    private float Distance(Vector3 from, Vector3 to) {
+        return Mathf.Sqrt((from.x - to.x) * (from.x - to.x) + (from.z - to.z) * (from.z - to.z));
+    }
+
+    public void SetPlayer(Player player) {
 		this.player = player;
+	}
+
+	public void SetActionablePlayer(Actionable actionablePlayer) {
+		this.actionablePlayer = actionablePlayer;
+	}
+
+	public void SetActionableEnemy(Actionable actionableEnemy) {
+		this.actionableEnemy = actionableEnemy;
 	}
 
 	public void SetEnemy(Enemy enemy) {

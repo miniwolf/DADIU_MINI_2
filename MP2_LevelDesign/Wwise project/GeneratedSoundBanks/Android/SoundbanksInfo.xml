@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Android" BasePlatform="Android" SchemaVersion="11" SoundbankVersion="118">
+	<RootPaths>
+		<ProjectRoot>C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\.cache\Android\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\GeneratedSoundBanks\Android\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\student\DADIU_MINI_2\MP2_LevelDesign\Wwise project\GeneratedSoundBanks\Android\</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="2228651116" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Main_Soundbank</ObjectPath>
+			<ShortName>Main_Soundbank</ShortName>
+			<Path>Main_Soundbank.bnk</Path>
+			<IncludedEvents>
+				<Event Id="1747696776" Name="auntieFootsteps" ObjectPath="\Events\Default Work Unit\auntieFootsteps"/>
+				<Event Id="2867536338" Name="dressPickup" ObjectPath="\Events\Default Work Unit\dressPickup"/>
+				<Event Id="3139869105" Name="menuBackwardClick" ObjectPath="\Events\Default Work Unit\menuBackwardClick"/>
+				<Event Id="4028748541" Name="menuForwardClick" ObjectPath="\Events\Default Work Unit\menuForwardClick"/>
+				<Event Id="4109667655" Name="playChasingMusic" ObjectPath="\Events\Default Work Unit\musicEvents\playChasingMusic"/>
+				<Event Id="1477059561" Name="playForestSoundscape" ObjectPath="\Events\Default Work Unit\playForestSoundscape"/>
+				<Event Id="3889299310" Name="playLakeAmbience" ObjectPath="\Events\Default Work Unit\playLakeAmbience" MaxAttenuation="50.000000"/>
+				<Event Id="413545259" Name="playMenuMusic" ObjectPath="\Events\Default Work Unit\musicEvents\playMenuMusic"/>
+				<Event Id="251180667" Name="playRiverAmbience" ObjectPath="\Events\Default Work Unit\playRiverAmbience" MaxAttenuation="25.000000"/>
+				<Event Id="2415596161" Name="playRoamingMusic" ObjectPath="\Events\Default Work Unit\musicEvents\playRoamingMusic"/>
+				<Event Id="2907867019" Name="stopAllMusic" ObjectPath="\Events\Default Work Unit\musicEvents\stopAllMusic" MaxAttenuation="0.000000"/>
+				<Event Id="3284803258" Name="stopAllSoundscapes" ObjectPath="\Events\Default Work Unit\stopEvents\stopAllSoundscapes" MaxAttenuation="0.000000"/>
+				<Event Id="3227179805" Name="trollCatchAuntie" ObjectPath="\Events\Default Work Unit\trollCatchAuntie"/>
+				<Event Id="1919802259" Name="trollFallsIntoWater" ObjectPath="\Events\Default Work Unit\trollFallsIntoWater"/>
+				<Event Id="4032712899" Name="trollFootsteps" ObjectPath="\Events\Default Work Unit\trollFootsteps" MaxAttenuation="50.000000"/>
+				<Event Id="4228143387" Name="trollThrowsAuntie" ObjectPath="\Events\Default Work Unit\trollThrowsAuntie"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="3617496" Language="SFX">
+					<ShortName>Throw_7.wav</ShortName>
+					<Path>SFX\Throw_7_CDFE0F68.wem</Path>
+				</File>
+				<File Id="42406669" Language="SFX">
+					<ShortName>Uoohh.wav</ShortName>
+					<Path>SFX\Uoohh_523312EE.wem</Path>
+				</File>
+				<File Id="53723177" Language="SFX">
+					<ShortName>clothes_pickup.wav</ShortName>
+					<Path>SFX\clothes_pickup_A296EAD0.wem</Path>
+				</File>
+				<File Id="68472481" Language="SFX">
+					<ShortName>Uhhuhh.wav</ShortName>
+					<Path>SFX\Uhhuhh_41CEA8EC.wem</Path>
+				</File>
+				<File Id="140875607" Language="SFX">
+					<ShortName>Throw_5.wav</ShortName>
+					<Path>SFX\Throw_5_CDFE0F68.wem</Path>
+				</File>
+				<File Id="205310487" Language="SFX">
+					<ShortName>footstep_branch_1.wav</ShortName>
+					<Path>SFX\footstep_branch_1_414C7702.wem</Path>
+				</File>
+				<File Id="208407703" Language="SFX">
+					<ShortName>music_notroll_comp.wav</ShortName>
+					<Path>SFX\music_notroll_comp_37B59102.wem</Path>
+				</File>
+				<File Id="216424462" Language="SFX">
+					<ShortName>footstep_branch_5.wav</ShortName>
+					<Path>SFX\footstep_branch_5_5E7FFB93.wem</Path>
+				</File>
+				<File Id="294334297" Language="SFX">
+					<ShortName>Troll_falling_short_3.wav</ShortName>
+					<Path>SFX\Troll_falling_short_3_CDFE0F68.wem</Path>
+				</File>
+				<File Id="330978246" Language="SFX">
+					<ShortName>bridge_breaking.wav</ShortName>
+					<Path>SFX\bridge_breaking_19E6728E.wem</Path>
+				</File>
+				<File Id="341112838" Language="SFX">
+					<ShortName>Troll_catching_auntie_5.wav</ShortName>
+					<Path>SFX\Troll_catching_auntie_5_CDFE0F68.wem</Path>
+				</File>
+				<File Id="349754821" Language="SFX">
+					<ShortName>troll_footstep_1.wav</ShortName>
+					<Path>SFX\troll_footstep_1_CDFE0F68.wem</Path>
+				</File>
+				<File Id="350202146" Language="SFX">
+					<ShortName>Troll_catching_auntie_2.wav</ShortName>
+					<Path>SFX\Troll_catching_auntie_2_CDFE0F68.wem</Path>
+				</File>
+				<File Id="360738613" Language="SFX">
+					<ShortName>Troll_falling_short_1.wav</ShortName>
+					<Path>SFX\Troll_falling_short_1_2C147F71.wem</Path>
+				</File>
+				<File Id="422205118" Language="SFX">
+					<ShortName>Yubii.wav</ShortName>
+					<Path>SFX\Yubii_4A89DC03.wem</Path>
+				</File>
+				<File Id="422937860" Language="SFX">
+					<ShortName>Troll_falling_short_2.wav</ShortName>
+					<Path>SFX\Troll_falling_short_2_CDFE0F68.wem</Path>
+				</File>
+				<File Id="479482607" Language="SFX">
+					<ShortName>frog_soundscape_loop_1.wav</ShortName>
+					<Path>SFX\frog_soundscape_loop_1_37B59102.wem</Path>
+				</File>
+				<File Id="480542494" Language="SFX">
+					<ShortName>Troll_catching_auntie_3.wav</ShortName>
+					<Path>SFX\Troll_catching_auntie_3_CDFE0F68.wem</Path>
+				</File>
+				<File Id="485177666" Language="SFX">
+					<ShortName>music_menu_comp.wav</ShortName>
+					<Path>SFX\music_menu_comp_37B59102.wem</Path>
+				</File>
+				<File Id="548029858" Language="SFX">
+					<ShortName>footstep_branch_2.wav</ShortName>
+					<Path>SFX\footstep_branch_2_09A27E2C.wem</Path>
+				</File>
+				<File Id="563529082" Language="SFX">
+					<ShortName>menu button_1.wav</ShortName>
+					<Path>SFX\menu button_1_CDFE0F68.wem</Path>
+				</File>
+				<File Id="617219006" Language="SFX">
+					<ShortName>footstep_3.wav</ShortName>
+					<Path>SFX\footstep_3_CDFE0F68.wem</Path>
+				</File>
+				<File Id="641037458" Language="SFX">
+					<ShortName>music_troll_comp_2.wav</ShortName>
+					<Path>SFX\music_troll_comp_2_37B59102.wem</Path>
+				</File>
+				<File Id="662664710" Language="SFX">
+					<ShortName>forest_ambience_loop.wav</ShortName>
+					<Path>SFX\forest_ambience_loop_37B59102.wem</Path>
+				</File>
+				<File Id="678907684" Language="SFX">
+					<ShortName>Gasp (breathing in).wav</ShortName>
+					<Path>SFX\Gasp (breathing in)_18BC047D.wem</Path>
+				</File>
+				<File Id="686164433" Language="SFX">
+					<ShortName>Yaay.wav</ShortName>
+					<Path>SFX\Yaay_C628F4AD.wem</Path>
+				</File>
+				<File Id="738345270" Language="SFX">
+					<ShortName>Troll_catching_auntie_6.wav</ShortName>
+					<Path>SFX\Troll_catching_auntie_6_CDFE0F68.wem</Path>
+				</File>
+				<File Id="784167980" Language="SFX">
+					<ShortName>Oihh.wav</ShortName>
+					<Path>SFX\Oihh_899DA06C.wem</Path>
+				</File>
+				<File Id="889290242" Language="SFX">
+					<ShortName>reward_points.wav</ShortName>
+					<Path>SFX\reward_points_7A2D2D50.wem</Path>
+				</File>
+				<File Id="898376589" Language="SFX">
+					<ShortName>Eeiii.wav</ShortName>
+					<Path>SFX\Eeiii_601470EA.wem</Path>
+				</File>
+				<File Id="977528163" Language="SFX">
+					<ShortName>troll_footstep_4.wav</ShortName>
+					<Path>SFX\troll_footstep_4_CDFE0F68.wem</Path>
+				</File>
+				<File Id="979268561" Language="SFX">
+					<ShortName>auntie_ground_impact_1.wav</ShortName>
+					<Path>SFX\auntie_ground_impact_1_CDFE0F68.wem</Path>
+				</File>
+				<File Id="998932725" Language="SFX">
+					<ShortName>running_river.wav</ShortName>
+					<Path>SFX\running_river_37B59102.wem</Path>
+				</File>
+				<File Id="1007633232" Language="SFX">
+					<ShortName>pick_up_auntie_1.wav</ShortName>
+					<Path>SFX\pick_up_auntie_1_CDFE0F68.wem</Path>
+				</File>
+				<File Id="1037391752" Language="SFX">
+					<ShortName>footstep_concrete_1.wav</ShortName>
+					<Path>SFX\footstep_concrete_1_353E0806.wem</Path>
+				</File>
+				<File Id="1072344928" Language="SFX">
+					<ShortName>Troll_catching_auntie_4.wav</ShortName>
+					<Path>SFX\Troll_catching_auntie_4_CDFE0F68.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>
