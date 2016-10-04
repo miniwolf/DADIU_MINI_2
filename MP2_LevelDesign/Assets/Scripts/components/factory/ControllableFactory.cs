@@ -47,6 +47,8 @@ public class ControllableFactory {
 	private Handler CreateStun() {
 		Handler stun = new Stun();
 		stun.AddAction(new StopAction(player));
+		stun.AddAction(new StopMovingAuntieSound());
+		stun.AddAction(new PlayerCaughtAnimation());
 		return stun;
 	}
 
@@ -91,6 +93,7 @@ public class ControllableFactory {
 	Handler CreateRoam() {
 		Handler roam = new ActionHandler();
 		roam.AddAction(new RoamAction(enemy));
+		roam.AddAction(new EnemyRoamingAnimation());
 		return roam;
 	}
 
