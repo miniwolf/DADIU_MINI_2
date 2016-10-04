@@ -4,6 +4,11 @@ using System.Collections;
 public class SpeedUpAction : Action {
 	private NavMeshAgent agent;
 	private float speedUp;
+	private Enemy enemy;
+
+	public SpeedUpAction(Enemy enemy){
+		this.enemy = enemy;
+	}
 
 	public void Setup(GameObject obj) {
 		agent = obj.GetComponent<NavMeshAgent>();
@@ -14,6 +19,8 @@ public class SpeedUpAction : Action {
 	}
 
 	public void Execute() {
-		agent.speed += speedUp;
+		if (enemy.GetMaxSpeed() > agent.speed + speedUp) {			
+			agent.speed += speedUp;
+		}
 	}
 }

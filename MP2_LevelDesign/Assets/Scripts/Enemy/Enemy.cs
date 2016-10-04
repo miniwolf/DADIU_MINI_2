@@ -29,4 +29,8 @@ public interface Enemy {
 	int GetThresholdSpeedup();
 
 	int GetThresholdChase();
+
+	float GetMaxSpeed();
+	float GetRoamSpeed();
+	float GetChaseSpeed();
 }
