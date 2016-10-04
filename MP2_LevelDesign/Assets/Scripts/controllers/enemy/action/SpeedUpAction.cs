@@ -19,10 +19,6 @@ public class SpeedUpAction : Action {
 	}
 
 	public void Execute() {
-		Debug.Log (enemy.GetMaxSpeed ());
-		Debug.Log (agent.speed);
-		Debug.Log (speedUp);
-
 		if (enemy.GetMaxSpeed() > agent.speed + speedUp) {			
 			agent.speed += speedUp;
 		}

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class LevelMusic : Action {
+public class RoamingMusic : Action {
 	private GameObject obj;
 
 	public void Setup(GameObject obj) {
@@ -8,6 +8,6 @@ public class LevelMusic : Action {
 	}
 
 	public void Execute() {
-		AkSoundEngine.PostEvent("playLevelMusic", obj);
+		AkSoundEngine.PostEvent("playRoamingMusic", obj);
 	}
 }
