@@ -31,6 +31,7 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Actionable {
 		switch ( playerState ) {
 			case PlayerState.Running:
 				ExecuteAction(Actions.MOVE);
+			ExecuteAction(Actions.DEBUGMOVE);
 				break;
 			case PlayerState.Idle:
 				ExecuteAction(Actions.STUN);

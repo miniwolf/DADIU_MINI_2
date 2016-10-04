@@ -24,6 +24,7 @@ public class ControllableFactory {
 
 	public void CreatePlayer(Actionable actionable) {
 		actionable.AddAction(Actions.MOVE, CreateMovementAuntie(actionable));
+		actionable.AddAction(Actions.DEBUGMOVE, CreateMouseMovementAuntie(actionable));
 		actionable.AddAction(Actions.STUN, CreateStun());
 		actionable.AddAction(Actions.RESUME, CreateResume());
 
@@ -48,6 +49,18 @@ public class ControllableFactory {
 		stun.AddAction(new StopAction(player));
 		stun.AddAction(new StopMovingAuntieSound());
 		return stun;
+	}
+
+	private MouseMove CreateMouseMovementAuntie(Actionable actionable) {
+		MouseMove move = new MouseMove(camera);
+		move.AddAction(new StartMovingAuntieSound());
+		move.AddMoveAction(new MoveActionImpl());
+		move.AddAction(new AuntieRunAnimation());
+
+		GameObject tapObj = GameObject.FindGameObjectWithTag(TagConstants.TAP_FEEDBACK);
+		move.AddMoveAction(new TapFeedback(tapObj));
+		move.AddAction(new TapAnimation(tapObj.GetComponent<Animator>()));
+		return move;
 	}
 		
 	private TouchMove CreateMovementAuntie(Actionable controllable) {
