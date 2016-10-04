@@ -43,11 +43,9 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 				Chaising();
 				break;
 			case EnemyState.GirlCaught:
-                GirlCaught();
-				// call animation controller of enemy and caught girl that would change the state to WalkAway when it's finished
-				//enemy.GetAnimController().CatchGirl(enemy);
+                //do nothing: waiting for trigger finishing animation
 				break;
-			case EnemyState.CatchGirl:
+			case EnemyState.StartChase: 
 				TeleportToGirl();
 				break;
 		}
@@ -114,19 +112,16 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 		actionableEnemy.ExecuteAction(Actions.MOVE);
 	}
 
+	/*
 	private void CatchGirl() {
 		if ( Distance(enemy.GetPosition(), player.GetPosition()) < catchDistance ) {
 			actionablePlayer.ExecuteAction(Actions.CAUGHT);
             enemy.SetState(EnemyState.GirlCaught);
         }
-    }
+    }*/
 
     private float Distance(Vector3 from, Vector3 to) {
         return Mathf.Sqrt((from.x - to.x) * (from.x - to.x) + (from.z - to.z) * (from.z - to.z));
-    }
-
-    private void GirlCaught() {
-		actionableEnemy.ExecuteAction(Actions.STOP);
     }
 
     public void SetPlayer(Player player) {

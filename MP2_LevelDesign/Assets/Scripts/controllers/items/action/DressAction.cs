@@ -50,7 +50,7 @@ public class DressAction : ItemCommand {
 			actionableEnemy.ExecuteAction(Actions.SPEEDUP);
 		}
 		if ( (int)inGameController.GetScoreValue() % enemy.GetThresholdChase() == 0 ) {
-			enemy.SetState(EnemyState.CatchGirl);
+			enemy.SetState(EnemyState.StartChase);
 		}
 	}
 }
