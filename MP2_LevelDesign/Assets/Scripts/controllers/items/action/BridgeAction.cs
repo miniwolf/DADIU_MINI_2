@@ -44,7 +44,4 @@ public class BridgeAction : ItemCommand {
 		yield return new WaitForSeconds(bridgeObject.GetComponent<Bridge>().timeForBrokenBridgeToDisappear);
 		bridgeObject.SetActive(false);
 	}
-
-
-
 }
