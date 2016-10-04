@@ -34,6 +34,34 @@ namespace AK
         static const AkUniqueID TROLLTHROWSAUNTIE = 4228143387U;
     } // namespace EVENTS
 
+    namespace SWITCHES
+    {
+        namespace AUNTIE_SURFACE
+        {
+            static const AkUniqueID GROUP = 3392155079U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID FOREST_SURFACE = 155471294U;
+                static const AkUniqueID STONE_BRIDGE = 1851077388U;
+                static const AkUniqueID WOOD_BRIDGE = 3876784398U;
+            } // namespace SWITCH
+        } // namespace AUNTIE_SURFACE
+
+        namespace TROLL_SURFACE
+        {
+            static const AkUniqueID GROUP = 129488886U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID FOREST_SURFACE = 155471294U;
+                static const AkUniqueID STONE_BRIDGE = 1851077388U;
+                static const AkUniqueID WOOD_BRIDGE = 3876784398U;
+            } // namespace SWITCH
+        } // namespace TROLL_SURFACE
+
+    } // namespace SWITCHES
+
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID SS_AIR_FEAR = 1351367891U;

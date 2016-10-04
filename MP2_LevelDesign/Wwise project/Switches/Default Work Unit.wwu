@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{697091F8-C971-4C9A-872D-E11EF758A9AA}" SchemaVersion="72">
 	<Switches>
-		<WorkUnit Name="Default Work Unit" ID="{697091F8-C971-4C9A-872D-E11EF758A9AA}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{697091F8-C971-4C9A-872D-E11EF758A9AA}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="Auntie_surface" ID="{02B67BE7-0E2D-4A77-94DB-3C80A260F148}">
+					<ChildrenList>
+						<Switch Name="forest_surface" ID="{D967F106-2838-486F-8367-2090621FAB7C}"/>
+						<Switch Name="stone_bridge" ID="{274FB42C-E5E5-4B44-9E23-D201C666AE47}"/>
+						<Switch Name="wood_bridge" ID="{D5F8E194-790E-4FEB-9569-0534E0A6436E}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="Troll_surface" ID="{8A3A1D41-D896-4FAE-9247-D6A872D23A39}">
+					<ChildrenList>
+						<Switch Name="stone_bridge" ID="{07F45BF9-CA38-4F62-9D75-D5E352B7F7B9}"/>
+						<Switch Name="forest_surface" ID="{21D1DA49-01D1-4059-AA6B-0550415D1206}"/>
+						<Switch Name="wood_bridge" ID="{80D8CE2C-798F-4225-8378-49403E040E20}"/>
+					</ChildrenList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</Switches>
 </WwiseDocument>

@@ -77,7 +77,10 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>
-					<CurrentSwitchList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="stone_bridge" ID="{274FB42C-E5E5-4B44-9E23-D201C666AE47}"/>
+						<CurrentSwitchRef Name="forest_surface" ID="{21D1DA49-01D1-4059-AA6B-0550415D1206}"/>
+					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>
 		</WorkUnit>

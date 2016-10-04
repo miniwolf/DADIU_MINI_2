@@ -4,6 +4,13 @@
 		<WorkUnit Name="Default Work Unit" ID="{2E1B4507-CFD6-4913-BA7B-5BF884AAA2BE}" PersistMode="Standalone">
 			<ChildrenList>
 				<SoundBank Name="Main_Soundbank" ID="{8E3A34D1-ECD0-4B6A-8D7D-C7DBA6833F71}">
+					<PropertyList>
+						<Property Name="Maximum" Type="int32">
+							<ValueList>
+								<Value>2000000</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ObjectInclusionList>
 						<ObjectRef Name="trollFallsIntoWater" ID="{A75FD346-D57D-4280-BEF5-B91F51B9409C}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="stopAuntieFootsteps" ID="{90D1E0FE-9FDC-42BA-A3F3-8FC7A251B0D4}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}" Filter="7" Origin="Manual"/>

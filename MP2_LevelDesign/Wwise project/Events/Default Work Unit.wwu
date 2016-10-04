@@ -190,17 +190,10 @@
 				</Event>
 				<Event Name="auntieFootsteps" ID="{44ADE32D-FF22-4AA3-AA3B-69D4D9B78B3D}">
 					<ChildrenList>
-						<Action Name="Play" ID="{DFCA51C5-1D37-48D9-AE20-352996195AC0}" ShortID="155247081" Type="Play" Scope="One" Global="false">
+						<Action Name="Play" ID="{4FB23826-D8A3-46A5-87C3-C8991CA81519}" ShortID="1007088085" Type="Play" Scope="One" Global="false">
 							<ElementList>
-								<Element ID="{B8B6A6F3-AE4E-47BA-9108-696E6CAC0E30}" Global="false">
-									<ObjectRef Name="main_footsteps" ID="{F8BF36C5-0F20-4E9C-8E78-DA1C8A152945}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
-								</Element>
-							</ElementList>
-						</Action>
-						<Action Name="Play" ID="{21B0F7C3-8E31-4060-85E1-51B78D5C684E}" ShortID="25674045" Type="Play" Scope="One" Global="false">
-							<ElementList>
-								<Element ID="{C3D385E8-8244-4FEF-A8A9-6DDDAF0B72DB}" Global="false">
-									<ObjectRef Name="forest" ID="{897720E0-A224-47A4-A584-4DCA4B76813E}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
+								<Element ID="{96E4744E-DC69-43B9-B246-A4DD92544CA3}" Global="false">
+									<ObjectRef Name="Footsteps" ID="{4187A11D-B99F-4349-88AA-494267B815C9}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
 								</Element>
 							</ElementList>
 						</Action>
@@ -208,10 +201,10 @@
 				</Event>
 				<Event Name="trollFootsteps" ID="{441AE6FC-175B-4732-8E96-E0C78F786837}">
 					<ChildrenList>
-						<Action Name="Play" ID="{FFECB610-54EA-470D-970D-074DB0BFBC64}" ShortID="1049027403" Type="Play" Scope="One" Global="false">
+						<Action Name="Play" ID="{B48B5C17-9F44-425F-886C-1E21BBF34A45}" ShortID="404110540" Type="Play" Scope="One" Global="false">
 							<ElementList>
-								<Element ID="{113092B5-970C-47C4-8EA7-EDA187FF8979}" Global="false">
-									<ObjectRef Name="forest_surface" ID="{244A00A9-B4A8-4651-838F-FE1EBE6E7A2C}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
+								<Element ID="{244756B6-BD10-4A19-A978-B0D408AAF353}" Global="false">
+									<ObjectRef Name="Footsteps" ID="{71BC011C-A5EC-4DE5-9153-D4EC0DA6D9A8}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
 								</Element>
 							</ElementList>
 						</Action>
@@ -341,7 +334,7 @@
 								<Action Name="Stop" ID="{B4682CA9-CF77-4867-8C5D-21C88567F504}" ShortID="684331066" Type="Stop" Scope="One" Global="false">
 									<ElementList>
 										<Element ID="{3461156E-48A8-40E8-A1FA-0B703C4CDF13}" Global="false">
-											<ObjectRef Name="forest" ID="{897720E0-A224-47A4-A584-4DCA4B76813E}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
+											<ObjectRef Name="branches" ID="{897720E0-A224-47A4-A584-4DCA4B76813E}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
 										</Element>
 									</ElementList>
 								</Action>
