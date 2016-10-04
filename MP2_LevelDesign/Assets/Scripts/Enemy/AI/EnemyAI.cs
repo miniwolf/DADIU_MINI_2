@@ -12,8 +12,10 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 	public float walkAwayDistance = 30f;
 
 	private Enemy enemy;
-	private Controllable controllableEnemy;
 	private Player player;
+	private Actionable actionablePlayer;
+	private Actionable actionableEnemy;
+
 	private bool isRoaming;
 	private Vector3 movingPosition;
 
@@ -55,7 +57,8 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 	private void FreeRoam(Vector3 reference, float maxRadius, float minRadius = 0) {
 		if ( !isRoaming ) {
             movingPosition = GenerateRandomPosition(reference, maxRadius, minRadius);
-			controllableEnemy.MoveTo(movingPosition);
+			enemy.SetDestination(movingPosition);
+			actionableEnemy.ExecuteAction(Actions.MOVE);
 			isRoaming = true;
 		}
 		//if the enemy is close enough to the end position we stop roaming
@@ -99,18 +102,21 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 		// check if the troll is far away when the girl picks up laundry for the first time
 		if ( Distance(enemy.GetPosition(), player.GetPosition()) > distanceForTeleport ) {
 			Vector3 newPosition = GenerateRandomPosition(player.GetPosition(), teleportRadius + teleportRange, teleportRadius - teleportRange);
-			enemy.Warp(newPosition);
+			enemy.SetDestination(newPosition);
+			actionableEnemy.ExecuteAction(Actions.WARP);
 		}
 		enemy.SetState(EnemyState.Chasing);
 	}
 
     private void Chaising() {
-        isRoaming = false;
-        controllableEnemy.MoveTo(player.GetPosition());
+		isRoaming = false;
+		enemy.SetDestination(player.GetPosition());
+		actionableEnemy.ExecuteAction(Actions.MOVE);
 	}
 
-    private void CatchGirl() {
-        if (Distance(enemy.GetPosition(), player.GetPosition()) < catchDistance) {
+	private void CatchGirl() {
+		if ( Distance(enemy.GetPosition(), player.GetPosition()) < catchDistance ) {
+			actionablePlayer.ExecuteAction(Actions.CAUGHT);
             enemy.SetState(EnemyState.GirlCaught);
         }
     }
@@ -120,23 +126,23 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
     }
 
     private void GirlCaught() {
-        enemy.Idle();
-        if (Input.GetKeyDown(KeyCode.R)) {
-            enemy.Resume();
-            enemy.SetState(EnemyState.WalkAway);
-        }
+		actionableEnemy.ExecuteAction(Actions.STOP);
     }
 
     public void SetPlayer(Player player) {
 		this.player = player;
 	}
 
-	public void SetEnemy(Enemy enemy) {
-		this.enemy = enemy;
+	public void SetActionablePlayer(Actionable actionablePlayer) {
+		this.actionablePlayer = actionablePlayer;
 	}
 
-	public void SetControllable(Controllable controllableEnemy) {
-		this.controllableEnemy = controllableEnemy;
+	public void SetActionableEnemy(Actionable actionableEnemy) {
+		this.actionableEnemy = actionableEnemy;
+	}
+
+	public void SetEnemy(Enemy enemy) {
+		this.enemy = enemy;
 	}
 
 	public string GetTag() {

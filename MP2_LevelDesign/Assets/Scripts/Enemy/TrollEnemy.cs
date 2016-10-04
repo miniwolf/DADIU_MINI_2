@@ -1,9 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable {
+public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Actionable {
 	private EnemyState state = EnemyState.RandomWalk;
-	private List<Controller> controllers = new List<Controller>();
+	private Dictionary<Actions, Handler> actions = new Dictionary<Actions, Handler>();
+	private Vector3 destination = Vector3.zero;
+
+	public float slowdownTime = 2f;
+	public float slowdown = 1.5f;
+	public float speedUp = 1.5f;
+
+	public int thresholdSpeed;
+	public int thresholdChase;
 
 	void Awake() {
 		InjectionRegister.Register(this);
@@ -21,6 +29,9 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable {
 	}
 
 	public void SetupComponents() {
+		foreach ( Handler action in actions.Values ) {
+			action.SetupComponents(gameObject);
+		}
 	}
 
 	public EnemyState GetState() {
@@ -29,10 +40,6 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable {
 
 	public void SetState(EnemyState newState) {
 		state = newState;
-	}
-		
-	public void AddController(Controller controller) {
-		controllers.Add(controller);
 	}
 
 	public string GetTag() {
@@ -43,36 +50,51 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Controllable {
 		return transform.position;
 	}
 
-	public void SlowDown() {
-		StartCoroutine(GetNavMesh().SlowDown());
+	public void AddAction(Actions actionName, Handler handler) {
+		actions.Add(actionName, handler);
 	}
 
-	public void SpeedUp() {
-		GetNavMesh().SpeedUp();
+	public void ExecuteAction(Actions actionName) {
+		actions[actionName].DoAction();
 	}
 
-	private NavMeshController GetNavMesh() {
-		foreach ( Controller controller in controllers ) {
-			if ( controller.GetType() == typeof(NavMeshController) ) {
-				return (NavMeshController) controller;
-			}
-		}
-		return null;
+	public float GetSlowdownTime() {
+		return slowdownTime;
 	}
 
-    public void Warp(Vector3 position) {
-        GetNavMesh().Teleport(position);
-    }
-    public void Idle() {
-        GetNavMesh().Idle();
-    }
-    public void Resume() {
-        GetNavMesh().Resume();
-    }
+	public void SetSlowdownTime(float slowdownTime) {
+		this.slowdownTime = slowdownTime;
+	}
 
-    public void MoveTo(Vector3 target) {
-		foreach ( Controller controller in controllers ) {
-			controller.Move(target);
-		}
+	public float GetSlowdown() {
+		return slowdown;
+	}
+
+	public void SetSlowdown(float slowdown) {
+		this.slowdown = slowdown;
+	}
+
+	public float GetSpeedUp() {
+		return speedUp;
+	}
+
+	public void SetSpeedUp(float speedUp) {
+		this.speedUp = speedUp;
+	}
+
+	public void SetDestination(Vector3 destination) {
+		this.destination = destination;
+	}
+
+	public Vector3 GetDestination() {
+		return destination;
+	}
+
+	public int GetThresholdSpeedup() {
+		return thresholdSpeed;
+	}
+
+	public int GetThresholdChase() {
+		return thresholdChase;
 	}
 }

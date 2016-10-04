@@ -17,29 +17,16 @@ public interface Enemy {
 	/// <returns>Current position of the enemy.</returns>
 	Vector3 GetPosition();
 
-	/// <summary>
-	/// Slows down the movement of the enemy
-	/// </summary>
-	void SlowDown();
+	float GetSlowdownTime();
+	void SetSlowdownTime(float slowdownTime);
+	float GetSlowdown();
+	void SetSlowdown(float slowdown);
+	float GetSpeedUp();
+	void SetSpeedUp(float speedUp);
+	void SetDestination(Vector3 destination);
+	Vector3 GetDestination();
 
-    /// <summary>
-    /// Teleports the enemy to a position
-    /// </summary>
-    /// <param name="newPosition">Position to be teleported to</param>
-    void Warp(Vector3 newPosition);
-    
-    /// <summary>
-    /// Stops the enemy movment.
-    /// </summary>
-    void Idle();
+	int GetThresholdSpeedup();
 
-    /// <summary>
-    /// Resumes the enemy movment.
-    /// </summary>
-    void Resume();
-
-    /// <summary>
-    /// Speeds up the troll
-    /// </summary>
-    void SpeedUp();
+	int GetThresholdChase();
 }

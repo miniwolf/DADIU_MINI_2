@@ -3,7 +3,7 @@ using System.Collections;
 /// <summary>
 /// This object needs to be attached to Player object in the game!
 /// </summary>
-public class PlayerAnimControllerImpl : MonoBehaviour, PlayerAnimController {
+public class PlayerAnimControllerImpl : MonoBehaviour {
 
 	private const string BOOL_IS_MOVING = "isMoving";
 	private const string BOOL_IS_THROWN = "isThrown";
