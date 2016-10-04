@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class  EnemyRoamingAnimation : Action {
+public class  EnemyStartChaseAnimation : Action {
 	private Animator animator;
 
 	public void Setup(GameObject obj) {
@@ -9,7 +9,7 @@ public class  EnemyRoamingAnimation : Action {
 	}
 
 	public void Execute() {
-		Debug.Log("Troll roaming true");
-		animator.SetBool("isRoaming", true);
+		Debug.Log("Troll isChasing false");
+		animator.SetBool("isChasing", true);
 	}
 }
