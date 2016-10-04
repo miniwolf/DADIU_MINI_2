@@ -12,16 +12,20 @@ public class ItemFactory {
 		feedBackNumber = GameObject.FindGameObjectWithTag(TagConstants.FEEDBACKNUMBER).GetComponent<FloatingNumberInterface>();
 	}
 
-	public void CreateDress(Commandable dress, int thresholdSpeedUp) {
-		dress.AddCommand(new DressCommand(inGameController, enemy, thresholdSpeedUp));
+	public void CreateDress(Commandable dress) {
+		dress.AddCommand(new DressSound());
+		dress.AddCommand(new DressAction(inGameController, (Actionable) enemy, enemy));
+	}
+
+	private void CreateDressCommand(int thresholdChase, int thresholdSpeedUp) {
 	}
 
 	public void CreateBridge(Commandable bridge) {
-		bridge.AddCommand(new BridgeCommand(enemy));
+		bridge.AddCommand(new BridgeAction(enemy));
 	}
 
 	public void CreateYellowBush(Commandable yellowBush) {
-		yellowBush.AddCommand(new YellowBushCommand(enemy));
+		yellowBush.AddCommand(new YellowBushAction(enemy, (Actionable) enemy));
 	}
 
 	public void CreateFloatingNumberFeedback(){

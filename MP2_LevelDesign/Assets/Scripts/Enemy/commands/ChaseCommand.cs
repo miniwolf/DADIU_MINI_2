@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class ChaseCommand : MovableCommand {
-	Enemy enemy;
+	private Enemy enemy;
 
 	public ChaseCommand(Enemy enemy) {
 		this.enemy = enemy;

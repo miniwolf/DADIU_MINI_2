@@ -42,13 +42,13 @@
 						</Action>
 						<Action Name="Set Voice Pitch" ID="{1D8C990F-A661-4BAD-94F0-37218C660771}" ShortID="752783925" Type="ChangePitch" Scope="One" Global="false">
 							<PropertyList>
-								<Property Name="Pitch" Type="int32" Value="-350">
+								<Property Name="Pitch" Type="int32" Value="-280">
 									<ModifierList>
 										<ModifierInfo>
 											<Modifier Name="" ID="{F23F2348-FE3C-4903-8580-293B50F4A213}">
 												<PropertyList>
 													<Property Name="Enabled" Type="bool" Value="True"/>
-													<Property Name="Max" Type="Real64" Value="300"/>
+													<Property Name="Max" Type="Real64" Value="200"/>
 												</PropertyList>
 											</Modifier>
 										</ModifierInfo>
@@ -64,7 +64,7 @@
 						<Action Name="Set Voice Pitch" ID="{690D3D1D-7DF7-4708-98A0-5E0338C728C0}" ShortID="30328615" Type="ChangePitch" Scope="One" Global="false">
 							<PropertyList>
 								<Property Name="FadeTime" Type="Real64" Value="0.281"/>
-								<Property Name="Pitch" Type="int32" Value="610">
+								<Property Name="Pitch" Type="int32" Value="910">
 									<ModifierList>
 										<ModifierInfo>
 											<Modifier Name="" ID="{F5504E41-0581-4936-840F-1A43233175CE}">
@@ -96,7 +96,7 @@
 						</Action>
 						<Action Name="Set Voice Pitch" ID="{BA24A0E0-AE19-42CD-8FE4-406116D3D572}" ShortID="909079446" Type="ChangePitch" Scope="One" Global="false">
 							<PropertyList>
-								<Property Name="Pitch" Type="int32" Value="510">
+								<Property Name="Pitch" Type="int32" Value="250">
 									<ModifierList>
 										<ModifierInfo>
 											<Modifier Name="" ID="{E33599C9-BEF1-4835-9D7D-DB85AF615446}">
@@ -118,7 +118,7 @@
 						<Action Name="Set Voice Pitch" ID="{5C573D31-842E-4B4F-85BD-5F627A404751}" ShortID="340175885" Type="ChangePitch" Scope="One" Global="false">
 							<PropertyList>
 								<Property Name="FadeTime" Type="Real64" Value="0.281"/>
-								<Property Name="Pitch" Type="int32" Value="-760">
+								<Property Name="Pitch" Type="int32" Value="-1540">
 									<ModifierList>
 										<ModifierInfo>
 											<Modifier Name="" ID="{98A7F5C7-F20A-4068-AB7C-BB3199D7F031}">
@@ -188,7 +188,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="auntieFootstep" ID="{44ADE32D-FF22-4AA3-AA3B-69D4D9B78B3D}">
+				<Event Name="auntieFootsteps" ID="{44ADE32D-FF22-4AA3-AA3B-69D4D9B78B3D}">
 					<ChildrenList>
 						<Action Name="Play" ID="{DFCA51C5-1D37-48D9-AE20-352996195AC0}" ShortID="155247081" Type="Play" Scope="One" Global="false">
 							<ElementList>
@@ -206,7 +206,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="trollFootstep" ID="{441AE6FC-175B-4732-8E96-E0C78F786837}">
+				<Event Name="trollFootsteps" ID="{441AE6FC-175B-4732-8E96-E0C78F786837}">
 					<ChildrenList>
 						<Action Name="Play" ID="{FFECB610-54EA-470D-970D-074DB0BFBC64}" ShortID="1049027403" Type="Play" Scope="One" Global="false">
 							<ElementList>
@@ -362,20 +362,30 @@
 					<ChildrenList>
 						<Event Name="playMenuMusic" ID="{B10B9A4F-B953-4A24-8626-94BD1D1DD38A}">
 							<ChildrenList>
-								<Action Name="Play" ID="{CB066D57-9334-4E94-AAA9-7D5E37B2F2A2}" ShortID="935106220" Type="Play" Scope="One" Global="false">
+								<Action Name="Stop" ID="{0010AEB5-6A2E-44F2-9976-7D471688DEB8}" ShortID="1016331227" Type="Stop" Scope="One" Global="false">
 									<ElementList>
-										<Element ID="{D04C7B13-E154-4A89-A17A-081ED03844FF}" Global="false">
-											<ObjectRef Name="music_menu_comp" ID="{420AF581-B574-4664-A8EB-C709A513D6EC}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
+										<Element ID="{BB3972CD-7D47-4E8B-B200-6D6D9B0720D3}" Global="false">
+											<ObjectRef Name="music_notroll_comp" ID="{61F33FC8-3D34-454E-B9D2-A925D40A48FC}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
 										</Element>
 									</ElementList>
 								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="stopMenuMusic" ID="{16A73AC3-56FA-4ABF-B705-528BFCD2B752}">
-							<ChildrenList>
-								<Action Name="Stop" ID="{205ACFFA-B129-43C8-991C-757E85CADD1D}" ShortID="692597109" Type="Stop" Scope="One" Global="true">
+								<Action Name="Stop" ID="{FEB7AB2F-6229-4C9D-AFCD-859CDED6BD1A}" ShortID="1052826770" Type="Stop" Scope="One" Global="false">
 									<ElementList>
-										<Element ID="{D6799BD3-8B52-4AE9-980F-8FF721A78A94}" Global="true">
+										<Element ID="{F3F288EB-466F-4FE2-A01D-682D8F6DC5F7}" Global="false">
+											<ObjectRef Name="music_troll_comp_1" ID="{05F89710-69A4-4FFB-83BC-63C3F475E08F}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
+										</Element>
+									</ElementList>
+								</Action>
+								<Action Name="Stop" ID="{772DA377-AEF1-492A-B900-9078EFCC0EBF}" ShortID="418350707" Type="Stop" Scope="One" Global="false">
+									<ElementList>
+										<Element ID="{380984B1-AC8D-4C91-8C1E-44583275F3C0}" Global="false">
+											<ObjectRef Name="music_troll_comp_2" ID="{0C9A8079-A0F7-4E5B-9E44-6540F13E99CC}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
+										</Element>
+									</ElementList>
+								</Action>
+								<Action Name="Play" ID="{CB066D57-9334-4E94-AAA9-7D5E37B2F2A2}" ShortID="935106220" Type="Play" Scope="One" Global="false">
+									<ElementList>
+										<Element ID="{D04C7B13-E154-4A89-A17A-081ED03844FF}" Global="false">
 											<ObjectRef Name="music_menu_comp" ID="{420AF581-B574-4664-A8EB-C709A513D6EC}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
 										</Element>
 									</ElementList>
@@ -416,17 +426,17 @@
 						</Event>
 						<Event Name="playLevelMusic" ID="{DB5F1819-1128-4CFB-86BF-14681B7D3D2B}">
 							<ChildrenList>
+								<Action Name="Stop" ID="{4BEDB025-F980-41F7-9578-A804BB7CE655}" ShortID="111524147" Type="Stop" Scope="One" Global="false">
+									<ElementList>
+										<Element ID="{5A960ADD-BCB9-4A9C-AB4A-082E31417C23}" Global="false">
+											<ObjectRef Name="music_menu_comp" ID="{420AF581-B574-4664-A8EB-C709A513D6EC}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
+										</Element>
+									</ElementList>
+								</Action>
 								<Action Name="Play" ID="{009A73C4-33C7-4ACC-9A75-CCA4CCCD1698}" ShortID="605363788" Type="Play" Scope="One" Global="false">
 									<ElementList>
 										<Element ID="{ADEA5699-FA1D-4E82-A20C-244962E1859D}" Global="false">
 											<ObjectRef Name="music_notroll_comp" ID="{61F33FC8-3D34-454E-B9D2-A925D40A48FC}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
-										</Element>
-									</ElementList>
-								</Action>
-								<Action Name="Play" ID="{1FCB951F-6F7E-40F5-B309-07AE9917AA61}" ShortID="623492533" Type="Play" Scope="One" Global="false">
-									<ElementList>
-										<Element ID="{B9DF5186-DCD7-42D6-91D3-DDE9482A49BA}" Global="false">
-											<ObjectRef Name="music_troll_comp_1" ID="{05F89710-69A4-4FFB-83BC-63C3F475E08F}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
 										</Element>
 									</ElementList>
 								</Action>
@@ -441,6 +451,28 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Event Name="playLakeSoundscape" ID="{425F7A6A-EA35-4E50-9D9B-3DB0C039DAA1}">
+					<ChildrenList>
+						<Action Name="Play" ID="{83D1D56A-AA25-432D-9862-8D8CB3DBA245}" ShortID="974330160" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{FADDE326-31CA-4709-A854-982FA78B32EB}" Global="false">
+									<ObjectRef Name="frog_soundscape_loop_1" ID="{AEDE5E54-A0EE-49F5-A3F5-1F71E08EA898}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="playRiverSound" ID="{02D0967D-B1C1-4825-B3B2-65066445DAC5}">
+					<ChildrenList>
+						<Action Name="Play" ID="{46A3D5BC-A765-48D8-85C0-1F6CCF5AC08B}" ShortID="852279737" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{44A4F623-F24C-40AD-B5CC-CB6270D8D897}" Global="false">
+									<ObjectRef Name="running_river" ID="{E5791DBD-B780-4B1D-8BB6-E74534D6323A}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
