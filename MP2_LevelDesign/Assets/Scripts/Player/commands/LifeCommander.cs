@@ -41,7 +41,7 @@ public class LifeCommander : MovableCommand {
     }
 	private IEnumerator ReactivateGirl() {
 		yield return new WaitForSeconds(2.5f);
-		player.SetState(PlayerState.Running);
-		enemy.SetState(EnemyState.WalkAway);
+		actionablePlayer.ExecuteAction(Actions.RESUME);
+		actionableEnemy.ExecuteAction(Actions.WALKAWAY);
 	}
 }
