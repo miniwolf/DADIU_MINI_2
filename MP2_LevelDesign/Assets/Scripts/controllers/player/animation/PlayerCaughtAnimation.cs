@@ -19,20 +19,12 @@ public class  PlayerCaughtAnimation : Action {
 	public void Execute() {
 		animator.SetTrigger("caught");
 		animator.SetBool("isThrown", true);
+		playerObj.transform.rotation = Quaternion.LookRotation(playerObj.transform.position - enemyObj.transform.position);
 		player.ExecuteCoroutine(IsThrownCoroutine());
 		player.ExecuteCoroutine(GetUpCoroutine());
 	}
 
 	private IEnumerator IsThrownCoroutine() {
-		// look in the right direction
-		playerObj.transform.rotation = Quaternion.LookRotation(playerObj.transform.position - enemyObj.transform.position);
-		NavMeshAgent agent = playerObj.GetComponent<NavMeshAgent>();
-//		 Vector3.Le(playerObj.transform.position, enemyObj.transform.position);
-//		Debug.Log("Player pos : " + playerObj.transform.position);
-//		Debug.Log("Enemy pos : " + enemyObj.transform.position);
-		Vector3  movePos = playerObj.transform.position + (enemyObj.transform.position - playerObj.transform.position);
-//		Debug.Log("movePos pos : " + movePos);
-		agent.Move(movePos);
 		yield return new WaitForSeconds(1);
 		animator.SetBool("isThrown", false);
 	}
