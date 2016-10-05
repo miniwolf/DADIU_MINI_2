@@ -16,6 +16,8 @@ public class CanvasScript : MonoBehaviour {
 	private UIController howToPlayController;
 	private Actionable enemy;
 
+	public GameObject quadBlocker;
+
 	void Awake() {
 		gameStateManager = GameObject.FindGameObjectWithTag(TagConstants.GAME_STATE).GetComponent<GameStateManager>();
 
@@ -47,6 +49,7 @@ public class CanvasScript : MonoBehaviour {
 		menuController.SetVisible();
 		settingsController.SetInvisible();
 		inGameController.SetInvisible();
+		quadBlocker.SetActive(true);
 
 		howToPlayMenu.gameObject.SetActive(false);
 
@@ -75,6 +78,7 @@ public class CanvasScript : MonoBehaviour {
 		menuController.SetInvisible();
 		settingsController.SetInvisible();
 		inGameController.SetVisible();
+		quadBlocker.SetActive(false);
 
 		howToPlayMenu.gameObject.SetActive(false);
 
