@@ -48,7 +48,6 @@ public class ControllableFactory {
 	private Handler CreateAuntieStop() {
 		Handler stop = new ActionHandler();
 		stop.AddAction(new PlayerIdleAnimation());
-		stop.AddAction(new StopMovingAuntieSound());
 		return stop;
 	}
 
@@ -94,8 +93,15 @@ public class ControllableFactory {
 		actionable.AddAction(Actions.CAUGHT, CreateCaught());
 		actionable.AddAction(Actions.ROAM, CreateRoam());
 		actionable.AddAction(Actions.CHASE, CreateChase());
+		actionable.AddAction(Actions.ONCE, CreateOnce());
 		//CreateControllable(enemy, enemyAgent,maxSpeedOnTroll);
 		enemyObj.GetComponentsInChildren<MovableCommandable>()[0].AddCommand(new ChaseCommand(enemy));
+	}
+
+	Handler CreateOnce() {
+		Handler once = new ActionHandler();
+		once.AddAction(new TrollMoveSound());
+		return once;
 	}
 
 	Handler CreateRoam() {
@@ -149,14 +155,12 @@ public class ControllableFactory {
 	private Handler CreateEnemyMovement() {
 		Handler enemyMovement = new ActionHandler();
 		enemyMovement.AddAction(new TrollMove(enemy));
-		enemyMovement.AddAction(new TrollMoveSound());
 		return enemyMovement;
 	}
 
 	private Handler CreateStopEnemy() {
 		Handler enemyStop = new ActionHandler();
 		enemyStop.AddAction(new StopAction(player));
-		enemyStop.AddAction(new StopTrollSound());
 		return enemyStop;
 	}
 
