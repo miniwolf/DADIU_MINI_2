@@ -6,7 +6,6 @@ public class EnemyCatchAnimation : Action {
 	private Animator animator;
 
 	public void Execute() {
-		Debug.Log("Troll catch false");
 		animator.SetBool("catch", true);
 	}
 

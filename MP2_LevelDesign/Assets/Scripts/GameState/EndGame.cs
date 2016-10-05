@@ -15,7 +15,7 @@ public class EndGame : MonoBehaviour {
 		color.a = 0f;
 		fadeGO.GetComponent<Image>().color = color;
 		origPos = fadeGO.transform.position;
-		fadeGO.transform.position += new Vector3(10000f, 10000f, 10000f);
+		fadeGO.transform.position += new Vector3(100000f, 100000f, 100000f);
 	}
 
 	public void BeginFade(){
