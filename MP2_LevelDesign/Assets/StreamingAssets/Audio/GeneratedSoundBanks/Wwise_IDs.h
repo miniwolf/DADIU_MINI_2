@@ -25,6 +25,8 @@ namespace AK
         static const AkUniqueID PLAYROAMINGMUSIC = 2415596161U;
         static const AkUniqueID STOPALLMUSIC = 2907867019U;
         static const AkUniqueID STOPALLSOUNDSCAPES = 3284803258U;
+        static const AkUniqueID STOPAUNTIEFOOTSTEPS = 3527026064U;
+        static const AkUniqueID STOPTROLLFOOTSTEPS = 1093813131U;
         static const AkUniqueID TROLLCATCHAUNTIE = 3227179805U;
         static const AkUniqueID TROLLFALLSINTOWATER = 1919802259U;
         static const AkUniqueID TROLLFOOTSTEPS = 4032712899U;

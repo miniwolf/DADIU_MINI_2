@@ -33,6 +33,8 @@
 				<Event Id="2415596161" Name="playRoamingMusic" ObjectPath="\Events\Default Work Unit\musicEvents\playRoamingMusic"/>
 				<Event Id="2907867019" Name="stopAllMusic" ObjectPath="\Events\Default Work Unit\musicEvents\stopAllMusic" MaxAttenuation="0.000000"/>
 				<Event Id="3284803258" Name="stopAllSoundscapes" ObjectPath="\Events\Default Work Unit\stopEvents\stopAllSoundscapes" MaxAttenuation="0.000000"/>
+				<Event Id="3527026064" Name="stopAuntieFootsteps" ObjectPath="\Events\Default Work Unit\stopEvents\stopAuntieFootsteps" MaxAttenuation="0.000000"/>
+				<Event Id="1093813131" Name="stopTrollFootsteps" ObjectPath="\Events\Default Work Unit\stopEvents\stopTrollFootsteps" MaxAttenuation="0.000000"/>
 				<Event Id="3227179805" Name="trollCatchAuntie" ObjectPath="\Events\Default Work Unit\trollCatchAuntie"/>
 				<Event Id="1919802259" Name="trollFallsIntoWater" ObjectPath="\Events\Default Work Unit\trollFallsIntoWater" MaxAttenuation="60.000000"/>
 				<Event Id="4032712899" Name="trollFootsteps" ObjectPath="\Events\Default Work Unit\trollFootsteps" MaxAttenuation="40.000000"/>
