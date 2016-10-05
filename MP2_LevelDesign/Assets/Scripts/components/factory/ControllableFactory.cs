@@ -39,16 +39,16 @@ public class ControllableFactory {
 		playerObj.GetComponentsInChildren<MovableCommandable>()[0].AddCommand(life);
 	}
 
-	private Handler CreateResume () {
+	private Handler CreateResume() {
 		Handler resume = new ActionHandler();
 		resume.AddAction(new ResumeAction(player));
 		return resume;
 	}
 
-	private Handler CreateAuntieStop () {
-		Handler resume = new ActionHandler();
-		resume.AddAction(new PlayerIdleAnimation());
-		return resume;
+	private Handler CreateAuntieStop() {
+		Handler stop = new ActionHandler();
+		stop.AddAction(new PlayerIdleAnimation());
+		return stop;
 	}
 
 	private Handler CreateStun() {
@@ -63,7 +63,7 @@ public class ControllableFactory {
 		MouseMove move = new MouseMove(camera);
 		move.AddMoveAction(new MoveActionImpl());
 		move.AddAction(new AuntieRunAnimation());
-
+		move.AddAction(new StartMovingAuntieSound());
 		GameObject tapObj = GameObject.FindGameObjectWithTag(TagConstants.TAP_FEEDBACK);
 		move.AddMoveAction(new TapFeedback(tapObj));
 		move.AddAction(new TapAnimation(tapObj.GetComponent<Animator>()));
@@ -75,7 +75,7 @@ public class ControllableFactory {
 		move.AddAction(new StartMovingAuntieSound());
 		move.AddMoveAction(new MoveActionImpl());
 		move.AddAction(new AuntieRunAnimation());
-
+		move.AddAction(new StartMovingAuntieSound());
 		GameObject tapObj = GameObject.FindGameObjectWithTag(TagConstants.TAP_FEEDBACK);
 		move.AddMoveAction(new TapFeedback(tapObj));
 		move.AddAction(new TapAnimation(tapObj.GetComponent<Animator>()));		
@@ -93,8 +93,15 @@ public class ControllableFactory {
 		actionable.AddAction(Actions.CAUGHT, CreateCaught());
 		actionable.AddAction(Actions.ROAM, CreateRoam());
 		actionable.AddAction(Actions.CHASE, CreateChase());
+		actionable.AddAction(Actions.ONCE, CreateOnce());
 		//CreateControllable(enemy, enemyAgent,maxSpeedOnTroll);
 		enemyObj.GetComponentsInChildren<MovableCommandable>()[0].AddCommand(new ChaseCommand(enemy));
+	}
+
+	Handler CreateOnce() {
+		Handler once = new ActionHandler();
+		once.AddAction(new TrollMoveSound());
+		return once;
 	}
 
 	Handler CreateRoam() {
