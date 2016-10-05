@@ -12,6 +12,7 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Actionable {
 
 	public float roamSpeed = 5f;
 	public float chaseSpeed = 6f;
+	public float slowDownSpeed = 2f;
 
 	public int thresholdSpeed = 2;
 	public int thresholdChase = 2;
