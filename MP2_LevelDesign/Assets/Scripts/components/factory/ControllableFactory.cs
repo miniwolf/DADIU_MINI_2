@@ -108,6 +108,7 @@ public class ControllableFactory {
 		Handler roam = new ActionHandler();
 		roam.AddAction(new RoamingMusic());
 		roam.AddAction(new RoamAction(enemy));
+		roam.AddAction(new EnemyEndCatchAnimation());
 		roam.AddAction(new EnemyRoamingAnimation());
 		return roam;
 	}
@@ -116,6 +117,7 @@ public class ControllableFactory {
 		Handler chase = new ActionHandler();
 		chase.AddAction(new ChasingMusic(enemy));
 		chase.AddAction(new ChaseAction(enemy));
+		chase.AddAction(new EnemyEndCatchAnimation());
 		chase.AddAction(new EnemyStartChaseAnimation());
 		return chase;
 	}
@@ -125,12 +127,15 @@ public class ControllableFactory {
 		catchGirl.AddAction(new CatchGirlAction(enemy));
 		catchGirl.AddAction(new GotCaughtSound());
 		catchGirl.AddAction(new EnemyEndChaseAnimation());
+		catchGirl.AddAction(new EnemyCatchAnimation());
 		return catchGirl;
 	}
 		
 	Handler CreateWalkAwayEnemy() {
 		Handler walkaway = new ActionHandler();
 		walkaway.AddAction(new WalkAwayAction(enemy));
+		walkaway.AddAction(new EnemyEndCatchAnimation());
+		walkaway.AddAction(new EnemyStartChaseAnimation());
 		return walkaway;
 	}
 
@@ -155,6 +160,7 @@ public class ControllableFactory {
 	private Handler CreateEnemyMovement() {
 		Handler enemyMovement = new ActionHandler();
 		enemyMovement.AddAction(new TrollMove(enemy));
+		enemyMovement.AddAction(new EnemyStartChaseAnimation());
 		return enemyMovement;
 	}
 
