@@ -26,6 +26,7 @@ public class ControllableFactory {
 		actionable.AddAction(Actions.MOVE, CreateMovementAuntie(actionable));
 		actionable.AddAction(Actions.DEBUGMOVE, CreateMouseMovementAuntie(actionable));
 		actionable.AddAction(Actions.STUN, CreateStun());
+		actionable.AddAction(Actions.STOP, CreateAuntieStop());
 		actionable.AddAction(Actions.RESUME, CreateResume());
 
 		MovableCommand life = new LifeCommander(player,
@@ -44,9 +45,17 @@ public class ControllableFactory {
 		return resume;
 	}
 
+	private Handler CreateAuntieStop () {
+		Handler resume = new ActionHandler();
+		resume.AddAction(new PlayerIdleAnimation());
+		return resume;
+	}
+
 	private Handler CreateStun() {
 		Handler stun = new Stun();
 		stun.AddAction(new StopAction(player));
+		stun.AddAction(new StopMovingAuntieSound());
+		stun.AddAction(new PlayerCaughtAnimation());
 		return stun;
 	}
 
@@ -90,13 +99,17 @@ public class ControllableFactory {
 
 	Handler CreateRoam() {
 		Handler roam = new ActionHandler();
+		roam.AddAction(new RoamingMusic());
 		roam.AddAction(new RoamAction(enemy));
+		roam.AddAction(new EnemyRoamingAnimation());
 		return roam;
 	}
 
 	Handler CreateChase() {
 		Handler chase = new ActionHandler();
+		chase.AddAction(new ChasingMusic(enemy));
 		chase.AddAction(new ChaseAction(enemy));
+		chase.AddAction(new EnemyStartChaseAnimation());
 		return chase;
 	}
 
@@ -105,6 +118,7 @@ public class ControllableFactory {
 		Handler catchGirl = new ActionHandler();
 		catchGirl.AddAction(new CatchGirlAction(enemy));
 		catchGirl.AddAction(new GotCaughtSound());
+		catchGirl.AddAction(new EnemyEndChaseAnimation());
 		return catchGirl;
 	}
 		
