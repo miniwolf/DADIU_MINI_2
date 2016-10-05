@@ -25,7 +25,7 @@ public class MouseMove : ActionHandler {
 	}
 
 	public override void DoAction() {
-		if ( Input.GetMouseButtonDown(1) ) {	
+		if ( Input.GetMouseButtonDown(0) ) {	
 			cameraToGround = camera.ScreenPointToRay(Input.mousePosition);
 			if ( Physics.Raycast(cameraToGround, out hit, 500f, layerMask.value) ) {
 				foreach ( MoveAction action in moveActions ) {
