@@ -26,6 +26,30 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Actionable {
 		GetComponent<NavMeshAgent> ().speed = roamSpeed;
 	}
 
+	void Update() {
+		switch( state ) {
+			case EnemyState.RandomWalk:
+				ExecuteAction(Actions.ROAM);
+				break;
+			case EnemyState.StartChase:
+				ExecuteAction(Actions.CHASE);
+				break;
+			case EnemyState.Chasing:
+				ExecuteAction(Actions.CHASE);
+				break;
+			case EnemyState.WalkAway:
+				ExecuteAction(Actions.WALKAWAY);
+				break;
+			case EnemyState.GirlCaught:
+				ExecuteAction(Actions.CAUGHT);
+				break;
+			default:
+				ExecuteAction(Actions.MOVE);
+				ExecuteAction(Actions.DEBUGMOVE);
+				break;
+		}
+	}
+
 	public void SetupComponents() {
 		foreach ( Handler action in actions.Values ) {
 			action.SetupComponents(gameObject);
