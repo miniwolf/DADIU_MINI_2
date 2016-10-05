@@ -2,6 +2,8 @@
 using System.Collections;
 
 public enum Actions {
+	ONCE,
+
 	DEBUGMOVE,
 	SPEEDUP,
 	WARP,

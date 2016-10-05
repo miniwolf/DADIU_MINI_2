@@ -87,6 +87,7 @@ public class CanvasScript : MonoBehaviour {
 		soundScape.Setup(gameObject);
 		soundScape.Execute();
 		enemy.ExecuteAction(Actions.ROAM);
+		enemy.ExecuteAction(Actions.ONCE);
 		gameStateManager.NewState(new GameState.Playing());
 	}
 
