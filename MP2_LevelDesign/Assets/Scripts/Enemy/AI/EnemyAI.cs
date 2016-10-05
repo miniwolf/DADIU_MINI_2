@@ -16,7 +16,6 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 	private Actionable actionablePlayer;
 	private Actionable actionableEnemy;
 
-	private bool isRoaming;
 	private Vector3 movingPosition;
 
     void Awake() {
@@ -33,7 +32,7 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 		}
 		switch ( enemy.GetState() ) {
 		case EnemyState.RandomWalk:
-				FreeRoam (enemy.GetPosition (), roamRadius);
+				FreeRoam(enemy.GetPosition(), roamRadius);
                 break;
 			case EnemyState.WalkAway:
 				FreeRoam(player.GetPosition(), 2 * walkAwayDistance, walkAwayDistance);
@@ -53,15 +52,11 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 	
 	// for now the random walk is just the position + (100,0,100)
 	private void FreeRoam(Vector3 reference, float maxRadius, float minRadius = 0) {
-		if ( !isRoaming ) {
-            movingPosition = GenerateRandomPosition(reference, maxRadius, minRadius);
-			enemy.SetDestination(movingPosition);
-			actionableEnemy.ExecuteAction(Actions.MOVE);
-			isRoaming = true;
-		}
 		//if the enemy is close enough to the end position we stop roaming
 		if ( Vector3.Distance(enemy.GetPosition(), enemy.GetDestination()) < roamDistanceError) {
-			isRoaming = false;
+			movingPosition = GenerateRandomPosition(reference, maxRadius, minRadius);
+			enemy.SetDestination(movingPosition);
+			actionableEnemy.ExecuteAction(Actions.MOVE);
 		}
 	}
 
@@ -107,7 +102,6 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 	}
 
     private void Chaising() {
-		isRoaming = false;
 		enemy.SetDestination(player.GetPosition());
 		actionableEnemy.ExecuteAction(Actions.MOVE);
 	}
