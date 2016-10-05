@@ -8,6 +8,7 @@ public class StopMovingAuntieSound : Action {
 	}
 
 	public void Execute() {
+		Debug.Log("Stopping sound");
 		AkSoundEngine.PostEvent("stopAuntieFootsteps", obj);
 	}
 }

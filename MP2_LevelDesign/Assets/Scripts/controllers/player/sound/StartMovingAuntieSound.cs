@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class StartMovingAuntieSound : Action {
 	private GameObject obj;
@@ -9,6 +8,7 @@ public class StartMovingAuntieSound : Action {
 	}
 
 	public void Execute() {
+		Debug.Log("Starting sound");
 		AkSoundEngine.PostEvent("auntieFootsteps", obj);
 	}
 }
