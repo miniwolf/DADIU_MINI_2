@@ -14,6 +14,7 @@ public class CanvasScript : MonoBehaviour {
 	private UIController menuController;
 	private UIController inGameController;
 	private UIController howToPlayController;
+	private Actionable enemy;
 
 	void Awake() {
 		gameStateManager = GameObject.FindGameObjectWithTag(TagConstants.GAME_STATE).GetComponent<GameStateManager>();
@@ -32,6 +33,8 @@ public class CanvasScript : MonoBehaviour {
 		Action soundScape = new SoundScapeMusic();
 		soundScape.Setup(gameObject);
 		soundScape.Execute();
+
+		enemy = GameObject.FindGameObjectWithTag(TagConstants.ENEMY).GetComponent<Actionable>();
 	}
 
 	void Update(){
@@ -79,6 +82,8 @@ public class CanvasScript : MonoBehaviour {
 		Action soundScape = new SoundScapeMusic();
 		soundScape.Setup(gameObject);
 		soundScape.Execute();
+		enemy.ExecuteAction(Actions.ROAM);
+		enemy.ExecuteAction(Actions.ONCE);
 		gameStateManager.NewState(new GameState.Playing());
 	}
 

@@ -39,16 +39,16 @@ public class ControllableFactory {
 		playerObj.GetComponentsInChildren<MovableCommandable>()[0].AddCommand(life);
 	}
 
-	private Handler CreateResume () {
+	private Handler CreateResume() {
 		Handler resume = new ActionHandler();
 		resume.AddAction(new ResumeAction(player));
 		return resume;
 	}
 
-	private Handler CreateAuntieStop () {
-		Handler resume = new ActionHandler();
-		resume.AddAction(new PlayerIdleAnimation());
-		return resume;
+	private Handler CreateAuntieStop() {
+		Handler stop = new ActionHandler();
+		stop.AddAction(new PlayerIdleAnimation());
+		return stop;
 	}
 
 	private Handler CreateStun() {
@@ -63,7 +63,7 @@ public class ControllableFactory {
 		MouseMove move = new MouseMove(camera);
 		move.AddMoveAction(new MoveActionImpl());
 		move.AddAction(new AuntieRunAnimation());
-
+		move.AddAction(new StartMovingAuntieSound());
 		GameObject tapObj = GameObject.FindGameObjectWithTag(TagConstants.TAP_FEEDBACK);
 		move.AddMoveAction(new TapFeedback(tapObj));
 		move.AddAction(new TapAnimation(tapObj.GetComponent<Animator>()));
@@ -75,7 +75,7 @@ public class ControllableFactory {
 		move.AddAction(new StartMovingAuntieSound());
 		move.AddMoveAction(new MoveActionImpl());
 		move.AddAction(new AuntieRunAnimation());
-
+		move.AddAction(new StartMovingAuntieSound());
 		GameObject tapObj = GameObject.FindGameObjectWithTag(TagConstants.TAP_FEEDBACK);
 		move.AddMoveAction(new TapFeedback(tapObj));
 		move.AddAction(new TapAnimation(tapObj.GetComponent<Animator>()));		
@@ -93,14 +93,22 @@ public class ControllableFactory {
 		actionable.AddAction(Actions.CAUGHT, CreateCaught());
 		actionable.AddAction(Actions.ROAM, CreateRoam());
 		actionable.AddAction(Actions.CHASE, CreateChase());
+		actionable.AddAction(Actions.ONCE, CreateOnce());
 		//CreateControllable(enemy, enemyAgent,maxSpeedOnTroll);
 		enemyObj.GetComponentsInChildren<MovableCommandable>()[0].AddCommand(new ChaseCommand(enemy));
+	}
+
+	Handler CreateOnce() {
+		Handler once = new ActionHandler();
+		once.AddAction(new TrollMoveSound());
+		return once;
 	}
 
 	Handler CreateRoam() {
 		Handler roam = new ActionHandler();
 		roam.AddAction(new RoamingMusic());
 		roam.AddAction(new RoamAction(enemy));
+		roam.AddAction(new EnemyEndCatchAnimation());
 		roam.AddAction(new EnemyRoamingAnimation());
 		return roam;
 	}
@@ -109,22 +117,25 @@ public class ControllableFactory {
 		Handler chase = new ActionHandler();
 		chase.AddAction(new ChasingMusic(enemy));
 		chase.AddAction(new ChaseAction(enemy));
+		chase.AddAction(new EnemyEndCatchAnimation());
 		chase.AddAction(new EnemyStartChaseAnimation());
 		return chase;
 	}
-
 
 	Handler CreateCaught() {
 		Handler catchGirl = new ActionHandler();
 		catchGirl.AddAction(new CatchGirlAction(enemy));
 		catchGirl.AddAction(new GotCaughtSound());
 		catchGirl.AddAction(new EnemyEndChaseAnimation());
+		catchGirl.AddAction(new EnemyCatchAnimation());
 		return catchGirl;
 	}
 		
 	Handler CreateWalkAwayEnemy() {
 		Handler walkaway = new ActionHandler();
 		walkaway.AddAction(new WalkAwayAction(enemy));
+		walkaway.AddAction(new EnemyEndCatchAnimation());
+		walkaway.AddAction(new EnemyStartChaseAnimation());
 		return walkaway;
 	}
 
@@ -149,6 +160,7 @@ public class ControllableFactory {
 	private Handler CreateEnemyMovement() {
 		Handler enemyMovement = new ActionHandler();
 		enemyMovement.AddAction(new TrollMove(enemy));
+		enemyMovement.AddAction(new EnemyStartChaseAnimation());
 		return enemyMovement;
 	}
 
