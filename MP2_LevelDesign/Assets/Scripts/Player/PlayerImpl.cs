@@ -7,7 +7,7 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Actionable {
 	private Dictionary<Actions, Handler> actions = new Dictionary<Actions, Handler>();
 
 	private NavMeshAgent agent;
-	private float stoppingDist = 1f;
+	private float stoppingDist = 0.1f;
 
 	void Awake() {
 		agent = this.GetComponent<NavMeshAgent>();
@@ -29,21 +29,21 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Actionable {
 	void Update() {
 		switch ( playerState ) {
 			case PlayerState.Running:
-
 				ExecuteAction(Actions.MOVE);
 				ExecuteAction(Actions.DEBUGMOVE);
-
-				if(agent.hasPath) {
-					if(agent.remainingDistance <= agent.stoppingDistance) {
-						ExecuteAction(Actions.STOP);
-					}
-				}
-
+				StopPlayer();
 				break;
 			case PlayerState.Idle:
 				ExecuteAction(Actions.STUN);
 				break;
+		}
+	}
 
+	private void StopPlayer() {
+		if (agent.hasPath) {
+			if (agent.remainingDistance <= agent.stoppingDistance) {
+				ExecuteAction(Actions.STOP);
+			}
 		}
 	}
 
