@@ -7,11 +7,16 @@ ModelImporter:
   fileIDToRecycleName:
     100000: ground02
     100002: //RootNode
+    100004: ground003
     400000: ground02
     400002: //RootNode
+    400004: ground003
     2300000: ground02
+    2300002: ground003
     3300000: ground02
+    3300002: ground003
     4300000: ground02
+    4300002: ground003
   materials:
     importMaterials: 1
     materialName: 0
