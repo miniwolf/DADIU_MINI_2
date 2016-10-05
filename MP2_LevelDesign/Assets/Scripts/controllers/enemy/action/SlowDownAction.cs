@@ -20,9 +20,10 @@ public class SlowDownAction : Action {
 	}
 
 	IEnumerator SlowDown() {
-		agent.speed -= enemy.GetSlowdown();
+		enemy.SetSlowdown(agent.speed);
+		agent.speed = 2;
 		yield return new WaitForSeconds(enemy.GetSlowdownTime());
-		agent.speed += enemy.GetSlowdown();
+		agent.speed = enemy.GetSlowdown();
 	}
 }
 
