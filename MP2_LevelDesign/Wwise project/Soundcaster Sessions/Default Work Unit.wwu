@@ -22,12 +22,20 @@
 							<Position X="1" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="playChasingMusic" ID="{FEAD006F-FAB9-4012-95C5-5D0556D13070}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="trollFootsteps" ID="{441AE6FC-175B-4732-8E96-E0C78F786837}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}"/>
 							<Position X="1" Y="2"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="frog_soundscape_loop_1" ID="{AEDE5E54-A0EE-49F5-A3F5-1F71E08EA898}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
 							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="playRoamingMusic" ID="{0AE47380-F4EB-4A0E-A143-BF48A0DCF7CC}" WorkUnitID="{F0672C7F-9186-4ECF-A4CF-410AEF84B05F}"/>
+							<Position X="2" Y="1"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
