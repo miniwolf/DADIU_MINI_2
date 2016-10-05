@@ -9,7 +9,6 @@ public class  EnemyRoamingAnimation : Action {
 	}
 
 	public void Execute() {
-		Debug.Log("Troll roaming true");
 		animator.SetBool("isRoaming", true);
 	}
 }
