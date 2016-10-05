@@ -9,7 +9,6 @@ public class  EnemyEndChaseAnimation : Action {
 	}
 
 	public void Execute() {
-		Debug.Log("Troll isChasing true");
 		animator.SetBool("isChasing", false);
 	}
 }
