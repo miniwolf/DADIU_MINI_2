@@ -55,7 +55,7 @@ public class ControllableFactory {
 		Handler stun = new Stun();
 		stun.AddAction(new StopAction(player));
 		stun.AddAction(new StopMovingAuntieSound());
-		stun.AddAction(new PlayerCaughtAnimation());
+		stun.AddAction(new PlayerCaughtAnimation(enemyObj, playerObj));
 		return stun;
 	}
 
