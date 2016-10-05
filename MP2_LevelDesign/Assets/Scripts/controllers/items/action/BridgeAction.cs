@@ -28,16 +28,18 @@ public class BridgeAction : ItemCommand {
 	/// <param name="other">Colliding object</param>
 	public void Execute(Collider other) {
 		if ( other.transform.tag == TagConstants.ENEMY ) {
-			foreach (Transform child in bridgeObject.GetComponentInChildren<Transform>()) {
-				if (child.GetComponent<Rigidbody> () != null) {
-					child.GetComponent<Rigidbody> ().isKinematic = false;	
-				} else {
-					child.GetComponent<NavMeshObstacle>().enabled = true;
-					child.transform.parent = null;
+			if (enemy.GetState () == EnemyState.Chasing || enemy.GetState () == EnemyState.StartChase) {
+				foreach (Transform child in bridgeObject.GetComponentInChildren<Transform>()) {
+					if (child.GetComponent<Rigidbody> () != null) {
+						child.GetComponent<Rigidbody> ().isKinematic = false;	
+					} else {
+						child.GetComponent<NavMeshObstacle> ().enabled = true;
+						child.transform.parent = null;
+					}
 				}
+				actionableEnemy.ExecuteAction (Actions.ROAM);
+				coroutineDelegator.StartCoroutine (RemoveBridgeAfterTime ());
 			}
-			actionableEnemy.ExecuteAction(Actions.ROAM);
-			coroutineDelegator.StartCoroutine(RemoveBridgeAfterTime());
 		}
 	}
 

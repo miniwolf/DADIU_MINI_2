@@ -75,9 +75,10 @@ public class CanvasScript : MonoBehaviour {
 
 		howToPlayMenu.gameObject.SetActive(false);
 
-		Action action = new LevelMusic();
-		action.Setup(gameObject);
-		action.Execute();
+
+		Action soundScape = new SoundScapeMusic();
+		soundScape.Setup(gameObject);
+		soundScape.Execute();
 		gameStateManager.NewState(new GameState.Playing());
 	}
 

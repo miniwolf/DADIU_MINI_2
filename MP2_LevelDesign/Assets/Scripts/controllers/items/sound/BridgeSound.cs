@@ -8,7 +8,7 @@ public class BridgeSound : ItemCommand {
 	}
 
 	public void Execute(Collider other) {
-		if ( other.tag == TagConstants.PLAYER ) {
+		if ( other.tag == TagConstants.ENEMY ) {
 			AkSoundEngine.PostEvent("trollFallsIntoWater", bridge);
 		}
 	}
