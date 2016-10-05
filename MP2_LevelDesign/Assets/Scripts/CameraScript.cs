@@ -3,6 +3,8 @@ using System.Collections;
 
 public class CameraScript : MonoBehaviour {
 
+	public GameObject quadBlocker;
+
 	private GameObject player;
 	private Vector3 cameraPosition;
 	public float offset = 12f;

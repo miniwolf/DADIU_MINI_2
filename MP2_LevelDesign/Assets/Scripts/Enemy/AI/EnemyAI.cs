@@ -31,7 +31,7 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 			return;
 		}
 		switch ( enemy.GetState() ) {
-		case EnemyState.RandomWalk:
+			case EnemyState.RandomWalk:
 				FreeRoam(enemy.GetPosition(), roamRadius);
                 break;
 			case EnemyState.WalkAway:
@@ -42,7 +42,7 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
 				Chaising();
 				break;
 			case EnemyState.GirlCaught:
-                //do nothing: waiting for trigger finishing animation
+				GetComponent<SphereCollider>().enabled = false;
 				break;
 			case EnemyState.StartChase: 
 				TeleportToGirl();
@@ -104,6 +104,7 @@ public class EnemyAI : MonoBehaviour, AI, GameEntity {
     private void Chaising() {
 		enemy.SetDestination(player.GetPosition());
 		actionableEnemy.ExecuteAction(Actions.MOVE);
+		GetComponent<SphereCollider>().enabled = true;
 	}
 
 	/*

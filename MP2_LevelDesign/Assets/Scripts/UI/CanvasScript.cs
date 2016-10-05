@@ -16,7 +16,7 @@ public class CanvasScript : MonoBehaviour {
 	private UIController howToPlayController;
 	private Actionable enemy;
 
-	public GameObject quadBlocker;
+	public GameObject ground;
 
 	void Awake() {
 		gameStateManager = GameObject.FindGameObjectWithTag(TagConstants.GAME_STATE).GetComponent<GameStateManager>();
@@ -26,6 +26,7 @@ public class CanvasScript : MonoBehaviour {
 		inGameController = GameObject.FindGameObjectWithTag(UIConstants.IN_GAME_MENU).GetComponent<UIController>();
 
 		ShowMainMenu();
+		ground.layer = 5;
 	}
 
 	void Start() {
@@ -49,7 +50,8 @@ public class CanvasScript : MonoBehaviour {
 		menuController.SetVisible();
 		settingsController.SetInvisible();
 		inGameController.SetInvisible();
-		quadBlocker.SetActive(true);
+
+		ground.layer = 5;
 
 		howToPlayMenu.gameObject.SetActive(false);
 
@@ -78,7 +80,6 @@ public class CanvasScript : MonoBehaviour {
 		menuController.SetInvisible();
 		settingsController.SetInvisible();
 		inGameController.SetVisible();
-		quadBlocker.SetActive(false);
 
 		howToPlayMenu.gameObject.SetActive(false);
 
@@ -89,6 +90,7 @@ public class CanvasScript : MonoBehaviour {
 		enemy.ExecuteAction(Actions.ROAM);
 		enemy.ExecuteAction(Actions.ONCE);
 		gameStateManager.NewState(new GameState.Playing());
+		ground.layer = 8;
 	}
 
 	public void ShowHowToPlayMenu() {
