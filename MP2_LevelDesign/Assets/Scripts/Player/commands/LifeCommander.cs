@@ -30,12 +30,14 @@ public class LifeCommander : MovableCommand {
             if (inGameController.GetLifeValue() > 0) {
 				actionablePlayer.ExecuteAction(Actions.STUN);
 				actionableEnemy.ExecuteAction(Actions.CAUGHT);
+				container.StartCoroutine(ReactivateGirl());
             } else {
                 player.SetState(PlayerState.Dead);
+				actionablePlayer.ExecuteAction(Actions.STUN);
                 gameStateManager.NewState(new GameState.Ended());
             }
 			//Possibly change this to react according to the animation
-			container.StartCoroutine(ReactivateGirl());
+
 			enemy.SetState(EnemyState.GirlCaught);
         }
     }

@@ -27,15 +27,17 @@
 				<Event Id="4028748541" Name="menuForwardClick" ObjectPath="\Events\Default Work Unit\menuForwardClick"/>
 				<Event Id="4109667655" Name="playChasingMusic" ObjectPath="\Events\Default Work Unit\musicEvents\playChasingMusic"/>
 				<Event Id="1477059561" Name="playForestSoundscape" ObjectPath="\Events\Default Work Unit\playForestSoundscape"/>
-				<Event Id="3889299310" Name="playLakeAmbience" ObjectPath="\Events\Default Work Unit\playLakeAmbience" MaxAttenuation="50.000000"/>
+				<Event Id="3889299310" Name="playLakeAmbience" ObjectPath="\Events\Default Work Unit\playLakeAmbience" MaxAttenuation="40.000000"/>
 				<Event Id="413545259" Name="playMenuMusic" ObjectPath="\Events\Default Work Unit\musicEvents\playMenuMusic"/>
-				<Event Id="251180667" Name="playRiverAmbience" ObjectPath="\Events\Default Work Unit\playRiverAmbience" MaxAttenuation="25.000000"/>
+				<Event Id="251180667" Name="playRiverAmbience" ObjectPath="\Events\Default Work Unit\playRiverAmbience" MaxAttenuation="40.000000"/>
 				<Event Id="2415596161" Name="playRoamingMusic" ObjectPath="\Events\Default Work Unit\musicEvents\playRoamingMusic"/>
 				<Event Id="2907867019" Name="stopAllMusic" ObjectPath="\Events\Default Work Unit\musicEvents\stopAllMusic" MaxAttenuation="0.000000"/>
 				<Event Id="3284803258" Name="stopAllSoundscapes" ObjectPath="\Events\Default Work Unit\stopEvents\stopAllSoundscapes" MaxAttenuation="0.000000"/>
+				<Event Id="3527026064" Name="stopAuntieFootsteps" ObjectPath="\Events\Default Work Unit\stopEvents\stopAuntieFootsteps" MaxAttenuation="0.000000"/>
+				<Event Id="1093813131" Name="stopTrollFootsteps" ObjectPath="\Events\Default Work Unit\stopEvents\stopTrollFootsteps" MaxAttenuation="0.000000"/>
 				<Event Id="3227179805" Name="trollCatchAuntie" ObjectPath="\Events\Default Work Unit\trollCatchAuntie"/>
-				<Event Id="1919802259" Name="trollFallsIntoWater" ObjectPath="\Events\Default Work Unit\trollFallsIntoWater"/>
-				<Event Id="4032712899" Name="trollFootsteps" ObjectPath="\Events\Default Work Unit\trollFootsteps" MaxAttenuation="50.000000"/>
+				<Event Id="1919802259" Name="trollFallsIntoWater" ObjectPath="\Events\Default Work Unit\trollFallsIntoWater" MaxAttenuation="60.000000"/>
+				<Event Id="4032712899" Name="trollFootsteps" ObjectPath="\Events\Default Work Unit\trollFootsteps" MaxAttenuation="40.000000"/>
 				<Event Id="4228143387" Name="trollThrowsAuntie" ObjectPath="\Events\Default Work Unit\trollThrowsAuntie"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>

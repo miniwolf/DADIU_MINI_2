@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Actionable {
-	private EnemyState state = EnemyState.RandomWalk;
+	public EnemyState state = EnemyState.RandomWalk;
 	private Dictionary<Actions, Handler> actions = new Dictionary<Actions, Handler>();
 	private Vector3 destination = Vector3.zero;
 
@@ -22,8 +22,32 @@ public class TrollEnemy : MonoBehaviour, Enemy, GameEntity, Actionable {
 		TagRegister.RegisterSingle(gameObject, TagConstants.ENEMY);
 	}
 
-	void Start(){
-		GetComponent<NavMeshAgent> ().speed = roamSpeed;
+	void Start() {
+		GetComponent<NavMeshAgent>().speed = roamSpeed;
+	}
+
+	void Update() {
+		switch( state ) {
+			case EnemyState.RandomWalk:
+				ExecuteAction(Actions.ROAM);
+				break;
+			case EnemyState.StartChase:
+				ExecuteAction(Actions.CHASE);
+				break;
+			case EnemyState.Chasing:
+				ExecuteAction(Actions.CHASE);
+				break;
+			case EnemyState.WalkAway:
+				ExecuteAction(Actions.WALKAWAY);
+				break;
+			case EnemyState.GirlCaught:
+				ExecuteAction(Actions.CAUGHT);
+				break;
+			default:
+				ExecuteAction(Actions.MOVE);
+				ExecuteAction(Actions.DEBUGMOVE);
+				break;
+		}
 	}
 
 	public void SetupComponents() {

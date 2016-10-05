@@ -6,12 +6,12 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Actionable {
 	private PlayerState playerState = PlayerState.Running;
 	private Dictionary<Actions, Handler> actions = new Dictionary<Actions, Handler>();
 
-	private GameObject player;
-	private GameObject tapObj;
+	private NavMeshAgent agent;
+	private float stoppingDist = 0.1f;
 
 	void Awake() {
-		player = GameObject.FindGameObjectWithTag(TagConstants.PLAYER);
-		tapObj = GameObject.FindGameObjectWithTag(TagConstants.TAP_FEEDBACK);
+		agent = this.GetComponent<NavMeshAgent>();
+		agent.stoppingDistance = stoppingDist;
 
 		InjectionRegister.Register(this);
 		TagRegister.RegisterSingle(gameObject, TagConstants.PLAYER);
@@ -30,11 +30,20 @@ public class PlayerImpl : MonoBehaviour, Player, GameEntity, Actionable {
 		switch ( playerState ) {
 			case PlayerState.Running:
 				ExecuteAction(Actions.MOVE);
-			ExecuteAction(Actions.DEBUGMOVE);
+				ExecuteAction(Actions.DEBUGMOVE);
+				StopPlayer();
 				break;
 			case PlayerState.Idle:
 				ExecuteAction(Actions.STUN);
 				break;
+		}
+	}
+
+	private void StopPlayer() {
+		if (agent.hasPath) {
+			if (agent.remainingDistance <= agent.stoppingDistance) {
+				ExecuteAction(Actions.STOP);
+			}
 		}
 	}
 
