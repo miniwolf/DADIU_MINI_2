@@ -11,5 +11,5 @@ ingameLife;
 ingameScore;
 endSceneHighscore;Highscore: 
 endSceneMyScore;Score: 
-endSceneMotivationalL;Great job, try again and see if you can beat the highscore next time
-endSceneMotivationalW;You are an amazing player you beat the highscore good job
+endSceneMotivationalL;Great job, try again
+endSceneMotivationalW;Good job You are amazing
