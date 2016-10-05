@@ -113,7 +113,6 @@ public class ControllableFactory {
 		return chase;
 	}
 
-
 	Handler CreateCaught() {
 		Handler catchGirl = new ActionHandler();
 		catchGirl.AddAction(new CatchGirlAction(enemy));
