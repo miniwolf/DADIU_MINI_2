@@ -149,12 +149,14 @@ public class ControllableFactory {
 	private Handler CreateEnemyMovement() {
 		Handler enemyMovement = new ActionHandler();
 		enemyMovement.AddAction(new TrollMove(enemy));
+		enemyMovement.AddAction(new TrollMoveSound());
 		return enemyMovement;
 	}
 
 	private Handler CreateStopEnemy() {
 		Handler enemyStop = new ActionHandler();
 		enemyStop.AddAction(new StopAction(player));
+		enemyStop.AddAction(new StopTrollSound());
 		return enemyStop;
 	}
 
