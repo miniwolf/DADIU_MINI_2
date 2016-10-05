@@ -1,6 +1,7 @@
 Event	ID	Name			Wwise Object Path	Notes
 	251180667	playRiverAmbience			\Default Work Unit\playRiverAmbience	
 	413545259	playMenuMusic			\Default Work Unit\musicEvents\playMenuMusic	
+	1093813131	stopTrollFootsteps			\Default Work Unit\stopEvents\stopTrollFootsteps	
 	1477059561	playForestSoundscape			\Default Work Unit\playForestSoundscape	
 	1747696776	auntieFootsteps			\Default Work Unit\auntieFootsteps	
 	1919802259	trollFallsIntoWater			\Default Work Unit\trollFallsIntoWater	
@@ -10,6 +11,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3139869105	menuBackwardClick			\Default Work Unit\menuBackwardClick	
 	3227179805	trollCatchAuntie			\Default Work Unit\trollCatchAuntie	
 	3284803258	stopAllSoundscapes			\Default Work Unit\stopEvents\stopAllSoundscapes	
+	3527026064	stopAuntieFootsteps			\Default Work Unit\stopEvents\stopAuntieFootsteps	
 	3889299310	playLakeAmbience			\Default Work Unit\playLakeAmbience	
 	4028748541	menuForwardClick			\Default Work Unit\menuForwardClick	
 	4032712899	trollFootsteps			\Default Work Unit\trollFootsteps	

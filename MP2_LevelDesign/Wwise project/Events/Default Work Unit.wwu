@@ -338,6 +338,34 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="stopAuntieFootsteps" ID="{8F345044-5321-4071-9175-8BBAD00A01C9}">
+							<ChildrenList>
+								<Action Name="Stop" ID="{C25CCD28-37E7-4B43-B814-D7FEC38403E4}" ShortID="196015296" Type="Stop" Scope="One" Global="true">
+									<PropertyList>
+										<Property Name="FadeTime" Type="Real64" Value="0.05"/>
+									</PropertyList>
+									<ElementList>
+										<Element ID="{D49FADAD-3B35-4DE9-A192-18909071CE28}" Global="true">
+											<ObjectRef Name="Footsteps" ID="{4187A11D-B99F-4349-88AA-494267B815C9}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
+										</Element>
+									</ElementList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="stopTrollFootsteps" ID="{E4EC78C8-22AF-4F4A-84B6-445495F49BD7}">
+							<ChildrenList>
+								<Action Name="Stop" ID="{007F5AFD-94EC-41C1-9088-3216F96567BB}" ShortID="847137786" Type="Stop" Scope="One" Global="true">
+									<PropertyList>
+										<Property Name="FadeTime" Type="Real64" Value="0.05"/>
+									</PropertyList>
+									<ElementList>
+										<Element ID="{5E4C8B2A-CCA7-4046-8579-A5F320004275}" Global="true">
+											<ObjectRef Name="forest_surface" ID="{244A00A9-B4A8-4651-838F-FE1EBE6E7A2C}" WorkUnitID="{73E050D3-3E03-455D-A62D-6A5660CB809A}"/>
+										</Element>
+									</ElementList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="musicEvents" ID="{04F10AD9-771C-4EF7-9D72-94094E7625BC}" ShortID="519636436">
